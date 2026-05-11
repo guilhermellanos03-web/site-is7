@@ -6,7 +6,6 @@ import Method from "@/components/site/Method";
 import Cases from "@/components/site/Cases";
 import GoogleReviews from "@/components/site/GoogleReviews";
 import BlogSection from "@/components/site/BlogSection";
-import InstagramFeed from "@/components/site/InstagramFeed";
 import FinalCTA from "@/components/site/FinalCTA";
 import Footer from "@/components/site/Footer";
 
@@ -47,7 +46,6 @@ const Index = () => {
         <Cases />
         <GoogleReviews />
         <BlogSection />
-        <InstagramFeed />
         <FinalCTA />
       </main>
       <Footer />
