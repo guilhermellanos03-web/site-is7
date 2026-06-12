@@ -14,20 +14,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install lftp + sshpass
-        run: sudo apt-get install -y lftp sshpass
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
 
-      - name: Deploy via SFTP (lftp + sshpass)
+      - name: Deploy via FTP (lftp)
         env:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
-          SSHPASS: ${{ secrets.FTP_PASSWORD }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -u "$FTP_USER," \
+          lftp -u "$FTP_USER,$FTP_PASS" \
             -e "
-              set sftp:connect-program 'sshpass -e ssh -a -x -o StrictHostKeyChecking=no -p 65002';
+              set ftp:passive-mode true;
+              set ftp:ssl-allow false;
               set net:timeout 30;
               set net:max-retries 3;
-              open sftp://ftp.is7mkt.com.br;
+              open ftp://ftp.is7mkt.com.br;
               mirror -R \
                 --delete \
                 --no-perms \
