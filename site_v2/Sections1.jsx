@@ -230,60 +230,56 @@
 
   // ── Deliverables ─────────────────────────────────────────────────────────
   var DELIVERABLES = [
-    "Design responsivo (mobile + desktop)",
-    "SEO on-page básico (meta tags, Google)",
-    "Integração com WhatsApp",
-    "Google Analytics instalado",
-    "SSL (https) incluso",
-    "Velocidade 90+ no PageSpeed",
-    "Formulário de contato",
-    "Domínio + hospedagem por 1 ano",
+    { icon: "palette",        title: "Identidade visual",      text: "Logo, cores e tipografia para a sua marca ter uma cara profissional." },
+    { icon: "monitor",        title: "Site profissional",      text: "Desenvolvido do zero, rápido, responsivo e otimizado para converter." },
+    { icon: "trending-up",    title: "Tráfego pago (Ads)",     text: "Campanhas de Google Ads gerenciadas com foco em retorno real." },
+    { icon: "shopping-bag",   title: "Loja virtual",           text: "Vitrine completa com catálogo, identidade própria e pedido no WhatsApp." },
+    { icon: "headphones",     title: "Suporte nas vendas",     text: "Acompanhamento ativo das vendas, ajustamos estratégias para crescimento constante." },
+    { icon: "users",          title: "Consultas estratégicas", text: "Sessões regulares para alinhar ações, revisar resultados e planejar próximos passos." },
+    { icon: "file-text",      title: "Relatórios mensais",     text: "Dados claros sobre visitas, cliques e resultados todo mês." },
+    { icon: "message-circle", title: "Suporte via WhatsApp",   text: "Atendimento próximo e rápido, sem burocracia." },
   ];
 
   const Deliverables = function Deliverables() {
     var { Icon, Eyebrow, Reveal, wa } = _v;
     return (
-      <section className="section">
+      <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
-          <div className="grid-2">
-            <Reveal>
-              <Eyebrow>O que está incluso</Eyebrow>
-              <h2 className="h2" style={{ marginTop: 12, marginBottom: 16 }}>
-                Tudo o que seu site precisa
-              </h2>
-              <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.65, marginBottom: 36 }}>
-                Do design ao domínio, cada detalhe técnico já está coberto.
-                Você foca no negócio — a IS7 cuida do digital.
-              </p>
-              <a
-                href={wa("Olá, vim pelo site da IS7 e quero saber o que está incluso no site!")}
-                target="_blank" rel="noreferrer"
-                className="btn btn-primary"
-              >
-                Ver planos e preços <Icon name="arrow-right" size={17} />
-              </a>
-            </Reveal>
-            <Reveal delay={60}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-                {DELIVERABLES.map(function (d, i) {
-                  return (
-                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                      <span style={{
-                        width: 22, height: 22, borderRadius: 9999, background: "rgba(145,69,230,.18)",
-                        border: "1px solid rgba(145,69,230,.30)",
-                        display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 1,
-                      }}>
-                        <Icon name="check" size={12} color="var(--accent-bright)" />
-                      </span>
-                      <span style={{ fontSize: 14, color: "var(--fg-muted)", lineHeight: 1.5 }}>{d}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </Reveal>
+          <Reveal style={{ textAlign: "center", marginBottom: 48 }}>
+            <Eyebrow center>O que você recebe</Eyebrow>
+            <h2 className="h2" style={{ marginTop: 12 }}>
+              Tudo que sua empresa precisa para <span className="grad-text">crescer online.</span>
+            </h2>
+            <p className="lead" style={{ marginTop: 16, maxWidth: 520, margin: "16px auto 0" }}>
+              Não vendemos pacote fechado. Montamos a combinação certa para o momento da sua empresa.
+            </p>
+          </Reveal>
+
+          <div className="deliv-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
+            {DELIVERABLES.map(function (d, i) {
+              return (
+                <Reveal key={i} delay={i * 50} className="card" style={{ padding: 24 }}>
+                  <div className="chip" style={{ marginBottom: 16, width: 40, height: 40 }}>
+                    <Icon name={d.icon} size={18} color="var(--accent-bright)" />
+                  </div>
+                  <h3 style={{ margin: "0 0 8px", fontSize: 15, fontWeight: 700 }}>{d.title}</h3>
+                  <p style={{ margin: 0, fontSize: 13, color: "var(--fg-muted)", lineHeight: 1.6 }}>{d.text}</p>
+                </Reveal>
+              );
+            })}
           </div>
+
+          <Reveal style={{ textAlign: "center", marginTop: 40 }}>
+            <a
+              href={wa("Olá, vim pelo site da IS7 e quero montar meu plano personalizado!")}
+              target="_blank" rel="noreferrer"
+              className="btn btn-primary"
+            >
+              Montar meu plano personalizado <Icon name="arrow-right" size={17} />
+            </a>
+          </Reveal>
         </div>
-        <style>{`@media(max-width:620px){.deliv-grid{grid-template-columns:1fr !important;}}`}</style>
+        <style>{`@media(max-width:768px){ .deliv-grid{ grid-template-columns:repeat(2,1fr) !important; } }`}</style>
       </section>
     );
   };
