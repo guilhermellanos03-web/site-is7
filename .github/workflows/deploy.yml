@@ -32,14 +32,14 @@ jobs:
                 --delete \
                 --no-perms \
                 --no-umask \
-                --exclude .git \
-                --exclude .github \
-                --exclude .claude \
-                --exclude node_modules \
-                --exclude README.md \
-                --exclude '*.state.json' \
-                --exclude 'IS7 Site.html' \
-                --exclude 'IS7 Portfolio.html' \
+                --exclude-glob .git \
+                --exclude-glob .github \
+                --exclude-glob .claude \
+                --exclude-glob node_modules \
+                --exclude-glob README.md \
+                --exclude-glob '*.state.json' \
+                --exclude-glob 'IS7 Site.html' \
+                --exclude-glob 'IS7 Portfolio.html' \
                 . /public_html/;
               bye
             "
