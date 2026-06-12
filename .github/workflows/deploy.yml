@@ -56,6 +56,6 @@ jobs:
                 --exclude-glob '*.state.json' \
                 --exclude-glob 'IS7 Site.html' \
                 --exclude-glob 'IS7 Portfolio.html' \
-                . /public_html/;
+                . domains/is7mkt.com.br/public_html/;
               bye
             "
