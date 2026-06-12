@@ -32,7 +32,7 @@ jobs:
         run: |
           lftp -u "u194888534," \
             -e "
-              set sftp:connect-program 'ssh -a -x -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
+              set sftp:connect-program 'ssh -a -x -i /home/runner/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
               set net:timeout 60;
               set net:max-retries 3;
               open sftp://ftp.is7mkt.com.br;
