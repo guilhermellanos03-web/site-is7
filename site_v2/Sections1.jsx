@@ -11,7 +11,7 @@
   ];
 
   const StatCard = function StatCard({ s }) {
-    var { Icon, Reveal, useCountUp } = _v;
+    var { useCountUp } = _v;
     var ref = React.useRef(null);
     var [active, setActive] = React.useState(false);
     React.useEffect(function () {
@@ -25,14 +25,11 @@
     }, []);
     var count = useCountUp(s.value, 1600, active);
     return (
-      <div ref={ref} className="card" style={{ padding: "32px 24px", textAlign: "center" }}>
-        <div className="chip" style={{ margin: "0 auto 16px" }}>
-          <Icon name={s.icon} size={22} color="var(--accent-bright)" />
-        </div>
-        <p className="stat-num">
+      <div ref={ref} className="card" style={{ padding: "20px 18px", textAlign: "center" }}>
+        <p className="stat-num" style={{ marginBottom: 6 }}>
           {s.prefix || ""}{count}{s.suffix || ""}
         </p>
-        <p className="muted" style={{ margin: "8px 0 0", fontSize: 14 }}>{s.label}</p>
+        <p className="muted" style={{ margin: 0, fontSize: 13, lineHeight: 1.4 }}>{s.label}</p>
       </div>
     );
   };
