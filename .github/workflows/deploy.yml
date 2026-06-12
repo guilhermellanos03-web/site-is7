@@ -14,23 +14,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy via FTPS para Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ftp.is7mkt.com.br
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps-legacy
-          port: 990
-          local-dir: ./
-          server-dir: /public_html/
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.claude/**
-            **/README.md
-            **/*.state.json
-            **/IS7 Site.html
-            **/IS7 Portfolio.html
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy via SFTP (lftp)
+        env:
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u "$FTP_USER,$FTP_PASS" \
+            -e "
+              set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no -p 65002';
+              set net:timeout 30;
+              set net:max-retries 3;
+              open sftp://ftp.is7mkt.com.br;
+              mirror -R \
+                --delete \
+                --no-perms \
+                --no-umask \
+                --exclude .git \
+                --exclude .github \
+                --exclude .claude \
+                --exclude node_modules \
+                --exclude README.md \
+                --exclude '*.state.json' \
+                --exclude 'IS7 Site.html' \
+                --exclude 'IS7 Portfolio.html' \
+                . /public_html/;
+              bye
+            "
