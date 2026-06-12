@@ -4,10 +4,10 @@
 
   // ── Stats ────────────────────────────────────────────────────────────────
   var STATS = [
-    { icon: "megaphone",     value: 300,  prefix: "R$",  suffix: "mil+", label: "Em tráfego gerenciado" },
-    { icon: "calendar-days", value: 4,    suffix: "+",   label: "Anos de experiência" },
-    { icon: "package",       value: 80,   suffix: "+",   label: "Projetos entregues" },
-    { icon: "users",         value: 40,   suffix: "+",   label: "Clientes atendidos" },
+    { icon: "megaphone",     value: 500, prefix: "R$", suffix: "mil+", label: "Gerenciados em tráfego pago" },
+    { icon: "calendar-days", value: 6,   suffix: "+",                  label: "Anos de experiência em marketing digital" },
+    { icon: "package",       value: 80,  prefix: "+",                  label: "Projetos entregues em todo o Brasil" },
+    { icon: "gauge",         value: 95,  prefix: "+",                  label: "Nota média de desempenho dos sites" },
   ];
 
   const StatCard = function StatCard({ s }) {
@@ -43,7 +43,7 @@
       <section className="section-tight" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
-            <Eyebrow center>Confiança e resultados</Eyebrow>
+            <Eyebrow center>Em números</Eyebrow>
             <h2 className="h2" style={{ marginTop: 12 }}>Experiência que dá segurança</h2>
           </Reveal>
           <div className="grid-stats">

@@ -15,12 +15,12 @@
   // ── Hero variant A ────────────────────────────────────────────────────────
   var chipFloat = {
     display: "flex", alignItems: "center", gap: 10,
-    background: "rgba(14,20,38,.88)",
-    border: "1px solid rgba(145,69,230,.30)",
+    background: "var(--surface)",
+    border: "1px solid var(--line-2)",
     borderRadius: 50,
     padding: "11px 18px",
     backdropFilter: "blur(14px)",
-    boxShadow: "0 8px 32px -8px rgba(0,0,0,.55)",
+    boxShadow: "0 8px 32px -8px rgba(0,0,0,.35)",
     whiteSpace: "nowrap",
   };
 

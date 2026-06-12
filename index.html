@@ -27,18 +27,18 @@
   <script src="lojas_virtuais/image-slot.js"></script>
   <script src="site_v2/cases.js"></script>
 
-  <script type="text/babel" src="tweaks-panel.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/SiteCore.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/SiteNav.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/SiteHero.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/Sections1.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/Sections2.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/Sections3.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/Sections4.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/PortfolioLightbox.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/Blog.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/SiteContact.jsx?v=3"></script>
-  <script type="text/babel" src="site_v2/ChatBot.jsx?v=3"></script>
+  <script type="text/babel" src="tweaks-panel.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/SiteCore.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/SiteNav.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/SiteHero.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/Sections1.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/Sections2.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/Sections3.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/Sections4.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/PortfolioLightbox.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/Blog.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/SiteContact.jsx?v=4"></script>
+  <script type="text/babel" src="site_v2/ChatBot.jsx?v=4"></script>
 
   <script type="text/babel">
     const TWEAKS = {
@@ -60,7 +60,7 @@
     };
 
     const App = () => {
-      const { Header, Hero, Stats, ClientsStrip, Services, BeforeAfter, Deliverables, Portfolio, Reviews, About, Instagram, Faq, Contact, Footer, WhatsAppFab, ChatBot } = window.IS7v2;
+      const { Header, Hero, Stats, Services, BeforeAfter, Deliverables, Portfolio, Reviews, About, Instagram, Faq, Contact, Footer, WhatsAppFab, ChatBot } = window.IS7v2;
       const useTweaks  = window.useTweaks  || ((d) => { const [t,setT] = React.useState(d); return [t,(k,v)=>setT(p=>({...p,[k]:v}))]; });
       const TweaksPanel  = window.TweaksPanel  || (({ children }) => null);
       const [t, setTweak] = useTweaks(TWEAKS);
@@ -84,7 +84,6 @@
           <Header />
           <main>
             <Hero variant={t.hero} />
-            <ClientsStrip />
             <Stats />
             <Services />
             <BeforeAfter />
