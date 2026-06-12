@@ -39,23 +39,37 @@ jobs:
 
       - name: Deploy via SFTP
         run: |
-          lftp -e "
-              set sftp:connect-program 'ssh -a -x -l u194888534 -i /home/runner/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
-              set net:timeout 60;
-              set net:max-retries 3;
-              open sftp://ftp.is7mkt.com.br;
-              mirror -R \
-                --delete \
-                --no-perms \
-                --no-umask \
-                --exclude-glob .git \
-                --exclude-glob .github \
-                --exclude-glob .claude \
-                --exclude-glob node_modules \
-                --exclude-glob README.md \
-                --exclude-glob '*.state.json' \
-                --exclude-glob 'IS7 Site.html' \
-                --exclude-glob 'IS7 Portfolio.html' \
-                . domains/is7mkt.com.br/public_html/;
-              bye
-            "
+          deploy_lftp() {
+            lftp -e "
+                set sftp:connect-program 'ssh -a -x -l u194888534 -i /home/runner/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
+                set net:timeout 90;
+                set net:max-retries 5;
+                set net:reconnect-interval-base 5;
+                open sftp://ftp.is7mkt.com.br;
+                mirror -R \
+                  --delete \
+                  --no-perms \
+                  --no-umask \
+                  --exclude-glob .git \
+                  --exclude-glob .github \
+                  --exclude-glob .claude \
+                  --exclude-glob node_modules \
+                  --exclude-glob README.md \
+                  --exclude-glob '*.state.json' \
+                  --exclude-glob 'IS7 Site.html' \
+                  --exclude-glob 'IS7 Portfolio.html' \
+                  . domains/is7mkt.com.br/public_html/;
+                bye
+              "
+          }
+          for attempt in 1 2 3; do
+            echo "Tentativa $attempt de 3..."
+            if deploy_lftp; then
+              echo "Deploy concluído com sucesso!"
+              exit 0
+            fi
+            echo "Tentativa $attempt falhou. Aguardando 15s antes de tentar novamente..."
+            sleep 15
+          done
+          echo "Todas as tentativas falharam."
+          exit 1
