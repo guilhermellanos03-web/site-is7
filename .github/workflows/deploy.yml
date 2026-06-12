@@ -22,8 +22,11 @@ jobs:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -u "$FTP_USER,$FTP_PASS" \
-            -e "
+          # Write credentials to netrc to handle special chars in password
+          printf 'machine ftp.is7mkt.com.br\nlogin %s\npassword %s\n' "$FTP_USER" "$FTP_PASS" > ~/.netrc
+          chmod 600 ~/.netrc
+
+          lftp -e "
               set ftp:passive-mode true;
               set ftp:ssl-allow false;
               set net:timeout 30;
@@ -43,4 +46,4 @@ jobs:
                 --exclude-glob 'IS7 Portfolio.html' \
                 . /public_html/;
               bye
-            "
+            " ftp.is7mkt.com.br
