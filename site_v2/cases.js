@@ -10,6 +10,4 @@ window.IS7_CASES = [
   { name: "Luã Advogado",            meta: "Advocacia tributária · Curitiba",       tag: "Site",        pages: 1, img: "assets/portfolio/rc-soft.png",          domain: "luadeAssis.adv.br",            url: "" },
   { name: "Chaveiro Assistência 24h",meta: "Chaveiro 24h · Recife",                 tag: "Site",        pages: 1, img: "assets/portfolio/chaveiro.png",         domain: "chaveiroassistencia24hs.com.br", url: "" },
   { name: "MK Distribuidora de Vinhos", meta: "Vinhos & adega · Curitiba",            tag: "Loja virtual",pages: 1, img: "assets/portfolio/mk-vinhos.png",         domain: "mkdistribuidoravinhos.com.br", url: "" },
-  { name: "Estética Davi",           meta: "Estética & beleza",                     tag: "Site",        pages: 1, mono: "ED", grad: "linear-gradient(150deg,#1F0E2E,#3D1A60)", domain: "esteticadavi.com.br", url: "" },
-  { name: "Kaue Personal",           meta: "Personal trainer · Fitness",            tag: "Site",        pages: 1, mono: "KP", grad: "linear-gradient(150deg,#0E2A1A,#1A5C3A)", domain: "kauepersonal.com.br", url: "" },
 ];

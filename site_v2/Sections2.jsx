@@ -107,47 +107,76 @@
 
   // ── Reviews ───────────────────────────────────────────────────────────────
   var REVIEWS = [
-    { name: "Allan Ferraz",      count: "11 avaliações", text: "Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes." },
-    { name: "André Vicente",     count: "3 avaliações",  text: "Graças às mudanças de direcionamento e grandes estratégias criadas por essa agência, alcancei resultados expressivos e grandes feitos." },
-    { name: "Vinicius Cortiano", count: "4 avaliações",  text: "Trabalho de qualidade e excelente atendimento! Recomendo muito para quem precisa de presença digital profissional." },
-    { name: "Tiago Monteiro",    count: "2 avaliações",  text: "Site entregue no prazo, exatamente como combinado. Já recebi vários contatos pelo formulário na primeira semana." },
-    { name: "Camila Rodrigues",  count: "5 avaliações",  text: "Super recomendo! Equipe muito atenciosa e o resultado ficou muito melhor do que esperava. Processo simples e rápido." },
-    { name: "Fernando Lima",     count: "1 avaliação",   text: "Ótimo custo-benefício. Site profissional com domínio e hospedagem inclusos por um preço muito acessível." },
-    { name: "Patrícia Souza",    count: "7 avaliações",  text: "Atendimento rápido, processo fácil e site lindo. Do briefing à entrega foi tudo muito bem organizado." },
-    { name: "Carlos Mendes",     count: "3 avaliações",  text: "Profissionalismo do início ao fim. O site ficou exatamente com o visual que eu queria e o suporte foi excelente." },
+    { name: "Allan Ferraz",      ago: "há 2 meses",  color: "#4285F4", text: "Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes." },
+    { name: "André Vicente",     ago: "há 3 meses",  color: "#34A853", text: "Graças às mudanças de direcionamento e grandes estratégias criadas por essa agência, alcancei resultados expressivos e grandes feitos." },
+    { name: "Vinicius Cortiano", ago: "há 4 meses",  color: "#EA4335", text: "Trabalho de qualidade e excelente atendimento! Recomendo muito para quem precisa de presença digital profissional." },
+    { name: "Tiago Monteiro",    ago: "há 5 meses",  color: "#4285F4", text: "Site entregue no prazo, exatamente como combinado. Já recebi vários contatos pelo formulário na primeira semana." },
+    { name: "Camila Rodrigues",  ago: "há 6 meses",  color: "#34A853", text: "Super recomendo! Equipe muito atenciosa e o resultado ficou muito melhor do que esperava. Processo simples e rápido." },
+    { name: "Fernando Lima",     ago: "há 7 meses",  color: "#FBBC05", text: "Ótimo custo-benefício. Site profissional com domínio e hospedagem inclusos por um preço muito acessível." },
+    { name: "Patrícia Souza",    ago: "há 8 meses",  color: "#9145E6", text: "Atendimento rápido, processo fácil e site lindo. Do briefing à entrega foi tudo muito bem organizado." },
+    { name: "Carlos Mendes",     ago: "há 9 meses",  color: "#EA4335", text: "Profissionalismo do início ao fim. O site ficou exatamente com o visual que eu queria e o suporte foi excelente." },
   ];
+
+  var GoogleLogoSVG = (
+    <svg width="22" height="22" viewBox="0 0 24 24">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+  );
+
+  var GoogleBadgeSVG = (
+    <svg width="10" height="10" viewBox="0 0 24 24">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+  );
 
   const ReviewCard = function ReviewCard({ r }) {
     return (
-      <div className="card" style={{ padding: 24 }}>
-        <div style={{ display: "flex", gap: 2, marginBottom: 12 }}>
-          {"★★★★★".split("").map(function (s, i) {
-            return <span key={i} style={{ color: "var(--star)", fontSize: 14 }}>{s}</span>;
-          })}
-        </div>
-        <p style={{ margin: "0 0 16px", fontSize: 14, lineHeight: 1.65, color: "var(--fg-muted)" }}>"{r.text}"</p>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{
-            width: 34, height: 34, borderRadius: 9999,
-            background: "var(--grad)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 13, fontWeight: 700, color: "#fff", flexShrink: 0,
-          }}>
-            {r.name[0]}
-          </div>
-          <div>
-            <p style={{ margin: 0, fontSize: 14, fontWeight: 600 }}>{r.name}</p>
-            <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 2 }}>
-              <svg width="12" height="12" viewBox="0 0 24 24" style={{ flexShrink: 0 }}>
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              <span style={{ fontSize: 11, color: "var(--fg-dim)" }}>{r.count}</span>
+      <div className="card" style={{ padding: 20, display: "flex", flexDirection: "column", gap: 0 }}>
+        {/* Header: avatar + name + time */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+          <div style={{ position: "relative", flexShrink: 0 }}>
+            <div style={{
+              width: 42, height: 42, borderRadius: 9999,
+              background: r.color, color: "#fff",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontFamily: "var(--serif)", fontWeight: 700, fontSize: 18,
+            }}>
+              {r.name[0]}
+            </div>
+            <div style={{
+              position: "absolute", bottom: -2, right: -2,
+              width: 18, height: 18, borderRadius: 9999,
+              background: "#fff", border: "1.5px solid #e0e0e0",
+              display: "flex", alignItems: "center", justifyContent: "center",
+            }}>
+              {GoogleBadgeSVG}
             </div>
           </div>
+          <div style={{ minWidth: 0 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+              <span style={{ fontWeight: 700, fontSize: 14, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{r.name}</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}>
+                <circle cx="12" cy="12" r="10" fill="#4285F4"/>
+                <path d="M8 12l3 3 5-5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <span style={{ fontSize: 12, color: "var(--fg-muted)" }}>{r.ago}</span>
+          </div>
         </div>
+        {/* Stars */}
+        <div style={{ display: "flex", gap: 1, marginBottom: 10 }}>
+          {"★★★★★".split("").map(function (s, i) {
+            return <span key={i} style={{ color: "#FBBC05", fontSize: 15 }}>{s}</span>;
+          })}
+        </div>
+        {/* Text */}
+        <p style={{ margin: 0, fontSize: 13.5, lineHeight: 1.65, color: "var(--fg-muted)" }}>{r.text}</p>
       </div>
     );
   };
@@ -155,41 +184,42 @@
   const Reviews = function Reviews() {
     var { Eyebrow, Reveal } = _v;
     var [page, setPage] = React.useState(0);
-    var perPage = 3;
+    var perPage = 4;
     var pages = Math.ceil(REVIEWS.length / perPage);
-
-    React.useEffect(function () {
-      var t = setInterval(function () {
-        setPage(function (p) { return (p + 1) % pages; });
-      }, 7000);
-      return function () { clearInterval(t); };
-    }, [pages]);
-
     var visible = REVIEWS.slice(page * perPage, page * perPage + perPage);
 
     return (
       <section className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
-          <Reveal style={{ textAlign: "center", marginBottom: 48 }}>
-            <Eyebrow center>Avaliações</Eyebrow>
-            <h2 className="h2" style={{ marginTop: 12 }}>O que nossos clientes dizem</h2>
-            <div style={{ marginTop: 16, display: "flex", justifyContent: "center", alignItems: "center", gap: 10 }}>
-              <span style={{ fontSize: 24, color: "var(--star)", letterSpacing: 2 }}>★★★★★</span>
-              <span style={{ fontFamily: "var(--serif)", fontWeight: 800, fontSize: 22 }}>5.0</span>
-              <span style={{ fontSize: 14, color: "var(--fg-muted)" }}>· 25+ avaliações no Google</span>
-            </div>
-            <div style={{ marginTop: 14 }}>
-              <a
-                href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc"
-                target="_blank" rel="noreferrer"
-                className="link-arrow"
-              >
-                Ver todas no Google →
-              </a>
+          <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
+            <Eyebrow center>O que dizem nossos clientes</Eyebrow>
+            <h2 className="h2" style={{ marginTop: 12 }}>
+              Mais de 30 avaliações <span className="grad-text">verificadas no Google</span>
+            </h2>
+          </Reveal>
+
+          {/* Google Avaliações header card */}
+          <Reveal style={{ marginBottom: 24 }}>
+            <div className="card" style={{ padding: "18px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                {GoogleLogoSVG}
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 15 }}>Google Avaliações</div>
+                  <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>Avaliações verificadas</div>
+                </div>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{ fontFamily: "var(--serif)", fontWeight: 800, fontSize: 30, lineHeight: 1 }}>5.0</span>
+                <div>
+                  <div style={{ color: "#FBBC05", fontSize: 18, letterSpacing: 2 }}>★★★★★</div>
+                  <div style={{ fontSize: 12, color: "var(--fg-muted)" }}>30 avaliações</div>
+                </div>
+              </div>
             </div>
           </Reveal>
 
-          <div className="grid-reviews" style={{ marginBottom: 32 }}>
+          {/* Cards grid — 4 colunas */}
+          <div className="rev-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, marginBottom: 28 }}>
             {visible.map(function (r, i) {
               return (
                 <Reveal key={page + "-" + i} delay={i * 60}>
@@ -199,26 +229,53 @@
             })}
           </div>
 
-          {/* Pagination dots */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 8 }}>
-            {Array.from({ length: pages }).map(function (_, i) {
-              return (
-                <button
-                  key={i}
-                  onClick={function () { setPage(i); }}
-                  style={{
-                    width: i === page ? 24 : 8, height: 8,
-                    borderRadius: 9999,
-                    background: i === page ? "var(--accent)" : "var(--line-2)",
-                    border: 0, cursor: "pointer", padding: 0,
-                    transition: "width .3s, background .3s",
-                  }}
-                  aria-label={"Página " + (i + 1)}
-                />
-              );
-            })}
+          {/* Paginação + botão */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              {Array.from({ length: pages }).map(function (_, i) {
+                return (
+                  <button
+                    key={i}
+                    onClick={function () { setPage(i); }}
+                    style={{
+                      width: i === page ? 24 : 8, height: 8,
+                      borderRadius: 9999,
+                      background: i === page ? "var(--accent)" : "var(--line-2)",
+                      border: 0, cursor: "pointer", padding: 0,
+                      transition: "width .3s, background .3s",
+                    }}
+                    aria-label={"Página " + (i + 1)}
+                  />
+                );
+              })}
+              <button
+                onClick={function () { setPage(function (p) { return (p + 1) % pages; }); }}
+                style={{
+                  width: 36, height: 36, borderRadius: 9999,
+                  border: "1px solid var(--line-2)", background: "var(--surface)",
+                  cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+                  color: "var(--fg)", marginLeft: 4,
+                }}
+                aria-label="Próxima página"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </button>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc"
+              target="_blank" rel="noreferrer"
+              className="btn btn-ghost"
+            >
+              Ver todas no Google ↗
+            </a>
           </div>
         </div>
+        <style>{`
+          @media(max-width:900px){ .rev-grid{ grid-template-columns:repeat(2,1fr) !important; } }
+          @media(max-width:480px){ .rev-grid{ grid-template-columns:1fr !important; } }
+        `}</style>
       </section>
     );
   };
