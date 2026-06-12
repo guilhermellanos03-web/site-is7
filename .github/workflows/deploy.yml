@@ -28,6 +28,15 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
+      - name: Testar SSH
+        run: |
+          ssh -i /home/runner/.ssh/id_ed25519 \
+            -o StrictHostKeyChecking=no \
+            -o PasswordAuthentication=no \
+            -o BatchMode=yes \
+            -p 65002 -v \
+            u194888534@ftp.is7mkt.com.br "echo OK" 2>&1 | tail -20
+
       - name: Deploy via SFTP
         run: |
           lftp -u "u194888534," \
