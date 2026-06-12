@@ -25,10 +25,8 @@ jobs:
         run: sudo apt-get install -y lftp
 
       - name: Deploy via SFTP
-        env:
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
         run: |
-          lftp -u "$FTP_USER," \
+          lftp -u "u194888534," \
             -e "
               set sftp:connect-program 'ssh -a -x -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
               set net:timeout 60;
