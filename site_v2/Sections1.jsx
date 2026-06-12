@@ -136,70 +136,94 @@
 
   // ── BeforeAfter ───────────────────────────────────────────────────────────
   const BeforeAfter = function BeforeAfter() {
-    var { Icon, Eyebrow, Reveal } = _v;
+    var { Icon, Eyebrow, Reveal, wa } = _v;
     var before = [
-      "Invisível no Google",
-      "Sem site profissional",
-      "Perdendo clientes para a concorrência",
-      "Sem como medir resultados",
+      "Invisível no Google: seu concorrente aparece, você não",
+      "Site desatualizado ou sem site, passando imagem de empresa largada",
+      "Sem saber de onde vêm (ou não vêm) os clientes",
+      "Dinheiro em impulsionar post que não converte",
+      "Atendendo qualquer cliente por falta de posicionamento",
     ];
     var after = [
-      "Aparece no topo do Google",
-      "Site profissional e responsivo",
-      "Recebendo contatos pelo WhatsApp",
-      "Dashboard com métricas reais",
+      "Aparecer na primeira página quando alguém procura pelo seu serviço",
+      "Site rápido que converte visita em contato e contato em cliente",
+      "Relatórios claros mostrando exatamente o que deu retorno",
+      "Tráfego qualificado que traz quem realmente quer comprar",
+      "Posicionamento forte que atrai o cliente certo para o seu negócio",
     ];
     return (
-      <section className="section-tight" style={{ background: "var(--surface)" }}>
+      <section className="section-tight" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal style={{ textAlign: "center", marginBottom: 48 }}>
-            <Eyebrow center>Transformação</Eyebrow>
-            <h2 className="h2" style={{ marginTop: 12 }}>A diferença que a IS7 faz</h2>
+            <Eyebrow center>A diferença na prática</Eyebrow>
+            <h2 className="h2" style={{ marginTop: 12 }}>
+              Sem IS7 × <span className="grad-text">Com IS7</span>
+            </h2>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
-            {/* Before */}
-            <Reveal delay={0} className="card" style={{ padding: 32 }}>
-              <p style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(248,113,113,.85)", marginBottom: 20 }}>Antes</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+
+          <div className="ba-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+            {/* Sem IS7 */}
+            <Reveal delay={0} className="card" style={{ padding: 28, background: "rgba(220,38,38,.04)", border: "1px solid rgba(220,38,38,.15)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
+                <span style={{
+                  width: 30, height: 30, borderRadius: 9999,
+                  background: "rgba(220,38,38,.12)", border: "1px solid rgba(220,38,38,.25)",
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                }}>
+                  <Icon name="x" size={14} color="rgba(220,38,38,.9)" />
+                </span>
+                <span style={{ fontWeight: 700, fontSize: 15, color: "rgba(220,38,38,.9)" }}>Sem IS7</span>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {before.map(function (item, i) {
                   return (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                      <span style={{
-                        width: 22, height: 22, borderRadius: 9999, background: "rgba(248,113,113,.12)",
-                        border: "1px solid rgba(248,113,113,.25)",
-                        display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                      }}>
-                        <Icon name="minus" size={12} color="rgba(248,113,113,.8)" />
-                      </span>
-                      <span style={{ fontSize: 15, color: "var(--fg-muted)" }}>{item}</span>
+                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                      <span style={{ color: "rgba(220,38,38,.8)", fontSize: 14, marginTop: 1, flexShrink: 0 }}>✕</span>
+                      <span style={{ fontSize: 14, color: "var(--fg-muted)", lineHeight: 1.55 }}>{item}</span>
                     </div>
                   );
                 })}
               </div>
             </Reveal>
-            {/* After */}
-            <Reveal delay={80} className="card" style={{ padding: 32, border: "1px solid rgba(145,69,230,.25)" }}>
-              <p style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".14em", textTransform: "uppercase", color: "var(--accent-bright)", marginBottom: 20 }}>Com a IS7</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+
+            {/* Com IS7 */}
+            <Reveal delay={80} className="card" style={{ padding: 28, background: "rgba(145,69,230,.05)", border: "1px solid rgba(145,69,230,.25)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
+                <span style={{
+                  width: 30, height: 30, borderRadius: 9999,
+                  background: "rgba(145,69,230,.18)", border: "1px solid rgba(145,69,230,.35)",
+                  display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                }}>
+                  <Icon name="check" size={14} color="var(--accent-bright)" />
+                </span>
+                <span style={{ fontWeight: 700, fontSize: 15, color: "var(--accent-bright)" }}>Com IS7</span>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {after.map(function (item, i) {
                   return (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                      <span style={{
-                        width: 22, height: 22, borderRadius: 9999, background: "rgba(145,69,230,.15)",
-                        border: "1px solid rgba(145,69,230,.3)",
-                        display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                      }}>
-                        <Icon name="check" size={12} color="var(--accent-bright)" />
-                      </span>
-                      <span style={{ fontSize: 15, color: "var(--fg)" }}>{item}</span>
+                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                      <span style={{ color: "var(--accent-bright)", fontSize: 14, marginTop: 1, flexShrink: 0 }}>✓</span>
+                      <span style={{ fontSize: 14, color: "var(--fg)", lineHeight: 1.55 }}>{item}</span>
                     </div>
                   );
                 })}
               </div>
             </Reveal>
           </div>
+
+          <Reveal style={{ textAlign: "center", marginTop: 40 }}>
+            <a
+              href={wa("Olá, vim pelo site da IS7 e quero isso para minha empresa!")}
+              target="_blank" rel="noreferrer"
+              className="btn btn-primary"
+            >
+              Quero isso para minha empresa <Icon name="arrow-right" size={17} />
+            </a>
+          </Reveal>
         </div>
-        <style>{`@media(max-width:620px){#before-after-grid{grid-template-columns:1fr !important;}}`}</style>
+        <style>{`@media(max-width:640px){
+          .ba-grid{ grid-template-columns:1fr !important; }
+        }`}</style>
       </section>
     );
   };
