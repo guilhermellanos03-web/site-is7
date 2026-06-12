@@ -14,24 +14,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
+      - name: Install lftp + sshpass
+        run: sudo apt-get install -y lftp sshpass
 
-      - name: Deploy via FTP (lftp)
+      - name: Deploy via SFTP (lftp + sshpass)
         env:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          SSHPASS: ${{ secrets.FTP_PASSWORD }}
         run: |
-          # Write credentials to netrc to handle special chars in password
-          printf 'machine ftp.is7mkt.com.br\nlogin %s\npassword %s\n' "$FTP_USER" "$FTP_PASS" > ~/.netrc
-          chmod 600 ~/.netrc
-
-          lftp -e "
-              set ftp:passive-mode true;
-              set ftp:ssl-allow false;
-              set net:timeout 30;
+          lftp -u "$FTP_USER," \
+            -e "
+              set sftp:connect-program 'sshpass -e ssh -a -x -o StrictHostKeyChecking=no -p 65002';
+              set net:timeout 60;
               set net:max-retries 3;
-              open ftp://ftp.is7mkt.com.br;
+              open sftp://ftp.is7mkt.com.br;
               mirror -R \
                 --delete \
                 --no-perms \
@@ -46,4 +42,4 @@ jobs:
                 --exclude-glob 'IS7 Portfolio.html' \
                 . /public_html/;
               bye
-            " ftp.is7mkt.com.br
+            "
