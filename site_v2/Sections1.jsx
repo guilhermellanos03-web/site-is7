@@ -54,63 +54,82 @@
   // ── Services ─────────────────────────────────────────────────────────────
   var SERVICES = [
     {
-      icon: "globe", tag: "Mais pedido",
-      title: "Sites profissionais",
-      text: "Desenvolvimento completo, responsivo e otimizado para o Google. Do design ao ar em dias, com domínio + hospedagem inclusos.",
-      href: "#contato",
-    },
-    {
-      icon: "shopping-bag",
-      title: "Lojas virtuais",
-      text: "Catálogo online com pedidos direto no WhatsApp. Sem mensalidade de plataforma, sem complicação para o cliente.",
-      href: "#contato",
-    },
-    {
-      icon: "trending-up",
-      title: "Tráfego pago",
-      text: "Campanhas no Google Ads e Meta Ads que levam os clientes certos até você. Gestão completa com relatório mensal.",
-      href: "#contato",
-    },
-    {
-      icon: "search",
+      icon: "search", num: "01",
       title: "Posicionamento no Google",
-      text: "Perfil verificado e otimizado para aparecer nas buscas locais. Mais visibilidade sem precisar investir em anúncios.",
-      href: "#contato",
+      text: "Sua empresa nas primeiras posições quando alguém procura pelo seu serviço. Google Meu Negócio otimizado e presença orgânica que dura.",
+      tags: ["Google Meu Negócio", "SEO local", "Avaliações 5 estrelas"],
+    },
+    {
+      icon: "monitor", num: "02",
+      title: "Sites profissionais",
+      text: "Sites rápidos, bonitos e feitos para converter visita em cliente. Sua marca com a cara que ela merece, no computador e no celular.",
+      tags: ["Design sob medida", "Otimizado para celular", "Nota +90 de desempenho"],
+    },
+    {
+      icon: "shopping-bag", num: "03",
+      title: "Lojas virtuais",
+      text: "Vitrine profissional com pedido direto no WhatsApp. Sua marca pronta para vender online, sem mensalidade de plataforma.",
+      tags: ["Catálogo completo", "Pedido no WhatsApp", "Identidade própria"],
+    },
+    {
+      icon: "trending-up", num: "04",
+      title: "Tráfego pago",
+      text: "Campanhas de Google Ads que trazem clientes qualificados todos os dias. Cada real investido trabalhando para o seu negócio.",
+      tags: ["Google Ads", "Públicos certos", "Relatórios claros"],
     },
   ];
 
   const Services = function Services() {
-    var { Icon, Eyebrow, Reveal } = _v;
+    var { Icon, Eyebrow, Reveal, wa } = _v;
     return (
       <section id="servicos" className="section">
         <div className="wrap">
-          <Reveal style={{ textAlign: "center", marginBottom: 56 }}>
-            <Eyebrow center>O que fazemos</Eyebrow>
-            <h2 className="h2" style={{ marginTop: 12 }}>Uma assessoria completa para o seu negócio <span className="grad-text">crescer online.</span></h2>
-            <p className="lead" style={{ marginTop: 16, maxWidth: 540, margin: "16px auto 0" }}>
-              Do site ao tráfego pago, cuidamos de toda a presença digital do seu negócio.
+          <Reveal style={{ marginBottom: 48 }}>
+            <Eyebrow>O que fazemos</Eyebrow>
+            <h2 className="h2" style={{ marginTop: 12, maxWidth: 560 }}>Uma assessoria completa para o seu negócio <span className="grad-text">crescer online.</span></h2>
+            <p className="lead" style={{ marginTop: 16, maxWidth: 560 }}>
+              Do primeiro clique no Google até a venda fechada, cuidamos de toda a sua presença digital com estratégia, suporte e resultado.
             </p>
           </Reveal>
-          <div className="grid-services">
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             {SERVICES.map(function (s, i) {
               return (
-                <Reveal key={i} delay={i * 60} className="card card-hover" style={{ padding: 32 }}>
-                  {s.tag && (
-                    <span className="tag tag-accent" style={{ marginBottom: 20, display: "inline-flex" }}>{s.tag}</span>
-                  )}
-                  <div className="chip" style={{ marginBottom: 20 }}>
-                    <Icon name={s.icon} size={22} color="var(--accent-bright)" />
+                <Reveal key={i} delay={i * 60} className="card card-hover" style={{ padding: 28, position: "relative" }}>
+                  <span style={{
+                    position: "absolute", top: 18, right: 20,
+                    fontFamily: "var(--mono)", fontSize: 12, color: "var(--fg-dim)", letterSpacing: ".06em",
+                  }}>{s.num}</span>
+                  <div className="chip" style={{ marginBottom: 18, width: 44, height: 44 }}>
+                    <Icon name={s.icon} size={20} color="var(--accent-bright)" />
                   </div>
-                  <h3 className="h3" style={{ marginBottom: 12 }}>{s.title}</h3>
-                  <p style={{ color: "var(--fg-muted)", fontSize: 15, lineHeight: 1.65, margin: 0 }}>{s.text}</p>
-                  <a href={s.href} className="link-arrow" style={{ marginTop: 24, display: "inline-flex" }}>
-                    Saiba mais <Icon name="arrow-right" size={15} />
-                  </a>
+                  <h3 className="h3" style={{ marginBottom: 10 }}>{s.title}</h3>
+                  <p style={{ color: "var(--fg-muted)", fontSize: 14, lineHeight: 1.65, margin: "0 0 18px" }}>{s.text}</p>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 16px" }}>
+                    {s.tags.map(function (tag, ti) {
+                      return (
+                        <span key={ti} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 12, color: "var(--fg-muted)" }}>
+                          <span style={{ color: "var(--accent-bright)", fontSize: 11 }}>✓</span> {tag}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </Reveal>
               );
             })}
           </div>
+
+          <Reveal style={{ textAlign: "center", marginTop: 40 }}>
+            <a
+              href={wa("Olá, vim pelo site da IS7 e quero descobrir o ideal para meu negócio!")}
+              target="_blank" rel="noreferrer"
+              className="btn btn-primary"
+            >
+              Descobrir o ideal para mim <Icon name="arrow-right" size={17} />
+            </a>
+          </Reveal>
         </div>
+        <style>{`@media(max-width:640px){ #servicos .grid-2col{ grid-template-columns:1fr !important; } }`}</style>
       </section>
     );
   };
