@@ -63,13 +63,14 @@
             <Reveal>
               <Eyebrow>Marketing Digital · Curitiba</Eyebrow>
               <h1 className="display" style={{ marginTop: 20, marginBottom: 28, color: "var(--fg)" }}>
-                Seu negócio na<br />
-                <span className="grad-text">vitrine digital</span><br />
-                que vende de verdade
+                Sua empresa<br />
+                encontrada,{" "}
+                <span className="grad-text">escolhida</span><br />
+                <span className="grad-text">e contratada</span><br />
+                todos os dias.
               </h1>
               <p className="lead" style={{ marginBottom: 40, maxWidth: 520 }}>
-                Sites profissionais, lojas virtuais e tráfego pago para pequenas e médias empresas.
-                Do projeto ao ar em dias — domínio e hospedagem inclusos.
+                Sites, lojas virtuais e tráfego pago que colocam seu negócio na frente de quem já está procurando o que você oferece.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 14, marginBottom: 40 }}>
                 <a

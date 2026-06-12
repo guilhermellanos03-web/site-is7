@@ -4,10 +4,10 @@
 
   // ── Stats ────────────────────────────────────────────────────────────────
   var STATS = [
-    { icon: "package",       value: 80,   suffix: "+",     label: "Projetos entregues" },
-    { icon: "calendar-days", value: 6,    suffix: "+ anos", label: "De experiência" },
-    { icon: "megaphone",     value: 500,  prefix: "R$",  suffix: "mil+", label: "Em tráfego gerenciado" },
-    { icon: "gauge",         value: 5,    suffix: ".0 ⭐", label: "Nota no Google" },
+    { icon: "megaphone",     value: 300,  prefix: "R$",  suffix: "mil+", label: "Em tráfego gerenciado" },
+    { icon: "calendar-days", value: 4,    suffix: "+",   label: "Anos de experiência" },
+    { icon: "package",       value: 80,   suffix: "+",   label: "Projetos entregues" },
+    { icon: "users",         value: 40,   suffix: "+",   label: "Clientes atendidos" },
   ];
 
   const StatCard = function StatCard({ s }) {
@@ -43,8 +43,8 @@
       <section className="section-tight" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <Reveal style={{ textAlign: "center", marginBottom: 40 }}>
-            <Eyebrow center>Resultados</Eyebrow>
-            <h2 className="h2" style={{ marginTop: 12 }}>Números que falam por si</h2>
+            <Eyebrow center>Confiança e resultados</Eyebrow>
+            <h2 className="h2" style={{ marginTop: 12 }}>Experiência que dá segurança</h2>
           </Reveal>
           <div className="grid-stats">
             {STATS.map(function (s, i) { return <StatCard key={i} s={s} />; })}
@@ -75,8 +75,8 @@
       href: "#contato",
     },
     {
-      icon: "map-pin",
-      title: "Google Meu Negócio",
+      icon: "search",
+      title: "Posicionamento no Google",
       text: "Perfil verificado e otimizado para aparecer nas buscas locais. Mais visibilidade sem precisar investir em anúncios.",
       href: "#contato",
     },
@@ -89,7 +89,7 @@
         <div className="wrap">
           <Reveal style={{ textAlign: "center", marginBottom: 56 }}>
             <Eyebrow center>O que fazemos</Eyebrow>
-            <h2 className="h2" style={{ marginTop: 12 }}>Serviços que geram resultado</h2>
+            <h2 className="h2" style={{ marginTop: 12 }}>Uma assessoria completa para o seu negócio <span className="grad-text">crescer online.</span></h2>
             <p className="lead" style={{ marginTop: 16, maxWidth: 540, margin: "16px auto 0" }}>
               Do site ao tráfego pago, cuidamos de toda a presença digital do seu negócio.
             </p>

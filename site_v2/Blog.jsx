@@ -18,11 +18,11 @@
               Dicas, cases e novidades sobre marketing digital.
             </p>
             <a
-              href="https://instagram.com/is7mkt"
+              href="https://instagram.com/is7digital_07"
               target="_blank" rel="noreferrer"
               className="btn btn-ghost"
             >
-              <Icon name="instagram" size={17} /> @is7mkt
+              <Icon name="instagram" size={17} /> @is7digital_07
             </a>
           </Reveal>
 
@@ -31,7 +31,7 @@
               return (
                 <a
                   key={i}
-                  href="https://instagram.com/is7mkt"
+                  href="https://instagram.com/is7digital_07"
                   target="_blank" rel="noreferrer"
                   style={{
                     aspectRatio: "1",

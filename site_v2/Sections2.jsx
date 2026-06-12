@@ -77,7 +77,7 @@
         <div className="wrap">
           <Reveal style={{ textAlign: "center", marginBottom: 48 }}>
             <Eyebrow center>Portfólio</Eyebrow>
-            <h2 className="h2" style={{ marginTop: 12 }}>Sites que já estão gerando resultados</h2>
+            <h2 className="h2" style={{ marginTop: 12 }}>Projetos reais, <span className="grad-text">no ar e vendendo.</span></h2>
             <p className="lead" style={{ marginTop: 16, maxWidth: 520, margin: "16px auto 0" }}>
               Cada projeto foi desenvolvido com foco em performance, SEO e conversão.
             </p>
