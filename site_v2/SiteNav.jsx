@@ -26,6 +26,7 @@
       { href: "#servicos", label: "Serviços" },
       { href: "#portfolio", label: "Portfólio" },
       { href: "#sobre", label: "Sobre" },
+      { href: "#faq", label: "FAQ" },
       { href: "#contato", label: "Contato" },
     ];
 

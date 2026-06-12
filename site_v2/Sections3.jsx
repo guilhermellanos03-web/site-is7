@@ -135,7 +135,7 @@
   const Faq = function Faq() {
     var { Eyebrow, Reveal, wa, Icon } = _v;
     return (
-      <section className="section" style={{ background: "var(--bg-2)" }}>
+      <section id="faq" className="section" style={{ background: "var(--bg-2)" }}>
         <div className="wrap">
           <div className="grid-2">
             <Reveal>
