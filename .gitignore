@@ -1,0 +1,14 @@
+# Design tool artifacts
+.image-slots.state.json
+*.state.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if ever used)
+node_modules/
+
+# Editor
+.vscode/
+.idea/

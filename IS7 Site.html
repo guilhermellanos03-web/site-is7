@@ -1,0 +1,134 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="IS7 Site" -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>IS7 — Assessoria de Marketing Digital | Curitiba</title>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="site_v2/site.css"/>
+<!-- Anti-flash: apply saved theme before React mounts -->
+<script>(function(){ var t=localStorage.getItem('is7-theme')||'dark'; document.documentElement.setAttribute('data-theme',t); })()</script>
+<body data-screen-label="IS7 — Site principal (v2)">
+  <div id="root"></div>
+
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" fill="#070A14"/>
+      <text x="50" y="60" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="34" letter-spacing="-2">
+        <tspan fill="#F4F6FB">i</tspan><tspan fill="#9145E6">S7</tspan>
+      </text>
+    </svg>
+  </template>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.js"></script>
+  <script src="lojas_virtuais/image-slot.js"></script>
+  <script src="site_v2/cases.js"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="site_v2/SiteCore.jsx"></script>
+  <script type="text/babel" src="site_v2/SiteNav.jsx"></script>
+  <script type="text/babel" src="site_v2/SiteHero.jsx"></script>
+  <script type="text/babel" src="site_v2/Sections1.jsx"></script>
+  <script type="text/babel" src="site_v2/Sections2.jsx"></script>
+  <script type="text/babel" src="site_v2/Sections3.jsx"></script>
+  <script type="text/babel" src="site_v2/Sections4.jsx"></script>
+  <script type="text/babel" src="site_v2/PortfolioLightbox.jsx"></script>
+  <script type="text/babel" src="site_v2/Blog.jsx"></script>
+  <script type="text/babel" src="site_v2/SiteContact.jsx"></script>
+  <script type="text/babel" src="site_v2/ChatBot.jsx"></script>
+
+  <script type="text/babel">
+    const TWEAKS = /*EDITMODE-BEGIN*/{
+      "hero": "A",
+      "accent": "Roxo → Azul",
+      "headingFont": "Montserrat",
+      "motion": true
+    }/*EDITMODE-END*/;
+
+    const ACCENTS = {
+      "Roxo → Azul": { a: "#9145E6", a2: "#3B6CFF", br: "#B57BFF", grad: "linear-gradient(118deg,#9145E6 0%,#5B5BF5 52%,#3B6CFF 100%)" },
+      "Roxo":        { a: "#9D4EDD", a2: "#C24BE6", br: "#CB8BFF", grad: "linear-gradient(118deg,#7B2FBE 0%,#A93CD9 55%,#C24BE6 100%)" },
+      "Azul":        { a: "#3B6CFF", a2: "#22A6F6", br: "#74A8FF", grad: "linear-gradient(118deg,#2D5BFF 0%,#3B8EF6 55%,#22C3F6 100%)" },
+      "Teal":        { a: "#13B8A6", a2: "#3B6CFF", br: "#56E0CE", grad: "linear-gradient(118deg,#0EA38F 0%,#1FA6C9 55%,#3B6CFF 100%)" },
+    };
+    const FONTS = {
+      "Montserrat": "'Montserrat', system-ui, sans-serif",
+      "Poppins": "'Poppins', system-ui, sans-serif",
+      "Space Grotesk": "'Space Grotesk', system-ui, sans-serif",
+    };
+
+    const App = () => {
+      const { Header, Hero, Stats, ClientsStrip, Services, BeforeAfter, Deliverables, Portfolio, Reviews, About, Instagram, Faq, Contact, Footer, WhatsAppFab, ChatBot } = window.IS7v2;
+      // Fallbacks so app renders even if tweaks-panel.jsx hasn't finished loading yet
+      const useTweaks  = window.useTweaks  || ((d) => { const [t,setT] = React.useState(d); return [t,(k,v)=>setT(p=>({...p,[k]:v}))]; });
+      const TweaksPanel  = window.TweaksPanel  || (({ children }) => null);
+      const TweakSection = window.TweakSection || (() => null);
+      const TweakRadio   = window.TweakRadio   || (() => null);
+      const TweakToggle  = window.TweakToggle  || (() => null);
+      const [t, setTweak] = useTweaks(TWEAKS);
+
+      React.useEffect(() => {
+        const r = document.documentElement.style;
+        const ac = ACCENTS[t.accent] || ACCENTS["Roxo → Azul"];
+        r.setProperty("--accent", ac.a);
+        r.setProperty("--accent-2", ac.a2);
+        r.setProperty("--accent-bright", ac.br);
+        r.setProperty("--grad", ac.grad);
+        r.setProperty("--serif", FONTS[t.headingFont] || FONTS.Montserrat);
+      }, [t.accent, t.headingFont]);
+
+      React.useEffect(() => {
+        document.body.classList.toggle("js-anim", !!t.motion);
+      }, [t.motion]);
+
+      return (
+        <React.Fragment>
+          <Header />
+          <main>
+            <Hero variant={t.hero} />
+            <ClientsStrip />
+            <Stats />
+            <Services />
+            <BeforeAfter />
+            <Deliverables />
+            <Portfolio />
+            <Reviews />
+            <About />
+            <Instagram />
+            <Faq />
+            <Contact />
+          </main>
+          <Footer />
+          <WhatsAppFab />
+          <ChatBot />
+
+          <TweaksPanel>
+            <TweakSection label="Direção do Hero" />
+            <TweakRadio label="Hero" value={t.hero}
+              options={[{ value: "A", label: "A · Statement" }, { value: "B", label: "B · Showcase" }]}
+              onChange={(v) => setTweak("hero", v)} />
+            <TweakSection label="Marca" />
+            <TweakRadio label="Cor de destaque" value={t.accent}
+              options={["Roxo → Azul", "Roxo", "Azul", "Teal"]}
+              onChange={(v) => setTweak("accent", v)} />
+            <TweakRadio label="Fonte dos títulos" value={t.headingFont}
+              options={["Montserrat", "Poppins", "Space Grotesk"]}
+              onChange={(v) => setTweak("headingFont", v)} />
+            <TweakSection label="Movimento" />
+            <TweakToggle label="Animações" value={t.motion} onChange={(v) => setTweak("motion", v)} />
+          </TweaksPanel>
+        </React.Fragment>
+      );
+    };
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
