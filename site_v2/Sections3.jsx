@@ -3,11 +3,10 @@
   var _v = window.IS7v2;
 
   // ── About ─────────────────────────────────────────────────────────────────
-  var HIGHLIGHTS = [
-    { icon: "sparkles",     text: "Especialista em performance digital e SEO" },
-    { icon: "package",      text: "80+ sites e lojas virtuais entregues" },
-    { icon: "bar-chart",    text: "Gestão de tráfego no Google e Meta Ads" },
-    { icon: "shield-check", text: "Suporte pós-entrega e manutenção mensal" },
+  var ABOUT_CHIPS = [
+    { icon: "map-pin",       label: "Curitiba / PR" },
+    { icon: "package",       label: "+80 Projetos" },
+    { icon: "calendar-days", label: "6+ Anos" },
   ];
 
   const About = function About() {
@@ -18,7 +17,7 @@
           <div className="grid-2">
             {/* Photo side */}
             <Reveal style={{ display: "flex", justifyContent: "center", alignItems: "flex-start" }}>
-              <div style={{ position: "relative", width: 320 }}>
+              <div style={{ position: "relative", width: 320, maxWidth: "100%" }}>
                 <div style={{
                   borderRadius: 24, overflow: "hidden",
                   border: "1px solid var(--line-2)",
@@ -30,15 +29,25 @@
                     style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "3/4" }}
                   />
                 </div>
-                {/* Badge */}
-                <div className="about-badge" style={{
-                  position: "absolute", bottom: -16, right: -16,
-                  background: "var(--surface)", border: "1px solid var(--line-2)",
-                  borderRadius: 16, padding: "14px 20px",
-                  boxShadow: "0 16px 40px -12px rgba(0,0,0,.5)",
+                {/* Name badge sobreposto na foto */}
+                <div style={{
+                  position: "absolute", bottom: 20, left: 16, right: 16,
+                  background: "rgba(8,10,24,.82)", backdropFilter: "blur(16px)",
+                  border: "1px solid rgba(255,255,255,.10)",
+                  borderRadius: 14, padding: "13px 16px",
+                  display: "flex", alignItems: "center", gap: 12,
+                  boxShadow: "0 8px 32px -8px rgba(0,0,0,.5)",
                 }}>
-                  <p style={{ margin: 0, fontFamily: "var(--serif)", fontWeight: 800, fontSize: 22, lineHeight: 1 }}>6+ anos</p>
-                  <p style={{ margin: "4px 0 0", fontSize: 12, color: "var(--fg-muted)" }}>de experiência</p>
+                  <div style={{
+                    width: 38, height: 38, borderRadius: 9999,
+                    background: "var(--grad)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    flexShrink: 0, fontSize: 16, fontWeight: 800, color: "#fff",
+                  }}>G</div>
+                  <div>
+                    <p style={{ margin: 0, fontWeight: 700, fontSize: 14, color: "#fff" }}>Guilherme Llanos</p>
+                    <p style={{ margin: "2px 0 0", fontSize: 12, color: "rgba(255,255,255,.55)" }}>Gestor · IS7 Marketing</p>
+                  </div>
                 </div>
               </div>
             </Reveal>
@@ -46,28 +55,28 @@
             {/* Text side */}
             <Reveal delay={60}>
               <Eyebrow>Quem está por trás</Eyebrow>
-              <h2 className="h2" style={{ marginTop: 12, marginBottom: 8 }}>Guilherme Llanos</h2>
-              <p className="tag tag-accent" style={{ marginBottom: 24, display: "inline-flex" }}>Fundador · IS7 Marketing Digital</p>
-              <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.7, marginBottom: 12 }}>
-                Mais de 6 anos criando sites e gerenciando tráfego pago para pequenas e médias empresas em todo o Brasil.
+              <h2 className="h2" style={{ marginTop: 12, marginBottom: 20 }}>
+                Gente de verdade cuidando do seu <span className="grad-text">resultado.</span>
+              </h2>
+              <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>
+                À frente da IS7 está <strong style={{ color: "var(--fg)" }}>Guilherme Llanos</strong>, gestor com mais de 6 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
               </p>
               <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
-                Já entregamos mais de 80 projetos digitais e gerenciamos mais de R$ 500 mil em anúncios —
-                sempre com foco em resultado real para quem contrata.
+                Com foco em resultado real, Guilherme lidera uma operação que já ajudou dezenas de empresas a aparecerem no Google, terem sites que convertem e venderem mais pela internet. O acompanhamento é próximo, as estratégias são ajustadas continuamente e o compromisso sempre é com o crescimento do cliente.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
-                {HIGHLIGHTS.map(function (h, i) {
+              {/* Chips */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 36 }}>
+                {ABOUT_CHIPS.map(function (c, i) {
                   return (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                      <span style={{
-                        width: 38, height: 38, borderRadius: 10,
-                        background: "rgba(145,69,230,.15)",
-                        border: "1px solid rgba(145,69,230,.25)",
-                        display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                      }}>
-                        <Icon name={h.icon} size={17} color="var(--accent-bright)" />
-                      </span>
-                      <span style={{ fontSize: 15, color: "var(--fg)" }}>{h.text}</span>
+                    <div key={i} style={{
+                      display: "flex", alignItems: "center", gap: 8,
+                      background: "var(--surface)", border: "1px solid var(--line-2)",
+                      borderRadius: 9999, padding: "8px 16px",
+                      fontSize: 12, fontWeight: 700, letterSpacing: ".06em",
+                      color: "var(--fg-muted)", textTransform: "uppercase",
+                    }}>
+                      <Icon name={c.icon} size={13} color="var(--accent-bright)" />
+                      {c.label}
                     </div>
                   );
                 })}
@@ -77,7 +86,7 @@
                 target="_blank" rel="noreferrer"
                 className="btn btn-primary"
               >
-                Falar com o Guilherme <Icon name="arrow-right" size={17} />
+                Conversar com a IS7 <Icon name="arrow-right" size={17} />
               </a>
             </Reveal>
           </div>
