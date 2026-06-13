@@ -107,7 +107,7 @@
     },
     {
       q: "Atende clientes fora de Curitiba?",
-      a: "Sim! Atendemos todo o Brasil. O processo é 100% online — do briefing à entrega final, tudo funciona via WhatsApp e Google Meet.",
+      a: "Sim! Atendemos todo o Brasil. O processo é 100% online, do briefing à entrega. Tudo funciona via WhatsApp e Google Meet.",
     },
     {
       q: "O site fica bonito no celular?",
@@ -151,7 +151,7 @@
               <Eyebrow>Dúvidas</Eyebrow>
               <h2 className="h2" style={{ marginTop: 12, marginBottom: 20 }}>Perguntas frequentes</h2>
               <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.65, marginBottom: 32 }}>
-                Ainda tem dúvidas? Fale diretamente com a gente pelo WhatsApp — respondemos na hora.
+                Ainda tem dúvidas? Fale com a gente pelo WhatsApp. Respondemos em minutos.
               </p>
               <a
                 href={wa("Olá, tenho uma dúvida sobre os serviços da IS7!")}

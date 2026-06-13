@@ -58,7 +58,7 @@
               </p>
               <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
                 <a
-                  href="https://instagram.com/is7mkt"
+                  href="https://instagram.com/guilherme.is7"
                   target="_blank" rel="noreferrer"
                   style={{ width: 36, height: 36, borderRadius: 9999, background: "rgba(255,255,255,.06)", border: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "center" }}
                 >
@@ -112,7 +112,7 @@
                 </a>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <Icon name="map-pin" size={15} color="var(--fg-dim)" />
-                  <span style={{ fontSize: 14, color: "var(--fg-muted)" }}>Curitiba — PR</span>
+                  <span style={{ fontSize: 14, color: "var(--fg-muted)" }}>Curitiba, PR</span>
                 </div>
               </div>
             </div>

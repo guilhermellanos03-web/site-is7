@@ -83,18 +83,18 @@
             </div>
 
             {/* Trust row */}
-            <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 16, justifyContent: "center" }}>
+            <div className="trust-bar" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 16, justifyContent: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <Stars n={5} size={15} />
                 <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>
                   <strong style={{ color: "var(--fg)" }}>5.0</strong> no Google · 30 avaliações
                 </span>
               </div>
-              <span style={{ width: 1, height: 16, background: "var(--line-2)" }} />
+              <span className="trust-sep" style={{ width: 1, height: 16, background: "var(--line-2)" }} />
               <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>
                 <strong style={{ color: "var(--fg)" }}>+80</strong> projetos entregues
               </span>
-              <span style={{ width: 1, height: 16, background: "var(--line-2)" }} />
+              <span className="trust-sep" style={{ width: 1, height: 16, background: "var(--line-2)" }} />
               <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>
                 <strong style={{ color: "var(--fg)" }}>6 anos</strong> de mercado
               </span>
@@ -105,6 +105,11 @@
         <style>{`
           @media(max-width:980px){
             #topo .display{ font-size:clamp(28px,7vw,44px) !important; }
+          }
+          @media(max-width:620px){
+            #topo .trust-sep{ display:none !important; }
+            #topo .trust-bar{ gap:10px !important; }
+            #topo .btn-lg{ width:100%; justify-content:center; }
           }
         `}</style>
       </section>

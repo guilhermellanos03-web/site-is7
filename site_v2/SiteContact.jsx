@@ -27,7 +27,7 @@
     var info = [
       { icon: "message-circle", label: "WhatsApp", value: "+55 (41) 98743-0349", href: wa("Olá, vim pelo site da IS7!") },
       { icon: "mail",           label: "E-mail",   value: "suporte@is7mkt.com.br", href: "mailto:suporte@is7mkt.com.br" },
-      { icon: "map-pin",        label: "Localização", value: "Curitiba — PR", href: null },
+      { icon: "map-pin",        label: "Localização", value: "Curitiba, PR", href: null },
     ];
 
     return (
@@ -60,7 +60,7 @@
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                    <div className="contact-name-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
                       <div>
                         <label style={{ display: "block", fontSize: 13, color: "var(--fg-muted)", marginBottom: 6 }}>Nome completo *</label>
                         <input className="inp" value={form.nome} onChange={set("nome")} placeholder="Seu nome" required />
@@ -146,7 +146,7 @@
             </Reveal>
           </div>
         </div>
-        <style>{`@media(max-width:620px){ .contact-form-grid{ grid-template-columns:1fr !important; } }`}</style>
+        <style>{`@media(max-width:620px){ .contact-name-grid{ grid-template-columns:1fr !important; } }`}</style>
       </section>
     );
   };

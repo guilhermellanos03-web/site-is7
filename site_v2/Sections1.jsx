@@ -92,7 +92,7 @@
             </p>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+          <div className="serv-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             {SERVICES.map(function (s, i) {
               return (
                 <Reveal key={i} delay={i * 60} className="card card-hover" style={{ padding: 28, position: "relative" }}>
@@ -129,7 +129,7 @@
             </a>
           </Reveal>
         </div>
-        <style>{`@media(max-width:640px){ #servicos .grid-2col{ grid-template-columns:1fr !important; } }`}</style>
+        <style>{`@media(max-width:640px){ .serv-grid{ grid-template-columns:1fr !important; } }`}</style>
       </section>
     );
   };
