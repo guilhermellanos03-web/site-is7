@@ -103,7 +103,7 @@
     },
     {
       q: "Quanto custa criar um site?",
-      a: "Sites a partir de R$ 600, com domínio e hospedagem inclusos por 1 ano. Lojas virtuais têm orçamento específico conforme o tamanho do catálogo e funcionalidades.",
+      a: "O investimento varia conforme o projeto. Cada orçamento é personalizado de acordo com o que o seu negócio precisa. Entre em contato e receba uma proposta sem compromisso.",
     },
     {
       q: "Atende clientes fora de Curitiba?",
@@ -115,7 +115,7 @@
     },
     {
       q: "Preciso pagar hospedagem separada?",
-      a: "Não. Nos nossos pacotes de criação, o domínio e a hospedagem por 1 ano já estão inclusos no valor. Depois do primeiro ano, a renovação anual é acessível.",
+      a: "Não. Domínio e hospedagem por 1 ano já estão inclusos na criação do site. Depois do primeiro ano, a renovação é feita diretamente com a plataforma de hospedagem.",
     },
     {
       q: "Têm suporte depois da entrega?",

@@ -6,7 +6,7 @@
     { label: "Quero um site",        msg: "Olá, vim pelo site da IS7 e quero criar um site profissional para meu negócio!" },
     { label: "Quero uma loja virtual", msg: "Olá, vim pelo site da IS7 e quero criar uma loja virtual com pedidos pelo WhatsApp!" },
     { label: "Quero tráfego pago",   msg: "Olá, vim pelo site da IS7 e quero investir em Google Ads / Meta Ads para o meu negócio!" },
-    { label: "Ver preços",           msg: "Olá, vim pelo site da IS7 e quero saber os preços dos serviços!" },
+    { label: "Pedir orçamento",      msg: "Olá, vim pelo site da IS7 e quero um orçamento personalizado!" },
   ];
 
   const ChatBot = function ChatBot() {
