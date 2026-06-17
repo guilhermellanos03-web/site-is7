@@ -36,9 +36,21 @@ var siteCss = [
   "#topo{min-height:auto!important;padding-top:96px!important;padding-bottom:56px!important}", // tira o vao do hero
   ".grid-stats{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}",            // colunas dos numeros iguais (minmax evita coluna esticada por palavra larga)
   ".ig-grid>*:nth-child(n+4){display:none!important}",                                   // Instagram: so 3 posts no mobile
+  "button[aria-label='Atendimento']{display:none!important}",                            // some com o bot de chat no mobile (deixa so o WhatsApp)
   "}",
+  // Rodape: centraliza a barra final (logo + copyright), em todas as larguras
+  "footer .wrap>div:last-of-type{justify-content:center!important;text-align:center!important;flex-wrap:wrap!important;gap:10px!important}",
 ].join("");
 var siteStyle = '<style id="is7-mobile-fix">' + siteCss + "</style>";
+
+// Script de correcao: o botao "Ver nossos cases" aponta pra #cases, mas a
+// secao e #projetos. Listener delegado faz o scroll funcionar (robusto a
+// timing de render). O </script> precisa ir como <\/script> dentro do template.
+var fixScript =
+  "<script>(function(){document.addEventListener('click',function(e){" +
+  "var a=e.target.closest&&e.target.closest('a[href=\"#cases\"]');" +
+  "if(a){e.preventDefault();var t=document.getElementById('projetos')||document.getElementById('cases');" +
+  "if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}},true);})();</script>";
 
 // 2) CSS aplicado na tela de loading (head externo).
 var loadCss = [
@@ -62,9 +74,12 @@ if (html.indexOf(tplMarker) === -1) {
   process.exit(1);
 }
 // encode para caber dentro da string JSON do template (escapa as aspas do atributo)
-var encSite = JSON.stringify(siteStyle);
-encSite = encSite.slice(1, encSite.length - 1);
-html = html.replace(tplMarker, encSite + tplMarker);
+function jsonInner(s) { var e = JSON.stringify(s); return e.slice(1, e.length - 1); }
+var encSite = jsonInner(siteStyle);
+// o script precisa do </script> escapado como <\/script> pra (a) nao fechar o
+// <script type="__bundler/template"> e (b) virar </script> valido apos JSON.parse
+var encScript = jsonInner(fixScript).replace(/<\/script>/g, "<\\/script>");
+html = html.replace(tplMarker, encSite + encScript + tplMarker);
 
 // --- Injecao 2: no head externo (</head> cru, unico no arquivo) ---
 var outerMarker = "</head>";
