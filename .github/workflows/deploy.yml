@@ -42,64 +42,40 @@ jobs:
 
       - name: Deploy via SFTP
         run: |
-          LFTP_OPTS="
-            set sftp:connect-program 'ssh -a -x -l u194888534 -i /home/runner/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
-            set net:timeout 90;
-            set net:max-retries 5;
-            set net:reconnect-interval-base 5;
-            open sftp://ftp.is7mkt.com.br;
-          "
-
-          COMMON_EXCLUDES="
-            --exclude-glob .git
-            --exclude-glob .github
-            --exclude-glob .claude
-            --exclude-glob node_modules
-            --exclude-glob README.md
-            --exclude-glob '*.state.json'
-            --exclude-glob 'IS7 Site.html'
-            --exclude-glob 'IS7 Portfolio.html'
-          "
-
+          # Deploy SOMENTE do site principal (is7mkt.com.br).
+          # A proposta (proposta.is7mkt.com.br) e tarefa separada, com seu proprio
+          # subdominio — sera reativada depois. Por isso os arquivos de proposta e
+          # as dependencias do site antigo ficam de fora deste deploy.
           deploy_main() {
             lftp -e "
-              $LFTP_OPTS
-              mirror -R --delete --no-perms --no-umask \
-                $COMMON_EXCLUDES \
-                --exclude-glob 'proposta-index.html' \
-                . domains/is7mkt.com.br/public_html/;
-              bye
-            "
+                set sftp:connect-program 'ssh -a -x -l u194888534 -i /home/runner/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
+                set net:timeout 90;
+                set net:max-retries 5;
+                set net:reconnect-interval-base 5;
+                open sftp://ftp.is7mkt.com.br;
+                mirror -R --delete --no-perms --no-umask \
+                  --exclude-glob .git \
+                  --exclude-glob .github \
+                  --exclude-glob .claude \
+                  --exclude-glob node_modules \
+                  --exclude-glob README.md \
+                  --exclude-glob tools \
+                  --exclude-glob '*.state.json' \
+                  --exclude-glob 'proposta-index.html' \
+                  --exclude-glob 'proposta' \
+                  --exclude-glob 'IS7 Proposta*.html' \
+                  . domains/is7mkt.com.br/public_html/;
+                bye
+              "
           }
-
-          deploy_proposta() {
-            lftp -e "
-              $LFTP_OPTS
-              mirror -R --delete --no-perms --no-umask \
-                $COMMON_EXCLUDES \
-                --exclude-glob 'portfolio.html' \
-                --exclude-glob 'curadoria-by-nanda' \
-                . domains/proposta.is7mkt.com.br/public_html/;
-              put proposta-index.html -o domains/proposta.is7mkt.com.br/public_html/index.html;
-              bye
-            "
-          }
-
-          run_with_retry() {
-            local fn=$1
-            local name=$2
-            for attempt in 1 2 3; do
-              echo "[$name] Tentativa $attempt de 3..."
-              if $fn; then
-                echo "[$name] Deploy concluído!"
-                return 0
-              fi
-              echo "[$name] Tentativa $attempt falhou. Aguardando 15s..."
-              sleep 15
-            done
-            echo "[$name] Todas as tentativas falharam."
-            return 1
-          }
-
-          run_with_retry deploy_main "is7mkt.com.br" && \
-          run_with_retry deploy_proposta "proposta.is7mkt.com.br"
+          for attempt in 1 2 3; do
+            echo "Tentativa $attempt de 3..."
+            if deploy_main; then
+              echo "Deploy concluído com sucesso!"
+              exit 0
+            fi
+            echo "Tentativa $attempt falhou. Aguardando 15s antes de tentar novamente..."
+            sleep 15
+          done
+          echo "Todas as tentativas falharam."
+          exit 1
