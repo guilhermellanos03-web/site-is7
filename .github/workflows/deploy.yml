@@ -14,6 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Corrigir mobile do export do Claude Design
+        run: node tools/patch-mobile.js index.html
+
       - name: Configurar chave SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
