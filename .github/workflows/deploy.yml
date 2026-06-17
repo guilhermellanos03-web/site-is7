@@ -14,8 +14,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Corrigir mobile do export do Claude Design
-        run: node tools/patch-mobile.js index.html
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build do site (JSX -> dist/)
+        run: |
+          npm ci
+          npm run build
 
       - name: Configurar chave SSH
         env:
@@ -42,10 +49,11 @@ jobs:
 
       - name: Deploy via SFTP
         run: |
-          # Deploy SOMENTE do site principal (is7mkt.com.br).
-          # A proposta (proposta.is7mkt.com.br) e tarefa separada, com seu proprio
-          # subdominio — sera reativada depois. Por isso os arquivos de proposta e
-          # as dependencias do site antigo ficam de fora deste deploy.
+          # Publica o resultado do build (dist/) no site principal (is7mkt.com.br).
+          # dist/ ja contem so o necessario: index.html, IS7 Portfolio.html,
+          # assets/, robots.txt e sitemap.xml. O --delete deixa o servidor
+          # espelhado com dist/ (sem residuos). A proposta (proposta.is7mkt.com.br)
+          # e tarefa separada, deployada depois.
           deploy_main() {
             lftp -e "
                 set sftp:connect-program 'ssh -a -x -l u194888534 -i /home/runner/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
@@ -54,17 +62,7 @@ jobs:
                 set net:reconnect-interval-base 5;
                 open sftp://ftp.is7mkt.com.br;
                 mirror -R --delete --no-perms --no-umask \
-                  --exclude-glob .git \
-                  --exclude-glob .github \
-                  --exclude-glob .claude \
-                  --exclude-glob node_modules \
-                  --exclude-glob README.md \
-                  --exclude-glob tools \
-                  --exclude-glob '*.state.json' \
-                  --exclude-glob 'proposta-index.html' \
-                  --exclude-glob 'proposta' \
-                  --exclude-glob 'IS7 Proposta*.html' \
-                  . domains/is7mkt.com.br/public_html/;
+                  dist/ domains/is7mkt.com.br/public_html/;
                 bye
               "
           }

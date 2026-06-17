@@ -6,8 +6,11 @@
 .DS_Store
 Thumbs.db
 
-# Node (if ever used)
+# Node
 node_modules/
+
+# Build output (gerado pelo CI a partir de src/)
+dist/
 
 # Editor
 .vscode/

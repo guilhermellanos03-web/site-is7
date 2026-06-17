@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "-p", "4000", "."],
       "port": 4000
+    },
+    {
+      "name": "IS7 Dist",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "4010", "dist"],
+      "port": 4010
     }
   ]
 }
