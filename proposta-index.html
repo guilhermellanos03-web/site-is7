@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>IS7 · Propostas</title>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root{ --navy:#0A1628; --accent:#3E78F0; --accent-lt:#5C8AFF; --muted:#9AA3B8; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:var(--navy); color:#fff; font-family:'Inter',sans-serif; min-height:100vh; }
+  .wrap{ max-width:980px; margin:0 auto; padding:72px 28px 100px; }
+  .eyebrow{ font-family:'Inter',sans-serif; font-weight:600; font-size:14px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:18px; }
+  h1{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:46px; letter-spacing:-0.03em; line-height:1.05; margin-bottom:14px; }
+  .lead{ color:var(--muted); font-size:18px; max-width:560px; margin-bottom:52px; }
+  .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media(max-width:600px){ .grid{ grid-template-columns:1fr; } h1{ font-size:32px; } }
+  a.card{ display:block; text-decoration:none; color:inherit; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); border-radius:18px; padding:30px 30px 28px; transition:border-color .18s, transform .18s, background .18s; }
+  a.card:hover{ border-color:rgba(92,138,255,.55); background:rgba(92,138,255,.07); transform:translateY(-3px); }
+  .seg{ font-family:'Inter',sans-serif; font-weight:600; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:14px; }
+  .ctitle{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:25px; letter-spacing:-0.02em; margin-bottom:8px; }
+  .cdesc{ color:var(--muted); font-size:15px; line-height:1.5; margin-bottom:22px; }
+  .go{ display:inline-flex; align-items:center; gap:8px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:#fff; }
+  .go .arrow{ color:var(--accent-lt); transition:transform .18s; }
+  a.card:hover .go .arrow{ transform:translateX(4px); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">IS7 · Propostas comerciais</div>
+  <h1>Sites de proposta</h1>
+  <p class="lead">Propostas comerciais por segmento. Clique para abrir em tela cheia.</p>
+  <div class="grid">
+    <a class="card" href="IS7 Proposta Guincho.html">
+      <div class="seg">Guincho · principal</div>
+      <div class="ctitle">Guincho no Google</div>
+      <div class="cdesc">Proposta principal de guincho, versão atual que usamos.</div>
+      <span class="go">Abrir proposta <span class="arrow">→</span></span>
+    </a>
+    <a class="card" href="IS7 Proposta Chaveiro.html">
+      <div class="seg">Chaveiro</div>
+      <div class="ctitle">Chaveiro no Google</div>
+      <div class="cdesc">Proposta de presença e captação para chaveiros.</div>
+      <span class="go">Abrir proposta <span class="arrow">→</span></span>
+    </a>
+    <a class="card" href="IS7 Proposta Assessoria.html">
+      <div class="seg">Assessoria</div>
+      <div class="ctitle">Assessoria no Google</div>
+      <div class="cdesc">Proposta voltada a serviços de assessoria.</div>
+      <span class="go">Abrir proposta <span class="arrow">→</span></span>
+    </a>
+  </div>
+</div>
+</body>
+</html>
