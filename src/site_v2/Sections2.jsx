@@ -103,15 +103,21 @@ const Portfolio = () => {
 };
 
 /* ---------------- GOOGLE REVIEWS CAROUSEL ---------------- */
+// Avaliacoes reais do Google, curadas: as que falam de SITE/resultado primeiro.
+// (sem fotos por pessoa, como no widget; sem a avaliacao que cita "preco")
 const REVIEWS = [
-  { name: "Jeferson Lemos",    time: "há 1 dia",    initial: "J", color: "#4285F4", text: "Muito boa." },
-  { name: "Maycon Zeclhynski", time: "há 9 dias",   initial: "M", color: "#34A853", text: "Trabalho excelente na construção do site e LP! Recomendo!" },
-  { name: "Rafael Almeida",    time: "há 9 dias",   initial: "R", color: "#F4B400", text: "Fizeram meu site, a cara da empresa ficou outra. Muito bom." },
-  { name: "Jonas Neto",        time: "há 9 dias",   initial: "J", color: "#EA4335", text: "Serviço impecável." },
-  { name: "Allan Ferraz",      time: "há 2 meses",  initial: "A", color: "#4285F4", text: "Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes." },
-  { name: "André Vicente",     time: "há 3 meses",  initial: "A", color: "#34A853", text: "Grandes estratégias que me ajudaram a alcançar resultados expressivos. Recomendo muito!" },
-  { name: "Vinicius Cortiano", time: "há 4 meses",  initial: "V", color: "#EA4335", text: "Trabalho de qualidade e excelente atendimento!" },
-  { name: "Marcos Rios",       time: "há 5 meses",  initial: "M", color: "#F4B400", text: "Profissional e muito competente. A IS7 transformou a presença digital do meu negócio." },
+  { name: "Maycon Zeclhynski",      time: "há 2 semanas", initial: "M", color: "#4285F4", text: "Trabalho excelente na construção do site e LP! Recomendo!" },
+  { name: "Joao Victor",            time: "há 1 mês",     initial: "J", color: "#34A853", text: "Meu site ficou perfeito! Recomendo muito, ótimo suporte!" },
+  { name: "Allan Ferraz",           time: "há 3 meses",   initial: "A", color: "#EA4335", text: "Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes." },
+  { name: "Rafael Almeida",         time: "há 2 semanas", initial: "R", color: "#FBBC05", text: "Fizeram meu site, a cara da empresa ficou outra. Muito bom." },
+  { name: "VICTOR Hugo",            time: "há 1 mês",     initial: "V", color: "#9145E6", text: "Solicitei um serviço para um site e foi ótimo o atendimento!" },
+  { name: "André Vicente",          time: "há 3 meses",   initial: "A", color: "#4285F4", text: "Graças às mudanças de direcionamento e grandes estratégias criadas por essa agência, alcancei resultados expressivos." },
+  { name: "Victor Hugo",            time: "há 3 meses",   initial: "V", color: "#34A853", text: "Uma empresa séria que me gerou confiança e ótimos resultados. Guilherme é um excelente profissional que traz o direcionamento certo para investir melhor e ter retorno." },
+  { name: "Eduardo Henrique",       time: "há 3 meses",   initial: "E", color: "#EA4335", text: "Me surpreendeu bem mais do que eu esperava. Nota 1000!" },
+  { name: "Geovanna Xavier",        time: "há 8 meses",   initial: "G", color: "#FBBC05", text: "Ótimos serviços, entregam o que prometem com muita agilidade e pontualidade. Recomendo!!" },
+  { name: "Luã De Assis",           time: "há 3 meses",   initial: "L", color: "#9145E6", text: "Excelente! Recomendo o trabalho de olhos fechados. Grande profissional." },
+  { name: "Jonas Neto",             time: "há 2 semanas", initial: "J", color: "#4285F4", text: "Serviço impecável." },
+  { name: "Alexandre Freitas",      time: "há 3 meses",   initial: "A", color: "#34A853", text: "Fui atendido pelo Guilherme, muito prestativo e atencioso. Recomendo!" },
 ];
 
 const GoogleG = () => (
@@ -152,28 +158,77 @@ const ReviewCard = ({ r }) => (
 );
 
 const Reviews = () => {
+  const scroller = React.useRef(null);
+
+  // arrastar pra rolar (desktop); no mobile o swipe nativo ja funciona
+  React.useEffect(() => {
+    const el = scroller.current; if (!el) return;
+    let down = false, startX = 0, startLeft = 0, moved = false;
+    const md = (e) => { down = true; moved = false; startX = e.pageX; startLeft = el.scrollLeft; el.classList.add("dragging"); };
+    const mm = (e) => { if (!down) return; const dx = e.pageX - startX; if (Math.abs(dx) > 4) moved = true; el.scrollLeft = startLeft - dx; };
+    const up = () => { down = false; el.classList.remove("dragging"); };
+    // evita "clicar" num card logo apos arrastar
+    const ck = (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); } };
+    el.addEventListener("mousedown", md);
+    el.addEventListener("mousemove", mm);
+    window.addEventListener("mouseup", up);
+    el.addEventListener("click", ck, true);
+    return () => { el.removeEventListener("mousedown", md); el.removeEventListener("mousemove", mm); window.removeEventListener("mouseup", up); el.removeEventListener("click", ck, true); };
+  }, []);
+
+  const nudge = (dir) => { const el = scroller.current; if (el) el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: "smooth" }); };
+
   return (
     <section className="section">
       <div className="glow glow-blue" style={{ width: 360, height: 360, top: 80, right: -160, opacity: .35 }} />
-      <div className="wrap" style={{ maxWidth: 1060, position: "relative", zIndex: 2 }}>
+      <div className="wrap" style={{ maxWidth: 1100, position: "relative", zIndex: 2 }}>
 
         {/* Eyebrow + titulo */}
-        <Reveal style={{ textAlign: "center", marginBottom: 28 }}>
+        <Reveal style={{ textAlign: "center", marginBottom: 24 }}>
           <Eyebrow center>O que dizem nossos clientes</Eyebrow>
           <h2 className="h2" style={{ marginTop: 14 }}>Avaliações reais no <span className="grad-text">Google</span></h2>
         </Reveal>
 
-        {/* Widget Elfsight — puxa as avaliacoes do Google automaticamente (sempre atualizado) */}
+        {/* Resumo (estilo Google) */}
         <Reveal>
-          <div className="elfsight-app-8db2a21c-ddc7-4050-8363-c1a8204fce49" data-elfsight-app-lazy=""></div>
+          <div className="card" style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "6px 14px", padding: "18px 24px", borderRadius: 16, marginBottom: 20, textAlign: "center" }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 7 }}><GoogleWord size={22} /> <span style={{ fontWeight: 700, fontSize: 16 }}>Avaliações</span></span>
+            <span style={{ width: 1, height: 18, background: "var(--line-2)" }} className="hide-sm" />
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 24, fontWeight: 900, fontFamily: "var(--serif)" }}>5,0</span>
+              <Stars size={18} />
+              <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>(29)</span>
+            </span>
+          </div>
         </Reveal>
 
-        <Reveal style={{ textAlign: "center", marginTop: 24 }}>
-          <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc" target="_blank" rel="noreferrer" className="btn btn-ghost">
+        {/* Carrossel arrastavel */}
+        <div className="rev-scroller" ref={scroller}>
+          {REVIEWS.map((r, i) => (
+            <div className="rev-item" key={i}><ReviewCard r={r} /></div>
+          ))}
+        </div>
+
+        {/* Controles + CTA */}
+        <Reveal style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginTop: 22, flexWrap: "wrap" }}>
+          <button onClick={() => nudge(-1)} aria-label="Anterior" className="rev-nav"><Icon name="chevron-left" size={18} color="var(--fg-muted)" /></button>
+          <button onClick={() => nudge(1)} aria-label="Próximas" className="rev-nav"><Icon name="chevron-right" size={18} color="var(--fg-muted)" /></button>
+          <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc" target="_blank" rel="noreferrer" className="btn btn-ghost" style={{ marginLeft: 4 }}>
             Ver todas no Google <Icon name="external-link" size={15} />
           </a>
         </Reveal>
       </div>
+
+      <style>{`
+        .rev-scroller{ display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px; -webkit-overflow-scrolling:touch; scrollbar-width:none; cursor:grab; }
+        .rev-scroller::-webkit-scrollbar{ display:none; }
+        .rev-scroller.dragging{ cursor:grabbing; }
+        .rev-scroller.dragging *{ user-select:none; }
+        .rev-item{ flex:0 0 320px; max-width:82vw; scroll-snap-align:start; }
+        .rev-nav{ width:40px; height:40px; border-radius:50%; border:1px solid var(--line-2); background:var(--surface); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:border-color .2s, background .2s; }
+        .rev-nav:hover{ border-color:var(--accent-bright); }
+        @media(max-width:600px){ .rev-item{ flex-basis:80vw; } }
+      `}</style>
     </section>
   );
 };
