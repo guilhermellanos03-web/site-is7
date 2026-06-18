@@ -2,7 +2,7 @@ const { Logo, Icon, wa } = window.IS7v2;
 
 const NAV = [
   { href: "#servicos", label: "Serviços" },
-  { href: "IS7 Portfolio.html", label: "Portfólio" },
+  { href: "/portfolio", label: "Portfólio" },
   { href: "#sobre",    label: "Sobre" },
   { href: "#faq",      label: "FAQ" },
   { href: "#contato",  label: "Contato" },

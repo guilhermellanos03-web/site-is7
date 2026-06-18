@@ -81,13 +81,13 @@ const Portfolio = () => {
             <Eyebrow>Projetos desenvolvidos</Eyebrow>
             <h2 className="h2" style={{ marginTop: 16 }}>Projetos reais, <span className="grad-text">no ar e vendendo</span>.</h2>
           </div>
-          <a href="IS7 Portfolio.html" className="link-arrow hide-sm">Ver portfólio completo <Icon name="arrow-right" size={16} /></a>
+          <a href="/portfolio" className="link-arrow hide-sm">Ver portfólio completo <Icon name="arrow-right" size={16} /></a>
         </Reveal>
         <div className="grid-portfolio">
           {FEATURED.map((c, i) => <CaseCard key={i} c={c} i={i} onOpen={setActive} />)}
         </div>
         <Reveal style={{ textAlign: "center", marginTop: 36 }}>
-          <a href="IS7 Portfolio.html" className="btn btn-ghost">
+          <a href="/portfolio" className="btn btn-ghost">
             Ver portfólio completo <Icon name="arrow-right" size={16} />
           </a>
         </Reveal>

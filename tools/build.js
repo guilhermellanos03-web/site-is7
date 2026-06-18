@@ -25,13 +25,13 @@ var DIST = path.join(ROOT, "dist");
 var PAGES = [
   { in: "index.html", out: "index.html" },
 ];
-// portfolio entra quando src/portfolio.html existir
+// portfolio entra quando src/portfolio.html existir (nome limpo: /portfolio)
 if (fs.existsSync(path.join(SRC, "portfolio.html"))) {
-  PAGES.push({ in: "portfolio.html", out: "IS7 Portfolio.html" });
+  PAGES.push({ in: "portfolio.html", out: "portfolio.html" });
 }
 
 // Recursos extras copiados pra dist (referenciados por URL no HTML)
-var COPY = ["assets", "robots.txt", "sitemap.xml"];
+var COPY = ["assets", "robots.txt", "sitemap.xml", ".htaccess"];
 
 function rmrf(p) { if (fs.existsSync(p)) fs.rmSync(p, { recursive: true, force: true }); }
 function copyRec(src, dst) {

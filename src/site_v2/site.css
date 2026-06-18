@@ -204,6 +204,10 @@ textarea.inp{ height:auto; padding:14px 16px; resize:vertical; min-height:96px; 
 @media (max-width:768px){
   /* hero sem vao gigante (remove min-height de 92vh) */
   #topo{ min-height:auto !important; padding-top:96px !important; padding-bottom:56px !important; }
+  /* stats: cards mais compactos e alinhados ao topo (sem vao por altura desigual) */
+  .grid-stats{ align-items:start !important; }
+  .grid-stats .card{ padding:22px 14px !important; }
+  .grid-stats .stat-num{ font-size:26px !important; }   /* evita "R$ 500 mil+" cortar */
   /* mata overflow horizontal / zoom-out */
   html, body{ overflow-x:clip; max-width:100%; }
   /* esconde o bot de chat, deixa so o WhatsApp */
