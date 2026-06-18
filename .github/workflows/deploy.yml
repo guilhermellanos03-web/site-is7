@@ -54,15 +54,26 @@ jobs:
           # assets/, robots.txt e sitemap.xml. O --delete deixa o servidor
           # espelhado com dist/ (sem residuos). A proposta (proposta.is7mkt.com.br)
           # e tarefa separada, deployada depois.
+          # A Hostinger costuma engasgar em transferencias grandes. Os assets
+          # (30MB) raramente mudam, entao usamos --size-only pra pular os que ja
+          # estao no servidor com o mesmo tamanho. Os HTML (pequenos) sao
+          # enviados explicitamente com 'put' pra garantir que ficam atualizados.
           deploy_main() {
             lftp -e "
                 set sftp:connect-program 'ssh -a -x -l u194888534 -i /home/runner/.ssh/id_ed25519 -o StrictHostKeyChecking=no -p 65002';
-                set net:timeout 90;
-                set net:max-retries 5;
-                set net:reconnect-interval-base 5;
+                set net:timeout 180;
+                set net:max-retries 4;
+                set net:reconnect-interval-base 8;
+                set net:connection-limit 1;
+                set sftp:auto-confirm yes;
+                set xfer:clobber on;
                 open sftp://ftp.is7mkt.com.br;
-                mirror -R --delete --no-perms --no-umask \
+                mirror -R --delete --size-only --no-perms --no-umask --parallel=1 \
                   dist/ domains/is7mkt.com.br/public_html/;
+                put dist/index.html -o 'domains/is7mkt.com.br/public_html/index.html';
+                put 'dist/IS7 Portfolio.html' -o 'domains/is7mkt.com.br/public_html/IS7 Portfolio.html';
+                put dist/robots.txt -o 'domains/is7mkt.com.br/public_html/robots.txt';
+                put dist/sitemap.xml -o 'domains/is7mkt.com.br/public_html/sitemap.xml';
                 bye
               "
           }
