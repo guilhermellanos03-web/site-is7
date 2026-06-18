@@ -4,10 +4,13 @@
   "private": true,
   "description": "Site IS7 Marketing Digital — fonte editavel + build para deploy",
   "scripts": {
-    "build": "node tools/build.js"
+    "compile": "node tools/build.js",
+    "prerender": "node tools/prerender.js",
+    "build": "node tools/build.js && node tools/prerender.js"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
-    "@babel/preset-react": "^7.26.3"
+    "@babel/preset-react": "^7.26.3",
+    "puppeteer": "^25.1.0"
   }
 }

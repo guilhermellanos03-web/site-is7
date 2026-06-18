@@ -20,9 +20,13 @@ jobs:
           node-version: "20"
 
       - name: Build do site (JSX -> dist/)
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
         run: |
           npm ci
-          npm run build
+          # CI faz so o compile (sem pre-render, que precisa de Chromium).
+          # O pre-render roda localmente (npm run build) ao gerar o zip de deploy.
+          npm run compile
 
       - name: Configurar chave SSH
         env:
