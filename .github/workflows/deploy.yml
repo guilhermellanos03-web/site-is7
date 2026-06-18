@@ -54,11 +54,8 @@ jobs:
           # assets/, robots.txt e sitemap.xml. O --delete deixa o servidor
           # espelhado com dist/ (sem residuos). A proposta (proposta.is7mkt.com.br)
           # e tarefa separada, deployada depois.
-          # A Hostinger engasga em transferencia grande, e o checkout do CI deixa
-          # todos os arquivos com data "agora" (o mirror padrao re-enviaria os
-          # 30MB de assets toda vez e estouraria o timeout). Com --ignore-time o
-          # mirror compara por TAMANHO: os assets ja no servidor (mesmo tamanho)
-          # sao pulados e so os HTML (que mudam de tamanho) sobem. O --delete
+          # dist/ agora e leve (~3.5MB: imagens otimizadas), entao o mirror
+          # padrao (compara tamanho+data) sobe rapido e confiavel. O --delete
           # limpa os residuos do site antigo que ainda estiverem no servidor.
           deploy_main() {
             lftp -e "
@@ -67,7 +64,7 @@ jobs:
                 set net:max-retries 4;
                 set net:reconnect-interval-base 8;
                 open sftp://ftp.is7mkt.com.br;
-                mirror -R --delete --ignore-time --no-perms --no-umask \
+                mirror -R --delete --no-perms --no-umask \
                   dist/ domains/is7mkt.com.br/public_html/;
                 bye
               "
