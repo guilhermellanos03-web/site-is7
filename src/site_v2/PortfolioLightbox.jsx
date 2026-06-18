@@ -156,12 +156,13 @@ const PortfolioLightbox = ({ c, onClose }) => {
               />
             </>
           ) : hasImg ? (
-            /* Scrollable screenshot */
-            <div style={{ width: "100%", height: "100%", overflowY: "auto", overflowX: "hidden" }}>
+            /* Scrollable screenshot — fundo branco pra parecer um navegador
+               (screenshots curtos nao ficam num vao escuro) */
+            <div style={{ width: "100%", height: "100%", overflowY: "auto", overflowX: "hidden", background: "#fff", textAlign: "center" }}>
               <img
                 src={c.img}
                 alt={c.name}
-                style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "top" }}
+                style={{ width: "100%", maxWidth: 1100, display: "inline-block", verticalAlign: "top" }}
               />
             </div>
           ) : (

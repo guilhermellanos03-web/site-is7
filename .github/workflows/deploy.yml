@@ -38,9 +38,17 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
-      # Sem passo "Testar SSH" separado: a Hostinger limita conexoes rapidas,
-      # e abrir uma conexao extra logo antes do deploy fazia o mirror ser
-      # recusado ("Password required"). O deploy usa uma unica conexao.
+      - name: Diagnostico SSH (chave aceita?)
+        run: |
+          echo "=== teste de autenticacao por chave ==="
+          ssh -i /home/runner/.ssh/id_ed25519 \
+            -o StrictHostKeyChecking=no \
+            -o PasswordAuthentication=no \
+            -o BatchMode=yes \
+            -p 65002 -v \
+            u194888534@ftp.is7mkt.com.br "echo CHAVE_OK" 2>&1 \
+            | grep -iE "Authenticated|Permission denied|publickey|password|CHAVE_OK|Offering|Accepted|no matching" || true
+          echo "=== fim diagnostico (nao falha o job) ==="
 
       - name: Deploy via SFTP
         run: |
