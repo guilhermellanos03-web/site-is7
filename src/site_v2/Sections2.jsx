@@ -152,79 +152,28 @@ const ReviewCard = ({ r }) => (
 );
 
 const Reviews = () => {
-  const PER = 4;
-  const TOTAL = Math.ceil(REVIEWS.length / PER);
-  const [pg, setPg] = React.useState(0);
-
-  React.useEffect(() => {
-    const t = setInterval(() => setPg(p => (p + 1) % TOTAL), 7000);
-    return () => clearInterval(t);
-  }, []);
-
-  const slice = REVIEWS.slice(pg * PER, (pg + 1) * PER);
-
   return (
     <section className="section">
       <div className="glow glow-blue" style={{ width: 360, height: 360, top: 80, right: -160, opacity: .35 }} />
       <div className="wrap" style={{ maxWidth: 1060, position: "relative", zIndex: 2 }}>
 
-        {/* Eyebrow + header summary */}
-        <Reveal style={{ textAlign: "center", marginBottom: 20 }}>
+        {/* Eyebrow + titulo */}
+        <Reveal style={{ textAlign: "center", marginBottom: 28 }}>
           <Eyebrow center>O que dizem nossos clientes</Eyebrow>
+          <h2 className="h2" style={{ marginTop: 14 }}>Avaliações reais no <span className="grad-text">Google</span></h2>
         </Reveal>
+
+        {/* Widget Elfsight — puxa as avaliacoes do Google automaticamente (sempre atualizado) */}
         <Reveal>
-          <div style={{
-            background: "var(--surface-2)", border: "1px solid var(--line)", borderRadius: 18,
-            padding: "22px 32px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-            gap: 8, marginBottom: 20,
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <GoogleWord size={26} />
-              <span style={{ fontWeight: 700, fontSize: 18 }}>Avaliações</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ fontSize: 28, fontWeight: 900, fontFamily: "var(--serif)" }}>5.0</span>
-              <Stars size={22} />
-              <span style={{ fontSize: 15, color: "var(--fg-muted)" }}>(29)</span>
-            </div>
-          </div>
+          <div className="elfsight-app-8db2a21c-ddc7-4050-8363-c1a8204fce49" data-elfsight-app-lazy=""></div>
         </Reveal>
 
-        {/* Review cards */}
-        <div className="reviews-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12 }}>
-          {slice.map((r, i) => (
-            <Reveal key={pg * 10 + i} delay={i * 55}>
-              <ReviewCard r={r} />
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Dots + arrow nav */}
-        <Reveal style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginTop: 22 }}>
-          {Array.from({ length: TOTAL }).map((_, i) => (
-            <button key={i} onClick={() => setPg(i)} style={{
-              width: i === pg ? 22 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer",
-              background: i === pg ? "var(--accent)" : "var(--line-2)", padding: 0, transition: "all .3s",
-            }} aria-label={`Página ${i + 1}`} />
-          ))}
-          <button onClick={() => setPg(p => (p + 1) % TOTAL)} style={{
-            width: 32, height: 32, borderRadius: "50%", border: "1px solid var(--line-2)",
-            background: "var(--surface)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", marginLeft: 4,
-          }}>
-            <Icon name="chevron-right" size={14} color="var(--fg-muted)" />
-          </button>
-        </Reveal>
-
-        <Reveal style={{ textAlign: "center", marginTop: 22 }}>
+        <Reveal style={{ textAlign: "center", marginTop: 24 }}>
           <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc" target="_blank" rel="noreferrer" className="btn btn-ghost">
             Ver todas no Google <Icon name="external-link" size={15} />
           </a>
         </Reveal>
       </div>
-      <style>{`
-        @media (max-width: 860px) { .reviews-grid { grid-template-columns: repeat(2,1fr) !important; } }
-        @media (max-width: 520px) { .reviews-grid { grid-template-columns: 1fr !important; } }
-      `}</style>
     </section>
   );
 };

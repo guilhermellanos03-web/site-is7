@@ -8,7 +8,7 @@ const TrustRow = ({ center }) => (
   <div style={{ display: "flex", flexWrap: "wrap", gap: 26, alignItems: "center", justifyContent: center ? "center" : "flex-start", marginTop: 34 }}>
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
       <Stars />
-      <span style={{ fontSize: 14, color: "var(--fg-muted)" }}><strong style={{ color: "var(--fg)" }}>5.0</strong> no Google · 29 avaliações</span>
+      <span style={{ fontSize: 14, color: "var(--fg-muted)" }}><strong style={{ color: "var(--fg)" }}>5.0</strong> no Google · 30 avaliações</span>
     </div>
     <span style={{ width: 1, height: 22, background: "var(--line-2)" }} className="hide-sm" />
     <span style={{ fontSize: 14, color: "var(--fg-muted)" }} className="hide-sm"><strong style={{ color: "var(--fg)" }}>+80</strong> projetos entregues</span>
