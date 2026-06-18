@@ -191,6 +191,14 @@
       e.preventDefault();
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }, true);
+    // Se a pagina abrir com #ancora (link externo), rola ate la e limpa a URL
+    window.addEventListener("load", function () {
+      if (location.hash && location.hash.length > 1) {
+        var el = document.getElementById(location.hash.slice(1));
+        if (el) setTimeout(function () { el.scrollIntoView({ block: "start" }); }, 300);
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+    });
   </script>
 </body>
 </html>
