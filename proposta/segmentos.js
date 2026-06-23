@@ -65,4 +65,37 @@ window.IS7_SEGMENTOS = {
     ],
   },
 
+  // Proposta GENERICA — assessoria de Google completa (sem nicho especifico)
+  assessoria: {
+    key:       'assessoria',
+    label:     'sua empresa',
+    heroEyebrow: 'Sua empresa no Google · Assessoria completa',
+    heroH1:    ['Seu cliente está', 'procurando no Google', 'agora. Sua empresa', 'precisa estar lá.'],
+    heroAccent: 3,
+    heroSub:   'A IS7 cuida de toda a sua presença no Google — perfil, site e anúncios — para o seu negócio ser encontrado e escolhido por quem já está pronto para comprar.',
+    heroCTA:   'Quero minha empresa no Google',
+    painPoints:[
+      'Seu concorrente aparece no Google e você não — e perde cliente todo dia por isso',
+      'Investe em anúncio sem estratégia e não sabe se está dando retorno',
+      'Perfil da Empresa no Google desatualizado afasta quem está pesquisando',
+      'Sem site profissional e sem avaliações, o cliente escolhe quem passa mais confiança',
+    ],
+    methodology: [
+      { icon: 'map-pin',     title: 'Posicionamento no Google', desc: 'Perfil da Empresa no Google otimizado com fotos, serviços, horários e palavras-chave — para você aparecer no Maps e na busca quando o cliente da sua região procura.' },
+      { icon: 'trending-up', title: 'Tráfego que converte',     desc: 'Campanhas de Google Ads focadas em quem já está procurando pelo seu serviço. Cada real investido trabalhando para trazer cliente qualificado.' },
+      { icon: 'star',        title: 'Site e reputação',          desc: 'Site profissional rápido, otimizado para SEO e conversão, somado a uma estratégia de avaliações 5 estrelas que constrói confiança e fecha mais.' },
+    ],
+    portfolio: [
+      { id: 'a-port-1', caption: 'Negócio local no Google',     tag: 'Google Ads + Site' },
+      { id: 'a-port-2', caption: 'Presença digital completa',   tag: 'Site + SEO' },
+      { id: 'a-port-3', caption: 'Campanha de resultado',       tag: 'Google Ads' },
+      { id: 'a-port-4', caption: 'Perfil otimizado no Google',  tag: 'Perfil no Google' },
+    ],
+    faq: [
+      { q: 'Funciona para o meu tipo de negócio?', a: 'Sim. A assessoria se adapta ao seu segmento — serviços, comércio ou profissional liberal. O método de aparecer no Google e converter é o mesmo; o que muda é a estratégia de palavras-chave e a abordagem.' },
+      { q: 'Em quanto tempo vejo resultado?', a: 'Com Google Ads os primeiros resultados aparecem já nos primeiros dias. O posicionamento orgânico (Maps e SEO) é construído de forma consistente ao longo do mês.' },
+      { q: 'Preciso já ter um site?', a: 'Não. Se você ainda não tem, criamos um site profissional otimizado dentro do pacote. Se já tem, avaliamos e otimizamos para converter melhor.' },
+    ],
+  },
+
 };

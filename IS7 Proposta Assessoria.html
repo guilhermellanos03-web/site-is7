@@ -1,344 +1,41 @@
 <!doctype html>
+<!-- @dsCard group="Brand" name="IS7 Proposta Assessoria" -->
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Proposta de Assessoria Mensal — IS7</title>
+<title>Sua empresa no Google — IS7 Assessoria Digital</title>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="site_v2/site.css"/>
 </head>
-<body class="js-anim" data-screen-label="Proposta Assessoria Mensal">
-<div id="root"></div>
+<body data-screen-label="Proposta · Assessoria">
+  <div id="root"></div>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.js"></script>
-<script type="text/babel" src="site_v2/SiteCore.jsx"></script>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" fill="#070A14"/>
+      <text x="50" y="40" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="900" font-size="11" fill="#9145E6">IS7</text>
+      <text x="50" y="58" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="11" fill="white">ASSESSORIA</text>
+      <text x="50" y="74" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" fill="#98A1BC">no Google</text>
+    </svg>
+  </template>
 
-<script type="text/babel">
-const { Icon, Logo, Eyebrow, Reveal, StatNumber } = window.IS7v2;
-
-/* ─── Header simples ─── */
-const Hdr = () => {
-  const [sc, setSc] = React.useState(false);
-  React.useEffect(() => {
-    const fn = () => setSc(window.scrollY > 16);
-    fn(); window.addEventListener("scroll", fn, {passive:true});
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-  return (
-    <header className={`hdr ${sc?"scrolled":""}`}>
-      <div className="wrap hdr-row">
-        <Logo size={22}/>
-        <nav className="nav">
-          <a href="#entregaveis">O que inclui</a>
-          <a href="#resultados">Resultados</a>
-          <a href="#planos">Investimento</a>
-        </nav>
-      </div>
-    </header>
-  );
-};
-
-/* ─── Hero ─── */
-const Hero = () => (
-  <section style={{position:"relative",overflow:"hidden",minHeight:"80vh",display:"flex",alignItems:"center",paddingTop:60,paddingBottom:80}}>
-    <div className="glow glow-purple" style={{width:560,height:560,top:-200,left:"50%",transform:"translateX(-50%)",animation:"glow-morph 12s ease-in-out infinite"}}/>
-    <div className="glow glow-blue" style={{width:380,height:380,bottom:-160,right:-80,animation:"drift 16s ease-in-out infinite"}}/>
-    <div className="gridlines"/>
-    <div className="wrap" style={{position:"relative",zIndex:2,textAlign:"center"}}>
-      <Reveal>
-        <span style={{display:"inline-flex",alignItems:"center",gap:8,background:"rgba(145,69,230,.12)",border:"1px solid rgba(145,69,230,.28)",padding:"8px 18px",borderRadius:9999,fontFamily:"var(--mono)",fontSize:12,letterSpacing:".14em",textTransform:"uppercase",color:"var(--accent-bright)",marginBottom:28}}>
-          Proposta de Assessoria Mensal
-        </span>
-      </Reveal>
-      <Reveal delay={60}>
-        <h1 className="display" style={{maxWidth:860,margin:"0 auto",fontSize:"clamp(38px,5.8vw,74px)"}}>
-          Proposta Comercial<br/><span className="grad-text">Assessoria de Google<br/>Meu Negócio</span>
-        </h1>
-      </Reveal>
-      <Reveal delay={120}>
-        <p className="lead" style={{maxWidth:580,margin:"26px auto 0"}}>
-          Você já tem o site. Agora é hora de manter tudo atualizado, ativo e gerando resultados todo mês — enquanto você foca no que sabe fazer melhor.
-        </p>
-      </Reveal>
-      <Reveal delay={200}>
-        <div style={{display:"flex",flexWrap:"wrap",gap:22,justifyContent:"center",marginTop:44,paddingTop:32,borderTop:"1px solid var(--line)"}}>
-          {[["check-circle","R$ 500 mil+ gerenciados em Ads"],["star","5.0 no Google"],["users","80+ projetos entregues"]].map(([ic,l])=>(
-            <span key={l} style={{display:"flex",alignItems:"center",gap:7,fontSize:14,color:"var(--fg-muted)"}}>
-              <Icon name={ic} size={15} color="var(--accent-bright)"/>{l}
-            </span>
-          ))}
-        </div>
-      </Reveal>
-    </div>
-  </section>
-);
-
-/* ─── Por que assessoria mensal ─── */
-const Why = () => (
-  <section className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
-    <div className="glow glow-purple" style={{width:300,height:300,top:0,left:-100,opacity:.35}}/>
-    <div className="wrap" style={{maxWidth:860}}>
-      <Reveal style={{textAlign:"center",marginBottom:52}}>
-        <Eyebrow center>Por que contratar</Eyebrow>
-        <h2 className="h2" style={{marginTop:14}}>Ter site é o começo.<br/><span className="grad-text">Mantê-lo vivo é o que gera resultado.</span></h2>
-        <p className="lead" style={{maxWidth:560,margin:"18px auto 0"}}>
-          Site desatualizado, Perfil da Empresa no Google parado e sem posts novos passam a mesma mensagem para o cliente: empresa largada. A assessoria mensal garante que isso nunca aconteça.
-        </p>
-      </Reveal>
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}} className="why-grid">
-        {[
-          {icon:"refresh-cw",    title:"Site sempre atualizado",      desc:"Produtos, serviços, fotos, textos — qualquer mudança no seu negócio reflete no site rapidamente. Sem você precisar pedir para ninguém."},
-          {icon:"trending-up",   title:"Google Ads gerenciado",        desc:"Campanhas otimizadas continuamente para trazer quem realmente quer contratar seu serviço. Nenhum real desperdiçado."},
-          {icon:"star",          title:"Avaliações respondidas",       desc:"Toda avaliação no Perfil da Empresa no Google recebe resposta profissional. Isso aumenta a confiança e melhora o ranqueamento."},
-          {icon:"image",         title:"Conteúdo novo todo mês",       desc:"4 posts mensais mantendo seu Google e redes sociais ativos, mostrando que sua empresa está presente e funcionando."},
-        ].map((w,i)=>(
-          <Reveal key={i} delay={i*60} className="card card-hover" style={{padding:"26px 24px",display:"flex",gap:18,alignItems:"flex-start"}}>
-            <span className="chip" style={{flexShrink:0,width:46,height:46}}>
-              <Icon name={w.icon} size={22} color="var(--accent-bright)" strokeWidth={1.9}/>
-            </span>
-            <div>
-              <h3 style={{fontFamily:"var(--serif)",fontWeight:700,fontSize:17,margin:"0 0 8px"}}>{w.title}</h3>
-              <p style={{margin:0,fontSize:14,color:"var(--fg-muted)",lineHeight:1.65}}>{w.desc}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-      <style>{`@media(max-width:640px){.why-grid{grid-template-columns:1fr!important}}`}</style>
-    </div>
-  </section>
-);
-
-/* ─── Entregáveis ─── */
-const Entregaveis = () => (
-  <section id="entregaveis" className="section">
-    <div className="glow glow-blue" style={{width:320,height:320,top:40,right:-100,opacity:.38}}/>
-    <div className="wrap">
-      <Reveal style={{textAlign:"center",maxWidth:580,margin:"0 auto 52px"}}>
-        <Eyebrow center>O que você recebe todo mês</Eyebrow>
-        <h2 className="h2" style={{marginTop:14}}>Tudo feito e entregue. <span className="grad-text">Você aprova.</span></h2>
-      </Reveal>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:18,maxWidth:1000,margin:"0 auto"}} className="del-grid">
-        {[
-          {n:"01", icon:"file-text",    title:"4 posts mensais",             desc:"Conteúdo criado e publicado no Perfil da Empresa no Google para manter o perfil ativo e relevante nas buscas."},
-          {n:"02", icon:"image",        title:"Atualização de fotos",         desc:"Fotos novas dos seus serviços, produtos ou trabalhos realizados adicionadas ao site e ao Google."},
-          {n:"03", icon:"package",      title:"Atualização de produtos",      desc:"Qualquer novo serviço, produto ou mudança de informação refletida no site sem você precisar se preocupar."},
-          {n:"04", icon:"star",         title:"Gestão de avaliações",         desc:"Respostas profissionais para todas as avaliações recebidas no Google, reforçando sua reputação."},
-          {n:"05", icon:"trending-up",  title:"Gestão de Google Ads",         desc:"Acompanhamento e otimização das campanhas para manter o custo baixo e o resultado em cima."},
-          {n:"06", icon:"bar-chart-2",  title:"Relatório mensal",             desc:"Resumo claro do que foi feito, quantas pessoas viram, clicaram e entraram em contato com sua empresa."},
-        ].map((d,i)=>(
-          <Reveal key={i} delay={(i%3)*60} className="card card-hover" style={{padding:"26px 22px",display:"flex",flexDirection:"column",gap:12,position:"relative"}}>
-            <span style={{position:"absolute",top:16,right:18,fontFamily:"var(--mono)",fontSize:12,color:"var(--fg-dim)",letterSpacing:".1em"}}>{d.n}</span>
-            <span className="chip"><Icon name={d.icon} size={20} color="var(--accent-bright)" strokeWidth={1.9}/></span>
-            <h3 style={{fontFamily:"var(--serif)",fontWeight:700,fontSize:16,margin:0}}>{d.title}</h3>
-            <p style={{margin:0,fontSize:13.5,color:"var(--fg-muted)",lineHeight:1.6}}>{d.desc}</p>
-          </Reveal>
-        ))}
-      </div>
-      <style>{`@media(max-width:860px){.del-grid{grid-template-columns:repeat(2,1fr)!important}} @media(max-width:520px){.del-grid{grid-template-columns:1fr!important}}`}</style>
-    </div>
-  </section>
-);
-
-/* ─── Resultados ─── */
-const Resultados = () => (
-  <section id="resultados" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
-    <div className="wrap">
-      <Reveal style={{textAlign:"center",maxWidth:560,margin:"0 auto 48px"}}>
-        <Eyebrow center>Histórico IS7</Eyebrow>
-        <h2 className="h2" style={{marginTop:14}}>Números que <span className="grad-text">comprovam o método</span>.</h2>
-      </Reveal>
-      <div className="grid-stats">
-        {[
-          {p:"R$ ",v:500,s:" mil+",l:"Investidos em Google Ads gerenciados"},
-          {p:"",  v:80, s:"+",   l:"Projetos entregues em todo o Brasil"},
-          {p:"",  v:6,  s:"+",   l:"Anos de experiência com marketing digital"},
-          {p:"+", v:95, s:"",    l:"Nota média PageSpeed dos nossos sites"},
-        ].map((s,i)=>(
-          <Reveal key={i} delay={i*70} className="card" style={{padding:"26px 16px",textAlign:"center"}}>
-            <StatNumber prefix={s.p} value={s.v} suffix={s.s} size={32}/>
-            <p style={{margin:"8px 0 0",fontSize:13,color:"var(--fg-muted)",lineHeight:1.5}}>{s.l}</p>
-          </Reveal>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ─── Depoimentos ─── */
-const Reviews = () => (
-  <section className="section">
-    <div className="glow glow-blue" style={{width:300,height:300,top:40,right:-80,opacity:.35}}/>
-    <div className="wrap">
-      <Reveal style={{textAlign:"center",marginBottom:48}}>
-        <Eyebrow center>Quem já trabalha com a IS7</Eyebrow>
-        <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:10,marginTop:16}}>
-          <h2 className="h2" style={{fontSize:"clamp(36px,5vw,58px)"}}>EXCELENTE</h2>
-          <span>{[0,1,2,3,4].map(i=><Icon key={i} name="star" size={22} color="#FBBF24" fill="#FBBF24" strokeWidth={0}/>)}</span>
-          <p className="muted" style={{margin:0}}>5.0 · 25+ avaliações no Google</p>
-        </div>
-      </Reveal>
-      <div className="grid-reviews">
-        {[
-          {i:"A",name:"Allan Ferraz",    count:"11 avaliações", text:"Atendimento rápido e conciso, meu site ficou lindo e agora recebo clientes melhores investindo menos."},
-          {i:"A",name:"André Vicente",   count:"3 avaliações",  text:"Alcancei resultados expressivos e grandes feitos graças às estratégias criadas pela IS7."},
-          {i:"V",name:"Vinicius Cortiano",count:"4 avaliações", text:"Trabalho de qualidade e excelente atendimento!"},
-        ].map((r,i)=>(
-          <Reveal key={i} delay={i*80} className="card" style={{padding:24,display:"flex",flexDirection:"column",gap:14}}>
-            <span>{[0,1,2,3,4].map(k=><Icon key={k} name="star" size={14} color="#FBBF24" fill="#FBBF24" strokeWidth={0}/>)}</span>
-            <p style={{margin:0,fontSize:15,lineHeight:1.65}}>"{r.text}"</p>
-            <div style={{display:"flex",alignItems:"center",gap:11,marginTop:"auto",paddingTop:10,borderTop:"1px solid var(--line)"}}>
-              <span style={{width:38,height:38,borderRadius:9999,background:"var(--grad)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"var(--serif)",fontWeight:800,color:"#fff"}}>{r.i}</span>
-              <div>
-                <p style={{margin:0,fontSize:14,fontWeight:600}}>{r.name}</p>
-                <p style={{margin:0,fontSize:12,color:"var(--fg-dim)"}}>{r.count}</p>
-              </div>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* ─── Planos ─── */
-const PLANS = [
-  {id:"mensal",     label:"Mensal",     months:1,  price:590, highlight:false, tag:null},
-  {id:"trimestral", label:"Trimestral", months:3,  price:490, highlight:false, tag:"3 meses"},
-  {id:"semestral",  label:"Semestral",  months:6,  price:420, highlight:false, tag:"6 meses"},
-  {id:"anual",      label:"Anual",      months:12, price:350, highlight:true,  tag:"12 meses"},
-];
-
-const INCLUDES = [
-  "Site sempre atualizado",
-  "4 posts mensais no Google",
-  "Atualização de produtos e fotos",
-  "Gestão de avaliações no Google",
-  "Gestão de Google Ads",
-  "Relatório mensal de resultados",
-  "Suporte direto via WhatsApp",
-  "Sem se preocupar com nada",
-];
-
-const Planos = () => {
-  const [sel, setSel] = React.useState("anual");
-  const plan = PLANS.find(p=>p.id===sel);
-
-  return (
-    <section id="planos" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
-      <div className="glow glow-blue" style={{width:420,height:420,top:-140,left:"50%",transform:"translateX(-50%)",opacity:.45}}/>
-      <div className="wrap" style={{maxWidth:680,position:"relative",zIndex:2,textAlign:"center"}}>
-        <Reveal>
-          <Eyebrow center>Investimento</Eyebrow>
-          <h2 className="h2" style={{marginTop:14}}>Escolha o plano <span className="grad-text">ideal para você</span>.</h2>
-          <p className="lead" style={{marginTop:14,maxWidth:480,margin:"14px auto 0"}}>
-            Quanto mais tempo, mais acessível fica o investimento mensal.
-          </p>
-        </Reveal>
-
-        {/* Seletor */}
-        <Reveal delay={80}>
-          <div style={{display:"flex",flexWrap:"wrap",gap:10,justifyContent:"center",margin:"36px auto 28px",padding:"6px",background:"var(--surface)",border:"1px solid var(--line)",borderRadius:16,maxWidth:480}}>
-            {PLANS.map(p=>(
-              <button key={p.id} onClick={()=>setSel(p.id)} style={{
-                flex:1,minWidth:90,padding:"10px 12px",borderRadius:10,border:"none",cursor:"pointer",
-                fontFamily:"var(--sans)",fontWeight:600,fontSize:14,transition:"all .25s",
-                background: sel===p.id ? (p.highlight?"var(--grad)":"var(--surface-2)") : "transparent",
-                color: sel===p.id ? "#fff" : "var(--fg-muted)",
-                boxShadow: sel===p.id ? "0 4px 14px -4px rgba(145,69,230,.4)" : "none",
-              }}>
-                {p.label}
-                {p.highlight && sel===p.id && <span style={{display:"block",fontSize:10,fontWeight:700,color:"rgba(255,255,255,.75)",marginTop:2}}>melhor valor</span>}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* Card */}
-        <Reveal delay={120}>
-          <div className="card" style={{
-            padding:"40px 36px",
-            borderColor: plan.highlight ? "rgba(145,69,230,.5)" : "var(--line-2)",
-            background: plan.highlight ? "linear-gradient(160deg,rgba(145,69,230,.10),rgba(59,108,255,.06))" : "var(--surface)",
-            transition:"all .3s",
-          }}>
-            {/* Preço */}
-            <div style={{borderBottom:"1px solid var(--line)",paddingBottom:28,marginBottom:28}}>
-              {plan.highlight && (
-                <span style={{display:"inline-block",marginBottom:14,background:"var(--grad)",color:"#fff",fontSize:12,fontWeight:700,letterSpacing:".1em",padding:"5px 14px",borderRadius:9999}}>PLANO RECOMENDADO</span>
-              )}
-              <p style={{margin:"0 0 6px",fontFamily:"var(--mono)",fontSize:11,letterSpacing:".2em",textTransform:"uppercase",color:"var(--fg-dim)"}}>valor mensal · plano {plan.label.toLowerCase()}</p>
-              <div style={{display:"inline-flex",alignItems:"baseline",gap:4,fontFamily:"var(--serif)",fontWeight:900,letterSpacing:"-.04em"}}>
-                <span style={{fontSize:24,background:"var(--grad)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>R$</span>
-                <span style={{fontSize:"clamp(60px,9vw,90px)",background:"var(--grad)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",lineHeight:1}}>{plan.price}</span>
-                <span style={{fontSize:18,color:"var(--fg-muted)",fontWeight:600,marginLeft:4}}>/mês</span>
-              </div>
-
-              {/* Pagamento */}
-              <div style={{display:"flex",flexWrap:"wrap",gap:10,justifyContent:"center",marginTop:16}}>
-                {["Pix","Cartão de crédito","Boleto"].map(m=>(
-                  <span key={m} style={{display:"flex",alignItems:"center",gap:6,background:"var(--surface-2)",border:"1px solid var(--line)",borderRadius:9999,padding:"6px 14px",fontSize:13,color:"var(--fg-muted)"}}>
-                    <Icon name={m==="Pix"?"zap":m==="Cartão de crédito"?"credit-card":"file-text"} size={13} color="var(--accent-bright)"/>{m}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Entregáveis */}
-            <ul style={{listStyle:"none",padding:0,margin:"0 0 28px",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px 16px",textAlign:"left"}}>
-              {INCLUDES.map((it,i)=>(
-                <li key={i} style={{display:"flex",alignItems:"flex-start",gap:8,fontSize:14,color:"var(--fg-muted)"}}>
-                  <Icon name="check" size={15} color="var(--accent-bright)" strokeWidth={2.5} style={{marginTop:2,flexShrink:0}}/>{it}
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA email/contato direto */}
-            <div style={{background:"var(--surface-2)",border:"1px solid var(--line)",borderRadius:14,padding:"18px 20px",textAlign:"center"}}>
-              <p style={{margin:"0 0 4px",fontSize:14,color:"var(--fg-muted)"}}>Pronto para começar? Entre em contato:</p>
-              <p style={{margin:0,fontFamily:"var(--serif)",fontWeight:700,fontSize:17,color:"var(--fg)"}}>guilherme@is7mkt.com.br</p>
-              <p style={{margin:"2px 0 0",fontSize:13,color:"var(--fg-dim)"}}>(41) 98743-0349</p>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-};
-
-/* ─── Footer ─── */
-const Ftr = () => (
-  <footer style={{background:"var(--bg)",borderTop:"1px solid var(--line)",padding:"26px 0"}}>
-    <div className="wrap" style={{display:"flex",flexWrap:"wrap",gap:14,alignItems:"center",justifyContent:"space-between"}}>
-      <Logo size={20}/>
-      <p style={{margin:0,fontSize:12,color:"var(--fg-dim)"}}>CNPJ 50.201.864/0001-40 · IS7 Mídias Digitais</p>
-      <p style={{margin:0,fontSize:12,color:"var(--fg-dim)"}}>(41) 98743-0349</p>
-    </div>
-  </footer>
-);
-
-/* ─── App ─── */
-const App = () => (
-  <React.Fragment>
-    <Hdr/>
-    <main>
-      <Hero/>
-      <Why/>
-      <Entregaveis/>
-      <Resultados/>
-      <Reviews/>
-      <Planos/>
-    </main>
-    <Ftr/>
-  </React.Fragment>
-);
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
-</script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.js"></script>
+  <script>window.IS7_SEG = 'assessoria';</script>
+  <script src="lojas_virtuais/image-slot.js"></script>
+  <script src="proposta/segmentos.js"></script>
+  <script type="text/babel" src="site_v2/SiteCore.jsx"></script>
+  <script type="text/babel" src="proposta/PropostaApp.jsx"></script>
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById("root")).render(
+      React.createElement(window.PropostaApp)
+    );
+  </script>
 </body>
 </html>
