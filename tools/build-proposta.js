@@ -36,8 +36,11 @@ var PAGES = [
   ["IS7 Proposta Chaveiro.html", "chaveiro.html"],
   ["IS7 Proposta Assessoria.html", "assessoria.html"],
 ];
+var VER = Date.now(); // cache-busting dos recursos locais (jsx/js/css)
 PAGES.forEach(function (pair) {
   var html = read(path.join(ROOT, pair[0]));
+  // cache-busting: ?v=VER nos src/href locais (nao toca em http/CDN)
+  html = html.replace(/(src|href)="((?!https?:|\/\/)[^"]+\.(?:jsx|js|css))"/g, '$1="$2?v=' + VER + '"');
   // back-link pro site principal (outro dominio)
   html = html.replace(/href="IS7 Site\.html"/g, 'href="https://is7mkt.com.br/"');
   // links do indice pros segmentos -> URL limpa

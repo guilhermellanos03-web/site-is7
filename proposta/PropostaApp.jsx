@@ -385,179 +385,100 @@ const HowItWorks = () => (
   </section>
 );
 
-/* ---- PRICING ---- */
+/* ---- PRICING (2 ofertas) ---- */
 const PLANS = [
   {
-    id: "mensal",
-    label: "Mensal",
-    months: 1,
-    price: 590,
-    total: null,
-    badge: null,
-    desc: "Sem contrato",
+    id: "criacao",
+    name: "Criação Completa",
+    tagline: "Tudo pronto em 1 mês",
+    price: "Pagamento único",
+    sub: "Sua presença no Google montada do zero",
     highlight: false,
-  },
-  {
-    id: "trimestral",
-    label: "Trimestral",
-    months: 3,
-    price: 490,
-    total: 1470,
-    badge: "17% off",
-    desc: "3 meses",
-    highlight: false,
-  },
-  {
-    id: "semestral",
-    label: "Semestral",
-    months: 6,
-    price: 420,
-    total: 2520,
-    badge: "29% off",
-    desc: "6 meses",
-    highlight: false,
+    cta: "Quero a Criação Completa",
+    features: [
+      "Site profissional criado do zero",
+      "Domínio + hospedagem por 1 ano inclusos",
+      "Perfil da Empresa no Google otimizado",
+      "4 posts publicados no perfil",
+      "Todas as informações atualizadas",
+      "1 mês de gestão e consultoria",
+    ],
   },
   {
     id: "anual",
-    label: "Anual",
-    months: 12,
-    price: 350,
-    total: 4200,
-    badge: "Melhor valor",
-    desc: "12 meses",
+    name: "Gestão Anual",
+    tagline: "A gente cuida do seu Google o ano todo",
+    price: "Plano de 12 meses",
+    sub: "Você não precisa se preocupar com nada",
     highlight: true,
+    cta: "Quero a Gestão Anual",
+    features: [
+      "Tudo da Criação Completa, e mais:",
+      "Gestão contínua por 12 meses",
+      "Postagens e atualizações constantes no perfil",
+      "Campanhas de Google Ads gerenciadas",
+      "Resposta às avaliações dos clientes",
+      "Site sempre no ar, rápido e otimizado",
+      "Relatórios e suporte via WhatsApp",
+    ],
+    note: "Da sua parte, só: pedir avaliações aos seus clientes e enviar fotos pra gente publicar no perfil. O resto é com a IS7.",
   },
 ];
 
-const INCLUDES = [
-  "Site profissional otimizado",
-  "Perfil da Empresa no Google configurado",
-  "Gestão de Google Ads",
-  "Relatório mensal de resultados",
-  "1 campanha ativa no mês",
-  "Suporte via WhatsApp",
-  "Até 2 rodadas de ajuste",
-  "Copywriting dos anúncios",
-];
+const Pricing = () => (
+  <section id="investimento" className="section" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--line)" }}>
+    <div className="glow glow-blue" style={{ width: 400, height: 400, top: -120, left: "50%", transform: "translateX(-50%)", opacity: .5 }} />
+    <div className="wrap" style={{ maxWidth: 920, position: "relative", zIndex: 2 }}>
+      <Reveal style={{ textAlign: "center", marginBottom: 44 }}>
+        <Eyebrow center>Investimento</Eyebrow>
+        <h2 className="h2" style={{ marginTop: 14 }}>Escolha como quer <span className="grad-text">começar</span>.</h2>
+        <p className="lead" style={{ marginTop: 14, maxWidth: 540, margin: "14px auto 0" }}>Duas formas de colocar seu guincho no topo do Google.</p>
+      </Reveal>
 
-const Pricing = () => {
-  const [selected, setSelected] = React.useState("anual");
-  const plan = PLANS.find(p => p.id === selected);
-  const waCTA = wa(`Olá! Vi a proposta da IS7 e quero contratar o plano ${plan.label} de R$${plan.price}/mês.`);
-
-  return (
-    <section id="investimento" className="section" style={{ background: "var(--bg-2)", borderTop: "1px solid var(--line)" }}>
-      <div className="glow glow-blue" style={{ width: 400, height: 400, top: -120, left: "50%", transform: "translateX(-50%)", opacity: .5 }} />
-      <div className="wrap" style={{ maxWidth: 760, position: "relative", zIndex: 2, textAlign: "center" }}>
-        <Reveal>
-          <Eyebrow center>Investimento</Eyebrow>
-          <h2 className="h2" style={{ marginTop: 14 }}>Quanto mais tempo, <span className="grad-text">mais barato fica</span>.</h2>
-          <p className="lead" style={{ marginTop: 14, maxWidth: 520, margin: "14px auto 0" }}>
-            Escolha o plano que melhor se encaixa no momento da sua empresa.
-          </p>
-        </Reveal>
-
-        {/* Plan selector */}
-        <Reveal delay={80}>
-          <div style={{
-            display: "flex", flexWrap: "wrap", gap: 10, justifyContent: "center",
-            margin: "36px auto 28px", padding: "6px", background: "var(--surface)",
-            border: "1px solid var(--line)", borderRadius: 16, maxWidth: 480,
+      <div className="plans-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, alignItems: "start" }}>
+        {PLANS.map((p, i) => (
+          <Reveal key={p.id} delay={i * 90} className="card" style={{
+            padding: "34px 28px", display: "flex", flexDirection: "column", gap: 18,
+            borderColor: p.highlight ? "rgba(145,69,230,.5)" : "var(--line-2)",
+            background: p.highlight ? "linear-gradient(160deg, rgba(145,69,230,.10), rgba(59,108,255,.06))" : "var(--surface)",
+            position: "relative",
           }}>
-            {PLANS.map(p => (
-              <button key={p.id} onClick={() => setSelected(p.id)} style={{
-                flex: 1, minWidth: 90, padding: "10px 14px", borderRadius: 10, border: "none",
-                cursor: "pointer", fontFamily: "var(--sans)", fontWeight: 600, fontSize: 14,
-                transition: "all .25s",
-                background: selected === p.id
-                  ? (p.highlight ? "var(--grad)" : "var(--surface-2)")
-                  : "transparent",
-                color: selected === p.id ? "#fff" : "var(--fg-muted)",
-                boxShadow: selected === p.id ? "0 4px 14px -4px rgba(145,69,230,.4)" : "none",
-              }}>
-                {p.label}
-                {p.badge && (
-                  <span style={{
-                    display: "block", fontSize: 10, fontWeight: 700,
-                    color: selected === p.id ? "rgba(255,255,255,.75)" : "var(--accent-bright)",
-                    marginTop: 2, letterSpacing: ".04em",
-                  }}>{p.badge}</span>
-                )}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* Price card */}
-        <Reveal delay={120}>
-          <div className="card" style={{
-            padding: "40px 36px",
-            borderColor: plan.highlight ? "rgba(145,69,230,.5)" : "var(--line-2)",
-            background: plan.highlight
-              ? "linear-gradient(160deg, rgba(145,69,230,.10), rgba(59,108,255,.06))"
-              : "var(--surface)",
-            transition: "all .3s",
-          }}>
-            {/* Price display */}
-            <div style={{ borderBottom: "1px solid var(--line)", paddingBottom: 28, marginBottom: 28 }}>
-              {plan.highlight && (
-                <span style={{
-                  display: "inline-block", marginBottom: 12,
-                  background: "var(--grad)", color: "#fff",
-                  fontSize: 12, fontWeight: 700, letterSpacing: ".1em",
-                  padding: "5px 14px", borderRadius: 9999,
-                }}>MELHOR VALOR</span>
-              )}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
-                <div style={{ textAlign: "left" }}>
-                  <p style={{ margin: "0 0 2px", fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "var(--fg-dim)" }}>por mês</p>
-                  <div style={{ display: "inline-flex", alignItems: "baseline", gap: 4, fontFamily: "var(--serif)", fontWeight: 900, letterSpacing: "-.04em" }}>
-                    <span style={{ fontSize: 22, background: "var(--grad)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>R$</span>
-                    <span style={{ fontSize: "clamp(56px,8vw,84px)", background: "var(--grad)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: 1 }}>{plan.price}</span>
-                  </div>
-                </div>
-                {plan.total && (
-                  <div style={{ textAlign: "left", borderLeft: "1px solid var(--line-2)", paddingLeft: 16 }}>
-                    <p style={{ margin: 0, fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "var(--fg-dim)" }}>total</p>
-                    <p style={{ margin: "4px 0 0", fontFamily: "var(--serif)", fontWeight: 700, fontSize: 22, color: "var(--fg)" }}>R$ {plan.total.toLocaleString("pt-BR")}</p>
-                    <p style={{ margin: "2px 0 0", fontSize: 12, color: "var(--fg-dim)" }}>em {plan.months}x de R${plan.price}</p>
-                  </div>
-                )}
-              </div>
-              {!plan.total && (
-                <p style={{ margin: "8px 0 0", fontSize: 14, color: "var(--fg-muted)" }}>Sem fidelidade, cancela quando quiser</p>
-              )}
+            {p.highlight && (
+              <span style={{ position: "absolute", top: -12, left: "50%", transform: "translateX(-50%)", background: "var(--grad)", color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: ".1em", padding: "5px 16px", borderRadius: 9999, whiteSpace: "nowrap" }}>RECOMENDADO</span>
+            )}
+            <div>
+              <h3 style={{ fontFamily: "var(--serif)", fontWeight: 800, fontSize: 23, margin: 0 }}>{p.name}</h3>
+              <p style={{ margin: "6px 0 0", fontSize: 14, color: "var(--fg-muted)" }}>{p.tagline}</p>
             </div>
-
-            {/* Includes */}
-            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 16px", textAlign: "left" }}>
-              {INCLUDES.map((it, i) => (
-                <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 14, color: "var(--fg-muted)" }}>
-                  <Icon name="check" size={15} color="var(--accent-bright)" strokeWidth={2.5} style={{ marginTop: 2, flexShrink: 0 }} />{it}
+            <div style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", padding: "16px 0" }}>
+              <p style={{ margin: 0, fontFamily: "var(--serif)", fontWeight: 800, fontSize: 21, background: "var(--grad)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{p.price}</p>
+              <p style={{ margin: "4px 0 0", fontSize: 13, color: "var(--fg-dim)" }}>{p.sub}</p>
+            </div>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 11, flex: 1 }}>
+              {p.features.map((f, j) => (
+                <li key={j} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, color: "var(--fg-muted)", lineHeight: 1.5, fontWeight: f.endsWith(":") ? 700 : 400 }}>
+                  <Icon name="check" size={15} color="var(--accent-bright)" strokeWidth={2.5} style={{ marginTop: 2, flexShrink: 0 }} />{f}
                 </li>
               ))}
             </ul>
-
-            <a href={waCTA} target="_blank" rel="noreferrer" className="btn btn-wa" style={{ width: "100%", justifyContent: "center", padding: "16px", fontSize: 15 }}>
-              <svg viewBox="0 0 32 32" style={{ width: 20, height: 20, fill: "#04210F", flexShrink: 0 }}><path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z" /></svg>
-              Contratar plano {plan.label} — R${plan.price}/mês
+            {p.note && (
+              <p style={{ margin: 0, fontSize: 12.5, color: "var(--fg-dim)", lineHeight: 1.55, background: "var(--bg-2)", border: "1px solid var(--line)", borderRadius: 10, padding: "11px 13px" }}>{p.note}</p>
+            )}
+            <a href={wa(`Olá! Vi a proposta da IS7 e quero o plano ${p.name}.`)} target="_blank" rel="noreferrer" className={p.highlight ? "btn btn-wa" : "btn btn-primary"} style={{ width: "100%", justifyContent: "center", padding: "15px", fontSize: 14.5 }}>
+              {p.highlight && <svg viewBox="0 0 32 32" style={{ width: 18, height: 18, fill: "#04210F", flexShrink: 0 }}><path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z"/></svg>}
+              {p.cta}
             </a>
-            <p style={{ marginTop: 12, fontSize: 12, color: "var(--fg-dim)" }}>
-              Resposta em até 1h nos dias úteis · (41) 98743-0349
-            </p>
-          </div>
-        </Reveal>
-
-        {/* Savings comparison */}
-        <Reveal delay={160}>
-          <p style={{ marginTop: 20, fontSize: 13, color: "var(--fg-dim)" }}>
-            No plano anual você economiza <strong style={{ color: "var(--accent-bright)" }}>R$ 2.880</strong> comparado ao mensal.
-          </p>
-        </Reveal>
+          </Reveal>
+        ))}
       </div>
-    </section>
-  );
-};
+
+      <Reveal style={{ textAlign: "center", marginTop: 24 }}>
+        <p style={{ fontSize: 13, color: "var(--fg-dim)" }}>Pagamento via Pix, cartão ou boleto · Resposta em até 1h · (41) 98743-0349</p>
+      </Reveal>
+    </div>
+    <style>{`@media(max-width:720px){ .plans-grid{ grid-template-columns:1fr !important; } }`}</style>
+  </section>
+);
 
 /* ---- FAQ ---- */
 const FaqItem = ({item,open,onToggle}) => {
@@ -669,16 +590,10 @@ const PropostaApp = () => {
       <main>
         <Hero/>
         <Stats/>
-        <Pain/>
         <Method/>
         <Portfolio/>
-        <PageSpeed/>
         <Reviews/>
-        <About/>
-        <HowItWorks/>
         <Pricing/>
-        <Faq/>
-        <FinalCTA/>
       </main>
       <Footer/>
       <Fab/>
