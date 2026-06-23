@@ -14,6 +14,7 @@ const ICONS = {
   "briefcase": '<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/>',
   "calendar-days": '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>',
   "check": '<path d="M20 6 9 17l-5-5"/>',
+  "credit-card": '<rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>',
   "chevron-left": '<path d="m15 18-6-6 6-6"/>',
   "chevron-right": '<path d="m9 18 6-6-6-6"/>',
   "external-link": '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
@@ -40,12 +41,31 @@ const ICONS = {
   "x": '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
 };
 
-const Icon = ({ name, size = 24, strokeWidth = 2, color = "currentColor", fill = "none", style = {} }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={color}
-    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
-    style={{ display: "inline-block", verticalAlign: "middle", flexShrink: 0, ...style }}
-    aria-hidden="true" dangerouslySetInnerHTML={{ __html: ICONS[name] || "" }} />
-);
+const Icon = ({ name, size = 24, strokeWidth = 2, color = "currentColor", fill = "none", style = {} }) => {
+  const inline = ICONS[name];
+  // Fallback: se o icone nao esta no mapa inline E o lucide estiver carregado
+  // (paginas de proposta), usa o lucide. O site principal nao carrega lucide,
+  // mas todos os icones dele estao no mapa.
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    if (!inline && typeof window !== "undefined" && window.lucide && ref.current) {
+      ref.current.innerHTML = "";
+      const i = document.createElement("i");
+      i.setAttribute("data-lucide", name);
+      ref.current.appendChild(i);
+      window.lucide.createIcons({ attrs: { width: size, height: size, "stroke-width": strokeWidth, stroke: color, fill } });
+    }
+  }, [name, size, strokeWidth, color, fill, inline]);
+  if (inline) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={color}
+        strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+        style={{ display: "inline-block", verticalAlign: "middle", flexShrink: 0, ...style }}
+        aria-hidden="true" dangerouslySetInnerHTML={{ __html: inline }} />
+    );
+  }
+  return <span ref={ref} style={{ display: "inline-flex", color, lineHeight: 0, ...style }} aria-hidden="true" />;
+};
 
 const Logo = ({ size = 26 }) => (
   <img

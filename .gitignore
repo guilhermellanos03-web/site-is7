@@ -11,6 +11,7 @@ node_modules/
 
 # Build output (gerado pelo CI a partir de src/)
 dist/
+dist-proposta/
 
 # Editor
 .vscode/

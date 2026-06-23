@@ -431,7 +431,7 @@ const PLANS = [
 
 const INCLUDES = [
   "Site profissional otimizado",
-  "Google Meu Negócio configurado",
+  "Perfil da Empresa no Google configurado",
   "Gestão de Google Ads",
   "Relatório mensal de resultados",
   "1 campanha ativa no mês",

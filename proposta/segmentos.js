@@ -12,11 +12,11 @@ window.IS7_SEGMENTOS = {
     painPoints:[
       'Clientes ligam para o concorrente porque não te encontram no Google',
       'Pagam caro por anúncio mas sem estratégia de quem faz busca de emergência',
-      'Perfil desatualizado no Google Meu Negócio afasta chamados',
+      'Perfil desatualizado no Perfil da Empresa no Google afasta chamados',
       'Sem avaliações 5 estrelas, o cliente escolhe outro',
     ],
     methodology: [
-      { icon: 'map-pin',     title: 'Posicionamento Local',  desc: 'Google Meu Negócio otimizado com fotos, horários, serviços e palavras-chave do segmento guincho — para aparecer no Maps quando alguém pesquisa na região.' },
+      { icon: 'map-pin',     title: 'Posicionamento Local',  desc: 'Perfil da Empresa no Google otimizado com fotos, horários, serviços e palavras-chave do segmento guincho — para aparecer no Maps quando alguém pesquisa na região.' },
       { icon: 'trending-up', title: 'Tráfego de Emergência', desc: "Campanhas de Google Ads focadas nas buscas de urgência: 'guincho perto de mim', 'guincho 24h', 'reboque urgente'. Cada clique é um cliente com carro parado." },
       { icon: 'star',        title: 'Conversão e Reputação', desc: 'Site rápido com botão de chamada direta + estratégia de avaliações 5 estrelas que constroem confiança e aumentam a taxa de chamados.' },
     ],
@@ -48,7 +48,7 @@ window.IS7_SEGMENTOS = {
       'Investe em panfleto mas não em quem já está procurando na internet',
     ],
     methodology: [
-      { icon: 'map-pin',     title: 'Posicionamento Local',  desc: 'Google Meu Negócio otimizado para aparecer no Maps com fotos, serviços, horários e área de cobertura — dominando a busca local.' },
+      { icon: 'map-pin',     title: 'Posicionamento Local',  desc: 'Perfil da Empresa no Google otimizado para aparecer no Maps com fotos, serviços, horários e área de cobertura — dominando a busca local.' },
       { icon: 'trending-up', title: 'Tráfego de Urgência',   desc: "Google Ads para buscas de emergência: 'chaveiro perto de mim', 'chaveiro 24h', 'copiar chave'. Aparece exatamente quando o cliente mais precisa." },
       { icon: 'star',        title: 'Confiança e Conversão', desc: 'Site com botão de ligação direta + WhatsApp + estratégia de avaliações 5 estrelas para construir reputação e bater concorrentes.' },
     ],
