@@ -231,14 +231,14 @@ const Reviews = () => (
         <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:10,marginTop:16}}>
           <h2 className="h2" style={{fontSize:"clamp(38px,5.5vw,60px)"}}>EXCELENTE</h2>
           <Stars n={5} size={24}/>
-          <p className="muted" style={{margin:0}}>5.0 · 25+ avaliações no Google</p>
+          <p className="muted" style={{margin:0}}>5.0 · 29 avaliações no Google</p>
         </div>
       </Reveal>
       <div className="grid-reviews">
         {[
-          {i:"A",name:"Allan Ferraz",    count:"11 avaliações", text:"Atendimento rápido e conciso, meu site ficou lindo e agora recebo clientes melhores investindo menos."},
-          {i:"A",name:"André Vicente",   count:"3 avaliações",  text:"Alcancei resultados expressivos e grandes feitos graças às estratégias criadas pela IS7."},
-          {i:"V",name:"Vinicius Cortiano",count:"4 avaliações", text:"Trabalho de qualidade e excelente atendimento!"},
+          {i:"M",name:"Maycon Zeclhynski",count:"há 2 semanas", text:"Trabalho excelente na construção do site e LP! Recomendo!"},
+          {i:"J",name:"Joao Victor",      count:"há 1 mês",     text:"Meu site ficou perfeito! Recomendo muito, ótimo suporte!"},
+          {i:"A",name:"Allan Ferraz",     count:"há 3 meses",   text:"Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes."},
         ].map((r,i)=>(
           <Reveal key={i} delay={i*80} className="card" style={{padding:24,display:"flex",flexDirection:"column",gap:14}}>
             <Stars/>
