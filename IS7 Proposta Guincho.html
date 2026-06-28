@@ -295,7 +295,6 @@ const PLANS = [
       "4 posts publicados no perfil durante o mês",
       "Consultoria no fim: como seguir atualizando sozinho",
     ],
-    note: "R$ 600 é o único valor: nada além disso.",
     cta: "Quero a Criação Completa",
   },
   {
@@ -305,7 +304,7 @@ const PLANS = [
     price: "R$ 350",
     priceNote: "por mês",
     headline: "A IS7 cuida do seu Google o ano todo",
-    highlight: true,
+    highlight: false,
     features: [
       "Tudo da Criação Completa, e mais:",
       "Acompanhamento e gestão durante 12 meses",
@@ -315,7 +314,6 @@ const PLANS = [
       "Resposta às avaliações dos seus clientes",
       "Relatórios e suporte direto no WhatsApp",
     ],
-    note: "Sem fidelidade — cancele quando quiser, sem multa. R$ 350/mês é o único valor: nada além disso. Da sua parte, só pedir avaliações aos clientes e enviar fotos pra gente publicar.",
     cta: "Quero a Gestão Anual",
   },
 ];
@@ -373,6 +371,41 @@ const Pricing = () => (
 );
 
 
+
+/* ─── Próximas etapas ─── */
+const NextSteps = () => (
+  <section className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
+    <div className="glow glow-blue" style={{width:300,height:300,top:0,right:-100,opacity:.35}}/>
+    <div className="wrap" style={{maxWidth:680,position:"relative",zIndex:2}}>
+      <Reveal style={{textAlign:"center",marginBottom:48}}>
+        <Eyebrow center>O que acontece depois</Eyebrow>
+        <h2 className="h2" style={{marginTop:14}}>Próximas <span className="grad-text">etapas</span>.</h2>
+      </Reveal>
+      <div style={{display:"flex",flexDirection:"column",gap:0}}>
+        {[
+          {n:"01", icon:"file-text",  title:"Contrato",            desc:"Enviamos o contrato digital para você assinar. Simples, sem burocracia — tudo pelo celular."},
+          {n:"02", icon:"credit-card",title:"Pagamento",           desc:"Pagamento via Pix, cartão ou boleto. Após a confirmação, a gente já entra em ação."},
+          {n:"03", icon:"layers",     title:"Acesso aos dados",    desc:"Você nos passa os dados do negócio: telefone, endereço, área de atendimento, fotos e serviços. Tudo pelo WhatsApp, sem complicação."},
+          {n:"04", icon:"users",      title:"Reunião de alinhamento", desc:"Uma conversa rápida (30 min) para alinhar os detalhes e definir o que vamos priorizar primeiro."},
+        ].map((s,i,arr)=>(
+          <Reveal key={i} delay={i*80} style={{display:"flex",gap:0,alignItems:"stretch"}}>
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:0,flexShrink:0}}>
+              <div style={{width:44,height:44,borderRadius:9999,background:"var(--grad)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"var(--serif)",fontWeight:800,fontSize:15,color:"#fff",flexShrink:0}}>{s.n}</div>
+              {i < arr.length-1 && <div style={{width:2,flex:1,background:"var(--line-2)",margin:"4px 0"}}/>}
+            </div>
+            <div className="card" style={{margin:"0 0 16px 20px",padding:"20px 24px",flex:1,display:"flex",gap:14,alignItems:"flex-start"}}>
+              <span className="chip" style={{width:38,height:38,flexShrink:0}}><Icon name={s.icon} size={18} color="var(--accent-bright)" strokeWidth={1.9}/></span>
+              <div>
+                <h3 style={{fontFamily:"var(--serif)",fontWeight:700,fontSize:17,margin:"0 0 6px"}}>{s.title}</h3>
+                <p style={{margin:0,fontSize:14,color:"var(--fg-muted)",lineHeight:1.65}}>{s.desc}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 /* ─── Footer ─── */
 const Ftr = () => (
@@ -538,6 +571,7 @@ const App = () => (
       <Reviews/>
       <About/>
       <Pricing/>
+      <NextSteps/>
     </main>
     <Ftr/>
   </React.Fragment>
