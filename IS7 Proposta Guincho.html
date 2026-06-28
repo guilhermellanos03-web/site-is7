@@ -23,19 +23,21 @@
   .tag-accent{ color:var(--accent-bright) !important; border-color:rgba(62,120,240,.35) !important; background:rgba(62,120,240,.10) !important; }
   .btn-ghost:hover{ border-color:var(--accent-bright) !important; background:rgba(62,120,240,.10) !important; }
   .btn-primary{ box-shadow:0 12px 30px -10px rgba(62,120,240,.6) !important; }
+  @media(max-width:768px){
+    #hero-proposta{ min-height:auto!important; padding-top:80px!important; padding-bottom:56px!important; }
+    .pain-grid{ grid-template-columns:1fr!important; }
+    .about-wrap{ grid-template-columns:1fr!important; gap:36px!important; }
+    .mobile-menu{ display:flex!important; }
+  }
 </style>
 </head>
 <body class="js-anim" data-screen-label="Proposta Guincho">
 <div id="root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/lucide@0.462.0/dist/umd/lucide.js"></script>
 <script src="lojas_virtuais/image-slot.js"></script>
 <script type="text/babel" src="site_v2/SiteCore.jsx"></script>
-<script type="text/babel" src="proposta/PropostaApp.jsx"></script>
-<script>window.IS7_SEG = 'guincho';</script>
-<script src="proposta/segmentos.js"></script>
 <script type="text/babel">
 const { Icon, Logo, Eyebrow, Reveal, StatNumber, wa, WAPP } = window.IS7v2;
 
@@ -47,32 +49,50 @@ const Stars = ({ n = 5, size = 15 }) => (
 );
 
 /* ─── Header ─── */
+const NAV_LINKS = [["#problema","Problema"],["#metodo","Método"],["#depoimentos","Depoimentos"],["#planos","Planos"]];
 const Hdr = () => {
   const [sc, setSc] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   React.useEffect(() => {
     const fn = () => setSc(window.scrollY > 16);
     fn(); window.addEventListener("scroll", fn, {passive:true});
     return () => window.removeEventListener("scroll", fn);
   }, []);
   return (
-    <header className={`hdr ${sc?"scrolled":""}`}>
+    <header className={`hdr ${sc?"scrolled":""}`} style={{display:"block",height:"auto"}}>
       <div className="wrap hdr-row">
         <a href="https://is7mkt.com.br/"><Logo size={22}/></a>
         <nav className="nav">
-          <a href="#problema">Problema</a>
-          <a href="#metodo">Método</a>
-          <a href="#depoimentos">Depoimentos</a>
-          <a href="#planos">Planos</a>
+          {NAV_LINKS.map(([h,l]) => <a key={h} href={h}>{l}</a>)}
         </nav>
-        <a href={WA} target="_blank" rel="noreferrer" className="btn btn-primary" style={{padding:"11px 22px",fontSize:14}}>Falar com IS7</a>
+        <div style={{display:"flex",alignItems:"center",gap:10}}>
+          <a href={WA} target="_blank" rel="noreferrer" className="btn btn-primary hide-sm" style={{padding:"11px 22px",fontSize:14}}>Falar com IS7</a>
+          <button className="nav-toggle" onClick={()=>setOpen(o=>!o)} aria-label="Menu">
+            <Icon name={open?"x":"menu"} size={20}/>
+          </button>
+        </div>
       </div>
+      {open && (
+        <div style={{padding:"16px 20px 20px",borderTop:"1px solid var(--line)",background:"var(--surface)"}}>
+          {NAV_LINKS.map(([h,l]) => (
+            <a key={h} href={h} onClick={()=>setOpen(false)}
+              style={{display:"block",padding:"14px 0",fontSize:16,fontWeight:600,borderBottom:"1px solid var(--line)",color:"var(--fg)"}}>
+              {l}
+            </a>
+          ))}
+          <a href={WA} target="_blank" rel="noreferrer" className="btn btn-primary" onClick={()=>setOpen(false)}
+            style={{width:"100%",justifyContent:"center",marginTop:16}}>
+            Falar com IS7
+          </a>
+        </div>
+      )}
     </header>
   );
 };
 
 /* ─── Hero ─── */
 const Hero = () => (
-  <section style={{position:"relative",overflow:"hidden",minHeight:"92vh",display:"flex",alignItems:"center",paddingTop:60,paddingBottom:80}}>
+  <section id="hero-proposta" style={{position:"relative",overflow:"hidden",minHeight:"92vh",display:"flex",alignItems:"center",paddingTop:60,paddingBottom:80}}>
     <div className="glow glow-purple" style={{width:600,height:600,top:-200,left:"50%",transform:"translateX(-50%)",animation:"glow-morph 12s ease-in-out infinite"}}/>
     <div className="glow glow-blue" style={{width:400,height:400,bottom:-180,right:-100,animation:"drift 16s ease-in-out infinite"}}/>
     <div className="gridlines"/>
@@ -99,7 +119,7 @@ const Hero = () => (
       </Reveal>
       <Reveal delay={240}>
         <div style={{display:"flex",flexWrap:"wrap",gap:24,justifyContent:"center",marginTop:40,paddingTop:32,borderTop:"1px solid var(--line)"}}>
-          {[["check-circle","5 anos de experiência"],["star","5.0 no Google"],["users","80+ projetos entregues"]].map(([ic,l])=>(
+          {[["check","5 anos de experiência"],["star","5.0 no Google"],["users","80+ projetos entregues"]].map(([ic,l])=>(
             <span key={l} style={{display:"flex",alignItems:"center",gap:7,fontSize:14,color:"var(--fg-muted)"}}>
               <Icon name={ic} size={15} color="var(--accent-bright)"/>{l}
             </span>
@@ -121,10 +141,10 @@ const Pain = () => (
       </Reveal>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}} className="pain-grid">
         {[
-          {icon:"search-x",    title:"Invisível no Google",    desc:"Seu concorrente aparece quando alguém pesquisa 'guincho perto de mim'. Você não. O chamado vai para ele."},
-          {icon:"star-off",    title:"Sem avaliações",          desc:"Cliente escolhe pelo número de estrelas. Sem avaliações 5.0, você perde para quem tem, mesmo que seja pior."},
-          {icon:"wifi-off",    title:"Site lento ou sem site",  desc:"O cliente está nervoso na beira da estrada. Se o site demora 3 segundos, ele fecha e liga para o próximo."},
-          {icon:"wifi-off",title:"Perfil desatualizado",      desc:"Horário errado, sem fotos, sem avaliações recentes — o cliente vê o perfil e escolhe outro que parece mais ativo e confiável."},
+          {icon:"search",    title:"Invisível no Google",    desc:"Seu concorrente aparece quando alguém pesquisa 'guincho perto de mim'. Você não. O chamado vai para ele."},
+          {icon:"star",    title:"Sem avaliações",          desc:"Cliente escolhe pelo número de estrelas. Sem avaliações 5.0, você perde para quem tem, mesmo que seja pior."},
+          {icon:"monitor",    title:"Site lento ou sem site",  desc:"O cliente está nervoso na beira da estrada. Se o site demora 3 segundos, ele fecha e liga para o próximo."},
+          {icon:"clock",title:"Perfil desatualizado",      desc:"Horário errado, sem fotos, sem avaliações recentes — o cliente vê o perfil e escolhe outro que parece mais ativo e confiável."},
         ].map((p,i)=>(
           <Reveal key={i} delay={i*60} className="card" style={{padding:"24px 22px",display:"flex",gap:16,alignItems:"flex-start",borderColor:"rgba(239,68,68,.18)",background:"rgba(239,68,68,.04)"}}>
             <span style={{width:40,height:40,borderRadius:12,background:"rgba(239,68,68,.14)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
@@ -155,7 +175,7 @@ const Method = () => (
         {[
           {n:"01",icon:"map-pin",     title:"Aparecer primeiro no Google",  desc:"Perfil da Empresa no Google otimizado com fotos, horários, área de atendimento e palavras-chave de urgência. Aparece no Maps quando o cliente mais precisa."},
           {n:"02",icon:"trending-up", title:"Site veloz que converte", desc:"Site rápido, otimizado para SEO e com técnicas de ranqueamento orgânico. Aparece nas buscas, carrega em menos de 2 segundos e converte visita em chamado direto."},
-          {n:"03",icon:"phone-call",  title:"Site que converte na hora",    desc:"Site rápido, botão de ligação direta e WhatsApp visível. O cliente acessa, clica e já está falando com você em menos de 10 segundos."},
+          {n:"03",icon:"star",  title:"Avaliações 5 estrelas que vendem",    desc:"Captamos avaliações reais no Perfil da Empresa. O cliente pesquisa, vê suas estrelas, compara com a concorrência e escolhe você antes mesmo de ligar para o próximo."},
         ].map((m,i)=>(
           <Reveal key={i} delay={i*80} className="card card-hover" style={{padding:30,display:"flex",flexDirection:"column",gap:14,position:"relative"}}>
             <span style={{position:"absolute",top:16,right:20,fontFamily:"var(--mono)",fontSize:13,color:"var(--fg-dim)",letterSpacing:".1em"}}>{m.n}</span>
@@ -200,10 +220,9 @@ const Portfolio = () => (
       </Reveal>
       <div className="grid-portfolio" style={{maxWidth:960,margin:"0 auto"}}>
         {[
-          {id:"gv2-p1",caption:"Guincho em Blumenau/SC",  tag:"SEO + Site"},
-          {id:"gv2-p2",caption:"Guincho 24h Curitiba/PR", tag:"Site + Maps"},
-          {id:"gv2-p3",caption:"Reboque SP Cargo",        tag:"Site + SEO"},
-          {id:"gv2-p4",caption:"Guincho 24h Londrina/PR", tag:"Site + SEO"},
+          {id:"gv2-p1",caption:"Fabi Guincho · Campinas/SP",    tag:"Site + Maps"},
+          {id:"gv2-p2",caption:"Guincho Trevisan · Curitiba/PR", tag:"Site + SEO"},
+          {id:"gv2-p3",caption:"Auto Socorro WV · Maringá/PR",   tag:"Site + Maps"},
         ].map((p,i)=>(
           <Reveal key={i} delay={(i%3)*70} className="card" style={{overflow:"hidden",display:"flex",flexDirection:"column"}}>
             <div style={{height:220,background:"var(--surface-2)",position:"relative"}}>
@@ -352,7 +371,7 @@ const Pricing = () => (
       </div>
 
       <Reveal style={{textAlign:"center",marginTop:24}}>
-        <p style={{fontSize:13,color:"var(--fg-dim)"}}>Também temos planos de 3 e 6 meses · Pagamento via Pix, cartão ou boleto · (41) 98743-0349</p>
+        <p style={{fontSize:13,color:"var(--fg-dim)"}}>Pagamento via Pix, cartão ou boleto · (41) 98743-0349</p>
       </Reveal>
     </div>
     <style>{`@media(max-width:720px){ .plans-grid{ grid-template-columns:1fr !important; } }`}</style>
@@ -517,12 +536,11 @@ const App = () => (
     <Hdr/>
     <main>
       <Hero/>
-      <PageSpeed/>
       <Pain/>
       <Method/>
       <Results/>
       <Portfolio/>
-      <HowItWorks/>
+      <PageSpeed/>
       <Reviews/>
       <About/>
       <Pricing/>
