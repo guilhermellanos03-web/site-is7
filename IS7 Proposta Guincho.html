@@ -84,12 +84,12 @@ const Hero = () => (
       </Reveal>
       <Reveal delay={60}>
         <h1 className="display" style={{maxWidth:900,margin:"0 auto",fontSize:"clamp(40px,6vw,80px)"}}>
-          Proposta Comercial<br/><span className="grad-text">Assessoria de Perfil da<br/>Empresa no Google</span>
+          Proposta Comercial<br/><span className="grad-text">Assessoria no Google</span>
         </h1>
       </Reveal>
       <Reveal delay={120}>
         <p className="lead" style={{maxWidth:580,margin:"26px auto 0"}}>
-          Quem precisa de guincho pesquisa agora, liga para o primeiro que aparecer e contrata na hora. A IS7 garante que esse primeiro seja você.
+          Quem precisa de guincho pesquisa agora e liga para o primeiro resultado confiável. A IS7 coloca você nessa posição.
         </p>
       </Reveal>
       <Reveal delay={180}>
@@ -99,7 +99,7 @@ const Hero = () => (
       </Reveal>
       <Reveal delay={240}>
         <div style={{display:"flex",flexWrap:"wrap",gap:24,justifyContent:"center",marginTop:40,paddingTop:32,borderTop:"1px solid var(--line)"}}>
-          {[["check-circle","R$ 500 mil+ gerenciados em Ads"],["star","5.0 no Google"],["users","80+ projetos entregues"]].map(([ic,l])=>(
+          {[["check-circle","5 anos de experiência"],["star","5.0 no Google"],["users","80+ projetos entregues"]].map(([ic,l])=>(
             <span key={l} style={{display:"flex",alignItems:"center",gap:7,fontSize:14,color:"var(--fg-muted)"}}>
               <Icon name={ic} size={15} color="var(--accent-bright)"/>{l}
             </span>
@@ -124,7 +124,7 @@ const Pain = () => (
           {icon:"search-x",    title:"Invisível no Google",    desc:"Seu concorrente aparece quando alguém pesquisa 'guincho perto de mim'. Você não. O chamado vai para ele."},
           {icon:"star-off",    title:"Sem avaliações",          desc:"Cliente escolhe pelo número de estrelas. Sem avaliações 5.0, você perde para quem tem, mesmo que seja pior."},
           {icon:"wifi-off",    title:"Site lento ou sem site",  desc:"O cliente está nervoso na beira da estrada. Se o site demora 3 segundos, ele fecha e liga para o próximo."},
-          {icon:"megaphone-off",title:"Ads sem estratégia",     desc:"Anuncio no Google Ads sem saber quem clicar, horário certo ou palavra-chave de urgência. Dinheiro jogado fora."},
+          {icon:"wifi-off",title:"Perfil desatualizado",      desc:"Horário errado, sem fotos, sem avaliações recentes — o cliente vê o perfil e escolhe outro que parece mais ativo e confiável."},
         ].map((p,i)=>(
           <Reveal key={i} delay={i*60} className="card" style={{padding:"24px 22px",display:"flex",gap:16,alignItems:"flex-start",borderColor:"rgba(239,68,68,.18)",background:"rgba(239,68,68,.04)"}}>
             <span style={{width:40,height:40,borderRadius:12,background:"rgba(239,68,68,.14)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
@@ -154,7 +154,7 @@ const Method = () => (
       <div className="grid-services">
         {[
           {n:"01",icon:"map-pin",     title:"Aparecer primeiro no Google",  desc:"Perfil da Empresa no Google otimizado com fotos, horários, área de atendimento e palavras-chave de urgência. Aparece no Maps quando o cliente mais precisa."},
-          {n:"02",icon:"trending-up", title:"Anúncios que trazem chamados", desc:"Google Ads configurado para buscas de emergência: 'guincho 24h', 'guincho perto de mim', 'reboque urgente'. Cada clique é um potencial chamado."},
+          {n:"02",icon:"trending-up", title:"Site veloz que converte", desc:"Site rápido, otimizado para SEO e com técnicas de ranqueamento orgânico. Aparece nas buscas, carrega em menos de 2 segundos e converte visita em chamado direto."},
           {n:"03",icon:"phone-call",  title:"Site que converte na hora",    desc:"Site rápido, botão de ligação direta e WhatsApp visível. O cliente acessa, clica e já está falando com você em menos de 10 segundos."},
         ].map((m,i)=>(
           <Reveal key={i} delay={i*80} className="card card-hover" style={{padding:30,display:"flex",flexDirection:"column",gap:14,position:"relative"}}>
@@ -175,9 +175,9 @@ const Results = () => (
     <div className="wrap">
       <div className="grid-stats">
         {[
-          {p:"R$ ",v:500,s:" mil+",l:"Investidos em Google Ads gerenciados"},
+          {p:"R$ ",v:500,s:" mil+",l:"Em projetos de marketing digital"},
           {p:"",  v:80, s:"+",   l:"Projetos entregues no Brasil"},
-          {p:"",  v:6,  s:"+",   l:"Anos de experiência com Google"},
+          {p:"",  v:5,  s:" anos", l:"De experiência em marketing digital"},
           {p:"+", v:95, s:"",    l:"Nota média PageSpeed dos nossos sites"},
         ].map((s,i)=>(
           <Reveal key={i} delay={i*70} className="card" style={{padding:"24px 16px",textAlign:"center"}}>
@@ -200,10 +200,10 @@ const Portfolio = () => (
       </Reveal>
       <div className="grid-portfolio" style={{maxWidth:960,margin:"0 auto"}}>
         {[
-          {id:"gv2-p1",caption:"Guincho em Blumenau/SC",  tag:"Google Ads + Site"},
-          {id:"gv2-p2",caption:"Guincho 24h Curitiba/PR", tag:"Google Ads + Maps"},
+          {id:"gv2-p1",caption:"Guincho em Blumenau/SC",  tag:"SEO + Site"},
+          {id:"gv2-p2",caption:"Guincho 24h Curitiba/PR", tag:"Site + Maps"},
           {id:"gv2-p3",caption:"Reboque SP Cargo",        tag:"Site + SEO"},
-          {id:"gv2-p4",caption:"Guincho 24h Londrina/PR", tag:"Google Ads"},
+          {id:"gv2-p4",caption:"Guincho 24h Londrina/PR", tag:"Site + SEO"},
         ].map((p,i)=>(
           <Reveal key={i} delay={(i%3)*70} className="card" style={{overflow:"hidden",display:"flex",flexDirection:"column"}}>
             <div style={{height:220,background:"var(--surface-2)",position:"relative"}}>
@@ -276,8 +276,10 @@ const PLANS = [
       "Criação do site profissional do guincho",
       "Perfil da Empresa no Google totalmente atualizado",
       "Gestão completa durante 1 mês",
+      "4 posts publicados no perfil durante o mês",
       "Consultoria no fim: como seguir atualizando sozinho",
     ],
+    note: "R$ 600 é o único valor: nada além disso.",
     cta: "Quero a Criação Completa",
   },
   {
@@ -291,12 +293,13 @@ const PLANS = [
     features: [
       "Tudo da Criação Completa, e mais:",
       "Acompanhamento e gestão durante 12 meses",
+      "Perfil da Empresa no Google sempre atualizado",
       "Postagens e atualizações constantes no perfil",
-      "Google Ads sempre otimizado",
+      "4 posts por mês no perfil da empresa",
       "Resposta às avaliações dos seus clientes",
       "Relatórios e suporte direto no WhatsApp",
     ],
-    note: "Sem fidelidade — cancele quando quiser, sem multa. Da sua parte, só: pedir avaliações aos clientes e enviar fotos pra gente publicar.",
+    note: "Sem fidelidade — cancele quando quiser, sem multa. R$ 350/mês é o único valor: nada além disso. Da sua parte, só pedir avaliações aos clientes e enviar fotos pra gente publicar.",
     cta: "Quero a Gestão Anual",
   },
 ];
@@ -421,7 +424,7 @@ const PageSpeed = () => (
         <p className="lead" style={{marginTop:14}}>Nossos sites são auditados pelo Google PageSpeed Insights — e entregamos sempre acima de 90 nas métricas que importam para ranquear. Site rápido aparece primeiro e converte mais chamados.</p>
       </Reveal>
       <Reveal style={{display:"flex",flexWrap:"wrap",gap:"32px 40px",justifyContent:"center",marginBottom:48}}>
-        {[{score:97,label:"Performance"},{score:98,label:"Acessibilidade"},{score:100,label:"Boas práticas"},{score:100,label:"SEO"}].map((g,i)=>(
+        {[{score:98,label:"Performance"},{score:91,label:"Acessibilidade"},{score:100,label:"Boas práticas"},{score:100,label:"SEO"}].map((g,i)=>(
           <Gauge key={i} score={g.score} label={g.label}/>
         ))}
       </Reveal>
@@ -450,7 +453,7 @@ const HowItWorks = () => (
       </Reveal>
       <div style={{display:"flex",flexDirection:"column",gap:20}}>
         {[
-          {n:"01",icon:"credit-card",title:"Pagamento",desc:"50% na aprovação e 50% na entrega. Pix, cartão ou boleto — sem complicação."},
+          {n:"01",icon:"credit-card",title:"Pagamento",desc:"Pagamento via Pix, cartão ou boleto. Simples, sem burocracia."},
           {n:"02",icon:"users",title:"Reunião de alinhamento",desc:"Entendemos a fundo o seu guincho: região de atendimento, serviços e diferenciais. Tudo vira combustível para a estratégia."},
           {n:"03",icon:"trending-up",title:"Gestão e otimização",desc:"Publicamos, otimizamos, monitoramos e ajustamos. Você acompanha os resultados e recebe um relatório claro ao final do mês."},
         ].map((s,i)=>(
@@ -489,13 +492,13 @@ const About = () => (
           <Eyebrow>Quem está por trás</Eyebrow>
           <h2 className="h2" style={{marginTop:16,fontSize:"clamp(28px,3.6vw,44px)"}}>Gente de verdade cuidando do seu <span className="grad-text">resultado</span>.</h2>
           <p className="lead" style={{marginTop:20}}>
-            À frente da IS7 está <strong style={{color:"var(--fg)"}}>Guilherme Llanos</strong>, gestor com mais de 6 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
+            À frente da IS7 está <strong style={{color:"var(--fg)"}}>Guilherme Llanos</strong>, gestor com mais de 5 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
           </p>
           <p style={{marginTop:16,color:"var(--fg-muted)",fontSize:15.5,lineHeight:1.7}}>
-            Já gerenciei mais de R$ 500 mil em Google Ads e ajudei dezenas de empresas locais a chegarem ao topo do Google — com sites que convertem e mais clientes entrando todo dia. O acompanhamento é próximo e cada real investido precisa trazer retorno real.
+            Já gerenciei mais de R$ 500 mil em projetos de marketing digital e ajudei dezenas de empresas locais a chegarem ao topo do Google — com sites que convertem e mais clientes entrando todo dia. O acompanhamento é próximo e cada real investido precisa trazer retorno real.
           </p>
           <div style={{display:"flex",flexWrap:"wrap",gap:12,marginTop:26}}>
-            {[["map-pin","Curitiba/PR"],["briefcase","+80 projetos"],["calendar-days","6+ anos"]].map(([ic,l])=>(
+            {[["map-pin","Curitiba/PR"],["briefcase","+80 projetos"],["calendar-days","5 anos"]].map(([ic,l])=>(
               <span key={l} className="tag" style={{padding:"9px 15px",fontSize:12.5}}>
                 <Icon name={ic} size={14} color="var(--accent-bright)"/>{l}
               </span>
