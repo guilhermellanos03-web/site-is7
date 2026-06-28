@@ -65,12 +65,9 @@ const Hdr = () => {
         <nav className="nav">
           {NAV_LINKS.map(([h,l]) => <a key={h} href={h}>{l}</a>)}
         </nav>
-        <div style={{display:"flex",alignItems:"center",gap:10}}>
-          <a href={WA} target="_blank" rel="noreferrer" className="btn btn-primary hide-sm" style={{padding:"11px 22px",fontSize:14}}>Falar com IS7</a>
-          <button className="nav-toggle" onClick={()=>setOpen(o=>!o)} aria-label="Menu">
-            <Icon name={open?"x":"menu"} size={20}/>
-          </button>
-        </div>
+        <button className="nav-toggle" onClick={()=>setOpen(o=>!o)} aria-label="Menu">
+          <Icon name={open?"x":"menu"} size={20}/>
+        </button>
       </div>
       {open && (
         <div style={{padding:"16px 20px 20px",borderTop:"1px solid var(--line)",background:"var(--surface)"}}>
@@ -80,9 +77,9 @@ const Hdr = () => {
               {l}
             </a>
           ))}
-          <a href={WA} target="_blank" rel="noreferrer" className="btn btn-primary" onClick={()=>setOpen(false)}
+          <a href="#planos" onClick={()=>setOpen(false)} className="btn btn-ghost"
             style={{width:"100%",justifyContent:"center",marginTop:16}}>
-            Falar com IS7
+            Ver investimento
           </a>
         </div>
       )}
@@ -114,7 +111,7 @@ const Hero = () => (
       </Reveal>
       <Reveal delay={180}>
         <div style={{display:"flex",flexWrap:"wrap",gap:14,justifyContent:"center",marginTop:36}}>
-          <a href="#planos" className="btn btn-primary btn-lg">Ver investimento <Icon name="arrow-down" size={17}/></a>
+          <a href="#problema" className="btn btn-ghost btn-lg">Ver a proposta <Icon name="arrow-down" size={17}/></a>
         </div>
       </Reveal>
       <Reveal delay={240}>
@@ -363,9 +360,6 @@ const Pricing = () => (
               ))}
             </ul>
             {p.note && <p style={{margin:0,fontSize:12.5,color:"var(--fg-dim)",lineHeight:1.55,background:"var(--bg-2)",border:"1px solid var(--line)",borderRadius:10,padding:"11px 13px"}}>{p.note}</p>}
-            <a href={wa(`Olá! Vi a proposta da IS7 para guincho e quero o plano ${p.name}.`)} target="_blank" rel="noreferrer" className="btn btn-primary" style={{width:"100%",justifyContent:"center",padding:"15px",fontSize:14.5}}>
-              {p.cta} <Icon name="arrow-right" size={17}/>
-            </a>
           </Reveal>
         ))}
       </div>
