@@ -208,34 +208,77 @@ const Results = () => (
 );
 
 /* ─── Portfolio ─── */
-const Portfolio = () => (
-  <section className="section">
-    <div className="wrap">
-      <Reveal style={{textAlign:"center",maxWidth:560,margin:"0 auto 48px"}}>
-        <Eyebrow center>Trabalhos entregues</Eyebrow>
-        <h2 className="h2" style={{marginTop:14}}>Guinchos que <span className="grad-text">já estão no topo</span>.</h2>
-      </Reveal>
-      <div className="grid-portfolio" style={{maxWidth:960,margin:"0 auto"}}>
-        {[
-          {img:"assets/portfolio/gv2-p1.webp", caption:"Fabi Guincho · Campinas/SP",    tag:"Site + Maps"},
-          {img:"assets/portfolio/gv2-p2.webp", caption:"Guincho Trevisan · Curitiba/PR", tag:"Site + SEO"},
-          {img:"assets/portfolio/gv2-p3.webp", caption:"Auto Socorro WV · Maringá/PR",   tag:"Site + Maps"},
-        ].map((p,i)=>(
-          <Reveal key={i} delay={(i%3)*70} className="card" style={{overflow:"hidden",display:"flex",flexDirection:"column"}}>
-            <div style={{height:220,background:"var(--surface-2)",position:"relative",overflow:"hidden"}}>
-              <img src={p.img} alt={p.caption} loading="lazy"
-                style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",display:"block"}}/>
-              <span className="tag tag-accent" style={{position:"absolute",top:10,left:10,backdropFilter:"blur(6px)",background:"rgba(7,10,20,.55)"}}>{p.tag}</span>
-            </div>
-            <div style={{padding:"16px 18px"}}>
-              <p style={{margin:0,fontFamily:"var(--serif)",fontWeight:700,fontSize:16}}>{p.caption}</p>
-            </div>
-          </Reveal>
-        ))}
+const PORTFOLIO_ITEMS = [
+  {img:"assets/portfolio/gv2-p1.webp", caption:"Fabi Guincho · Campinas/SP",    tag:"Site + Maps"},
+  {img:"assets/portfolio/gv2-p2.webp", caption:"Guincho Trevisan · Curitiba/PR", tag:"Site + SEO"},
+  {img:"assets/portfolio/gv2-p3.webp", caption:"Auto Socorro WV · Maringá/PR",   tag:"Site + Maps"},
+];
+
+const SiteViewer = ({item, onClose}) => {
+  React.useEffect(()=>{
+    document.body.style.overflow="hidden";
+    const fn=(e)=>{if(e.key==="Escape")onClose();};
+    window.addEventListener("keydown",fn);
+    return()=>{ document.body.style.overflow=""; window.removeEventListener("keydown",fn); };
+  },[]);
+  return (
+    <div onClick={(e)=>{if(e.target===e.currentTarget)onClose();}} style={{position:"fixed",inset:0,zIndex:9999,background:"rgba(2,4,12,.92)",backdropFilter:"blur(8px)",display:"flex",flexDirection:"column"}}>
+      {/* Barra superior */}
+      <div style={{background:"#161B2E",borderBottom:"1px solid rgba(255,255,255,.07)",padding:"10px 16px",display:"flex",alignItems:"center",gap:10,flexShrink:0}}>
+        <div style={{display:"flex",gap:6}}>
+          <button onClick={onClose} style={{width:12,height:12,borderRadius:"50%",background:"#FF5F57",border:"none",cursor:"pointer",padding:0}}/>
+          <span style={{width:12,height:12,borderRadius:"50%",background:"#FFBD2E",display:"block"}}/>
+          <span style={{width:12,height:12,borderRadius:"50%",background:"#28CA42",display:"block"}}/>
+        </div>
+        <span style={{flex:1,fontSize:12,color:"rgba(255,255,255,.4)",fontFamily:"monospace",textAlign:"center"}}>{item.caption}</span>
+        <button onClick={onClose} aria-label="Fechar" style={{background:"rgba(255,255,255,.08)",border:"1px solid rgba(255,255,255,.12)",borderRadius:7,color:"#fff",cursor:"pointer",padding:"5px 10px",fontSize:12}}>✕ Fechar</button>
+      </div>
+      {/* Imagem scrollável */}
+      <div style={{flex:1,overflowY:"auto",background:"#fff"}}>
+        <img src={item.img} alt={item.caption} style={{width:"100%",display:"block"}}/>
       </div>
     </div>
-  </section>
-);
+  );
+};
+
+const Portfolio = () => {
+  const [active, setActive] = React.useState(null);
+  return (
+    <section className="section">
+      <div className="wrap">
+        <Reveal style={{textAlign:"center",maxWidth:560,margin:"0 auto 48px"}}>
+          <Eyebrow center>Trabalhos entregues</Eyebrow>
+          <h2 className="h2" style={{marginTop:14}}>Guinchos que <span className="grad-text">já estão no topo</span>.</h2>
+        </Reveal>
+        <div className="grid-portfolio" style={{maxWidth:960,margin:"0 auto"}}>
+          {PORTFOLIO_ITEMS.map((p,i)=>(
+            <Reveal key={i} delay={(i%3)*70} className="card" style={{overflow:"hidden",display:"flex",flexDirection:"column",cursor:"pointer"}} onClick={()=>setActive(p)}>
+              <div style={{height:220,background:"var(--surface-2)",position:"relative",overflow:"hidden"}}>
+                <img src={p.img} alt={p.caption} loading="lazy"
+                  style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",display:"block",transition:"transform .4s"}}/>
+                <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(7,10,20,.55)",opacity:0,transition:"opacity .25s"}}
+                  onMouseEnter={e=>e.currentTarget.style.opacity=1} onMouseLeave={e=>e.currentTarget.style.opacity=0}>
+                  <span style={{display:"flex",alignItems:"center",gap:7,background:"var(--grad)",padding:"9px 18px",borderRadius:9999,fontSize:13,fontWeight:600,color:"#fff"}}>
+                    <Icon name="arrow-up-right" size={15}/> Ver site completo
+                  </span>
+                </div>
+                <span className="tag tag-accent" style={{position:"absolute",top:10,left:10,backdropFilter:"blur(6px)",background:"rgba(7,10,20,.55)"}}>{p.tag}</span>
+              </div>
+              <div style={{padding:"14px 18px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                <p style={{margin:0,fontFamily:"var(--serif)",fontWeight:700,fontSize:15}}>{p.caption}</p>
+                <Icon name="arrow-up-right" size={16} color="var(--accent-bright)"/>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal style={{textAlign:"center",marginTop:20}}>
+          <p style={{margin:0,fontSize:13,color:"var(--fg-dim)"}}>Clique em qualquer site para ver a página completa</p>
+        </Reveal>
+      </div>
+      {active && <SiteViewer item={active} onClose={()=>setActive(null)}/>}
+    </section>
+  );
+};
 
 /* ─── Reviews ─── */
 const Reviews = () => (
@@ -470,7 +513,7 @@ const PageSpeed = () => (
         <p className="lead" style={{marginTop:14}}>Nossos sites são auditados pelo Google PageSpeed Insights — e entregamos sempre acima de 90 nas métricas que importam para ranquear. Site rápido aparece primeiro e converte mais chamados.</p>
       </Reveal>
       <Reveal style={{display:"flex",flexWrap:"wrap",gap:"32px 40px",justifyContent:"center",marginBottom:48}}>
-        {[{score:98,label:"Performance"},{score:91,label:"Acessibilidade"},{score:100,label:"Boas práticas"},{score:100,label:"SEO"}].map((g,i)=>(
+        {[{score:90,label:"Performance"},{score:94,label:"Acessibilidade"},{score:100,label:"Boas práticas"},{score:100,label:"SEO"}].map((g,i)=>(
           <Gauge key={i} score={g.score} label={g.label}/>
         ))}
       </Reveal>
