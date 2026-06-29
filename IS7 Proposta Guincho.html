@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Guincho no Google — IS7 | Mais chamados todo dia</title>
+<title>Guincho no Google e IS7 | Mais chamados todo dia</title>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="site_v2/site.css"/>
 <style id="is7-blue">
-  /* IS7 — accent único AZUL (sem roxo), escopo desta página */
+  /* IS7 e accent único AZUL (sem roxo), escopo desta página */
   :root{
     --accent:#3E78F0; --accent-2:#2D5BFF; --accent-bright:#5C8AFF;
     --grad:linear-gradient(118deg,#5C8AFF 0%,#3E78F0 52%,#2D5BFF 100%);
@@ -101,7 +101,7 @@ const Hero = () => (
       </Reveal>
       <Reveal delay={60}>
         <h1 className="display" style={{maxWidth:900,margin:"0 auto",fontSize:"clamp(40px,6vw,80px)"}}>
-          Proposta Comercial<br/><span className="grad-text">Assessoria no Google</span>
+          <span className="grad-text">Assessoria no Google</span>
         </h1>
       </Reveal>
       <Reveal delay={120}>
@@ -141,7 +141,7 @@ const Pain = () => (
           {icon:"search",    title:"Invisível no Google",    desc:"Seu concorrente aparece quando alguém pesquisa 'guincho perto de mim'. Você não. O chamado vai para ele."},
           {icon:"star",    title:"Sem avaliações",          desc:"Cliente escolhe pelo número de estrelas. Sem avaliações 5.0, você perde para quem tem, mesmo que seja pior."},
           {icon:"monitor",    title:"Site lento ou sem site",  desc:"O cliente está nervoso na beira da estrada. Se o site demora 3 segundos, ele fecha e liga para o próximo."},
-          {icon:"clock",title:"Perfil desatualizado",      desc:"Horário errado, sem fotos, sem avaliações recentes — o cliente vê o perfil e escolhe outro que parece mais ativo e confiável."},
+          {icon:"clock",title:"Perfil desatualizado",      desc:"Horário errado, sem fotos, sem avaliações recentes e o cliente vê o perfil e escolhe outro que parece mais ativo e confiável."},
         ].map((p,i)=>(
           <Reveal key={i} delay={i*60} className="card" style={{padding:"24px 22px",display:"flex",gap:16,alignItems:"flex-start",borderColor:"rgba(239,68,68,.18)",background:"rgba(239,68,68,.04)"}}>
             <span style={{width:40,height:40,borderRadius:12,background:"rgba(239,68,68,.14)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
@@ -192,7 +192,7 @@ const Results = () => (
     <div className="wrap">
       <div className="grid-stats">
         {[
-          {p:"R$ ",v:500,s:" mil+",l:"Em projetos de marketing digital"},
+          {p:"R$ ",v:500,s:" mil+",l:"Em tráfego pago gerenciado"},
           {p:"",  v:80, s:"+",   l:"Projetos entregues no Brasil"},
           {p:"",  v:5,  s:" anos", l:"De experiência em marketing digital"},
           {p:"+", v:95, s:"",    l:"Nota média PageSpeed dos nossos sites"},
@@ -400,7 +400,7 @@ const Pricing = () => (
         <Eyebrow center>Investimento</Eyebrow>
         <h2 className="h2" style={{marginTop:14}}>Escolha como quer <span className="grad-text">começar</span>.</h2>
         <p className="lead" style={{marginTop:14,maxWidth:540,margin:"14px auto 0"}}>
-          O serviço é o mesmo — a diferença é o tempo que a IS7 fica do seu lado.
+          O serviço é o mesmo e a diferença é o tempo que a IS7 fica do seu lado.
         </p>
       </Reveal>
 
@@ -457,7 +457,7 @@ const NextSteps = () => (
       </Reveal>
       <div style={{display:"flex",flexDirection:"column",gap:0}}>
         {[
-          {n:"01", icon:"layers",  title:"Contrato",            desc:"Enviamos o contrato digital para você assinar. Simples, sem burocracia — tudo pelo celular."},
+          {n:"01", icon:"layers",  title:"Contrato",            desc:"Enviamos o contrato digital para você assinar. Simples, sem burocracia e tudo pelo celular."},
           {n:"02", icon:"credit-card",title:"Pagamento",           desc:"Pagamento via Pix, cartão ou boleto. Após a confirmação, a gente já entra em ação."},
           {n:"03", icon:"layers",     title:"Acesso aos dados",    desc:"Você nos passa os dados do negócio: telefone, endereço, área de atendimento, fotos e serviços. Tudo pelo WhatsApp, sem complicação."},
           {n:"04", icon:"users",      title:"Reunião de alinhamento", desc:"Uma conversa rápida (30 min) para alinhar os detalhes e definir o que vamos priorizar primeiro."},
@@ -541,7 +541,7 @@ const PageSpeed = () => (
       <Reveal style={{textAlign:"center",maxWidth:640,margin:"0 auto 52px"}}>
         <Eyebrow center>Desempenho técnico</Eyebrow>
         <h2 className="h2" style={{marginTop:14}}>Sites com <span className="grad-text">nota máxima</span> no Google.</h2>
-        <p className="lead" style={{marginTop:14}}>Nossos sites são auditados pelo Google PageSpeed Insights — e entregamos sempre acima de 90 nas métricas que importam para ranquear. Site rápido aparece primeiro e converte mais chamados.</p>
+        <p className="lead" style={{marginTop:14}}>Nossos sites são auditados pelo Google PageSpeed Insights e e entregamos sempre acima de 90 nas métricas que importam para ranquear. Site rápido aparece primeiro e converte mais chamados.</p>
       </Reveal>
       <Reveal style={{display:"flex",flexWrap:"wrap",gap:"32px 40px",justifyContent:"center",marginBottom:48}}>
         {[{score:90,label:"Performance"},{score:94,label:"Acessibilidade"},{score:100,label:"Boas práticas"},{score:100,label:"SEO"}].map((g,i)=>(
@@ -561,7 +561,7 @@ const PageSpeed = () => (
   </section>
 );
 
-/* ─── Como funciona após a aprovação (vinda da Guincho 1 — placeholder até o print) ─── */
+/* ─── Como funciona após a aprovação (vinda da Guincho 1 e placeholder até o print) ─── */
 const HowItWorks = () => (
   <section className="section">
     <div className="glow glow-purple" style={{width:300,height:300,bottom:-80,left:-100,opacity:.4}}/>
@@ -591,7 +591,7 @@ const HowItWorks = () => (
   </section>
 );
 
-/* ─── About (sobre mim — puxado do site principal) ─── */
+/* ─── About (sobre mim e puxado do site principal) ─── */
 const About = () => (
   <section id="sobre" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
     <div className="wrap">
@@ -614,7 +614,7 @@ const About = () => (
             À frente da IS7 está <strong style={{color:"var(--fg)"}}>Guilherme Llanos</strong>, gestor com mais de 5 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
           </p>
           <p style={{marginTop:16,color:"var(--fg-muted)",fontSize:15.5,lineHeight:1.7}}>
-            Já gerenciei mais de R$ 500 mil em tráfego pago e ajudei dezenas de empresas locais a chegarem ao topo do Google — com sites que convertem e mais clientes entrando todo dia. O acompanhamento é próximo e cada real investido precisa trazer retorno real.
+            Já gerenciei mais de R$ 500 mil em tráfego pago e ajudei dezenas de empresas locais a chegarem ao topo do Google e com sites que convertem e mais clientes entrando todo dia. O acompanhamento é próximo e cada real investido precisa trazer retorno real.
           </p>
           <div style={{display:"flex",flexWrap:"wrap",gap:12,marginTop:26}}>
             {[["map-pin","Curitiba/PR"],["briefcase","+80 projetos"],["calendar-days","5 anos"]].map(([ic,l])=>(
