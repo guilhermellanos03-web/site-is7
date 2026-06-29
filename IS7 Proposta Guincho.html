@@ -281,45 +281,76 @@ const Portfolio = () => {
 };
 
 /* ─── Reviews ─── */
-const Reviews = () => (
-  <section id="depoimentos" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
-    <div className="glow glow-blue" style={{width:320,height:320,top:40,right:-100,opacity:.4}}/>
-    <div className="wrap">
-      <Reveal style={{textAlign:"center",marginBottom:48}}>
-        <Eyebrow center>O que dizem nossos clientes</Eyebrow>
-        <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:10,marginTop:16}}>
-          <h2 className="h2" style={{fontSize:"clamp(38px,5.5vw,60px)"}}>EXCELENTE</h2>
-          <Stars n={5} size={24}/>
-          <p className="muted" style={{margin:0}}>5.0 · 29 avaliações no Google</p>
+const REVIEWS_DATA = [
+  {i:"M",color:"#4285F4",name:"Maycon Zeclhynski", count:"há 3 semanas", text:"Trabalho excelente na construção do site e LP! Recomendo!"},
+  {i:"J",color:"#34A853",name:"Joao Victor",        count:"há 1 mês",    text:"Meu site ficou perfeito! Recomendo muito, ótimo suporte!"},
+  {i:"A",color:"#EA4335",name:"Allan Ferraz",        count:"há 2 meses",  text:"Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes."},
+  {i:"R",color:"#FBBC05",name:"Rafael Almeida",      count:"há 3 semanas",text:"Fizeram meu site, a cara da empresa ficou outra. Muito bom."},
+  {i:"V",color:"#9145E6",name:"Victor Hugo",          count:"há 2 meses",  text:"Uma empresa séria que me gerou confiança e ótimos resultados. Guilherme é um excelente profissional que tira dúvidas e me traz o direcionamento correto de como investir melhor o dinheiro para ter retorno."},
+  {i:"A",color:"#4285F4",name:"André Vicente",        count:"há 2 anos",   text:"Graças às mudanças de direcionamento e grandes estratégias criadas por essa agência, alcancei resultados expressivos e grandes feitos de mercado."},
+  {i:"E",color:"#34A853",name:"Eduardo Henrique",     count:"há 2 meses",  text:"Me surpreendeu bem mais do que esperava. Nota 1000!"},
+  {i:"L",color:"#9145E6",name:"Luã De Assis",         count:"há 2 meses",  text:"Excelente! Recomendo o trabalho de olhos fechados! Grande profissional."},
+  {i:"V",color:"#EA4335",name:"VICTOR Hugo",           count:"há 1 mês",   text:"Solicitei um serviço para um site, e foi ótimo o atendimento!"},
+  {i:"J",color:"#FBBC05",name:"Jonas Neto",            count:"há 3 semanas",text:"Serviço impecável."},
+];
+
+const ReviewCard = ({r}) => (
+  <div className="card rev-card-proposta" style={{padding:"18px 20px",display:"flex",flexDirection:"column",gap:12,flexShrink:0,width:300,maxWidth:"80vw",scrollSnapAlign:"start"}}>
+    <div style={{display:"flex",alignItems:"center",gap:10}}>
+      <div style={{position:"relative",flexShrink:0}}>
+        <div style={{width:36,height:36,borderRadius:"50%",background:r.color,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:800,fontSize:14,color:"#fff",fontFamily:"var(--serif)"}}>{r.i}</div>
+        <div style={{position:"absolute",bottom:-2,right:-2,width:15,height:15,borderRadius:"50%",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 1px 3px rgba(0,0,0,.25)"}}>
+          <svg width="9" height="9" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
         </div>
-      </Reveal>
-      <div className="grid-reviews">
-        {[
-          {i:"M",name:"Maycon Zeclhynski",count:"há 2 semanas", text:"Trabalho excelente na construção do site e LP! Recomendo!"},
-          {i:"J",name:"Joao Victor",      count:"há 1 mês",     text:"Meu site ficou perfeito! Recomendo muito, ótimo suporte!"},
-          {i:"A",name:"Allan Ferraz",     count:"há 3 meses",   text:"Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes."},
-        ].map((r,i)=>(
-          <Reveal key={i} delay={i*80} className="card" style={{padding:24,display:"flex",flexDirection:"column",gap:14}}>
-            <Stars/>
-            <p style={{margin:0,fontSize:15,lineHeight:1.65}}>"{r.text}"</p>
-            <div style={{display:"flex",alignItems:"center",gap:11,marginTop:"auto",paddingTop:10,borderTop:"1px solid var(--line)"}}>
-              <span style={{width:38,height:38,borderRadius:9999,background:"var(--grad)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"var(--serif)",fontWeight:800,color:"#fff"}}>{r.i}</span>
-              <div>
-                <p style={{margin:0,fontSize:14,fontWeight:600}}>{r.name}</p>
-                <p style={{margin:0,fontSize:12,color:"var(--fg-dim)"}}>{r.count}</p>
-              </div>
-            </div>
-          </Reveal>
-        ))}
       </div>
-      <Reveal style={{textAlign:"center",marginTop:32}}>
-        <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc" target="_blank" rel="noreferrer" className="btn btn-ghost">
-          Ver todas no Google <Icon name="external-link" size={16}/>
-        </a>
-      </Reveal>
+      <div>
+        <p style={{margin:0,fontWeight:700,fontSize:13}}>{r.name}</p>
+        <p style={{margin:"1px 0 0",fontSize:11,color:"var(--fg-dim)"}}>{r.count}</p>
+      </div>
     </div>
-  </section>
+    <Stars n={5} size={13}/>
+    <p style={{margin:0,fontSize:13.5,lineHeight:1.65,color:"var(--fg-muted)",flex:1}}>{r.text}</p>
+  </div>
 );
+
+const Reviews = () => {
+  const scroller = React.useRef(null);
+  React.useEffect(()=>{
+    const el=scroller.current; if(!el) return;
+    let down=false,startX=0,startLeft=0,moved=false;
+    const md=(e)=>{down=true;moved=false;startX=e.pageX;startLeft=el.scrollLeft;};
+    const mm=(e)=>{if(!down)return;if(Math.abs(e.pageX-startX)>4)moved=true;el.scrollLeft=startLeft-(e.pageX-startX);};
+    const mu=()=>{down=false;};
+    const ck=(e)=>{if(moved){e.preventDefault();e.stopPropagation();}};
+    el.addEventListener("mousedown",md); el.addEventListener("mousemove",mm);
+    window.addEventListener("mouseup",mu); el.addEventListener("click",ck,true);
+    return()=>{el.removeEventListener("mousedown",md);el.removeEventListener("mousemove",mm);window.removeEventListener("mouseup",mu);el.removeEventListener("click",ck,true);};
+  },[]);
+  return (
+    <section id="depoimentos" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
+      <div className="glow glow-blue" style={{width:320,height:320,top:40,right:-100,opacity:.4}}/>
+      <div className="wrap">
+        <Reveal style={{textAlign:"center",marginBottom:32}}>
+          <Eyebrow center>O que dizem nossos clientes</Eyebrow>
+          <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:8,marginTop:16}}>
+            <h2 className="h2" style={{fontSize:"clamp(34px,5vw,56px)"}}>EXCELENTE</h2>
+            <Stars n={5} size={22}/>
+            <p style={{margin:0,fontSize:14,color:"var(--fg-muted)"}}>5.0 · 28 avaliações no Google</p>
+          </div>
+        </Reveal>
+        <div ref={scroller} style={{display:"flex",gap:14,overflowX:"auto",scrollSnapType:"x mandatory",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",cursor:"grab",paddingBottom:4}}>
+          {REVIEWS_DATA.map((r,i)=><ReviewCard key={i} r={r}/>)}
+        </div>
+        <Reveal style={{textAlign:"center",marginTop:24}}>
+          <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc" target="_blank" rel="noreferrer" className="btn btn-ghost">
+            Ver todas no Google <Icon name="external-link" size={16}/>
+          </a>
+        </Reveal>
+      </div>
+      <style>{`.rev-card-proposta{}`}</style>
+    </section>
+  );
+};
 
 /* ─── Pricing ─── */
 const PLANS = [
@@ -426,7 +457,7 @@ const NextSteps = () => (
       </Reveal>
       <div style={{display:"flex",flexDirection:"column",gap:0}}>
         {[
-          {n:"01", icon:"file-text",  title:"Contrato",            desc:"Enviamos o contrato digital para você assinar. Simples, sem burocracia — tudo pelo celular."},
+          {n:"01", icon:"layers",  title:"Contrato",            desc:"Enviamos o contrato digital para você assinar. Simples, sem burocracia — tudo pelo celular."},
           {n:"02", icon:"credit-card",title:"Pagamento",           desc:"Pagamento via Pix, cartão ou boleto. Após a confirmação, a gente já entra em ação."},
           {n:"03", icon:"layers",     title:"Acesso aos dados",    desc:"Você nos passa os dados do negócio: telefone, endereço, área de atendimento, fotos e serviços. Tudo pelo WhatsApp, sem complicação."},
           {n:"04", icon:"users",      title:"Reunião de alinhamento", desc:"Uma conversa rápida (30 min) para alinhar os detalhes e definir o que vamos priorizar primeiro."},
@@ -583,7 +614,7 @@ const About = () => (
             À frente da IS7 está <strong style={{color:"var(--fg)"}}>Guilherme Llanos</strong>, gestor com mais de 5 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
           </p>
           <p style={{marginTop:16,color:"var(--fg-muted)",fontSize:15.5,lineHeight:1.7}}>
-            Já gerenciei mais de R$ 500 mil em projetos de marketing digital e ajudei dezenas de empresas locais a chegarem ao topo do Google — com sites que convertem e mais clientes entrando todo dia. O acompanhamento é próximo e cada real investido precisa trazer retorno real.
+            Já gerenciei mais de R$ 500 mil em tráfego pago e ajudei dezenas de empresas locais a chegarem ao topo do Google — com sites que convertem e mais clientes entrando todo dia. O acompanhamento é próximo e cada real investido precisa trazer retorno real.
           </p>
           <div style={{display:"flex",flexWrap:"wrap",gap:12,marginTop:26}}>
             {[["map-pin","Curitiba/PR"],["briefcase","+80 projetos"],["calendar-days","5 anos"]].map(([ic,l])=>(
@@ -612,8 +643,8 @@ const App = () => (
       <PageSpeed/>
       <Reviews/>
       <About/>
-      <Pricing/>
       <NextSteps/>
+      <Pricing/>
     </main>
     <Ftr/>
   </React.Fragment>
