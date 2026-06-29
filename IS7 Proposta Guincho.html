@@ -217,14 +217,14 @@ const Portfolio = () => (
       </Reveal>
       <div className="grid-portfolio" style={{maxWidth:960,margin:"0 auto"}}>
         {[
-          {id:"gv2-p1",caption:"Fabi Guincho · Campinas/SP",    tag:"Site + Maps"},
-          {id:"gv2-p2",caption:"Guincho Trevisan · Curitiba/PR", tag:"Site + SEO"},
-          {id:"gv2-p3",caption:"Auto Socorro WV · Maringá/PR",   tag:"Site + Maps"},
+          {img:"assets/portfolio/gv2-p1.webp", caption:"Fabi Guincho · Campinas/SP",    tag:"Site + Maps"},
+          {img:"assets/portfolio/gv2-p2.webp", caption:"Guincho Trevisan · Curitiba/PR", tag:"Site + SEO"},
+          {img:"assets/portfolio/gv2-p3.webp", caption:"Auto Socorro WV · Maringá/PR",   tag:"Site + Maps"},
         ].map((p,i)=>(
           <Reveal key={i} delay={(i%3)*70} className="card" style={{overflow:"hidden",display:"flex",flexDirection:"column"}}>
-            <div style={{height:220,background:"var(--surface-2)",position:"relative"}}>
-              <image-slot id={p.id} shape="rect" anchor="top" placeholder={`Print — ${p.caption}`}
-                style={{width:"100%",height:"100%",display:"block"}}/>
+            <div style={{height:220,background:"var(--surface-2)",position:"relative",overflow:"hidden"}}>
+              <img src={p.img} alt={p.caption} loading="lazy"
+                style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",display:"block"}}/>
               <span className="tag tag-accent" style={{position:"absolute",top:10,left:10,backdropFilter:"blur(6px)",background:"rgba(7,10,20,.55)"}}>{p.tag}</span>
             </div>
             <div style={{padding:"16px 18px"}}>
@@ -476,10 +476,9 @@ const PageSpeed = () => (
       </Reveal>
       <Reveal style={{maxWidth:820,margin:"0 auto"}}>
         <div className="card" style={{padding:10,borderColor:"rgba(62,120,240,.3)"}}>
-          <div style={{background:"var(--surface-2)",borderRadius:14,overflow:"hidden",position:"relative",paddingTop:"44%"}}>
-            <image-slot id="pagespeed-guincho" shape="rect" anchor="top"
-              placeholder="Arraste aqui o print do Google PageSpeed do site"
-              style={{position:"absolute",inset:0,width:"100%",height:"100%",display:"block"}}/>
+          <div style={{borderRadius:14,overflow:"hidden"}}>
+            <img src="assets/portfolio/pagespeed-guincho.webp" alt="Google PageSpeed Insights"
+              style={{width:"100%",display:"block"}} loading="lazy"/>
           </div>
           <p style={{margin:"12px 0 4px",textAlign:"center",fontSize:13,color:"var(--fg-dim)",fontFamily:"var(--mono)",letterSpacing:".1em",textTransform:"uppercase"}}>Relatório real do Google PageSpeed Insights</p>
         </div>
