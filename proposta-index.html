@@ -3,54 +3,590 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>IS7 · Propostas</title>
+<title>Assessoria no Google e IS7 | Sua empresa no topo</title>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<style>
-  :root{ --navy:#0A1628; --accent:#3E78F0; --accent-lt:#5C8AFF; --muted:#9AA3B8; }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  body{ background:var(--navy); color:#fff; font-family:'Inter',sans-serif; min-height:100vh; }
-  .wrap{ max-width:980px; margin:0 auto; padding:72px 28px 100px; }
-  .eyebrow{ font-family:'Inter',sans-serif; font-weight:600; font-size:14px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:18px; }
-  h1{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:46px; letter-spacing:-0.03em; line-height:1.05; margin-bottom:14px; }
-  .lead{ color:var(--muted); font-size:18px; max-width:560px; margin-bottom:52px; }
-  .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
-  @media(max-width:600px){ .grid{ grid-template-columns:1fr; } h1{ font-size:32px; } }
-  a.card{ display:block; text-decoration:none; color:inherit; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.09); border-radius:18px; padding:30px 30px 28px; transition:border-color .18s, transform .18s, background .18s; }
-  a.card:hover{ border-color:rgba(92,138,255,.55); background:rgba(92,138,255,.07); transform:translateY(-3px); }
-  .seg{ font-family:'Inter',sans-serif; font-weight:600; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-lt); margin-bottom:14px; }
-  .ctitle{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:25px; letter-spacing:-0.02em; margin-bottom:8px; }
-  .cdesc{ color:var(--muted); font-size:15px; line-height:1.5; margin-bottom:22px; }
-  .go{ display:inline-flex; align-items:center; gap:8px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:15px; color:#fff; }
-  .go .arrow{ color:var(--accent-lt); transition:transform .18s; }
-  a.card:hover .go .arrow{ transform:translateX(4px); }
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="site_v2/site.css"/>
+<style id="is7-blue">
+  /* IS7 e accent único AZUL (sem roxo), escopo desta página */
+  :root{
+    --accent:#3E78F0; --accent-2:#2D5BFF; --accent-bright:#5C8AFF;
+    --grad:linear-gradient(118deg,#5C8AFF 0%,#3E78F0 52%,#2D5BFF 100%);
+    --grad-soft:linear-gradient(118deg,rgba(62,120,240,.16),rgba(45,91,255,.16));
+  }
+  ::selection{ background:rgba(62,120,240,.35); color:#fff; }
+  .glow-purple{ background:rgba(62,120,240,.30) !important; }
+  .chip{ border-color:rgba(62,120,240,.30) !important; }
+  .card-hover:hover{ border-color:rgba(62,120,240,.45) !important; box-shadow:0 24px 50px -22px rgba(62,120,240,.5) !important; }
+  .tag-accent{ color:var(--accent-bright) !important; border-color:rgba(62,120,240,.35) !important; background:rgba(62,120,240,.10) !important; }
+  .btn-ghost:hover{ border-color:var(--accent-bright) !important; background:rgba(62,120,240,.10) !important; }
+  .btn-primary{ box-shadow:0 12px 30px -10px rgba(62,120,240,.6) !important; }
+  @media(max-width:768px){
+    #hero-proposta{ min-height:auto!important; padding-top:80px!important; padding-bottom:56px!important; }
+    .pain-grid{ grid-template-columns:1fr!important; }
+    .about-wrap{ grid-template-columns:1fr!important; gap:36px!important; }
+    .mobile-menu{ display:flex!important; }
+  }
 </style>
 </head>
-<body>
-<div class="wrap">
-  <div class="eyebrow">IS7 · Propostas comerciais</div>
-  <h1>Sites de proposta</h1>
-  <p class="lead">Propostas comerciais por segmento. Clique para abrir em tela cheia.</p>
-  <div class="grid">
-    <a class="card" href="IS7 Proposta Guincho.html">
-      <div class="seg">Guincho · principal</div>
-      <div class="ctitle">Guincho no Google</div>
-      <div class="cdesc">Proposta principal de guincho, versão atual que usamos.</div>
-      <span class="go">Abrir proposta <span class="arrow">→</span></span>
-    </a>
-    <a class="card" href="IS7 Proposta Chaveiro.html">
-      <div class="seg">Chaveiro</div>
-      <div class="ctitle">Chaveiro no Google</div>
-      <div class="cdesc">Proposta de presença e captação para chaveiros.</div>
-      <span class="go">Abrir proposta <span class="arrow">→</span></span>
-    </a>
-    <a class="card" href="IS7 Proposta Assessoria.html">
-      <div class="seg">Assessoria</div>
-      <div class="ctitle">Assessoria no Google</div>
-      <div class="cdesc">Proposta voltada a serviços de assessoria.</div>
-      <span class="go">Abrir proposta <span class="arrow">→</span></span>
-    </a>
+<body class="js-anim" data-screen-label="Proposta">
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="lojas_virtuais/image-slot.js"></script>
+<script type="text/babel" src="site_v2/SiteCore.jsx"></script>
+<script type="text/babel">
+const { Icon, Logo, Eyebrow, Reveal, StatNumber, wa, WAPP } = window.IS7v2;
+
+const WA = wa("Olá! Vi a proposta da IS7 e quero saber mais.");
+
+/* ─── Stars ─── */
+const Stars = ({ n = 5, size = 15 }) => (
+  <span>{Array.from({length:n}).map((_,i)=><Icon key={i} name="star" size={size} color="#FBBF24" fill="#FBBF24" strokeWidth={0}/>)}</span>
+);
+
+/* ─── Header ─── */
+const NAV_LINKS = [["#problema","Problema"],["#metodo","Método"],["#depoimentos","Depoimentos"],["#planos","Investimento"]];
+const Hdr = () => {
+  const [sc, setSc] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  React.useEffect(() => {
+    const fn = () => setSc(window.scrollY > 16);
+    fn(); window.addEventListener("scroll", fn, {passive:true});
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
+  return (
+    <header className={`hdr ${sc?"scrolled":""}`} style={{display:"block",height:"auto"}}>
+      <div className="wrap hdr-row">
+        <a href="https://is7mkt.com.br/"><Logo size={22}/></a>
+        <nav className="nav">
+          {NAV_LINKS.map(([h,l]) => <a key={h} href={h}>{l}</a>)}
+        </nav>
+        <button className="nav-toggle" onClick={()=>setOpen(o=>!o)} aria-label="Menu">
+          <Icon name={open?"x":"menu"} size={20}/>
+        </button>
+      </div>
+      {open && (
+        <div style={{padding:"16px 20px 20px",borderTop:"1px solid var(--line)",background:"var(--surface)"}}>
+          {NAV_LINKS.map(([h,l]) => (
+            <a key={h} href={h} onClick={()=>setOpen(false)}
+              style={{display:"block",padding:"14px 0",fontSize:16,fontWeight:600,borderBottom:"1px solid var(--line)",color:"var(--fg)"}}>
+              {l}
+            </a>
+          ))}
+          <a href="#planos" onClick={()=>setOpen(false)} className="btn btn-ghost"
+            style={{width:"100%",justifyContent:"center",marginTop:16}}>
+            Ver investimento
+          </a>
+        </div>
+      )}
+    </header>
+  );
+};
+
+/* ─── Hero ─── */
+const Hero = () => (
+  <section id="hero-proposta" style={{position:"relative",overflow:"hidden",minHeight:"92vh",display:"flex",alignItems:"center",paddingTop:60,paddingBottom:80}}>
+    <div className="glow glow-purple" style={{width:600,height:600,top:-200,left:"50%",transform:"translateX(-50%)",animation:"glow-morph 12s ease-in-out infinite"}}/>
+    <div className="glow glow-blue" style={{width:400,height:400,bottom:-180,right:-100,animation:"drift 16s ease-in-out infinite"}}/>
+    <div className="gridlines"/>
+    <div className="wrap" style={{position:"relative",zIndex:2,textAlign:"center"}}>
+      <Reveal>
+        <span style={{display:"inline-flex",alignItems:"center",gap:8,background:"rgba(62,120,240,.12)",border:"1px solid rgba(62,120,240,.28)",padding:"8px 18px",borderRadius:9999,fontFamily:"var(--mono)",fontSize:12,letterSpacing:".14em",textTransform:"uppercase",color:"var(--accent-bright)",marginBottom:24}}>
+          Proposta Comercial
+        </span>
+      </Reveal>
+      <Reveal delay={60}>
+        <h1 className="display" style={{maxWidth:900,margin:"0 auto",fontSize:"clamp(40px,6vw,80px)"}}>
+          <span className="grad-text">Assessoria no Google</span>
+        </h1>
+      </Reveal>
+      <Reveal delay={120}>
+        <p className="lead" style={{maxWidth:580,margin:"26px auto 0"}}>
+          Quem precisa de um serviço pesquisa no Google e chama o primeiro resultado confiável. A IS7 coloca a sua empresa nessa posição.
+        </p>
+      </Reveal>
+      <Reveal delay={180}>
+        <div style={{display:"flex",flexWrap:"wrap",gap:14,justifyContent:"center",marginTop:36}}>
+          <a href="#problema" className="btn btn-ghost btn-lg">Ver a proposta <Icon name="arrow-down" size={17}/></a>
+        </div>
+      </Reveal>
+      <Reveal delay={240}>
+        <div style={{display:"flex",flexWrap:"wrap",gap:24,justifyContent:"center",marginTop:40,paddingTop:32,borderTop:"1px solid var(--line)"}}>
+          {[["check","5 anos de experiência"],["star","5.0 no Google"],["users","80+ projetos entregues"]].map(([ic,l])=>(
+            <span key={l} style={{display:"flex",alignItems:"center",gap:7,fontSize:14,color:"var(--fg-muted)"}}>
+              <Icon name={ic} size={15} color="var(--accent-bright)"/>{l}
+            </span>
+          ))}
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
+
+/* ─── Pain ─── */
+const Pain = () => (
+  <section id="problema" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
+    <div className="glow glow-purple" style={{width:300,height:300,top:0,left:-100,opacity:.4}}/>
+    <div className="wrap" style={{maxWidth:820}}>
+      <Reveal style={{textAlign:"center",marginBottom:48}}>
+        <Eyebrow center>Você se identifica?</Eyebrow>
+        <h2 className="h2" style={{marginTop:14}}>Por que sua empresa <span className="grad-text">perde clientes</span> todo dia.</h2>
+      </Reveal>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}} className="pain-grid">
+        {[
+          {icon:"search",  title:"Invisível no Google",      desc:"Seu concorrente aparece quando alguém pesquisa pelo seu serviço na região. Você não. O cliente vai para ele."},
+          {icon:"star",    title:"Sem avaliações",           desc:"Cliente escolhe pelo número de estrelas. Sem avaliações 5.0, você perde para quem tem, mesmo que seja pior."},
+          {icon:"monitor", title:"Site lento ou sem site",   desc:"O cliente quer resolver agora. Se o site demora ou nem existe, ele fecha e procura o próximo resultado."},
+          {icon:"clock",   title:"Perfil desatualizado",     desc:"Horário errado, sem fotos, sem avaliações recentes e o cliente vê o perfil e escolhe outro que parece mais ativo e confiável."},
+        ].map((p,i)=>(
+          <Reveal key={i} delay={i*60} className="card" style={{padding:"24px 22px",display:"flex",gap:16,alignItems:"flex-start",borderColor:"rgba(239,68,68,.18)",background:"rgba(239,68,68,.04)"}}>
+            <span style={{width:40,height:40,borderRadius:12,background:"rgba(239,68,68,.14)",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
+              <Icon name={p.icon} size={20} color="#F87171" strokeWidth={2}/>
+            </span>
+            <div>
+              <h3 style={{fontFamily:"var(--serif)",fontWeight:700,fontSize:16,margin:"0 0 6px"}}>{p.title}</h3>
+              <p style={{margin:0,fontSize:14,color:"var(--fg-muted)",lineHeight:1.6}}>{p.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+      <style>{`@media(max-width:640px){.pain-grid{grid-template-columns:1fr!important}}`}</style>
+    </div>
+  </section>
+);
+
+/* ─── Method ─── */
+const Method = () => (
+  <section id="metodo" className="section">
+    <div className="glow glow-blue" style={{width:340,height:340,top:60,right:-120,opacity:.4}}/>
+    <div className="wrap">
+      <Reveal style={{textAlign:"center",maxWidth:600,margin:"0 auto 52px"}}>
+        <Eyebrow center>Como a IS7 resolve isso</Eyebrow>
+        <h2 className="h2" style={{marginTop:14}}>3 pilares para sua empresa <span className="grad-text">receber clientes todo dia</span>.</h2>
+      </Reveal>
+      <div className="grid-services">
+        {[
+          {n:"01",icon:"map-pin",     title:"Aparecer primeiro no Google",  desc:"Perfil da Empresa no Google otimizado com fotos, horários, área de atendimento e palavras-chave. Aparece no Maps quando o cliente procura pelo seu serviço."},
+          {n:"02",icon:"trending-up", title:"Site veloz que converte", desc:"Site rápido, otimizado para SEO e com técnicas de ranqueamento orgânico. Aparece nas buscas, carrega em menos de 2 segundos e converte visita em contato direto."},
+          {n:"03",icon:"star",  title:"Avaliações 5 estrelas que vendem",    desc:"Captamos avaliações reais no Perfil da Empresa. O cliente pesquisa, vê suas estrelas, compara com a concorrência e escolhe você antes mesmo de chamar o próximo."},
+        ].map((m,i)=>(
+          <Reveal key={i} delay={i*80} className="card card-hover" style={{padding:30,display:"flex",flexDirection:"column",gap:14,position:"relative"}}>
+            <span style={{position:"absolute",top:16,right:20,fontFamily:"var(--mono)",fontSize:13,color:"var(--fg-dim)",letterSpacing:".1em"}}>{m.n}</span>
+            <span className="chip"><Icon name={m.icon} size={22} color="var(--accent-bright)" strokeWidth={1.9}/></span>
+            <h3 style={{fontFamily:"var(--serif)",fontWeight:800,fontSize:18,margin:0}}>{m.title}</h3>
+            <p style={{margin:0,fontSize:14.5,color:"var(--fg-muted)",lineHeight:1.65}}>{m.desc}</p>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── Results bar ─── */
+const Results = () => (
+  <section style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)",borderBottom:"1px solid var(--line)",padding:"48px 0"}}>
+    <div className="wrap">
+      <div className="grid-stats">
+        {[
+          {p:"R$ ",v:500,s:" mil+",l:"Em tráfego pago gerenciado"},
+          {p:"",  v:80, s:"+",   l:"Projetos entregues no Brasil"},
+          {p:"",  v:5,  s:" anos", l:"De experiência em marketing digital"},
+          {p:"+", v:95, s:"",    l:"Nota média PageSpeed dos nossos sites"},
+        ].map((s,i)=>(
+          <Reveal key={i} delay={i*70} className="card" style={{padding:"24px 16px",textAlign:"center"}}>
+            <StatNumber prefix={s.p} value={s.v} suffix={s.s} size={32}/>
+            <p style={{margin:"8px 0 0",fontSize:13,color:"var(--fg-muted)",lineHeight:1.5}}>{s.l}</p>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── Portfolio ─── */
+const PORTFOLIO_ITEMS = [
+  {img:"assets/portfolio/gv2-p1.webp", caption:"Fabi Guincho · Campinas/SP",    tag:"Site + Maps"},
+  {img:"assets/portfolio/gv2-p2.webp", caption:"Guincho Trevisan · Curitiba/PR", tag:"Site + SEO"},
+  {img:"assets/portfolio/gv2-p3.webp", caption:"Auto Socorro WV · Maringá/PR",   tag:"Site + Maps"},
+];
+
+const SiteViewer = ({item, onClose}) => {
+  React.useEffect(()=>{
+    document.body.style.overflow="hidden";
+    const fn=(e)=>{if(e.key==="Escape")onClose();};
+    window.addEventListener("keydown",fn);
+    return()=>{ document.body.style.overflow=""; window.removeEventListener("keydown",fn); };
+  },[]);
+  return (
+    <div onClick={(e)=>{if(e.target===e.currentTarget)onClose();}} style={{position:"fixed",inset:0,zIndex:9999,background:"rgba(2,4,12,.92)",backdropFilter:"blur(8px)",display:"flex",flexDirection:"column"}}>
+      {/* Barra superior */}
+      <div style={{background:"#161B2E",borderBottom:"1px solid rgba(255,255,255,.07)",padding:"10px 16px",display:"flex",alignItems:"center",gap:10,flexShrink:0}}>
+        <div style={{display:"flex",gap:6}}>
+          <button onClick={onClose} style={{width:12,height:12,borderRadius:"50%",background:"#FF5F57",border:"none",cursor:"pointer",padding:0}}/>
+          <span style={{width:12,height:12,borderRadius:"50%",background:"#FFBD2E",display:"block"}}/>
+          <span style={{width:12,height:12,borderRadius:"50%",background:"#28CA42",display:"block"}}/>
+        </div>
+        <span style={{flex:1,fontSize:12,color:"rgba(255,255,255,.4)",fontFamily:"monospace",textAlign:"center"}}>{item.caption}</span>
+        <button onClick={onClose} aria-label="Fechar" style={{background:"rgba(255,255,255,.08)",border:"1px solid rgba(255,255,255,.12)",borderRadius:7,color:"#fff",cursor:"pointer",padding:"5px 10px",fontSize:12}}>✕ Fechar</button>
+      </div>
+      {/* Imagem scrollável */}
+      <div style={{flex:1,overflowY:"auto",background:"#fff"}}>
+        <img src={item.img} alt={item.caption} style={{width:"100%",display:"block"}}/>
+      </div>
+    </div>
+  );
+};
+
+const Portfolio = () => {
+  const [active, setActive] = React.useState(null);
+  return (
+    <section className="section">
+      <div className="wrap">
+        <Reveal style={{textAlign:"center",maxWidth:560,margin:"0 auto 48px"}}>
+          <Eyebrow center>Trabalhos entregues</Eyebrow>
+          <h2 className="h2" style={{marginTop:14}}>Empresas que <span className="grad-text">já estão no topo</span>.</h2>
+        </Reveal>
+        <div className="grid-portfolio" style={{maxWidth:960,margin:"0 auto"}}>
+          {PORTFOLIO_ITEMS.map((p,i)=>(
+            <Reveal key={i} delay={(i%3)*70} className="card" style={{overflow:"hidden",display:"flex",flexDirection:"column",cursor:"pointer"}} onClick={()=>setActive(p)}>
+              <div style={{height:220,background:"var(--surface-2)",position:"relative",overflow:"hidden"}}>
+                <img src={p.img} alt={p.caption} loading="lazy"
+                  style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",display:"block",transition:"transform .4s"}}/>
+                <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(7,10,20,.55)",opacity:0,transition:"opacity .25s"}}
+                  onMouseEnter={e=>e.currentTarget.style.opacity=1} onMouseLeave={e=>e.currentTarget.style.opacity=0}>
+                  <span style={{display:"flex",alignItems:"center",gap:7,background:"var(--grad)",padding:"9px 18px",borderRadius:9999,fontSize:13,fontWeight:600,color:"#fff"}}>
+                    <Icon name="arrow-up-right" size={15}/> Ver site completo
+                  </span>
+                </div>
+                <span className="tag tag-accent" style={{position:"absolute",top:10,left:10,backdropFilter:"blur(6px)",background:"rgba(7,10,20,.55)"}}>{p.tag}</span>
+              </div>
+              <div style={{padding:"14px 18px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+                <p style={{margin:0,fontFamily:"var(--serif)",fontWeight:700,fontSize:15}}>{p.caption}</p>
+                <Icon name="arrow-up-right" size={16} color="var(--accent-bright)"/>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal style={{textAlign:"center",marginTop:20}}>
+          <p style={{margin:0,fontSize:13,color:"var(--fg-dim)"}}>Clique em qualquer site para ver a página completa</p>
+        </Reveal>
+      </div>
+      {active && <SiteViewer item={active} onClose={()=>setActive(null)}/>}
+    </section>
+  );
+};
+
+/* ─── Reviews ─── */
+const REVIEWS_DATA = [
+  {i:"M",color:"#4285F4",name:"Maycon Zeclhynski", count:"há 3 semanas", text:"Trabalho excelente na construção do site e LP! Recomendo!"},
+  {i:"J",color:"#34A853",name:"Joao Victor",        count:"há 1 mês",    text:"Meu site ficou perfeito! Recomendo muito, ótimo suporte!"},
+  {i:"A",color:"#EA4335",name:"Allan Ferraz",        count:"há 2 meses",  text:"Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes."},
+  {i:"R",color:"#FBBC05",name:"Rafael Almeida",      count:"há 3 semanas",text:"Fizeram meu site, a cara da empresa ficou outra. Muito bom."},
+  {i:"V",color:"#9145E6",name:"Victor Hugo",          count:"há 2 meses",  text:"Uma empresa séria que me gerou confiança e ótimos resultados. Guilherme é um excelente profissional que tira dúvidas e me traz o direcionamento correto de como investir melhor o dinheiro para ter retorno."},
+  {i:"A",color:"#4285F4",name:"André Vicente",        count:"há 2 anos",   text:"Graças às mudanças de direcionamento e grandes estratégias criadas por essa agência, alcancei resultados expressivos e grandes feitos de mercado."},
+  {i:"E",color:"#34A853",name:"Eduardo Henrique",     count:"há 2 meses",  text:"Me surpreendeu bem mais do que esperava. Nota 1000!"},
+  {i:"L",color:"#9145E6",name:"Luã De Assis",         count:"há 2 meses",  text:"Excelente! Recomendo o trabalho de olhos fechados! Grande profissional."},
+  {i:"V",color:"#EA4335",name:"VICTOR Hugo",           count:"há 1 mês",   text:"Solicitei um serviço para um site, e foi ótimo o atendimento!"},
+  {i:"J",color:"#FBBC05",name:"Jonas Neto",            count:"há 3 semanas",text:"Serviço impecável."},
+];
+
+const ReviewCard = ({r}) => (
+  <div className="card rev-card-proposta" style={{padding:"18px 20px",display:"flex",flexDirection:"column",gap:12,flexShrink:0,width:300,maxWidth:"80vw",scrollSnapAlign:"start"}}>
+    <div style={{display:"flex",alignItems:"center",gap:10}}>
+      <div style={{position:"relative",flexShrink:0}}>
+        <div style={{width:36,height:36,borderRadius:"50%",background:r.color,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:800,fontSize:14,color:"#fff",fontFamily:"var(--serif)"}}>{r.i}</div>
+        <div style={{position:"absolute",bottom:-2,right:-2,width:15,height:15,borderRadius:"50%",background:"#fff",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 1px 3px rgba(0,0,0,.25)"}}>
+          <svg width="9" height="9" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+      </div>
+      <div>
+        <p style={{margin:0,fontWeight:700,fontSize:13}}>{r.name}</p>
+        <p style={{margin:"1px 0 0",fontSize:11,color:"var(--fg-dim)"}}>{r.count}</p>
+      </div>
+    </div>
+    <Stars n={5} size={13}/>
+    <p style={{margin:0,fontSize:13.5,lineHeight:1.65,color:"var(--fg-muted)",flex:1}}>{r.text}</p>
   </div>
-</div>
+);
+
+const Reviews = () => {
+  const scroller = React.useRef(null);
+  React.useEffect(()=>{
+    const el=scroller.current; if(!el) return;
+    let down=false,startX=0,startLeft=0,moved=false;
+    const md=(e)=>{down=true;moved=false;startX=e.pageX;startLeft=el.scrollLeft;};
+    const mm=(e)=>{if(!down)return;if(Math.abs(e.pageX-startX)>4)moved=true;el.scrollLeft=startLeft-(e.pageX-startX);};
+    const mu=()=>{down=false;};
+    const ck=(e)=>{if(moved){e.preventDefault();e.stopPropagation();}};
+    el.addEventListener("mousedown",md); el.addEventListener("mousemove",mm);
+    window.addEventListener("mouseup",mu); el.addEventListener("click",ck,true);
+    return()=>{el.removeEventListener("mousedown",md);el.removeEventListener("mousemove",mm);window.removeEventListener("mouseup",mu);el.removeEventListener("click",ck,true);};
+  },[]);
+  return (
+    <section id="depoimentos" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
+      <div className="glow glow-blue" style={{width:320,height:320,top:40,right:-100,opacity:.4}}/>
+      <div className="wrap">
+        <Reveal style={{textAlign:"center",marginBottom:32}}>
+          <Eyebrow center>O que dizem nossos clientes</Eyebrow>
+          <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:8,marginTop:16}}>
+            <h2 className="h2" style={{fontSize:"clamp(34px,5vw,56px)"}}>EXCELENTE</h2>
+            <Stars n={5} size={22}/>
+            <p style={{margin:0,fontSize:14,color:"var(--fg-muted)"}}>5.0 · 28 avaliações no Google</p>
+          </div>
+        </Reveal>
+        <div ref={scroller} style={{display:"flex",gap:14,overflowX:"auto",scrollSnapType:"x mandatory",WebkitOverflowScrolling:"touch",scrollbarWidth:"none",cursor:"grab",paddingBottom:4}}>
+          {REVIEWS_DATA.map((r,i)=><ReviewCard key={i} r={r}/>)}
+        </div>
+        <Reveal style={{textAlign:"center",marginTop:24}}>
+          <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA?g_st=ipc" target="_blank" rel="noreferrer" className="btn btn-ghost">
+            Ver todas no Google <Icon name="external-link" size={16}/>
+          </a>
+        </Reveal>
+      </div>
+      <style>{`.rev-card-proposta{}`}</style>
+    </section>
+  );
+};
+
+/* ─── Pricing ─── */
+const PLAN = {
+  name: "Assessoria no Google",
+  tag: "Mensal",
+  price: "R$ 600",
+  priceNote: "por mês",
+  headline: "A IS7 cuida da presença da sua empresa no Google, do site à captação.",
+  features: [
+    "Criação do site profissional da sua empresa",
+    "Perfil da Empresa no Google totalmente otimizado",
+    "Gestão e acompanhamento mês a mês",
+    "4 posts por mês publicados no perfil",
+    "Perfil sempre atualizado: fotos, horários e serviços",
+    "Resposta às avaliações dos seus clientes",
+    "Relatórios e suporte direto no WhatsApp",
+  ],
+};
+
+const Pricing = () => (
+  <section id="planos" className="section" style={{background:"var(--bg)",borderTop:"1px solid var(--line)"}}>
+    <div className="glow glow-blue" style={{width:420,height:420,top:-140,left:"50%",transform:"translateX(-50%)",opacity:.45}}/>
+    <div className="wrap" style={{maxWidth:560,position:"relative",zIndex:2}}>
+      <Reveal style={{textAlign:"center",marginBottom:44}}>
+        <Eyebrow center>Investimento</Eyebrow>
+        <h2 className="h2" style={{marginTop:14}}>Tudo incluído em um <span className="grad-text">valor único</span>.</h2>
+        <p className="lead" style={{marginTop:14,maxWidth:460,margin:"14px auto 0"}}>
+          Sem taxa de criação separada. O site e a gestão do Google entram juntos na mensalidade.
+        </p>
+      </Reveal>
+
+      <Reveal className="card" style={{
+        padding:"38px 32px",display:"flex",flexDirection:"column",gap:20,
+        borderColor:"rgba(62,120,240,.5)",
+        background:"linear-gradient(160deg,rgba(62,120,240,.12),rgba(45,91,255,.07))",
+      }}>
+        <div>
+          <span style={{fontFamily:"var(--mono)",fontSize:11,letterSpacing:".14em",textTransform:"uppercase",color:"var(--accent-bright)"}}>{PLAN.tag}</span>
+          <h3 style={{fontFamily:"var(--serif)",fontWeight:800,fontSize:25,margin:"8px 0 0"}}>{PLAN.name}</h3>
+          <p style={{margin:"8px 0 0",fontSize:14.5,color:"var(--fg-muted)",lineHeight:1.55}}>{PLAN.headline}</p>
+        </div>
+        <div style={{borderTop:"1px solid var(--line)",borderBottom:"1px solid var(--line)",padding:"20px 0"}}>
+          <div style={{display:"inline-flex",alignItems:"baseline",gap:8,fontFamily:"var(--serif)",fontWeight:900,letterSpacing:"-.03em"}}>
+            <span style={{fontSize:"clamp(46px,8vw,62px)",background:"var(--grad)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",lineHeight:1}}>{PLAN.price}</span>
+            <span style={{fontSize:16,color:"var(--fg-muted)",fontFamily:"var(--sans)",fontWeight:600}}>{PLAN.priceNote}</span>
+          </div>
+        </div>
+        <ul style={{listStyle:"none",padding:0,margin:0,display:"flex",flexDirection:"column",gap:12}}>
+          {PLAN.features.map((f,j)=>(
+            <li key={j} style={{display:"flex",alignItems:"flex-start",gap:10,fontSize:14.5,color:"var(--fg-muted)",lineHeight:1.5}}>
+              <Icon name="check" size={16} color="var(--accent-bright)" strokeWidth={2.5} style={{marginTop:2,flexShrink:0}}/>{f}
+            </li>
+          ))}
+        </ul>
+      </Reveal>
+
+      <Reveal style={{textAlign:"center",marginTop:24}}>
+        <p style={{fontSize:13,color:"var(--fg-dim)"}}>Pagamento via Pix, cartão ou boleto · (41) 98743-0349</p>
+      </Reveal>
+    </div>
+  </section>
+);
+
+/* ─── Próximas etapas ─── */
+const NextSteps = () => (
+  <section className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
+    <div className="glow glow-blue" style={{width:300,height:300,top:0,right:-100,opacity:.35}}/>
+    <div className="wrap" style={{maxWidth:680,position:"relative",zIndex:2}}>
+      <Reveal style={{textAlign:"center",marginBottom:48}}>
+        <Eyebrow center>O que acontece depois</Eyebrow>
+        <h2 className="h2" style={{marginTop:14}}>Próximas <span className="grad-text">etapas</span>.</h2>
+      </Reveal>
+      <div style={{display:"flex",flexDirection:"column",gap:0}}>
+        {[
+          {n:"01", icon:"layers",        title:"Contrato",            desc:"Enviamos o contrato digital para você assinar. Simples, sem burocracia e tudo pelo celular."},
+          {n:"02", icon:"credit-card",   title:"Pagamento",           desc:"Pagamento via Pix, cartão ou boleto. Após a confirmação, a gente já entra em ação."},
+          {n:"03", icon:"file-bar-chart",title:"Acesso aos dados",    desc:"Você nos passa os dados do negócio: telefone, endereço, área de atendimento, fotos e serviços. Tudo pelo WhatsApp, sem complicação."},
+          {n:"04", icon:"users",         title:"Reunião de alinhamento", desc:"Uma conversa rápida (30 min) para alinhar os detalhes e definir o que vamos priorizar primeiro."},
+        ].map((s,i,arr)=>(
+          <Reveal key={i} delay={i*80} style={{display:"flex",gap:0,alignItems:"stretch"}}>
+            <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:0,flexShrink:0}}>
+              <div style={{width:44,height:44,borderRadius:9999,background:"var(--grad)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"var(--serif)",fontWeight:800,fontSize:15,color:"#fff",flexShrink:0}}>{s.n}</div>
+              {i < arr.length-1 && <div style={{width:2,flex:1,background:"var(--line-2)",margin:"4px 0"}}/>}
+            </div>
+            <div className="card" style={{margin:"0 0 16px 20px",padding:"20px 24px",flex:1,display:"flex",gap:14,alignItems:"flex-start"}}>
+              <span className="chip" style={{width:38,height:38,flexShrink:0}}><Icon name={s.icon} size={18} color="var(--accent-bright)" strokeWidth={1.9}/></span>
+              <div>
+                <h3 style={{fontFamily:"var(--serif)",fontWeight:700,fontSize:17,margin:"0 0 6px"}}>{s.title}</h3>
+                <p style={{margin:0,fontSize:14,color:"var(--fg-muted)",lineHeight:1.65}}>{s.desc}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── Footer ─── */
+const Ftr = () => (
+  <footer style={{background:"var(--bg)",borderTop:"1px solid var(--line)",padding:"26px 0"}}>
+    <div className="wrap" style={{display:"flex",flexWrap:"wrap",gap:14,alignItems:"center",justifyContent:"space-between"}}>
+      <a href="https://is7mkt.com.br/"><Logo size={20}/></a>
+      <p style={{margin:0,fontSize:12,color:"var(--fg-dim)"}}>CNPJ 50.201.864/0001-40 · IS7 Mídias Digitais · Curitiba/PR</p>
+      <a href={`tel:+5541987430349`} style={{fontSize:12,color:"var(--fg-dim)"}}>(41) 98743-0349</a>
+    </div>
+  </footer>
+);
+
+/* ─── Gauge (PageSpeed) ─── */
+const Gauge = ({ score, label }) => {
+  const [val, setVal] = React.useState(0);
+  const ref = React.useRef(null);
+  const ran = React.useRef(false);
+  const color = score >= 90 ? "#22C55E" : score >= 50 ? "#F97316" : "#EF4444";
+  const R = 52; const CIRC = 2 * Math.PI * R;
+  React.useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const run = () => {
+      if (ran.current) return; ran.current = true;
+      const t0 = Date.now();
+      const iv = setInterval(() => {
+        const p = Math.min(1, (Date.now()-t0)/1400);
+        setVal(score*(1-Math.pow(1-p,3)));
+        if (p>=1){ clearInterval(iv); setVal(score); }
+      }, 28);
+    };
+    if (el.getBoundingClientRect().top < window.innerHeight) { run(); return; }
+    const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run();obs.disconnect();}}),{threshold:.4});
+    obs.observe(el);
+    const safety = setTimeout(()=>{ if(!ran.current) run(); },3000);
+    return ()=>{ obs.disconnect(); clearTimeout(safety); };
+  },[score]);
+  const dash = (val/100)*CIRC;
+  return (
+    <div ref={ref} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:10}}>
+      <svg width={130} height={130} viewBox="0 0 130 130">
+        <circle cx={65} cy={65} r={R} fill="none" stroke="rgba(255,255,255,.10)" strokeWidth={9}/>
+        <circle cx={65} cy={65} r={R} fill="none" stroke={color} strokeWidth={9}
+          strokeDasharray={`${dash} ${CIRC}`} strokeLinecap="round" transform="rotate(-90 65 65)"/>
+        <text x={65} y={65} textAnchor="middle" dominantBaseline="middle"
+          fill="#fff" fontFamily="Montserrat,sans-serif" fontWeight={800} fontSize={28}>{Math.round(val)}</text>
+      </svg>
+      <span style={{fontSize:13,fontWeight:600,color:"var(--fg-muted)",textAlign:"center",maxWidth:110}}>{label}</span>
+    </div>
+  );
+};
+
+/* ─── PageSpeed ─── */
+const PageSpeed = () => (
+  <section className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)",borderBottom:"1px solid var(--line)"}}>
+    <div className="glow glow-blue" style={{width:360,height:360,top:0,right:-140,opacity:.4}}/>
+    <div className="wrap">
+      <Reveal style={{textAlign:"center",maxWidth:640,margin:"0 auto 52px"}}>
+        <Eyebrow center>Desempenho técnico</Eyebrow>
+        <h2 className="h2" style={{marginTop:14}}>Sites com <span className="grad-text">nota máxima</span> no Google.</h2>
+        <p className="lead" style={{marginTop:14}}>Nossos sites são auditados pelo Google PageSpeed Insights e entregamos sempre acima de 90 nas métricas que importam para ranquear. Site rápido aparece primeiro e converte mais clientes.</p>
+      </Reveal>
+      <Reveal style={{display:"flex",flexWrap:"wrap",gap:"32px 40px",justifyContent:"center",marginBottom:48}}>
+        {[{score:90,label:"Performance"},{score:94,label:"Acessibilidade"},{score:100,label:"Boas práticas"},{score:100,label:"SEO"}].map((g,i)=>(
+          <Gauge key={i} score={g.score} label={g.label}/>
+        ))}
+      </Reveal>
+      <Reveal style={{maxWidth:820,margin:"0 auto"}}>
+        <div className="card" style={{padding:10,borderColor:"rgba(62,120,240,.3)"}}>
+          <div style={{borderRadius:14,overflow:"hidden"}}>
+            <img src="assets/portfolio/pagespeed-guincho.webp" alt="Google PageSpeed Insights"
+              style={{width:"100%",display:"block"}} loading="lazy"/>
+          </div>
+          <p style={{margin:"12px 0 4px",textAlign:"center",fontSize:13,color:"var(--fg-dim)",fontFamily:"var(--mono)",letterSpacing:".1em",textTransform:"uppercase"}}>Relatório real do Google PageSpeed Insights</p>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
+
+/* ─── About ─── */
+const About = () => (
+  <section id="sobre" className="section" style={{background:"var(--bg-2)",borderTop:"1px solid var(--line)"}}>
+    <div className="wrap">
+      <div className="about-wrap" style={{display:"grid",gridTemplateColumns:"minmax(220px,340px) 1fr",gap:56,alignItems:"center"}}>
+        <Reveal style={{position:"relative"}}>
+          <div className="glow glow-blue" style={{width:300,height:300,top:-40,left:-40,opacity:.5}}/>
+          <div className="card" style={{position:"relative",padding:10,borderRadius:24,overflow:"hidden",borderColor:"rgba(62,120,240,.35)"}}>
+            <img src="assets/portfolio/guilherme-foto.jpg" alt="Guilherme Llanos, fundador da IS7"
+              style={{width:"100%",aspectRatio:"4/5",display:"block",borderRadius:16,objectFit:"cover",objectPosition:"top center"}}/>
+          </div>
+          <div className="card" style={{position:"absolute",bottom:-20,right:-10,padding:"13px 17px",backdropFilter:"blur(8px)",background:"rgba(10,15,30,.72)",display:"flex",alignItems:"center",gap:12}}>
+            <span className="chip" style={{width:38,height:38}}><Icon name="badge-check" size={19} color="var(--accent-bright)"/></span>
+            <div><p style={{margin:0,fontSize:13.5,fontWeight:700}}>Guilherme Llanos</p><p style={{margin:0,fontSize:12,color:"var(--fg-muted)"}}>Fundador · IS7</p></div>
+          </div>
+        </Reveal>
+        <Reveal delay={120}>
+          <Eyebrow>Quem está por trás</Eyebrow>
+          <h2 className="h2" style={{marginTop:16,fontSize:"clamp(28px,3.6vw,44px)"}}>Gente de verdade cuidando do seu <span className="grad-text">resultado</span>.</h2>
+          <p className="lead" style={{marginTop:20}}>
+            À frente da IS7 está <strong style={{color:"var(--fg)"}}>Guilherme Llanos</strong>, gestor com mais de 5 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
+          </p>
+          <p style={{marginTop:16,color:"var(--fg-muted)",fontSize:15.5,lineHeight:1.7}}>
+            Já gerenciei mais de R$ 500 mil em tráfego pago e ajudei dezenas de empresas locais a chegarem ao topo do Google e com sites que convertem e mais clientes entrando todo dia. O acompanhamento é próximo e cada real investido precisa trazer retorno real.
+          </p>
+          <div style={{display:"flex",flexWrap:"wrap",gap:12,marginTop:26}}>
+            {[["map-pin","Curitiba/PR"],["briefcase","+80 projetos"],["calendar-days","5 anos"]].map(([ic,l])=>(
+              <span key={l} className="tag" style={{padding:"9px 15px",fontSize:12.5}}>
+                <Icon name={ic} size={14} color="var(--accent-bright)"/>{l}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </div>
+    <style>{`@media(max-width:760px){.about-wrap{grid-template-columns:1fr !important;gap:46px !important;}.about-wrap > *:first-child{max-width:300px;margin:0 auto;}}`}</style>
+  </section>
+);
+
+/* ─── App ─── */
+const App = () => (
+  <React.Fragment>
+    <Hdr/>
+    <main>
+      <Hero/>
+      <Pain/>
+      <Method/>
+      <Results/>
+      <Portfolio/>
+      <PageSpeed/>
+      <Reviews/>
+      <About/>
+      <NextSteps/>
+      <Pricing/>
+    </main>
+    <Ftr/>
+  </React.Fragment>
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
 </body>
 </html>

@@ -95,8 +95,8 @@ PAGES.forEach(function (pair) {
   html = html.replace(/href="IS7 Proposta Guincho\.html"/g, 'href="/guincho"');
   html = html.replace(/href="IS7 Proposta Chaveiro\.html"/g, 'href="/chaveiro"');
   html = html.replace(/href="IS7 Proposta Assessoria\.html"/g, 'href="/assessoria"');
-  // Compila JSX inline (guincho e chaveiro sao paginas autonomas)
-  if (pair[1] === "guincho.html" || pair[1] === "chaveiro.html") {
+  // Compila JSX inline (index/guincho/chaveiro sao paginas autonomas)
+  if (pair[1] === "index.html" || pair[1] === "guincho.html" || pair[1] === "chaveiro.html") {
     var label = pair[1].replace(".html", "");
     html = compileProposalPage(html, label);
     console.log("[proposta] " + pair[1] + ": JSX pre-compilado (sem Babel no navegador)");
