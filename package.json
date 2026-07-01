@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "node tools/build.js",
     "prerender": "node tools/prerender.js",
-    "build": "node tools/build.js && node tools/prerender.js"
+    "build": "node tools/build.js && node tools/prerender.js",
+    "build-proposta": "node tools/build-proposta.js"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
