@@ -26,7 +26,7 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Curitiba", "addressRegion": "PR", "addressCountry": "BR" },
   "areaServed": { "@type": "Country", "name": "Brasil" },
   "description": "Assessoria de marketing digital: posicionamento no Google, sites profissionais, landing pages, lojas virtuais e tráfego pago.",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "29" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "28" },
   "sameAs": ["https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA"]
 }
 </script>
@@ -40,7 +40,7 @@
 /* ============================================================
    IS7 — Modelo Home v3 (CSS crítico inline, sem Babel/React)
    Mesmos tokens do site (site_v2/site.css), com adições: bento
-   grid, marquee de clientes, seção blog, antes/depois métrico.
+   Método S7, seção blog, antes/depois métrico.
    ============================================================ */
 :root{
   --bg:#070A14; --bg-2:#0A0F1E; --surface:#0E1426; --surface-2:#131A30;
@@ -112,10 +112,6 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
 @keyframes glow-morph{0%,100%{border-radius:40% 60% 70% 30%/40% 50% 60% 50%;}50%{border-radius:30% 70% 60% 40%/50% 60% 30% 60%;}}
 @keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(24px,-20px);}}
 @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
-@keyframes marq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.marquee{display:flex;gap:56px;width:max-content;animation:marq 30s linear infinite;}
-.marquee-mask{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);overflow:hidden;}
-@media (prefers-reduced-motion:reduce){.marquee{animation:none;flex-wrap:wrap;}}
 .hdr{position:sticky;top:0;z-index:60;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent;}
 .hdr.scrolled{background:rgba(7,10,20,.78);backdrop-filter:blur(14px);border-bottom-color:var(--line);}
 [data-theme="light"] .hdr.scrolled{background:rgba(244,245,255,.90);}
@@ -140,10 +136,6 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
 .browser{border-radius:14px;overflow:hidden;border:1px solid var(--line-2);background:#0b1322;box-shadow:0 30px 60px -24px rgba(0,0,0,.7);}
 .browser-bar{background:#0f1830;padding:9px 13px;display:flex;align-items:center;gap:8px;}
 .browser-dot{width:9px;height:9px;border-radius:9999px;}
-/* bento */
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;}
-.bento > *{grid-column:span 2;}
-.bento .b-wide{grid-column:span 3;}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .grid-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
@@ -151,8 +143,6 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
   .grid-2{grid-template-columns:1fr;gap:40px;}
   .grid-stats{grid-template-columns:repeat(2,1fr);}
   .grid-3{grid-template-columns:1fr;}
-  .bento{grid-template-columns:1fr 1fr;}
-  .bento > *,.bento .b-wide{grid-column:span 2;}
   .nav,.hdr .btn-hdr{display:none;}
   .nav-toggle{display:inline-flex;}
 }
@@ -177,7 +167,7 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
   <div class="wrap hdr-row">
     <a href="#topo" aria-label="IS7"><span class="logo"><span class="i">i</span><span class="s7">S7</span></span></a>
     <nav class="nav">
-      <a href="#servicos">Serviços</a>
+      <a href="#metodo">Método</a>
       <a href="#resultados">Resultados</a>
       <a href="#cases">Cases</a>
       <a href="#blog">Blog</a>
@@ -195,7 +185,7 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
     </div>
   </div>
   <div class="mobile-panel" id="mobilePanel" style="border-top:1px solid var(--line);background:var(--bg-2);padding:14px 24px 22px;">
-    <a href="#servicos" style="display:block;padding:13px 0;font-size:16px;border-bottom:1px solid var(--line);">Serviços</a>
+    <a href="#metodo" style="display:block;padding:13px 0;font-size:16px;border-bottom:1px solid var(--line);">Método</a>
     <a href="#resultados" style="display:block;padding:13px 0;font-size:16px;border-bottom:1px solid var(--line);">Resultados</a>
     <a href="#cases" style="display:block;padding:13px 0;font-size:16px;border-bottom:1px solid var(--line);">Cases</a>
     <a href="#blog" style="display:block;padding:13px 0;font-size:16px;border-bottom:1px solid var(--line);">Blog</a>
@@ -231,34 +221,10 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
     <div class="reveal" style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:36px;padding-top:30px;border-top:1px solid var(--line);">
       <span style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--fg-muted);">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        <strong style="color:var(--fg);">5.0</strong>&nbsp;no Google · 29 avaliações
+        <strong style="color:var(--fg);">5.0</strong>&nbsp;no Google · 28 avaliações
       </span>
-      <span class="hide-sm" style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--fg-muted);"><strong style="color:var(--fg);">+80</strong>&nbsp;projetos entregues</span>
-      <span class="hide-sm" style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--fg-muted);"><strong style="color:var(--fg);">6 anos</strong>&nbsp;de mercado</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROVA SOCIAL IMEDIATA (marquee de clientes) ============ -->
-<section style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;">
-  <div class="marquee-mask">
-    <div class="marquee" aria-hidden="true">
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Angelo Car</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Degustare</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Tribbo Street</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">RC Soft Service</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Luã Advogado</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Chaveiro Assistência 24h</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">MK Distribuidora de Vinhos</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Guincho Trevisan</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Angelo Car</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Degustare</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Tribbo Street</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">RC Soft Service</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Luã Advogado</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Chaveiro Assistência 24h</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">MK Distribuidora de Vinhos</span>
-      <span style="font-family:var(--serif);font-weight:700;font-size:15px;color:var(--fg-dim);white-space:nowrap;">Guincho Trevisan</span>
+      <span class="hide-sm" style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--fg-muted);"><strong style="color:var(--fg);">+100</strong>&nbsp;projetos entregues</span>
+      <span class="hide-sm" style="display:flex;align-items:center;gap:7px;font-size:14px;color:var(--fg-muted);"><strong style="color:var(--fg);">5 anos</strong>&nbsp;de mercado</span>
     </div>
   </div>
 </section>
@@ -272,11 +238,11 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
         <p style="margin:10px 0 0;font-size:13.5px;color:var(--fg-muted);">Investidos em Google Ads</p>
       </div>
       <div class="reveal card" style="padding:26px 18px;text-align:center;">
-        <span class="stat-num" data-count="6" data-suffix="+">6+</span>
+        <span class="stat-num" data-count="5" data-suffix="+">5+</span>
         <p style="margin:10px 0 0;font-size:13.5px;color:var(--fg-muted);">Anos de experiência</p>
       </div>
       <div class="reveal card" style="padding:26px 18px;text-align:center;">
-        <span class="stat-num" data-count="80" data-prefix="+">+80</span>
+        <span class="stat-num" data-count="100" data-prefix="+">+100</span>
         <p style="margin:10px 0 0;font-size:13.5px;color:var(--fg-muted);">Projetos entregues</p>
       </div>
       <div class="reveal card" style="padding:26px 18px;text-align:center;">
@@ -287,56 +253,113 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
   </div>
 </section>
 
-<!-- ============ SERVIÇOS EM BENTO GRID (cada card -> página de produto) ============ -->
-<section id="servicos" class="section" style="background:var(--bg-2);border-top:1px solid var(--line);">
+<!-- ============ MÉTODO S7 (7 etapas, identidade da marca) ============ -->
+<section id="metodo" class="section" style="background:var(--bg-2);border-top:1px solid var(--line);overflow:hidden;">
   <div class="glow glow-purple" style="width:380px;height:380px;top:120px;left:-200px;opacity:.5;"></div>
-  <div class="wrap">
-    <div class="reveal" style="max-width:640px;margin-bottom:52px;">
-      <span class="eyebrow">O que fazemos</span>
-      <h2 class="h2" style="margin-top:16px;">Cada serviço tem uma página. Cada página, <span class="grad-text">um objetivo</span>.</h2>
-      <p class="lead" style="margin-top:18px;">Clique em qualquer serviço para ver como funciona, o que está incluído e exemplos reais. Do primeiro clique no Google até a venda fechada.</p>
+  <!-- Marca d'agua: o 7 da IS7 -->
+  <span aria-hidden="true" style="position:absolute;right:-30px;top:30px;font-family:var(--serif);font-weight:900;font-size:clamp(260px,32vw,500px);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.07;pointer-events:none;user-select:none;">7</span>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="reveal" style="max-width:680px;margin-bottom:10px;">
+      <span class="eyebrow">Nosso método</span>
+      <h2 class="h2" style="margin-top:16px;">Método <span class="grad-text">S7</span>: as 7 etapas que colocam sua empresa no <span class="grad-text">topo do Google</span>.</h2>
+      <p class="lead" style="margin-top:18px;">A gente não vende serviço solto. Aplicamos um método completo em que Google, site e tráfego trabalham juntos, na ordem certa, para a sua empresa ser encontrada, escolhida e contratada.</p>
     </div>
-    <div class="bento">
-      <!-- Google (wide) -->
-      <a href="#" class="reveal card card-hover b-wide" style="padding:30px;display:flex;flex-direction:column;gap:14px;position:relative;">
-        <span style="position:absolute;top:18px;right:22px;font-family:var(--mono);font-size:13px;color:var(--fg-dim);">01</span>
-        <span class="chip"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
-        <h3 style="font-size:20px;font-weight:800;">Posicionamento no Google</h3>
-        <p style="margin:0;font-size:14.5px;color:var(--fg-muted);line-height:1.6;">Apareça primeiro quando o cliente procura pelo seu serviço. Perfil da Empresa otimizado, SEO local e avaliações 5 estrelas que fazem o telefone tocar.</p>
-        <span class="link-arrow" style="margin-top:auto;">Ver como funciona <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </a>
-      <!-- Sites (wide) -->
-      <a href="#" class="reveal card card-hover b-wide" style="padding:30px;display:flex;flex-direction:column;gap:14px;position:relative;">
-        <span style="position:absolute;top:18px;right:22px;font-family:var(--mono);font-size:13px;color:var(--fg-dim);">02</span>
-        <span class="chip"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
-        <h3 style="font-size:20px;font-weight:800;">Sites profissionais</h3>
-        <p style="margin:0;font-size:14.5px;color:var(--fg-muted);line-height:1.6;">Um site que carrega num piscar e transforma visita em cliente. Nota +90 no PageSpeed, otimizado para o celular e para o Google. No ar em poucos dias.</p>
-        <span class="link-arrow" style="margin-top:auto;">Ver como funciona <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </a>
-      <!-- Landing Pages (novo, com selo) -->
-      <a href="landing-pages.html" class="reveal card card-hover" style="padding:28px;display:flex;flex-direction:column;gap:13px;position:relative;border-color:rgba(145,69,230,.5);">
-        <span style="position:absolute;top:-11px;left:24px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.1em;padding:4px 13px;border-radius:9999px;">NOVA PÁGINA</span>
-        <span class="chip" style="width:44px;height:44px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-        <h3 style="font-size:17.5px;font-weight:800;">Landing pages</h3>
-        <p style="margin:0;font-size:13.5px;color:var(--fg-muted);line-height:1.6;">Página de vendas, captura de leads ou portfólio. Feita para uma coisa só: converter.</p>
-        <span class="link-arrow" style="margin-top:auto;font-size:13px;">Conhecer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </a>
-      <!-- Lojas virtuais -->
-      <a href="#" class="reveal card card-hover" style="padding:28px;display:flex;flex-direction:column;gap:13px;position:relative;">
-        <span class="chip" style="width:44px;height:44px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>
-        <h3 style="font-size:17.5px;font-weight:800;">Lojas virtuais</h3>
-        <p style="margin:0;font-size:13.5px;color:var(--fg-muted);line-height:1.6;">Catálogo completo com pedido direto no WhatsApp, sem mensalidade de plataforma.</p>
-        <span class="link-arrow" style="margin-top:auto;font-size:13px;">Conhecer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </a>
-      <!-- Tráfego pago -->
-      <a href="#" class="reveal card card-hover" style="padding:28px;display:flex;flex-direction:column;gap:13px;position:relative;">
-        <span class="chip" style="width:44px;height:44px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
-        <h3 style="font-size:17.5px;font-weight:800;">Tráfego pago</h3>
-        <p style="margin:0;font-size:13.5px;color:var(--fg-muted);line-height:1.6;">Google Ads trazendo clientes qualificados todos os dias, com relatórios claros.</p>
-        <span class="link-arrow" style="margin-top:auto;font-size:13px;">Conhecer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
-      </a>
+    <div style="max-width:760px;margin:44px 0 0;display:flex;flex-direction:column;">
+      <div class="reveal" style="display:flex;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+          <div style="width:46px;height:46px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">01</div>
+          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
+        </div>
+        <div class="card" style="margin:0 0 14px 20px;padding:20px 24px;flex:1;display:flex;gap:16px;align-items:flex-start;">
+          <span class="chip" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;margin:0 0 5px;">Diagnóstico</h3>
+            <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.6;">Raio-x gratuito da sua presença digital: como você aparece no Google hoje, o que os concorrentes fazem e onde estão os buracos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+          <div style="width:46px;height:46px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">02</div>
+          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
+        </div>
+        <div class="card" style="margin:0 0 14px 20px;padding:20px 24px;flex:1;display:flex;gap:16px;align-items:flex-start;">
+          <span class="chip" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;margin:0 0 5px;">Posicionamento no Google</h3>
+            <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.6;">Perfil da Empresa otimizado por completo: categoria certa, fotos, área de atendimento e palavras-chave. Você aparece quando o cliente procura.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+          <div style="width:46px;height:46px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">03</div>
+          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
+        </div>
+        <div class="card" style="margin:0 0 14px 20px;padding:20px 24px;flex:1;display:flex;gap:16px;align-items:flex-start;">
+          <span class="chip" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;margin:0 0 5px;">Site que converte</h3>
+            <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.6;">Site profissional ou landing page com nota 90+ de velocidade, feito para transformar a visita em chamada no WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+          <div style="width:46px;height:46px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">04</div>
+          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
+        </div>
+        <div class="card" style="margin:0 0 14px 20px;padding:20px 24px;flex:1;display:flex;gap:16px;align-items:flex-start;">
+          <span class="chip" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;margin:0 0 5px;">Reputação 5 estrelas</h3>
+            <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.6;">Estratégia de avaliações reais no Google. O cliente compara, vê suas estrelas e escolhe você antes de ligar para o concorrente.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+          <div style="width:46px;height:46px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">05</div>
+          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
+        </div>
+        <div class="card" style="margin:0 0 14px 20px;padding:20px 24px;flex:1;display:flex;gap:16px;align-items:flex-start;">
+          <span class="chip" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;margin:0 0 5px;">Tráfego pago</h3>
+            <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.6;">Google Ads com verba controlada para acelerar o que o orgânico ainda não entrega: clientes qualificados chegando todos os dias.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+          <div style="width:46px;height:46px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">06</div>
+          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
+        </div>
+        <div class="card" style="margin:0 0 14px 20px;padding:20px 24px;flex:1;display:flex;gap:16px;align-items:flex-start;">
+          <span class="chip" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;margin:0 0 5px;">Autoridade e conteúdo</h3>
+            <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.6;">SEO e conteúdo que fazem sua empresa crescer no orgânico e depender cada vez menos de anúncio para vender.</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+          <div style="width:46px;height:46px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">07</div>
+        </div>
+        <div class="card" style="margin:0 0 0 20px;padding:20px 24px;flex:1;display:flex;gap:16px;align-items:flex-start;border-color:rgba(145,69,230,.4);">
+          <span class="chip" style="width:40px;height:40px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M12 18v-4"/><path d="M8 18v-2"/><path d="M16 18v-6"/></svg></span>
+          <div>
+            <h3 style="font-size:17px;font-weight:700;margin:0 0 5px;">Acompanhamento contínuo</h3>
+            <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.6;">Relatório mensal claro, atendimento direto no WhatsApp e otimização constante. O método não para de rodar, e seu resultado também não.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="reveal" style="margin:22px 0 0;font-size:12.5px;color:var(--fg-dim);text-align:center;">No modelo, a página de Landing Pages já está pronta. As demais entram na sequência, uma URL por serviço.</p>
+    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:36px;">
+      <a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Quero%20aplicar%20o%20M%C3%A9todo%20S7%20na%20minha%20empresa." class="btn btn-primary btn-lg">Aplicar o Método S7 na minha empresa</a>
+      <span style="font-size:13px;color:var(--fg-dim);">Começa pelo diagnóstico gratuito, sem compromisso.</span>
+    </div>
   </div>
 </section>
 
@@ -432,57 +455,6 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
   </div>
 </section>
 
-<!-- ============ PROCESSO ============ -->
-<section class="section">
-  <div class="wrap" style="max-width:780px;">
-    <div class="reveal" style="text-align:center;margin-bottom:52px;">
-      <span class="eyebrow" style="justify-content:center;">Como trabalhamos</span>
-      <h2 class="h2" style="margin-top:14px;">Simples para você. <span class="grad-text">Completo por dentro.</span></h2>
-    </div>
-    <div style="display:flex;flex-direction:column;">
-      <div class="reveal" style="display:flex;align-items:stretch;">
-        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-          <div style="width:44px;height:44px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">01</div>
-          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
-        </div>
-        <div class="card" style="margin:0 0 16px 20px;padding:20px 24px;flex:1;">
-          <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;">Diagnóstico gratuito</h3>
-          <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.65;">Analisamos sua presença digital: como você aparece no Google, seu site, suas avaliações. Você recebe um raio-x honesto, sem compromisso.</p>
-        </div>
-      </div>
-      <div class="reveal" style="display:flex;align-items:stretch;">
-        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-          <div style="width:44px;height:44px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">02</div>
-          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
-        </div>
-        <div class="card" style="margin:0 0 16px 20px;padding:20px 24px;flex:1;">
-          <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;">Estratégia sob medida</h3>
-          <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.65;">Montamos o plano certo para o seu momento: Google, site, landing page, loja ou tráfego. Sem pacote engessado.</p>
-        </div>
-      </div>
-      <div class="reveal" style="display:flex;align-items:stretch;">
-        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-          <div style="width:44px;height:44px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">03</div>
-          <div style="width:2px;flex:1;background:var(--line-2);margin:4px 0;"></div>
-        </div>
-        <div class="card" style="margin:0 0 16px 20px;padding:20px 24px;flex:1;">
-          <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;">Execução rápida</h3>
-          <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.65;">Colocamos tudo no ar em poucos dias: perfil otimizado, site veloz, campanhas rodando. Você acompanha pelo WhatsApp.</p>
-        </div>
-      </div>
-      <div class="reveal" style="display:flex;align-items:stretch;">
-        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
-          <div style="width:44px;height:44px;border-radius:9999px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:800;font-size:15px;color:#fff;">04</div>
-        </div>
-        <div class="card" style="margin:0 0 0 20px;padding:20px 24px;flex:1;">
-          <h3 style="font-size:17px;font-weight:700;margin:0 0 6px;">Acompanhamento próximo</h3>
-          <p style="margin:0;font-size:14px;color:var(--fg-muted);line-height:1.65;">Relatórios mensais claros, ajustes contínuos e atendimento direto com quem faz. Gente de verdade cuidando do seu resultado.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ REVIEWS ============ -->
 <section class="section" style="background:var(--bg-2);border-top:1px solid var(--line);">
   <div class="glow glow-purple" style="width:320px;height:320px;top:40px;left:-100px;opacity:.35;"></div>
@@ -492,7 +464,7 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
       <div style="display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:16px;">
         <h2 class="h2" style="font-size:clamp(34px,5vw,54px);">EXCELENTE</h2>
         <span style="display:inline-flex;gap:3px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-        <p style="margin:0;font-size:14px;color:var(--fg-muted);">5.0 · 29 avaliações no Google</p>
+        <p style="margin:0;font-size:14px;color:var(--fg-muted);">5.0 · 28 avaliações no Google</p>
       </div>
     </div>
     <div id="reviewScroller" style="display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;cursor:grab;"></div>
@@ -524,12 +496,12 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
     <div class="reveal">
       <span class="eyebrow">Quem está por trás</span>
       <h2 class="h2" style="margin-top:16px;">Gente de verdade cuidando do seu <span class="grad-text">resultado</span>.</h2>
-      <p class="lead" style="margin-top:20px;">À frente da IS7 está <strong style="color:var(--fg);">Guilherme Llanos</strong>, gestor com mais de 6 anos de experiência em marketing digital, de Curitiba para todo o Brasil.</p>
+      <p class="lead" style="margin-top:20px;">À frente da IS7 está <strong style="color:var(--fg);">Guilherme Llanos</strong>, gestor com mais de 5 anos de experiência em marketing digital, de Curitiba para todo o Brasil.</p>
       <p style="margin-top:16px;color:var(--fg-muted);font-size:15.5px;line-height:1.7;">Com foco em resultado real, Guilherme lidera uma operação que já ajudou dezenas de empresas a aparecerem no Google, terem sites que convertem e venderem mais pela internet. O acompanhamento é próximo, as estratégias são ajustadas continuamente e o compromisso sempre é com o crescimento do cliente.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;">
         <span class="tag" style="padding:9px 15px;font-size:12.5px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Curitiba / PR</span>
-        <span class="tag" style="padding:9px 15px;font-size:12.5px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>+80 projetos</span>
-        <span class="tag" style="padding:9px 15px;font-size:12.5px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>6+ anos</span>
+        <span class="tag" style="padding:9px 15px;font-size:12.5px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>+100 projetos</span>
+        <span class="tag" style="padding:9px 15px;font-size:12.5px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>5+ anos</span>
       </div>
       <div style="margin-top:32px;">
         <a href="https://wa.me/5541987430349?text=Ol%C3%A1%2C%20Guilherme!%20Quero%20conversar%20sobre%20a%20presen%C3%A7a%20digital%20da%20minha%20empresa." class="btn btn-primary">Conversar com a IS7
@@ -555,7 +527,7 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
       </a>
     </div>
     <div class="grid-3">
-      <a href="#" class="reveal card card-hover" style="overflow:hidden;display:flex;flex-direction:column;">
+      <a href="blog/quanto-custa-um-site-profissional.html" class="reveal card card-hover" style="overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:150px;background:linear-gradient(135deg,rgba(145,69,230,.25),rgba(59,108,255,.18));display:flex;align-items:center;justify-content:center;">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
         </div>
@@ -566,30 +538,30 @@ body.js-anim .reveal.in{opacity:1;transform:none;}
           <span class="link-arrow" style="font-size:13px;">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </div>
       </a>
-      <a href="#" class="reveal card card-hover" style="overflow:hidden;display:flex;flex-direction:column;">
+      <a href="blog/landing-page-ou-site-institucional.html" class="reveal card card-hover" style="overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:150px;background:linear-gradient(135deg,rgba(59,108,255,.22),rgba(145,69,230,.18));display:flex;align-items:center;justify-content:center;">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
         <div style="padding:22px;display:flex;flex-direction:column;gap:10px;flex:1;">
           <span class="tag tag-accent" style="align-self:flex-start;">Landing pages</span>
-          <h3 style="font-size:17px;font-weight:800;line-height:1.35;">O que é uma landing page e por que ela converte mais que um site comum</h3>
-          <p style="margin:0;font-size:13.5px;color:var(--fg-muted);line-height:1.6;flex:1;">A diferença entre informar e vender, e quando cada formato faz sentido para o seu negócio.</p>
+          <h3 style="font-size:17px;font-weight:800;line-height:1.35;">Landing page ou site institucional: qual o seu negócio precisa primeiro?</h3>
+          <p style="margin:0;font-size:13.5px;color:var(--fg-muted);line-height:1.6;flex:1;">Compare objetivo, prazo e investimento, e descubra o que faz sentido para o seu momento.</p>
           <span class="link-arrow" style="font-size:13px;">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </div>
       </a>
-      <a href="#" class="reveal card card-hover" style="overflow:hidden;display:flex;flex-direction:column;">
+      <a href="blog/como-aparecer-no-google-maps.html" class="reveal card card-hover" style="overflow:hidden;display:flex;flex-direction:column;">
         <div style="height:150px;background:linear-gradient(135deg,rgba(145,69,230,.2),rgba(37,211,102,.15));display:flex;align-items:center;justify-content:center;">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div style="padding:22px;display:flex;flex-direction:column;gap:10px;flex:1;">
           <span class="tag tag-accent" style="align-self:flex-start;">Google</span>
-          <h3 style="font-size:17px;font-weight:800;line-height:1.35;">Checklist de SEO local: como aparecer no Google Maps da sua cidade</h3>
+          <h3 style="font-size:17px;font-weight:800;line-height:1.35;">Como aparecer no Google Maps: o checklist completo do Perfil da Empresa</h3>
           <p style="margin:0;font-size:13.5px;color:var(--fg-muted);line-height:1.6;flex:1;">O passo a passo do Perfil da Empresa no Google que faz o telefone tocar, sem pagar anúncio.</p>
           <span class="link-arrow" style="font-size:13px;">Ler artigo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </div>
       </a>
     </div>
-    <p class="reveal" style="margin:22px 0 0;font-size:12.5px;color:var(--fg-dim);text-align:center;">Seção nova: é o motor de SEO nacional. Cada artigo responde uma busca real e leva para a página do serviço.</p>
+    <p class="reveal" style="margin:22px 0 0;font-size:12.5px;color:var(--fg-dim);text-align:center;">Os 3 primeiros artigos já estão escritos e prontos para publicar. Cada um responde uma busca real e leva para a página do serviço.</p>
   </div>
 </section>
 
