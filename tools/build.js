@@ -30,8 +30,10 @@ if (fs.existsSync(path.join(SRC, "portfolio.html"))) {
   PAGES.push({ in: "portfolio.html", out: "portfolio.html" });
 }
 
-// Recursos extras copiados pra dist (referenciados por URL no HTML)
-var COPY = ["assets", "robots.txt", "sitemap.xml", ".htaccess"];
+// Recursos extras copiados pra dist (referenciados por URL no HTML).
+// landing-pages.html e modelo-home.html sao paginas estaticas puras (sem JSX),
+// ja otimizadas: vao para dist como estao. O modelo e noindex de proposito.
+var COPY = ["assets", "robots.txt", "sitemap.xml", ".htaccess", "landing-pages.html", "modelo-home.html"];
 
 function rmrf(p) { if (fs.existsSync(p)) fs.rmSync(p, { recursive: true, force: true }); }
 function copyRec(src, dst) {
