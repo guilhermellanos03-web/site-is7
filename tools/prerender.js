@@ -78,7 +78,17 @@ async function prerenderPage(browser, route, outFile) {
 (async function () {
   var server = serve();
   await new Promise(function (r) { server.listen(PORT, r); });
-  var browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
+  var browser;
+  try {
+    browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
+  } catch (e) {
+    // Ambiente sem Chromium utilizavel (ex.: build da Vercel, que nao tem as
+    // libs do navegador). O dist/ compilado ja funciona sem o pre-render; a
+    // etapa so melhora FCP/LCP. Pula com aviso em vez de derrubar o build.
+    console.warn("[prerender] Chromium indisponivel, etapa pulada: " + e.message.split("\n")[0]);
+    server.close();
+    process.exit(0);
+  }
   try {
     await prerenderPage(browser, "/index.html", "index.html");
     if (fs.existsSync(path.join(DIST, "portfolio.html"))) {

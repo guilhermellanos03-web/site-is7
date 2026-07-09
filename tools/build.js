@@ -31,7 +31,9 @@ if (fs.existsSync(path.join(SRC, "portfolio.html"))) {
 }
 
 // Recursos extras copiados pra dist (referenciados por URL no HTML)
-var COPY = ["assets", "robots.txt", "sitemap.xml", ".htaccess"];
+// preview-builds: builds estaticos de sites de clientes pra aprovacao via
+// URL de preview da Vercel (ex.: /preview-builds/guincho-express/)
+var COPY = ["assets", "robots.txt", "sitemap.xml", ".htaccess", "preview-builds"];
 
 function rmrf(p) { if (fs.existsSync(p)) fs.rmSync(p, { recursive: true, force: true }); }
 function copyRec(src, dst) {

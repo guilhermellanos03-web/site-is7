@@ -12,6 +12,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", "-p", "4010", "dist"],
       "port": 4010
+    },
+    {
+      "name": "Guincho Express (dev)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "clientes/guincho-express", "run", "dev", "--", "--port", "4321", "--host"],
+      "port": 4321
     }
   ]
 }
