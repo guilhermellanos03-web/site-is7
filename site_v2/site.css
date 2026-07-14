@@ -191,6 +191,7 @@ textarea.inp{ height:auto; padding:14px 16px; resize:vertical; min-height:96px; 
   .nav-toggle{ display:inline-flex; }
 }
 @media (max-width:620px){
+  .grid-stats .stat-num{ font-size:clamp(17px,5.4vw,26px); }   /* "R$ 500 mil+" cabe no celular */
   .section{ padding:64px 0; }
   .section-tight{ padding:48px 0; }
   .grid-services{ grid-template-columns:1fr; }
