@@ -207,7 +207,7 @@ textarea.inp{ height:auto; padding:14px 16px; resize:vertical; min-height:96px; 
   /* stats: cards mais compactos e alinhados ao topo (sem vao por altura desigual) */
   .grid-stats{ align-items:start !important; }
   .grid-stats .card{ padding:22px 14px !important; }
-  .grid-stats .stat-num{ font-size:26px !important; }   /* evita "R$ 500 mil+" cortar */
+  .grid-stats .stat-num{ font-size:clamp(17px,5.4vw,26px) !important; }   /* "R$ 500 mil+" cabe ate 320px de largura */
   /* mata overflow horizontal / zoom-out */
   html, body{ overflow-x:clip; max-width:100%; }
   /* esconde o bot de chat, deixa so o WhatsApp */

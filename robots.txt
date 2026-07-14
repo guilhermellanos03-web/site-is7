@@ -1,4 +1,41 @@
+# IS7 Marketing Digital — is7mkt.com.br
+# Busca tradicional e assistentes de IA sao bem-vindos.
+
 User-agent: *
 Allow: /
+
+# Crawlers de IA (AEO/GEO): liberados explicitamente
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Modelo interno de estudo: fora do indice
+Disallow: /modelo-home
 
 Sitemap: https://is7mkt.com.br/sitemap.xml
