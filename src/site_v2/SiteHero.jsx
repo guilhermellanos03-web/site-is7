@@ -11,9 +11,9 @@ const TrustRow = ({ center }) => (
       <span style={{ fontSize: 14, color: "var(--fg-muted)" }}><strong style={{ color: "var(--fg)" }}>5.0</strong> no Google · 29 avaliações</span>
     </div>
     <span style={{ width: 1, height: 22, background: "var(--line-2)" }} className="hide-sm" />
-    <span style={{ fontSize: 14, color: "var(--fg-muted)" }} className="hide-sm"><strong style={{ color: "var(--fg)" }}>+80</strong> projetos entregues</span>
+    <span style={{ fontSize: 14, color: "var(--fg-muted)" }} className="hide-sm"><strong style={{ color: "var(--fg)" }}>+100</strong> projetos entregues</span>
     <span style={{ width: 1, height: 22, background: "var(--line-2)" }} className="hide-sm" />
-    <span style={{ fontSize: 14, color: "var(--fg-muted)" }} className="hide-sm"><strong style={{ color: "var(--fg)" }}>6 anos</strong> de mercado</span>
+    <span style={{ fontSize: 14, color: "var(--fg-muted)" }} className="hide-sm"><strong style={{ color: "var(--fg)" }}>5 anos</strong> de mercado</span>
   </div>
 );
 

@@ -5,8 +5,8 @@
   // ── About ─────────────────────────────────────────────────────────────────
   var ABOUT_CHIPS = [
     { icon: "map-pin",       label: "Curitiba / PR" },
-    { icon: "package",       label: "+80 Projetos" },
-    { icon: "calendar-days", label: "6+ Anos" },
+    { icon: "package",       label: "+100 Projetos" },
+    { icon: "calendar-days", label: "5+ Anos" },
   ];
 
   const About = function About() {
@@ -59,7 +59,7 @@
                 Gente de verdade cuidando do seu <span className="grad-text">resultado.</span>
               </h2>
               <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.7, marginBottom: 16 }}>
-                À frente da IS7 está <strong style={{ color: "var(--fg)" }}>Guilherme Llanos</strong>, gestor com mais de 6 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
+                À frente da IS7 está <strong style={{ color: "var(--fg)" }}>Guilherme Llanos</strong>, gestor com mais de 5 anos de experiência em marketing digital, de Curitiba para todo o Brasil.
               </p>
               <p style={{ color: "var(--fg-muted)", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
                 Com foco em resultado real, Guilherme lidera uma operação que já ajudou dezenas de empresas a aparecerem no Google, terem sites que convertem e venderem mais pela internet. O acompanhamento é próximo, as estratégias são ajustadas continuamente e o compromisso sempre é com o crescimento do cliente.

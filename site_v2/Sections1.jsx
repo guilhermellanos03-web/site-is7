@@ -5,8 +5,8 @@
   // ── Stats ────────────────────────────────────────────────────────────────
   var STATS = [
     { icon: "megaphone",     value: 500, prefix: "R$", suffix: "mil+", label: "Gerenciados em tráfego pago" },
-    { icon: "calendar-days", value: 6,   suffix: "+",                  label: "Anos de experiência em marketing digital" },
-    { icon: "package",       value: 80,  prefix: "+",                  label: "Projetos entregues em todo o Brasil" },
+    { icon: "calendar-days", value: 5,   suffix: "+",                  label: "Anos de experiência em marketing digital" },
+    { icon: "package",       value: 100, prefix: "+",                  label: "Projetos entregues em todo o Brasil" },
     { icon: "gauge",         value: 95,  prefix: "+",                  label: "Nota média de desempenho dos sites" },
   ];
 

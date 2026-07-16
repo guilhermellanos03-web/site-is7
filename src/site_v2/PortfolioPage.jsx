@@ -140,7 +140,7 @@ const PortfolioPage = () => {
         <section style={{ background: "var(--bg-2)", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", padding: "28px 0" }}>
           <div className="wrap" style={{ display: "flex", justifyContent: "center", gap: 48, flexWrap: "wrap" }}>
             {[
-              { val: "+80", label: "Projetos entregues" },
+              { val: "+100", label: "Projetos entregues" },
               { val: "15+", label: "Estados atendidos" },
               { val: "5.0", label: "Nota no Google" },
             ].map((s, i) => (

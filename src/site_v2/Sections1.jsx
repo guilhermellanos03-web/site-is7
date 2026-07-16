@@ -2,8 +2,8 @@ const { Icon, Eyebrow, Reveal, StatNumber, wa } = window.IS7v2;
 
 const STATS = [
   { prefix: "R$ ", value: 500, suffix: " mil+", label: "Investidos em Google Ads" },
-  { prefix: "",    value: 6,   suffix: "+",      label: "Anos de experiência" },
-  { prefix: "+",   value: 80,  suffix: "",       label: "Projetos entregues" },
+  { prefix: "",    value: 5,   suffix: "+",      label: "Anos de experiência" },
+  { prefix: "+",   value: 100, suffix: "",       label: "Projetos entregues" },
   { prefix: "+",   value: 95,  suffix: "",       label: "Nota média dos sites" },
 ];
 
