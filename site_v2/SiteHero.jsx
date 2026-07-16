@@ -92,11 +92,11 @@
               </div>
               <span className="trust-sep" style={{ width: 1, height: 16, background: "var(--line-2)" }} />
               <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>
-                <strong style={{ color: "var(--fg)" }}>+80</strong> projetos entregues
+                <strong style={{ color: "var(--fg)" }}>+100</strong> projetos entregues
               </span>
               <span className="trust-sep" style={{ width: 1, height: 16, background: "var(--line-2)" }} />
               <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>
-                <strong style={{ color: "var(--fg)" }}>6 anos</strong> de mercado
+                <strong style={{ color: "var(--fg)" }}>5 anos</strong> de mercado
               </span>
             </div>
           </Reveal>
