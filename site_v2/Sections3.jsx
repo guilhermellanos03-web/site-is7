@@ -24,7 +24,7 @@
                   boxShadow: "0 30px 60px -20px rgba(0,0,0,.6)",
                 }}>
                   <img
-                    src="assets/portfolio/guilherme-foto.jpg"
+                    src="assets/portfolio/guilherme-foto.webp"
                     alt="Guilherme Llanos"
                     style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "3/4" }}
                   />

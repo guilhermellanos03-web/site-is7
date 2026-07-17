@@ -7,11 +7,14 @@
     "compile": "node tools/build.js",
     "prerender": "node tools/prerender.js",
     "build": "node tools/build.js && node tools/prerender.js",
-    "build-proposta": "node tools/build-proposta.js"
+    "build-proposta": "node tools/build-proposta.js",
+    "prerender:save": "node tools/prerender.js && mkdir -p prerendered && cp dist/index.html prerendered/ && (test -f dist/portfolio.html && cp dist/portfolio.html prerendered/ || true)"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-react": "^7.26.3",
-    "puppeteer": "^25.1.0"
+    "puppeteer": "^25.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

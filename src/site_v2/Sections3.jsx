@@ -15,7 +15,7 @@ const About = () => (
           <div className="glow glow-purple" style={{ width: 320, height: 320, top: -40, left: -40, opacity: .55 }} />
           <div className="card" style={{ position: "relative", padding: 10, borderRadius: 24, overflow: "hidden" }}>
             <img
-              src="assets/portfolio/guilherme-foto.jpg"
+              src="assets/portfolio/guilherme-foto.webp"
               alt="Guilherme Llanos, Gestor IS7"
               style={{ width: "100%", aspectRatio: "4/5", display: "block", borderRadius: 16, objectFit: "cover", objectPosition: "top center" }}
             />

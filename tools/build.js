@@ -82,9 +82,12 @@ function buildPage(page) {
       var src = srcM ? srcM[1] : null;
       var isBabel = /type=["']text\/babel["']/i.test(attrs);
 
-      // CDN (http/https): remove Babel, mantem o resto (React/ReactDOM/lucide)
+      // CDN (http/https): remove Babel; React/ReactDOM viram copia local em
+      // /vendor (menos uma origem de terceiros = FCP/LCP melhores e sem SPOF).
       if (src && /^https?:\/\//i.test(src)) {
         if (/babel/i.test(src)) return ""; // nao precisa mais
+        if (/react-dom/i.test(src)) return '<script src="vendor/react-dom.production.min.js"></script>';
+        if (/react/i.test(src)) return '<script src="vendor/react.production.min.js"></script>';
         return full;
       }
 
@@ -124,4 +127,29 @@ COPY.forEach(function (rel) {
   var from = path.join(ROOT, rel);
   if (fs.existsSync(from)) { copyRec(from, path.join(DIST, rel)); console.log("[build] copiado: " + rel); }
 });
+
+// React auto-hospedado: copia os UMD de node_modules pra dist/vendor
+var VENDOR = [
+  ["node_modules/react/umd/react.production.min.js", "vendor/react.production.min.js"],
+  ["node_modules/react-dom/umd/react-dom.production.min.js", "vendor/react-dom.production.min.js"],
+];
+VENDOR.forEach(function (pair) {
+  var from = path.join(ROOT, pair[0]);
+  if (fs.existsSync(from)) { copyRec(from, path.join(DIST, pair[1])); console.log("[build] vendor: " + pair[1]); }
+  else console.warn("[build] AVISO: " + pair[0] + " nao encontrado (rode npm ci)");
+});
+
+// Pre-render commitado: a Vercel nao tem Chromium, entao o snapshot e gerado
+// localmente (npm run prerender:save) e commitado em prerendered/. No build da
+// Vercel (env VERCEL=1) ele substitui o HTML compilado: conteudo no primeiro
+// paint (FCP/LCP) sem depender de navegador no CI.
+// Para atualizar apos mudar src/: npm run build && npm run prerender:save
+if (process.env.VERCEL) {
+  var PRE = path.join(ROOT, "prerendered");
+  if (fs.existsSync(PRE)) {
+    fs.readdirSync(PRE).forEach(function (f) {
+      if (f.endsWith(".html")) { fs.copyFileSync(path.join(PRE, f), path.join(DIST, f)); console.log("[build] prerendered aplicado: " + f); }
+    });
+  }
+}
 console.log("[build] concluido em dist/");
