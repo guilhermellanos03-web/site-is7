@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfólio — IS7 Assessoria de Marketing Digital</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Poppins:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+<style>
+/* ============================================================
+   IS7 — Site v2 (dark / premium / bold)
+   Evolved from the IS7 brand: deep navy canvas, purple→blue
+   gradient accents, Montserrat display + Inter body + JetBrains
+   Mono labels. Capture-safe reveal motion.
+   ============================================================ */
+
+:root{
+  --bg:        #070A14;
+  --bg-2:      #0A0F1E;
+  --surface:   #0E1426;
+  --surface-2: #131A30;
+  --line:      rgba(255,255,255,.08);
+  --line-2:    rgba(255,255,255,.14);
+
+  --fg:        #F4F6FB;
+  --fg-muted:  #98A1BC;
+  --fg-dim:    #8089A8;
+
+  /* brand accent (purple→blue), brightened for dark */
+  --accent:    #9145E6;
+  --accent-2:  #3B6CFF;
+  --accent-bright: #B57BFF;
+  --grad: linear-gradient(118deg, #9145E6 0%, #5B5BF5 52%, #3B6CFF 100%);
+  --grad-soft: linear-gradient(118deg, rgba(145,69,230,.16), rgba(59,108,255,.16));
+
+  --wa:        #25D366;
+  --star:      #FBBF24;
+  --google-blue:#4285F4;
+
+  --serif: 'Montserrat', system-ui, sans-serif;
+  --sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --mono:  'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --maxw: 1200px;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--sans); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{ font-family:var(--serif); font-weight:800; margin:0; letter-spacing:-.02em; line-height:1.04; }
+a{ color:inherit; text-decoration:none; }
+img{ display:block; max-width:100%; }
+::selection{ background:rgba(145,69,230,.35); color:#fff; }
+
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; position:relative; }
+.section{ padding:104px 0; position:relative; }
+.section-tight{ padding:72px 0; position:relative; }
+
+/* ---------- Type helpers ---------- */
+.display{ font-size:clamp(40px,6.6vw,82px); line-height:1.0; letter-spacing:-.03em; }
+.h2{ font-size:clamp(30px,4vw,50px); line-height:1.05; }
+.h3{ font-size:clamp(20px,2vw,24px); }
+.grad-text{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.muted{ color:var(--fg-muted); }
+.dim{ color:var(--fg-dim); }
+.lead{ font-size:clamp(17px,1.5vw,20px); color:var(--fg-muted); line-height:1.6; }
+
+/* eyebrow — mono label with leading slashes */
+.eyebrow{
+  font-family:var(--mono); font-weight:500; font-size:12px;
+  letter-spacing:.24em; text-transform:uppercase; color:var(--accent-bright);
+  display:inline-flex; align-items:center; gap:10px;
+}
+.eyebrow::before{ content:""; display:none; }
+.eyebrow.center{ justify-content:center; }
+
+/* ---------- Logo wordmark (gradient text, crisp on dark) ---------- */
+.logo{ font-family:var(--serif); font-weight:800; letter-spacing:-.04em; line-height:1; display:inline-block; }
+.logo .i{ color:var(--fg); }
+.logo .s7{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  font-family:var(--sans); font-weight:600; font-size:15px;
+  padding:15px 28px; border-radius:9999px; border:1px solid transparent;
+  cursor:pointer; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, filter .25s; white-space:nowrap;
+}
+.btn-primary{ background:var(--grad); color:#fff; box-shadow:0 12px 30px -10px rgba(91,91,245,.6); }
+.btn-primary:hover{ transform:translateY(-2px); filter:brightness(1.08); box-shadow:0 18px 40px -10px rgba(91,91,245,.7); }
+.btn-ghost{ background:rgba(255,255,255,.02); border-color:var(--line-2); color:var(--fg); }
+.btn-ghost:hover{ border-color:var(--accent-bright); background:rgba(145,69,230,.10); transform:translateY(-2px); }
+.btn-wa{ background:var(--wa); color:#04210F; box-shadow:0 12px 30px -10px rgba(37,211,102,.5); }
+.btn-wa:hover{ transform:translateY(-2px); filter:brightness(1.06); }
+.btn-lg{ padding:17px 34px; font-size:16px; }
+
+.link-arrow{ display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px; color:var(--accent-bright); transition:gap .25s; }
+.link-arrow:hover{ gap:14px; }
+
+/* ---------- Cards ---------- */
+.card{ background:var(--surface); border:1px solid var(--line); border-radius:20px; transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
+.card-hover:hover{ transform:translateY(-5px); border-color:rgba(145,69,230,.45); box-shadow:0 24px 50px -22px rgba(91,91,245,.5); }
+
+/* icon chip */
+.chip{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:var(--grad-soft); border:1px solid rgba(145,69,230,.30); }
+
+/* status / tag pill */
+.tag{ display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:5px 11px; border-radius:9999px; border:1px solid var(--line-2); color:var(--fg-muted); background:rgba(255,255,255,.03); }
+.tag-accent{ color:var(--accent-bright); border-color:rgba(145,69,230,.35); background:rgba(145,69,230,.10); }
+
+/* ---------- Glows / decoration ---------- */
+.glow{ position:absolute; border-radius:9999px; filter:blur(110px); pointer-events:none; z-index:0; }
+.glow-purple{ background:rgba(145,69,230,.34); }
+.glow-blue{ background:rgba(59,108,255,.30); }
+.hair{ height:1px; background:linear-gradient(90deg, transparent, var(--line-2), transparent); border:0; }
+.gridlines{ position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%); mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%); opacity:.5; }
+
+/* star row */
+.stars{ display:inline-flex; gap:3px; color:var(--star); }
+
+/* ---------- Reveal (capture-safe: visible unless JS active) ---------- */
+.reveal{ transition:opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1); }
+body.js-anim .reveal{ opacity:0; transform:translateY(28px); }
+body.js-anim .reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  body.js-anim .reveal{ opacity:1 !important; transform:none !important; }
+}
+
+/* float loop */
+@keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-12px); } }
+@keyframes floaty2{ 0%,100%{ transform:translateY(0) rotate(-3deg); } 50%{ transform:translateY(-10px) rotate(-3deg); } }
+@keyframes drift{ 0%,100%{ transform:translate(0,0); } 50%{ transform:translate(24px,-20px); } }
+@keyframes pulse-ring{ 0%{ box-shadow:0 0 0 0 rgba(37,211,102,.45);} 70%{ box-shadow:0 0 0 16px rgba(37,211,102,0);} 100%{ box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+.float{ animation:floaty 6s ease-in-out infinite; }
+.float-2{ animation:floaty2 7s ease-in-out infinite; }
+
+/* marquee */
+@keyframes marq{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.marquee{ display:flex; gap:56px; width:max-content; animation:marq 28s linear infinite; }
+.marquee-mask{ -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); overflow:hidden; }
+
+/* ---------- Header ---------- */
+.hdr{ position:sticky; top:0; z-index:60; transition:background .3s, border-color .3s, backdrop-filter .3s; border-bottom:1px solid transparent; }
+.hdr.scrolled{ background:rgba(7,10,20,.78); backdrop-filter:blur(14px); border-bottom-color:var(--line); }
+.hdr-row{ display:flex; align-items:center; justify-content:space-between; height:74px; }
+.nav{ display:flex; align-items:center; gap:34px; }
+.nav a{ font-size:14.5px; color:var(--fg-muted); font-weight:500; transition:color .25s; }
+.nav a:hover{ color:var(--fg); }
+.nav-toggle{ display:none; background:transparent; border:0; color:var(--fg); cursor:pointer; padding:8px; }
+.mobile-panel{ background:var(--bg-2); border-top:1px solid var(--line); padding:14px 24px 22px; }
+.mobile-panel a{ display:block; padding:12px 0; color:var(--fg); border-bottom:1px solid var(--line); font-size:16px; }
+
+/* ---------- WhatsApp FAB ---------- */
+.fab{ position:fixed; right:22px; bottom:22px; z-index:80; width:58px; height:58px; border-radius:9999px; background:var(--wa); display:flex; align-items:center; justify-content:center; box-shadow:0 14px 30px -8px rgba(37,211,102,.55); animation:pulse-ring 2.6s infinite; transition:transform .25s; }
+.fab:hover{ transform:scale(1.07); }
+
+/* ---------- Stat figure ---------- */
+.stat-num{ font-family:var(--serif); font-weight:800; font-size:clamp(34px,4.2vw,52px); line-height:1; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; letter-spacing:-.03em; white-space:nowrap; }
+
+/* ---------- FAQ ---------- */
+.faq-item{ border:1px solid var(--line); border-radius:16px; background:var(--surface); overflow:hidden; transition:border-color .3s, background .3s; }
+.faq-item.open{ border-color:rgba(145,69,230,.4); }
+.faq-q{ width:100%; text-align:left; background:transparent; border:0; color:var(--fg); cursor:pointer; padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-family:var(--serif); font-weight:700; font-size:17px; letter-spacing:-.01em; }
+.faq-ic{ flex:0 0 auto; width:30px; height:30px; border-radius:9999px; border:1px solid var(--line-2); display:flex; align-items:center; justify-content:center; transition:transform .3s, background .3s, border-color .3s; }
+.faq-item.open .faq-ic{ transform:rotate(45deg); background:var(--grad); border-color:transparent; }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .4s ease; }
+.faq-a .inner{ padding:0 24px 22px; color:var(--fg-muted); font-size:15px; line-height:1.65; }
+
+/* ---------- Inputs ---------- */
+.inp{ width:100%; height:50px; padding:0 16px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid var(--line-2); color:var(--fg); font-family:var(--sans); font-size:15px; outline:none; transition:border-color .25s, box-shadow .25s; }
+.inp::placeholder{ color:var(--fg-dim); }
+.inp:focus{ border-color:var(--accent-bright); box-shadow:0 0 0 3px rgba(145,69,230,.18); }
+textarea.inp{ height:auto; padding:14px 16px; resize:vertical; min-height:96px; }
+
+/* ---------- Browser frame ---------- */
+.browser{ border-radius:14px; overflow:hidden; border:1px solid var(--line-2); background:#0b1322; box-shadow:0 30px 60px -24px rgba(0,0,0,.7); }
+.browser-bar{ background:#0f1830; padding:9px 13px; display:flex; align-items:center; gap:8px; }
+.browser-dot{ width:9px; height:9px; border-radius:9999px; }
+
+/* ---------- Grids ---------- */
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.grid-services{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+.grid-stats{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.grid-portfolio{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.grid-reviews{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+
+@media (max-width:980px){
+  .grid-2{ grid-template-columns:1fr; gap:40px; }
+  .grid-stats{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .grid-portfolio{ grid-template-columns:repeat(2,1fr); }
+  .grid-reviews{ grid-template-columns:1fr; }
+  .nav, .hdr .btn{ display:none; }
+  .nav-toggle{ display:inline-flex; }
+}
+@media (max-width:620px){
+  .section{ padding:64px 0; }
+  .section-tight{ padding:48px 0; }
+  .grid-services{ grid-template-columns:1fr; }
+  .grid-portfolio{ grid-template-columns:1fr; }
+  .grid-stats{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:14px; }
+  .hide-sm{ display:none !important; }
+  .wrap{ padding:0 18px; }
+}
+
+/* ===== Ajustes mobile IS7 (correcoes de UX no celular) ===== */
+@media (max-width:768px){
+  /* hero sem vao gigante (remove min-height de 92vh) */
+  #topo{ min-height:auto !important; padding-top:96px !important; padding-bottom:56px !important; }
+  /* stats: cards mais compactos e alinhados ao topo (sem vao por altura desigual) */
+  .grid-stats{ align-items:start !important; }
+  .grid-stats .card{ padding:22px 14px !important; }
+  .grid-stats .stat-num{ font-size:clamp(17px,5.4vw,26px) !important; }   /* "R$ 500 mil+" cabe ate 320px de largura */
+  /* mata overflow horizontal / zoom-out */
+  html, body{ overflow-x:clip; max-width:100%; }
+  /* esconde o bot de chat, deixa so o WhatsApp */
+  button[aria-label="Atendimento"]{ display:none !important; }
+  /* rodape: barra final centralizada */
+  footer .hair ~ div{ justify-content:center !important; text-align:center !important; }
+  /* portfolio: botao fechar flutuante so no mobile (a barra superior fica espremida) */
+  .lb-close-float{ display:flex !important; }
+}
+@media (max-width:480px){
+  #topo .btn-lg{ width:100%; justify-content:center; }
+  .display{ font-size:clamp(32px,8vw,40px) !important; }
+}
+
+/* ===== Hero animation enhancements ===== */
+@keyframes glow-morph{
+  0%,100%{ border-radius:40% 60% 70% 30% / 40% 50% 60% 50%; }
+  25%    { border-radius:60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%    { border-radius:30% 70% 60% 40% / 50% 60% 30% 60%; }
+  75%    { border-radius:50% 50% 40% 60% / 40% 60% 50% 50%; }
+}
+@keyframes star-twinkle{
+  0%,100%{ transform:scale(1); filter:brightness(1); }
+  50%    { transform:scale(1.8); filter:brightness(2.5); }
+}
+body.js-anim #topo .grad-text{
+  animation:grad-glow 4s ease-in-out 1.5s infinite;
+}
+@keyframes grad-glow{
+  0%,100%{ filter:brightness(1); }
+  50%    { filter:brightness(1.25); }
+}
+
+/* ===== Mobile nav enhancement ===== */
+@media (max-width:980px){
+  .mobile-panel{
+    position:fixed; top:74px; left:0; right:0; bottom:0;
+    background:var(--bg); z-index:50; padding:24px;
+    overflow-y:auto; animation:panel-in .3s ease;
+  }
+  @keyframes panel-in{
+    from{ opacity:0; transform:translateY(-12px); }
+    to  { opacity:1; transform:none; }
+  }
+  .mobile-panel a{ font-size:17px; padding:15px 0; }
+}
+
+/* ===== Touch targets ===== */
+.btn{ min-height:44px; }
+.faq-q{ min-height:52px; }
+@media (max-width:980px){
+  .nav-toggle{ min-width:44px; min-height:44px; }
+}
+
+/* ================================================================
+   LIGHT THEME
+   ================================================================ */
+[data-theme="light"]{
+  --bg:        #F4F5FF;
+  --bg-2:      #ECEFFE;
+  --surface:   #FFFFFF;
+  --surface-2: #F0F2FF;
+  --line:      rgba(100,108,160,.12);
+  --line-2:    rgba(100,108,160,.22);
+
+  --fg:        #0C1228;
+  --fg-muted:  #475080;
+  --fg-dim:    #5F6890;
+
+  --accent:        #7B2FD4;
+  --accent-2:      #2B5CE6;
+  --accent-bright: #6A1EC0;
+  --grad:      linear-gradient(118deg,#7B2FD4 0%,#4A4AE8 52%,#2B5CE6 100%);
+  --grad-soft: linear-gradient(118deg,rgba(123,47,212,.10),rgba(43,92,230,.10));
+}
+
+/* body */
+[data-theme="light"] body{ background:var(--bg); color:var(--fg); }
+
+/* header */
+[data-theme="light"] .hdr.scrolled{
+  background:rgba(244,245,255,.90); border-bottom-color:var(--line);
+}
+[data-theme="light"] .mobile-panel{
+  background:var(--bg); border-top-color:var(--line);
+}
+[data-theme="light"] .mobile-panel a{ border-bottom-color:var(--line); }
+
+/* buttons */
+[data-theme="light"] .btn-ghost{
+  background:rgba(0,0,0,.03); border-color:rgba(100,108,160,.24); color:var(--fg);
+}
+[data-theme="light"] .btn-ghost:hover{
+  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.35);
+}
+
+/* cards */
+[data-theme="light"] .card{
+  box-shadow:0 2px 14px rgba(0,0,0,.07);
+}
+[data-theme="light"] .card-hover:hover{
+  box-shadow:0 24px 50px -22px rgba(123,47,212,.20), 0 2px 14px rgba(0,0,0,.07);
+}
+
+/* chip / icon container */
+[data-theme="light"] .chip{
+  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.20);
+}
+
+/* tags */
+[data-theme="light"] .tag{
+  background:rgba(0,0,0,.04); border-color:rgba(100,108,160,.22); color:var(--fg-muted);
+}
+[data-theme="light"] .tag-accent{
+  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.25); color:var(--accent-bright);
+}
+
+/* inputs */
+[data-theme="light"] .inp{
+  background:rgba(0,0,0,.03); border-color:rgba(100,108,160,.22); color:var(--fg);
+}
+[data-theme="light"] .inp::placeholder{ color:var(--fg-dim); }
+[data-theme="light"] .inp:focus{
+  border-color:var(--accent); box-shadow:0 0 0 3px rgba(123,47,212,.14);
+}
+
+/* glows (subtler on light) */
+[data-theme="light"] .glow-purple{ background:rgba(123,47,212,.15); }
+[data-theme="light"] .glow-blue  { background:rgba(43,92,230,.12); }
+
+/* gridlines */
+[data-theme="light"] .gridlines{
+  background-image:
+    linear-gradient(rgba(100,108,160,.12) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(100,108,160,.12) 1px,transparent 1px);
+}
+
+/* faq */
+[data-theme="light"] .faq-item{ box-shadow:0 1px 8px rgba(0,0,0,.05); }
+
+/* logo dual-mode */
+.site-logo { filter: brightness(0) invert(1); } /* dark: white */
+[data-theme="light"] .site-logo { filter: none; }  /* light: roxo original */
+
+/* about badge — light mode fix */
+[data-theme="light"] .about-badge{
+  background: #fff !important;
+  border-color: rgba(0,0,0,.09) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,.10) !important;
+}
+[data-theme="light"] .about-badge p{ color: var(--fg) !important; }
+.logo-txt   { display:none; }
+[data-theme="light"] .logo-img{ display:none !important; }
+[data-theme="light"] .logo-txt{ display:inline !important; }
+
+/* float chips in hero */
+[data-theme="light"] .chip-float-card{
+  background:rgba(244,245,255,.94) !important;
+  border-color:rgba(100,108,160,.22) !important;
+}
+
+/* glass cards with fixed-dark backgrounds (hero panels) — readable on light */
+[data-theme="light"] .glass-dark{
+  background:rgba(255,255,255,.95) !important;
+  border-color:rgba(100,108,160,.18) !important;
+  box-shadow:0 8px 30px -14px rgba(0,0,0,.18) !important;
+}
+
+/* theme toggle button */
+.theme-toggle{
+  width:38px; height:38px; border-radius:10px;
+  background:rgba(255,255,255,.06); border:1px solid var(--line-2);
+  cursor:pointer; display:inline-flex; align-items:center; justify-content:center;
+  color:var(--fg-muted); transition:border-color .25s,color .25s,background .25s;
+  flex-shrink:0;
+}
+.theme-toggle:hover{ border-color:var(--accent-bright); color:var(--accent-bright); }
+[data-theme="light"] .theme-toggle{ background:rgba(0,0,0,.04); }
+
+/* WhatsApp card light mode */
+[data-theme="light"] .wa-card{
+  background: linear-gradient(160deg, rgba(37,211,102,.12), rgba(244,245,255,.9)) !important;
+  border-color: rgba(37,211,102,.4) !important;
+  color: var(--fg);
+}
+[data-theme="light"] .wa-card p,
+[data-theme="light"] .wa-card span{ color: var(--fg); }
+
+/* Contact section grid light */
+[data-theme="light"] #contato .card{ color: var(--fg); }
+
+/* eyebrow */
+[data-theme="light"] .eyebrow::before{ opacity:.5; }
+
+/* link-arrow */
+[data-theme="light"] .link-arrow{ color:var(--accent); }
+
+</style>
+<!-- Anti-flash: apply saved theme before React mounts -->
+<script>(function(){ var t=localStorage.getItem('is7-theme')||'dark'; document.documentElement.setAttribute('data-theme',t); })()</script>
+<style>
+  .port-hero{
+    position:relative; overflow:hidden; padding:140px 0 80px; text-align:center;
+  }
+  .port-count{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:13px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent-bright);
+    background:rgba(145,69,230,.10); border:1px solid rgba(145,69,230,.25);
+    padding:8px 18px; border-radius:9999px; margin-bottom:22px;
+  }
+  .port-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .port-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:20px;
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .port-card:hover{
+    transform:translateY(-6px); border-color:rgba(145,69,230,.45);
+    box-shadow:0 24px 50px -22px rgba(91,91,245,.45);
+  }
+  .port-card:hover .port-img{ transform:scale(1.06); }
+  .port-thumb{
+    height:240px; overflow:hidden; position:relative;
+  }
+  .port-img{
+    width:100%; height:100%; object-fit:cover; object-position:top center;
+    transition:transform .5s ease;
+  }
+  .port-mono{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  }
+  .port-mono span{
+    font-family:var(--serif); font-weight:800; font-size:64px;
+    letter-spacing:.06em; color:rgba(255,255,255,.88);
+  }
+  .port-info{ padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .port-name{ margin:0; font-family:var(--serif); font-weight:700; font-size:17px; }
+  .port-meta{ margin:4px 0 0; font-size:13px; color:var(--fg-muted); }
+  .port-arrow{
+    width:36px; height:36px; border-radius:9999px; border:1px solid var(--line-2);
+    display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+    transition:background .25s, border-color .25s;
+  }
+  .port-card:hover .port-arrow{ background:var(--grad); border-color:transparent; }
+
+  .port-cta{
+    margin-top:80px; padding:64px 0; text-align:center; position:relative;
+    background:linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    border-top:1px solid var(--line);
+  }
+
+  @media(max-width:900px){
+    .port-grid{ grid-template-columns:repeat(2,1fr); gap:18px; }
+    .port-hero{ padding:120px 0 60px; }
+  }
+  @media(max-width:580px){
+    .port-grid{ grid-template-columns:1fr; gap:16px; }
+    .port-thumb{ height:200px; }
+  }
+  /* light mode overrides */
+  [data-theme="light"] .port-card{ box-shadow:0 2px 14px rgba(0,0,0,.07); }
+  [data-theme="light"] .port-card:hover{ box-shadow:0 24px 50px -22px rgba(123,47,212,.20); border-color:rgba(123,47,212,.4); }
+  [data-theme="light"] .port-cta{ background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%); }
+  [data-theme="light"] .port-mono span{ color:rgba(255,255,255,.92); }
+  [data-theme="light"] .port-count{ background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.22); }
+  .port-hover-hint{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:rgba(7,10,20,.55); opacity:0; transition:opacity .25s; backdrop-filter:blur(2px);
+  }
+  .port-card:hover .port-hover-hint{ opacity:1; }
+</style>
+</head>
+<body class="js-anim" data-screen-label="IS7 — Portfólio completo">
+  <div id="root"><header class="hdr "><div class="wrap hdr-row"><a href="/" aria-label="IS7"><img src="assets/is7-logo-roxa.png" alt="IS7" class="site-logo" style="height: 57.2px; width: auto; display: block;"></a><nav class="nav"><a href="/">Início</a><a href="/#servicos">Serviços</a><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a></nav><div style="display: flex; align-items: center; gap: 10px;"><button class="theme-toggle" aria-label="Alternar tema"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary" style="padding: 12px 24px; font-size: 14px;">Fale conosco</a></div></div></header><section class="port-hero"><div class="glow glow-purple" style="width: 500px; height: 500px; top: -200px; left: 50%; transform: translateX(-50%); animation: 12s ease-in-out 0s infinite normal none running glow-morph;"></div><div class="gridlines"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><a href="/" class="link-arrow" style="justify-content: center; margin-bottom: 28px;"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Voltar ao site</a></div><div class="reveal in" style="transition-delay: 60ms;"><span class="port-count"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> 5 projetos entregues</span></div><div class="reveal in" style="transition-delay: 100ms;"><h1 class="display" style="max-width: 800px; margin: 0px auto;">Nosso <span class="grad-text">portfólio</span></h1></div><div class="reveal in" style="transition-delay: 140ms;"><p class="lead" style="max-width: 560px; margin: 22px auto 0px;">Sites, lojas virtuais e projetos de presença digital desenvolvidos para negócios reais em todo o Brasil.</p></div></div></section><section style="padding-bottom: 80px;"><div class="wrap"><div class="port-grid"><article class="reveal in port-card" style="transition-delay: 0ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/tribbo-street.webp" alt="Tribbo Street" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><span class="tag" style="position: absolute; top: 12px; right: 12px; backdrop-filter: blur(6px);">2 páginas</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">Tribbo Street</p><p class="port-meta">Estética automotiva · SJP</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 70ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/rc-soft.webp" alt="RC Soft Service" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">RC Soft Service</p><p class="port-meta">Manutenção predial · Curitiba</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 140ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/lua-advogado.webp" alt="Luã Advogado" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">Luã Advogado</p><p class="port-meta">Advocacia tributária · Curitiba</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 0ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/chaveiro.webp" alt="Chaveiro Assistência 24h" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">Chaveiro Assistência 24h</p><p class="port-meta">Chaveiro 24h · Recife</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 70ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/mk-vinhos.webp" alt="MK Distribuidora de Vinhos" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Loja virtual</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">MK Distribuidora de Vinhos</p><p class="port-meta">Vinhos &amp; adega · Curitiba</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article></div></div></section><section class="port-cta"><div class="glow glow-blue" style="width: 400px; height: 400px; top: -120px; left: 50%; transform: translateX(-50%); opacity: 0.35;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><span class="eyebrow center">Quer um projeto assim?</span><h2 class="h2" style="margin-top: 16px;">Seu negócio pode ser o <span class="grad-text">próximo case</span>.</h2><p class="lead" style="max-width: 500px; margin: 18px auto 0px;">Fale com a gente e descubra como sua empresa pode ter uma presença digital que vende todos os dias.</p><div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px;"><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary btn-lg">Quero meu projeto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="/#contato" class="btn btn-ghost btn-lg">Entrar em contato</a></div></div></div></section><footer style="border-top: 1px solid var(--line); padding: 28px 0px; text-align: center;"><div class="wrap" style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center;"><img src="assets/is7-logo-roxa.png" alt="IS7" class="site-logo" style="height: 48.4px; width: auto; display: block;"><p style="margin: 0px; font-size: 12px; color: var(--fg-dim);">© 2026 IS7 · Todos os direitos reservados</p></div></footer><a class="fab" href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20saber%20mais." target="_blank" rel="noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 32 32" style="width: 30px; height: 30px; fill: rgb(4, 33, 15);"><path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z"></path></svg></a></div>
+
+  <script src="vendor/react.production.min.js"></script>
+  <script src="vendor/react-dom.production.min.js"></script>
+  
+  <script>
+// IS7 — shared portfolio cases data (plain JS, loaded before Babel scripts)
+window.IS7_CASES = [
+  { name: "Tribbo Street",           meta: "Estética automotiva · SJP",            tag: "Site",        pages: 2, img: "assets/portfolio/tribbo-street.webp",    domain: "tribbostreet.com.br",          url: "" },
+  { name: "RC Soft Service",         meta: "Manutenção predial · Curitiba",         tag: "Site",        pages: 1, img: "assets/portfolio/rc-soft.webp",          domain: "rcsoftservice.com.br",         url: "" },
+  { name: "Luã Advogado",            meta: "Advocacia tributária · Curitiba",       tag: "Site",        pages: 1, img: "assets/portfolio/lua-advogado.webp",     domain: "luadeAssis.adv.br",            url: "" },
+  { name: "Chaveiro Assistência 24h",meta: "Chaveiro 24h · Recife",                 tag: "Site",        pages: 1, img: "assets/portfolio/chaveiro.webp",         domain: "chaveiroassistencia24hs.com.br", url: "" },
+  { name: "MK Distribuidora de Vinhos", meta: "Vinhos & adega · Curitiba",            tag: "Loja virtual",pages: 1, img: "assets/portfolio/mk-vinhos.webp",         domain: "mkdistribuidoravinhos.com.br", url: "" },
+];
+
+</script>
+  <script>
+(function(){
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+// IS7 Site v2 — primitives. All exports land on window.IS7v2 so Babel-standalone
+// file order stays stable. Icon (lucide), Logo (gradient wordmark), Eyebrow,
+// Reveal (capture-safe scroll reveal via React state), useCountUp, WhatsApp helpers.
+
+const WAPP = "https://wa.me/5541987430349";
+const wa = msg => `${WAPP}?text=${encodeURIComponent(msg)}`;
+
+// Icones inline (SVG) — substitui a lib lucide (~324KB) por so o que usamos.
+// Renderizam sincronamente (sem flash, sem JS extra). Paths no padrao lucide.
+const ICONS = {
+  "arrow-right": '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  "arrow-down": '<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',
+  "clock": '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  "arrow-up-right": '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+  "badge-check": '<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/>',
+  "briefcase": '<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/>',
+  "calendar-days": '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>',
+  "check": '<path d="M20 6 9 17l-5-5"/>',
+  "credit-card": '<rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>',
+  "chevron-left": '<path d="m15 18-6-6 6-6"/>',
+  "chevron-right": '<path d="m9 18 6-6-6-6"/>',
+  "external-link": '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+  "file-bar-chart": '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M12 18v-4"/><path d="M8 18v-2"/><path d="M16 18v-6"/>',
+  "headset": '<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5a9 9 0 0 1 18 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>',
+  "heart": '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+  "instagram": '<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>',
+  "layers": '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>',
+  "lock": '<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+  "mail": '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+  "map-pin": '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>',
+  "menu": '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>',
+  "message-circle": '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+  "monitor": '<rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/>',
+  "moon": '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+  "palette": '<circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>',
+  "plus": '<path d="M5 12h14"/><path d="M12 5v14"/>',
+  "search": '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  "shopping-bag": '<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>',
+  "star": '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  "sun": '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+  "trending-up": '<path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/>',
+  "users": '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  "x": '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'
+};
+const Icon = ({
+  name,
+  size = 24,
+  strokeWidth = 2,
+  color = "currentColor",
+  fill = "none",
+  style = {}
+}) => {
+  const inline = ICONS[name];
+  // Fallback: se o icone nao esta no mapa inline E o lucide estiver carregado
+  // (paginas de proposta), usa o lucide. O site principal nao carrega lucide,
+  // mas todos os icones dele estao no mapa.
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    if (!inline && typeof window !== "undefined" && window.lucide && ref.current) {
+      ref.current.innerHTML = "";
+      const i = document.createElement("i");
+      i.setAttribute("data-lucide", name);
+      ref.current.appendChild(i);
+      window.lucide.createIcons({
+        attrs: {
+          width: size,
+          height: size,
+          "stroke-width": strokeWidth,
+          stroke: color,
+          fill
+        }
+      });
+    }
+  }, [name, size, strokeWidth, color, fill, inline]);
+  if (inline) {
+    return /*#__PURE__*/React.createElement("svg", {
+      width: size,
+      height: size,
+      viewBox: "0 0 24 24",
+      fill: fill,
+      stroke: color,
+      strokeWidth: strokeWidth,
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      style: {
+        display: "inline-block",
+        verticalAlign: "middle",
+        flexShrink: 0,
+        ...style
+      },
+      "aria-hidden": "true",
+      dangerouslySetInnerHTML: {
+        __html: inline
+      }
+    });
+  }
+  return /*#__PURE__*/React.createElement("span", {
+    ref: ref,
+    style: {
+      display: "inline-flex",
+      color,
+      lineHeight: 0,
+      ...style
+    },
+    "aria-hidden": "true"
+  });
+};
+const Logo = ({
+  size = 26
+}) => /*#__PURE__*/React.createElement("img", {
+  src: "assets/is7-logo-roxa.png",
+  alt: "IS7",
+  className: "site-logo",
+  style: {
+    height: size * 2.2,
+    width: "auto",
+    display: "block"
+  }
+});
+const Eyebrow = ({
+  children,
+  center = false,
+  style = {}
+}) => /*#__PURE__*/React.createElement("span", {
+  className: `eyebrow ${center ? "center" : ""}`,
+  style: style
+}, children);
+
+// Capture-safe reveal: hidden state only applies when body.js-anim is set AND
+// the element hasn't yet entered the viewport. State lives in React so a parent
+// re-render (e.g. from tweaks) can't strip the "in" class.
+const Reveal = ({
+  children,
+  className = "",
+  style = {},
+  delay = 0,
+  as = "div",
+  ...rest
+}) => {
+  const ref = React.useRef(null);
+  const [shown, setShown] = React.useState(false);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.92) {
+      setShown(true);
+      return;
+    }
+    const obs = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) {
+        setShown(true);
+        obs.disconnect();
+      }
+    }), {
+      threshold: 0.12
+    });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  const Tag = as;
+  return /*#__PURE__*/React.createElement(Tag, _extends({
+    ref: ref,
+    className: `reveal ${shown ? "in" : ""} ${className}`,
+    style: {
+      transitionDelay: shown ? `${delay}ms` : "0ms",
+      ...style
+    }
+  }, rest), children);
+};
+
+// Count-up: animates 0→target when the element scrolls into view. Uses a
+// timer-based tween (Date.now) so it advances reliably even where rAF is
+// throttled; a mount-level safety timer guarantees the final value always lands.
+const useCountUp = (target, {
+  duration = 1600,
+  decimals = 0
+} = {}) => {
+  const ref = React.useRef(null);
+  const [val, setVal] = React.useState(0);
+  const done = React.useRef(false);
+  React.useEffect(() => {
+    const el = ref.current;
+    let iv = null;
+    const finish = () => {
+      if (iv) clearInterval(iv);
+      iv = null;
+      setVal(target);
+    };
+    const run = () => {
+      if (done.current) return;
+      done.current = true;
+      const t0 = Date.now();
+      iv = setInterval(() => {
+        const p = Math.min(1, (Date.now() - t0) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setVal(target * eased);
+        if (p >= 1) finish();
+      }, 32);
+    };
+    let obs = null;
+    if (el && el.getBoundingClientRect().top < window.innerHeight) run();else if (el) {
+      obs = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) {
+          run();
+          obs.disconnect();
+        }
+      }), {
+        threshold: 0.35
+      });
+      obs.observe(el);
+    }
+    // Safety net: never leave the figure stuck at 0.
+    const safety = setTimeout(() => {
+      if (!done.current) run();
+    }, 2600);
+    return () => {
+      if (iv) clearInterval(iv);
+      if (obs) obs.disconnect();
+      clearTimeout(safety);
+    };
+  }, [target, duration]);
+  const display = decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString("pt-BR");
+  return [ref, display];
+};
+
+// Animated stat figure: parses prefix/number/suffix so "R$ 500 mil+" counts the 500.
+const StatNumber = ({
+  prefix = "",
+  value,
+  suffix = "",
+  decimals = 0,
+  size
+}) => {
+  const [ref, display] = useCountUp(value, {
+    decimals
+  });
+  return /*#__PURE__*/React.createElement("span", {
+    ref: ref,
+    className: "stat-num",
+    style: size ? {
+      fontSize: size
+    } : undefined
+  }, prefix, display, suffix);
+};
+window.IS7v2 = {
+  Icon,
+  Logo,
+  Eyebrow,
+  Reveal,
+  useCountUp,
+  StatNumber,
+  WAPP,
+  wa
+};
+})();
+</script>
+  <script>
+(function(){
+// IS7 — Portfolio Lightbox v2 — Full iframe / screenshot browser experience
+
+const {
+  Icon,
+  wa
+} = window.IS7v2;
+const useLightbox = () => {
+  const [active, setActive] = React.useState(null);
+  React.useEffect(() => {
+    const fn = e => {
+      if (e.key === "Escape") setActive(null);
+    };
+    window.addEventListener("keydown", fn);
+    return () => window.removeEventListener("keydown", fn);
+  }, []);
+  return [active, setActive];
+};
+const PortfolioLightbox = ({
+  c,
+  onClose
+}) => {
+  const hasUrl = !!c.url;
+  const hasImg = !!c.img;
+  const [loaded, setLoaded] = React.useState(false);
+  React.useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    onClick: e => {
+      if (e.target === e.currentTarget) onClose();
+    },
+    style: {
+      position: "fixed",
+      inset: 0,
+      zIndex: 9990,
+      background: "rgba(2,4,12,.92)",
+      backdropFilter: "blur(12px)",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "20px 20px 0",
+      animation: "lb-in .2s ease both"
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: onClose,
+    "aria-label": "Fechar",
+    className: "lb-close-float",
+    style: {
+      position: "fixed",
+      top: 14,
+      right: 14,
+      zIndex: 10001,
+      width: 46,
+      height: 46,
+      borderRadius: 9999,
+      border: "1px solid rgba(255,255,255,.22)",
+      background: "rgba(10,14,30,.9)",
+      backdropFilter: "blur(8px)",
+      display: "none",
+      alignItems: "center",
+      justifyContent: "center",
+      cursor: "pointer",
+      boxShadow: "0 8px 24px -6px rgba(0,0,0,.6)"
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "x",
+    size: 24,
+    color: "#fff"
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: 1100,
+      height: "calc(100vh - 80px)",
+      display: "flex",
+      flexDirection: "column",
+      borderRadius: "14px 14px 0 0",
+      overflow: "hidden",
+      boxShadow: "0 40px 100px -20px rgba(0,0,0,.9)",
+      border: "1px solid rgba(255,255,255,.08)",
+      borderBottom: "none",
+      animation: "lb-slide .32s cubic-bezier(.16,1,.3,1) both"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: "#161B2E",
+      borderBottom: "1px solid rgba(255,255,255,.07)",
+      padding: "10px 16px",
+      display: "flex",
+      alignItems: "center",
+      gap: 10,
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 6,
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: onClose,
+    title: "Fechar",
+    style: {
+      width: 12,
+      height: 12,
+      borderRadius: "50%",
+      background: "#FF5F57",
+      border: "none",
+      cursor: "pointer",
+      padding: 0,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      transition: "filter .15s"
+    },
+    onMouseEnter: e => e.currentTarget.style.filter = "brightness(1.3)",
+    onMouseLeave: e => e.currentTarget.style.filter = "none"
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 12,
+      height: 12,
+      borderRadius: "50%",
+      background: "#FFBD2E",
+      display: "block"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 12,
+      height: 12,
+      borderRadius: "50%",
+      background: "#28CA42",
+      display: "block"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      background: "rgba(255,255,255,.06)",
+      borderRadius: 7,
+      padding: "5px 12px",
+      display: "flex",
+      alignItems: "center",
+      gap: 7
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "lock",
+    size: 10,
+    color: "rgba(255,255,255,.3)"
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 11,
+      color: "rgba(255,255,255,.45)",
+      fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap"
+    }
+  }, c.domain || "is7mkt.com.br")), /*#__PURE__*/React.createElement("a", {
+    href: wa(`Olá! Vi o projeto ${c.name} no portfólio da IS7 e quero um site assim.`),
+    target: "_blank",
+    rel: "noreferrer",
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 6,
+      background: "var(--grad)",
+      borderRadius: 7,
+      padding: "5px 14px",
+      fontSize: 11,
+      fontWeight: 700,
+      color: "#fff",
+      textDecoration: "none",
+      flexShrink: 0,
+      whiteSpace: "nowrap"
+    }
+  }, "Quero assim ", /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-right",
+    size: 11
+  })), /*#__PURE__*/React.createElement("button", {
+    onClick: onClose,
+    style: {
+      width: 30,
+      height: 30,
+      borderRadius: 7,
+      border: "1px solid rgba(255,255,255,.1)",
+      background: "rgba(255,255,255,.05)",
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "x",
+    size: 14,
+    color: "rgba(255,255,255,.5)"
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      overflow: "hidden",
+      position: "relative",
+      background: c.grad || "#0A0E2E"
+    }
+  }, hasUrl ? /*#__PURE__*/React.createElement(React.Fragment, null, !loaded && /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0,
+      zIndex: 2,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "#0A0E2E",
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: "50%",
+      border: "3px solid rgba(255,255,255,.1)",
+      borderTopColor: "var(--accent)",
+      animation: "lb-spin 1s linear infinite"
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      color: "rgba(255,255,255,.3)"
+    }
+  }, "Carregando ", c.domain, "\u2026")), /*#__PURE__*/React.createElement("iframe", {
+    src: c.url,
+    title: c.name,
+    onLoad: () => setLoaded(true),
+    style: {
+      width: "100%",
+      height: "100%",
+      border: "none",
+      display: "block",
+      opacity: loaded ? 1 : 0,
+      transition: "opacity .3s"
+    },
+    sandbox: "allow-scripts allow-same-origin allow-forms allow-popups"
+  })) : hasImg ?
+  /*#__PURE__*/
+  /* Scrollable screenshot — fundo branco pra parecer um navegador
+     (screenshots curtos nao ficam num vao escuro) */
+  React.createElement("div", {
+    style: {
+      width: "100%",
+      height: "100%",
+      overflowY: "auto",
+      overflowX: "hidden",
+      background: "#fff",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: c.img,
+    alt: c.name,
+    style: {
+      width: "100%",
+      maxWidth: 1100,
+      display: "inline-block",
+      verticalAlign: "top"
+    }
+  })) :
+  /*#__PURE__*/
+  /* Mono fallback */
+  React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: c.grad
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: "var(--serif)",
+      fontWeight: 900,
+      fontSize: 120,
+      color: "rgba(255,255,255,.12)",
+      letterSpacing: ".06em"
+    }
+  }, c.mono)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "100%",
+      maxWidth: 1100,
+      background: "rgba(22,27,46,.97)",
+      borderTop: "1px solid rgba(255,255,255,.07)",
+      padding: "12px 20px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      backdropFilter: "blur(8px)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "tag tag-accent",
+    style: {
+      fontSize: 10
+    }
+  }, c.tag), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700,
+      fontFamily: "var(--serif)",
+      color: "var(--fg)"
+    }
+  }, c.name), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      color: "var(--fg-dim)"
+    }
+  }, "\xB7"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      color: "var(--fg-muted)"
+    }
+  }, c.meta)), /*#__PURE__*/React.createElement("a", {
+    href: wa(`Olá! Vi o projeto ${c.name} no portfólio da IS7 e gostaria de saber mais.`),
+    target: "_blank",
+    rel: "noreferrer",
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 6,
+      fontSize: 12,
+      fontWeight: 600,
+      color: "var(--accent-bright)",
+      textDecoration: "none"
+    }
+  }, "Falar com a IS7 ", /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-up-right",
+    size: 13
+  }))), /*#__PURE__*/React.createElement("style", null, `
+        @keyframes lb-in    { from { opacity: 0 } to { opacity: 1 } }
+        @keyframes lb-slide { from { transform: translateY(24px) scale(.98); opacity: 0 } to { transform: none; opacity: 1 } }
+        @keyframes lb-spin  { to { transform: rotate(360deg) } }
+        @media (max-width: 600px) {
+          .lb-cta-btn { display: none !important; }
+        }
+      `));
+};
+window.IS7v2 = Object.assign(window.IS7v2, {
+  useLightbox,
+  PortfolioLightbox
+});
+})();
+</script>
+
+  <script>
+(function(){
+const {
+  Logo,
+  Icon,
+  Eyebrow,
+  Reveal,
+  wa,
+  WAPP
+} = window.IS7v2;
+const CASES = window.IS7_CASES || [];
+const PortCard = ({
+  c,
+  i,
+  onOpen
+}) => /*#__PURE__*/React.createElement(Reveal, {
+  delay: i % 3 * 70,
+  as: "article",
+  className: "port-card",
+  onClick: () => onOpen(c),
+  style: {
+    cursor: "pointer"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  className: "port-thumb",
+  style: {
+    background: c.grad || "var(--surface-2)",
+    position: "relative"
+  }
+}, c.img ? /*#__PURE__*/React.createElement("img", {
+  src: c.img,
+  alt: c.name,
+  loading: "lazy",
+  className: "port-img"
+}) : /*#__PURE__*/React.createElement("div", {
+  className: "port-mono"
+}, /*#__PURE__*/React.createElement("span", null, c.mono)), /*#__PURE__*/React.createElement("span", {
+  className: "tag tag-accent",
+  style: {
+    position: "absolute",
+    top: 12,
+    left: 12,
+    backdropFilter: "blur(6px)"
+  }
+}, c.tag), c.pages > 1 && /*#__PURE__*/React.createElement("span", {
+  className: "tag",
+  style: {
+    position: "absolute",
+    top: 12,
+    right: 12,
+    backdropFilter: "blur(6px)"
+  }
+}, c.pages, " p\xE1ginas"), /*#__PURE__*/React.createElement("div", {
+  className: "port-hover-hint"
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    display: "flex",
+    alignItems: "center",
+    gap: 8,
+    background: "var(--grad)",
+    padding: "10px 18px",
+    borderRadius: 9999,
+    fontSize: 13.5,
+    fontWeight: 600,
+    color: "#fff"
+  }
+}, /*#__PURE__*/React.createElement(Icon, {
+  name: "expand",
+  size: 16
+}), " Ver detalhes"))), /*#__PURE__*/React.createElement("div", {
+  className: "port-info"
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+  className: "port-name"
+}, c.name), /*#__PURE__*/React.createElement("p", {
+  className: "port-meta"
+}, c.meta)), /*#__PURE__*/React.createElement("span", {
+  className: "port-arrow"
+}, /*#__PURE__*/React.createElement(Icon, {
+  name: "expand",
+  size: 16,
+  color: "var(--accent-bright)"
+}))));
+const App = () => {
+  const [scrolled, setScrolled] = React.useState(false);
+  const [theme, setTheme] = React.useState(() => typeof localStorage !== 'undefined' ? localStorage.getItem('is7-theme') || 'dark' : 'dark');
+  React.useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 16);
+    fn();
+    window.addEventListener('scroll', fn, {
+      passive: true
+    });
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('is7-theme', theme);
+  }, [theme]);
+  const {
+    useLightbox,
+    PortfolioLightbox
+  } = window.IS7v2;
+  const [active, setActive] = useLightbox();
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
+    className: `hdr ${scrolled ? "scrolled" : ""}`
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap hdr-row"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/",
+    "aria-label": "IS7"
+  }, /*#__PURE__*/React.createElement(Logo, {
+    size: 26
+  })), /*#__PURE__*/React.createElement("nav", {
+    className: "nav"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/"
+  }, "In\xEDcio"), /*#__PURE__*/React.createElement("a", {
+    href: "/#servicos"
+  }, "Servi\xE7os"), /*#__PURE__*/React.createElement("a", {
+    href: "/#sobre"
+  }, "Sobre"), /*#__PURE__*/React.createElement("a", {
+    href: "/#contato"
+  }, "Contato")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "theme-toggle",
+    "aria-label": "Alternar tema",
+    onClick: () => setTheme(t => t === 'dark' ? 'light' : 'dark')
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: theme === 'dark' ? 'sun' : 'moon',
+    size: 17
+  })), /*#__PURE__*/React.createElement("a", {
+    href: wa("Olá! Vi o portfólio da IS7 e quero um projeto assim também."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "btn btn-primary",
+    style: {
+      padding: "12px 24px",
+      fontSize: 14
+    }
+  }, "Fale conosco")))), /*#__PURE__*/React.createElement("section", {
+    className: "port-hero"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "glow glow-purple",
+    style: {
+      width: 500,
+      height: 500,
+      top: -200,
+      left: "50%",
+      transform: "translateX(-50%)",
+      animation: "glow-morph 12s ease-in-out infinite"
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "gridlines"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "wrap",
+    style: {
+      position: "relative",
+      zIndex: 2
+    }
+  }, /*#__PURE__*/React.createElement(Reveal, null, /*#__PURE__*/React.createElement("a", {
+    href: "/",
+    className: "link-arrow",
+    style: {
+      justifyContent: "center",
+      marginBottom: 28
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-left",
+    size: 15
+  }), " Voltar ao site")), /*#__PURE__*/React.createElement(Reveal, {
+    delay: 60
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "port-count"
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "layout-grid",
+    size: 14
+  }), " ", CASES.length, " projetos entregues")), /*#__PURE__*/React.createElement(Reveal, {
+    delay: 100
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: "display",
+    style: {
+      maxWidth: 800,
+      margin: "0 auto"
+    }
+  }, "Nosso ", /*#__PURE__*/React.createElement("span", {
+    className: "grad-text"
+  }, "portf\xF3lio"))), /*#__PURE__*/React.createElement(Reveal, {
+    delay: 140
+  }, /*#__PURE__*/React.createElement("p", {
+    className: "lead",
+    style: {
+      maxWidth: 560,
+      margin: "22px auto 0"
+    }
+  }, "Sites, lojas virtuais e projetos de presen\xE7a digital desenvolvidos para neg\xF3cios reais em todo o Brasil.")))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      paddingBottom: 80
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "port-grid"
+  }, CASES.map((c, i) => /*#__PURE__*/React.createElement(PortCard, {
+    key: i,
+    c: c,
+    i: i,
+    onOpen: setActive
+  }))))), /*#__PURE__*/React.createElement("section", {
+    className: "port-cta"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "glow glow-blue",
+    style: {
+      width: 400,
+      height: 400,
+      top: -120,
+      left: "50%",
+      transform: "translateX(-50%)",
+      opacity: .35
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "wrap",
+    style: {
+      position: "relative",
+      zIndex: 2
+    }
+  }, /*#__PURE__*/React.createElement(Reveal, null, /*#__PURE__*/React.createElement(Eyebrow, {
+    center: true
+  }, "Quer um projeto assim?"), /*#__PURE__*/React.createElement("h2", {
+    className: "h2",
+    style: {
+      marginTop: 16
+    }
+  }, "Seu neg\xF3cio pode ser o ", /*#__PURE__*/React.createElement("span", {
+    className: "grad-text"
+  }, "pr\xF3ximo case"), "."), /*#__PURE__*/React.createElement("p", {
+    className: "lead",
+    style: {
+      maxWidth: 500,
+      margin: "18px auto 0"
+    }
+  }, "Fale com a gente e descubra como sua empresa pode ter uma presen\xE7a digital que vende todos os dias."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 14,
+      justifyContent: "center",
+      marginTop: 32
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: wa("Olá! Vi o portfólio da IS7 e quero um projeto assim também."),
+    target: "_blank",
+    rel: "noreferrer",
+    className: "btn btn-primary btn-lg"
+  }, "Quero meu projeto ", /*#__PURE__*/React.createElement(Icon, {
+    name: "arrow-right",
+    size: 18
+  })), /*#__PURE__*/React.createElement("a", {
+    href: "/#contato",
+    className: "btn btn-ghost btn-lg"
+  }, "Entrar em contato"))))), /*#__PURE__*/React.createElement("footer", {
+    style: {
+      borderTop: "1px solid var(--line)",
+      padding: "28px 0",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "wrap",
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: 14,
+      justifyContent: "space-between",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement(Logo, {
+    size: 22
+  }), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: 0,
+      fontSize: 12,
+      color: "var(--fg-dim)"
+    }
+  }, "\xA9 2026 IS7 \xB7 Todos os direitos reservados"))), active && /*#__PURE__*/React.createElement(PortfolioLightbox, {
+    c: active,
+    onClose: () => setActive(null)
+  }), /*#__PURE__*/React.createElement("a", {
+    className: "fab",
+    href: wa("Olá! Vi o portfólio da IS7 e quero saber mais."),
+    target: "_blank",
+    rel: "noreferrer",
+    "aria-label": "WhatsApp"
+  }, /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 32 32",
+    style: {
+      width: 30,
+      height: 30,
+      fill: "#04210F"
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z"
+  }))));
+};
+ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(App, null));
+})();
+</script>
+
+
+</body></html>
