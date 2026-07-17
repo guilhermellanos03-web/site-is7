@@ -256,3 +256,5 @@ CNPJ: 50.201.864/0001-40
 - [ ] Testar lightbox do portfólio
 - [ ] Testar formulário de contato
 - [ ] Testar em mobile (iOS Safari + Android Chrome)
+
+<!-- deploy: conteudo 5 anos / +100 projetos / portfolio atualizado -->
