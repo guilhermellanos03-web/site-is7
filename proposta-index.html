@@ -209,9 +209,12 @@ const Results = () => (
 
 /* ─── Portfolio ─── */
 const PORTFOLIO_ITEMS = [
-  {img:"assets/portfolio/gv2-p1.webp", caption:"Fabi Guincho · Campinas/SP",    tag:"Site + Maps"},
-  {img:"assets/portfolio/gv2-p2.webp", caption:"Guincho Trevisan · Curitiba/PR", tag:"Site + SEO"},
-  {img:"assets/portfolio/gv2-p3.webp", caption:"Auto Socorro WV · Maringá/PR",   tag:"Site + Maps"},
+  {img:"assets/portfolio/gv2-p1.webp",       caption:"Fabi Guincho · Campinas/SP",          tag:"Site + Maps"},
+  {img:"assets/portfolio/gv2-p2.webp",       caption:"Guincho Trevisan · Curitiba/PR",      tag:"Site + SEO"},
+  {img:"assets/portfolio/tribbo-street.webp",caption:"Tribbo Street · SJP/PR",              tag:"Site"},
+  {img:"assets/portfolio/rc-soft.webp",      caption:"Luã Advogado · Curitiba/PR",          tag:"Site"},
+  {img:"assets/portfolio/mk-vinhos.webp",    caption:"MK Vinhos · Curitiba/PR",             tag:"Loja virtual"},
+  {img:"assets/portfolio/chaveiro.webp",     caption:"Chaveiro Assistência 24h · Recife/PE",tag:"Site + Maps"},
 ];
 
 const SiteViewer = ({item, onClose}) => {
@@ -407,8 +410,11 @@ const Pricing = () => (
         </ul>
       </Reveal>
 
-      <Reveal style={{textAlign:"center",marginTop:24}}>
-        <p style={{fontSize:13,color:"var(--fg-dim)"}}>Pagamento via Pix, cartão ou boleto · (41) 98743-0349</p>
+      <Reveal style={{textAlign:"center",marginTop:28,display:"flex",flexDirection:"column",alignItems:"center",gap:14}}>
+        <a href={WA} target="_blank" rel="noreferrer" className="btn btn-wa btn-lg">
+          <Icon name="message-circle" size={18}/> Quero contratar a IS7
+        </a>
+        <p style={{fontSize:13,color:"var(--fg-dim)",margin:0}}>Pagamento via Pix, cartão ou boleto · (41) 98743-0349</p>
       </Reveal>
     </div>
   </section>
