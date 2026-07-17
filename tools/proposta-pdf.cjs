@@ -100,6 +100,11 @@ const PRINT_CSS = `
   await page.evaluate(() => {
     document.body.classList.remove("js-anim");
     document.querySelectorAll(".reveal").forEach((e) => e.classList.add("in"));
+    // remove textos de "site interativo" que nao fazem sentido em PDF
+    document.querySelectorAll("p,span,a").forEach((el) => {
+      const t = (el.textContent || "").trim().toLowerCase();
+      if (t === "clique em qualquer site para ver a página completa") el.style.display = "none";
+    });
     // reviews: o carrossel horizontal vira grade que mostra todos os cards
     document.querySelectorAll("div").forEach((d) => {
       const st = d.getAttribute("style") || "";
