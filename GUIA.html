@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Guia IS7 — Rodar o site (Local + Git + Vercel)</title>
+<style>
+:root{--bg:#070A14;--bg2:#0A0F1E;--surface:#0E1426;--line:rgba(255,255,255,.10);--fg:#F4F6FB;--muted:#98A1BC;--accent:#5C8AFF;--grad:linear-gradient(118deg,#9145E6,#5B5BF5 52%,#3B6CFF);--code:#0c1426;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.7;font-size:16px}
+.wrap{max-width:860px;margin:0 auto;padding:48px 22px 80px}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+h1{font-size:clamp(28px,5vw,40px);margin:.2em 0 .1em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(22px,3.4vw,28px);margin:2em 0 .5em;padding-top:1em;border-top:1px solid var(--line)}
+h3{font-size:19px;margin:1.6em 0 .4em;color:#fff}
+h2:first-of-type{border-top:0}
+p,li{color:var(--muted)}
+strong{color:var(--fg)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+code{font-family:'JetBrains Mono',ui-monospace,monospace;background:var(--code);border:1px solid var(--line);border-radius:6px;padding:.12em .4em;font-size:.88em;color:#cfe0ff}
+pre{background:var(--code);border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow-x:auto}
+pre code{background:none;border:0;padding:0;color:#dbe6ff}
+table{width:100%;border-collapse:collapse;margin:1em 0;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;color:var(--muted)}
+th{background:var(--surface);color:#fff;font-family:Montserrat,sans-serif;font-size:13.5px}
+blockquote{margin:1em 0;padding:12px 18px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 10px 10px 0}
+blockquote p{margin:.3em 0}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+ul,ol{padding-left:22px}
+li{margin:.3em 0}
+.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(92,138,255,.4);background:rgba(92,138,255,.1);padding:5px 12px;border-radius:9999px;margin-bottom:18px}
+@media print{body{background:#fff;color:#111}.wrap{max-width:100%}h1{color:#5B5BF5;-webkit-text-fill-color:#5B5BF5}h3,strong{color:#111}p,li,td{color:#333}pre,code{background:#f4f6fb;color:#111;border-color:#ddd}pre code{color:#111}th{background:#f0f2ff;color:#111}}
+</style></head>
+<body><div class="wrap"><span class="badge">IS7 Marketing Digital · Guia do projeto</span>
+<h1>🚀 Guia IS7 — Rodar o site no seu computador (Local + Git + Vercel)</h1>
+<blockquote>
+<p>Este é o manual completo do projeto do site da <strong>IS7 Marketing Digital</strong>.
+Serve pra você (ou qualquer pessoa) baixar o projeto, rodar no próprio computador,
+editar, salvar no Git e publicar na Vercel. Escrito passo a passo, sem pular etapa.</p>
+</blockquote>
+<hr>
+<h2>PARTE 1 — O que é este projeto (contexto da IS7)</h2>
+<h3>A marca</h3>
+<ul>
+<li><strong>Nome:</strong> IS7 Marketing Digital</li>
+<li><strong>Site:</strong> <a href="https://is7mkt.com.br">https://is7mkt.com.br</a></li>
+<li><strong>Cidade:</strong> Curitiba/PR (atende todo o Brasil)</li>
+<li><strong>WhatsApp:</strong> (41) 98743-0349 → <code>5541987430349</code></li>
+<li><strong>E-mail:</strong> <a href="mailto:suporte@is7mkt.com.br">suporte@is7mkt.com.br</a></li>
+<li><strong>CNPJ:</strong> 50.201.864/0001-40 (IS7 Mídias Digitais)</li>
+<li><strong>Fundador/Gestor:</strong> Guilherme Llanos</li>
+<li><strong>Números atuais:</strong> 5.0 no Google (28 avaliações) · +100 projetos · 5 anos de mercado · sites com PageSpeed 90–100</li>
+<li><strong>Google (avaliações):</strong> <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA">https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA</a></li>
+</ul>
+<h3>O que a IS7 vende (e o &quot;Método IS7&quot;)</h3>
+<p>Assessoria de marketing para <strong>empresas de serviço</strong>. A oferta é apresentada como o <strong>Método IS7</strong> (7 etapas):</p>
+<ol>
+<li>Diagnóstico gratuito</li>
+<li>Posicionamento no Google (Perfil da Empresa / SEO local)</li>
+<li>Site que converte (site profissional ou landing page)</li>
+<li>Reputação 5 estrelas (avaliações no Google)</li>
+<li>Tráfego pago (Google Ads)</li>
+<li>Autoridade e conteúdo (SEO/blog)</li>
+<li>Acompanhamento contínuo</li>
+</ol>
+<h3>O que este site tem (páginas)</h3>
+<table>
+<thead>
+<tr>
+<th>Página</th>
+<th>Endereço</th>
+<th>Arquivo-fonte</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Home</td>
+<td><code>/</code></td>
+<td><code>src/index.html</code> + <code>src/site_v2/*</code></td>
+</tr>
+<tr>
+<td>Portfólio</td>
+<td><code>/portfolio</code></td>
+<td><code>src/portfolio.html</code></td>
+</tr>
+<tr>
+<td>Landing Pages (produto)</td>
+<td><code>/landing-pages</code></td>
+<td><code>landing-pages.html</code></td>
+</tr>
+<tr>
+<td>Modelo da nova home (estudo, <code>noindex</code>)</td>
+<td><code>/modelo-home</code></td>
+<td><code>modelo-home.html</code></td>
+</tr>
+<tr>
+<td>Blog (3 artigos)</td>
+<td><code>/blog/...</code></td>
+<td><code>blog/*.html</code></td>
+</tr>
+<tr>
+<td><strong>Propostas</strong> (outro domínio)</td>
+<td><code>proposta.is7mkt.com.br</code></td>
+<td><code>proposta-index.html</code>, <code>IS7 Proposta Guincho.html</code>, <code>IS7 Proposta Chaveiro.html</code></td>
+</tr>
+</tbody></table>
+<h3>Como o projeto é organizado (pastas principais)</h3>
+<pre><code>site-is7/
+├── src/                     ← FONTE do site principal (é aqui que você edita a home)
+│   ├── index.html           ← página inicial
+│   ├── portfolio.html       ← página de portfólio
+│   └── site_v2/             ← componentes (JSX), CSS e dados
+│       ├── site.css         ← TODAS as cores/estilos (tema claro/escuro)
+│       ├── cases.js          ← lista de projetos do portfólio
+│       ├── SiteHero.jsx      ← hero (topo)
+│       ├── Sections1..4.jsx  ← seções da home
+│       └── ...
+├── landing-pages.html       ← página de produto (HTML puro, rápido)
+├── modelo-home.html         ← modelo da nova home (Método IS7)
+├── blog/                    ← artigos do blog (HTML puro)
+├── proposta-index.html      ← proposta principal (R$ 500 / 4 meses)
+├── IS7 Proposta *.html      ← propostas de guincho e chaveiro
+├── assets/                  ← imagens (logo, favicon, portfólio)
+├── tools/                   ← scripts de build (não precisa editar)
+│   ├── build.js             ← compila src/ → dist/
+│   ├── prerender.js         ← &quot;pré-desenha&quot; as páginas (site mais rápido)
+│   ├── build-proposta.js    ← monta as propostas → dist-proposta/
+│   └── proposta-pdf.cjs     ← gera PDF da proposta
+├── prerendered/             ← snapshots usados no deploy (gerados por script)
+├── package.json             ← comandos do projeto (scripts npm)
+├── vercel.json              ← config da Vercel (URLs limpas + cache)
+└── GUIA.md                  ← este arquivo
+</code></pre>
+<h3>Tecnologia (resumo)</h3>
+<ul>
+<li>Site em <strong>HTML + React + Babel</strong> (sem framework pesado). Você edita <code>.jsx</code> legível em <code>src/</code> e um <strong>build</strong> gera a versão rápida em <code>dist/</code>.</li>
+<li><strong>Sem banco de dados, sem servidor</strong> — é 100% estático.</li>
+<li><strong>Deploy:</strong> o site vive na <strong>Vercel</strong> (e o principal também na Hostinger). Todo push no Git dispara o deploy automático.</li>
+</ul>
+<hr>
+<h2>PARTE 2 — Instalar os programas (só uma vez)</h2>
+<p>Baixe e instale, nesta ordem:</p>
+<ol>
+<li><strong>Node.js</strong> (versão LTS) → <a href="https://nodejs.org">https://nodejs.org</a>
+Isso instala o <code>node</code> e o <code>npm</code> (o gerenciador de pacotes).</li>
+<li><strong>Git</strong> → <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li><strong>Visual Studio Code</strong> (editor de código) → <a href="https://code.visualstudio.com">https://code.visualstudio.com</a></li>
+<li>Uma conta no <strong>GitHub</strong> → <a href="https://github.com">https://github.com</a> (você já tem: <code>guilhermellanos03-web</code>)</li>
+<li>Uma conta na <strong>Vercel</strong> → <a href="https://vercel.com">https://vercel.com</a> (entre com o GitHub — já está conectada ao projeto)</li>
+</ol>
+<p><strong>Como saber se instalou certo:</strong> abra o Terminal (no VS Code: menu <em>Terminal → New Terminal</em>) e digite:</p>
+<pre><code class="language-bash">node -v      # deve mostrar algo como v20.x ou v22.x
+npm -v       # deve mostrar um número
+git --version
+</code></pre>
+<hr>
+<h2>PARTE 3 — Baixar o projeto e rodar no seu computador</h2>
+<h3>Passo 1 — Escolher uma pasta e clonar o repositório</h3>
+<p>No Terminal, vá até onde quer guardar o projeto (ex.: a Área de Trabalho) e clone:</p>
+<pre><code class="language-bash">cd ~/Desktop
+git clone https://github.com/guilhermellanos03-web/site-is7.git
+cd site-is7
+</code></pre>
+<p>Agora você tem a pasta <code>site-is7</code> com tudo dentro. Abra ela no VS Code:</p>
+<pre><code class="language-bash">code .
+</code></pre>
+<h3>Passo 2 — Instalar as dependências (só na 1ª vez, ou quando mudar)</h3>
+<pre><code class="language-bash">npm install
+</code></pre>
+<blockquote>
+<p>Isso baixa as ferramentas de build (Babel, etc.). Pode demorar 1–2 minutos.</p>
+</blockquote>
+<h3>Passo 3 — Gerar o site (build)</h3>
+<pre><code class="language-bash">npm run compile
+</code></pre>
+<p>Isso cria a pasta <strong><code>dist/</code></strong> com o site pronto (home, portfólio, landing pages, blog).</p>
+<blockquote>
+<p><code>compile</code> é a versão rápida. Se quiser a versão &quot;pré-desenhada&quot; (mais otimizada, igual à produção), use <code>npm run build</code> — só que ela precisa baixar um navegador (Chromium) na primeira vez.</p>
+</blockquote>
+<h3>Passo 4 — Abrir no navegador</h3>
+<p>Rode um servidor local apontando pra pasta <code>dist/</code>:</p>
+<pre><code class="language-bash">npx serve dist
+</code></pre>
+<p>Vai aparecer um endereço, geralmente <strong><a href="http://localhost:3000">http://localhost:3000</a></strong>. Abra no navegador.</p>
+<p>Páginas pra testar:</p>
+<ul>
+<li>Home → <code>http://localhost:3000/</code></li>
+<li>Portfólio → <code>http://localhost:3000/portfolio</code></li>
+<li>Landing Pages → <code>http://localhost:3000/landing-pages</code></li>
+<li>Modelo da nova home → <code>http://localhost:3000/modelo-home</code></li>
+<li>Blog → <code>http://localhost:3000/blog/quanto-custa-um-site-profissional</code></li>
+</ul>
+<blockquote>
+<p>Se algum link &quot;limpo&quot; não abrir, tente com <code>.html</code> no fim (ex.: <code>/landing-pages.html</code>). Na Vercel, a URL limpa funciona sozinha.</p>
+</blockquote>
+<h3>Passo 5 — Ver as PROPOSTAS localmente (opcional)</h3>
+<p>As propostas (proposta.is7mkt.com.br) têm um build próprio:</p>
+<pre><code class="language-bash">npm run build-proposta
+npx serve dist-proposta
+</code></pre>
+<p>Abra <code>http://localhost:3000/</code> (proposta principal) — ou <code>/guincho</code>, <code>/chaveiro</code>.</p>
+<hr>
+<h2>PARTE 4 — Editar o site</h2>
+<p><strong>Regra de ouro:</strong> você edita a <strong>fonte</strong> e depois <strong>roda o build de novo</strong> pra ver o resultado.</p>
+<table>
+<thead>
+<tr>
+<th>O que você quer mudar</th>
+<th>Arquivo pra editar</th>
+<th>Comando depois</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Textos/seções da home</td>
+<td><code>src/site_v2/*.jsx</code></td>
+<td><code>npm run compile</code></td>
+</tr>
+<tr>
+<td>Cores / tema</td>
+<td><code>src/site_v2/site.css</code></td>
+<td><code>npm run compile</code></td>
+</tr>
+<tr>
+<td>Projetos do portfólio</td>
+<td><code>src/site_v2/cases.js</code></td>
+<td><code>npm run compile</code></td>
+</tr>
+<tr>
+<td>Landing page de produto</td>
+<td><code>landing-pages.html</code></td>
+<td>(é HTML puro, só recarregar)</td>
+</tr>
+<tr>
+<td>Modelo da nova home</td>
+<td><code>modelo-home.html</code></td>
+<td>(HTML puro)</td>
+</tr>
+<tr>
+<td>Artigos do blog</td>
+<td><code>blog/*.html</code></td>
+<td>(HTML puro)</td>
+</tr>
+<tr>
+<td>Proposta principal (R$ 500)</td>
+<td><code>proposta-index.html</code></td>
+<td><code>npm run build-proposta</code></td>
+</tr>
+<tr>
+<td>Imagens</td>
+<td>pasta <code>assets/</code></td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p><strong>Fluxo de edição:</strong></p>
+<ol>
+<li>Edite o arquivo no VS Code e salve (Ctrl/Cmd + S).</li>
+<li>Rode o build (<code>npm run compile</code> para a home).</li>
+<li>Atualize a página no navegador (F5).</li>
+</ol>
+<blockquote>
+<p><strong>Importante (páginas pré-renderizadas):</strong> se você editar a HOME em <code>src/</code>, para a versão de produção ficar 100% otimizada rode também:</p>
+<pre><code class="language-bash">npm run build &amp;&amp; npm run prerender:save
+</code></pre>
+<p>Isso atualiza a pasta <code>prerendered/</code>. Depois é só commitar junto (a Vercel usa esse snapshot).</p>
+</blockquote>
+<hr>
+<h2>PARTE 5 — Salvar e versionar no Git</h2>
+<p>Sempre trabalhe assim: cria um &quot;ramo&quot; (branch), salva (commit), envia (push).</p>
+<pre><code class="language-bash"># 1. Crie um branch para a sua alteração
+git checkout -b minha-alteracao
+
+# 2. Veja o que mudou
+git status
+
+# 3. Adicione as mudanças e salve com uma mensagem
+git add .
+git commit -m &quot;Descreve o que você mudou aqui&quot;
+
+# 4. Envie para o GitHub
+git push -u origin minha-alteracao
+</code></pre>
+<p>Depois é só abrir um <strong>Pull Request</strong> no GitHub (ele mostra um botão &quot;Compare &amp; pull request&quot;) e, quando estiver ok, clicar em <strong>Merge</strong> para publicar na <code>master</code>.</p>
+<blockquote>
+<p><strong>Atalho (sem branch):</strong> se for algo simples e você quer publicar direto:</p>
+<pre><code class="language-bash">git checkout master
+git pull
+git add . &amp;&amp; git commit -m &quot;ajuste rápido&quot; &amp;&amp; git push
+</code></pre>
+<p>Push na <code>master</code> = publica em produção. Use com cuidado.</p>
+</blockquote>
+<hr>
+<h2>PARTE 6 — Publicar na Vercel</h2>
+<h3>O jeito automático (já configurado — recomendado)</h3>
+<p>O repositório <strong>já está conectado à Vercel</strong>. Você não precisa configurar nada:</p>
+<ul>
+<li><strong>Push em um branch / Pull Request</strong> → a Vercel gera um link de <strong>preview</strong> (pra testar antes).</li>
+<li><strong>Merge na <code>master</code></strong> → a Vercel publica em <strong>produção</strong> (is7mkt.com.br e proposta.is7mkt.com.br).</li>
+</ul>
+<p>Ou seja: <strong>git push já é o deploy.</strong> É só esperar 1–2 minutos e atualizar o site (Ctrl+Shift+R para limpar o cache).</p>
+<h3>O jeito manual pela Vercel CLI (opcional)</h3>
+<p>Se quiser publicar direto do seu computador, sem Git:</p>
+<pre><code class="language-bash">npm i -g vercel      # instala a ferramenta (só 1ª vez)
+vercel login         # entra na sua conta
+npm run build        # gera o dist/
+vercel               # cria um preview
+vercel --prod        # publica em produção
+</code></pre>
+<h3>Se um dia precisar reconectar/reconfigurar na Vercel</h3>
+<p>No painel da Vercel (vercel.com), no projeto <strong>site-is7</strong>:</p>
+<ul>
+<li><strong>Framework Preset:</strong> Other</li>
+<li><strong>Build Command:</strong> <code>npm run build</code></li>
+<li><strong>Output Directory:</strong> <code>dist</code></li>
+</ul>
+<p>Para as propostas, o projeto <strong>is7-proposta</strong> usa <strong>Build Command:</strong> <code>npm run build-proposta</code> e <strong>Output Directory:</strong> <code>dist-proposta</code>.</p>
+<hr>
+<h2>PARTE 7 — Colinha de comandos (cheat sheet)</h2>
+<pre><code class="language-bash"># Baixar o projeto
+git clone https://github.com/guilhermellanos03-web/site-is7.git
+cd site-is7
+npm install
+
+# Rodar o site principal local
+npm run compile
+npx serve dist
+
+# Rodar as propostas local
+npm run build-proposta
+npx serve dist-proposta
+
+# Versão de produção (com pré-render) da home
+npm run build &amp;&amp; npm run prerender:save
+
+# Gerar PDF de uma proposta (ex.: a principal)
+npm run build-proposta
+node tools/proposta-pdf.cjs dist-proposta/index.html ~/Desktop/Proposta-IS7.pdf 860
+
+# Salvar e publicar
+git checkout -b minha-alteracao
+git add . &amp;&amp; git commit -m &quot;o que mudei&quot;
+git push -u origin minha-alteracao
+# depois: abrir Pull Request no GitHub e dar Merge
+</code></pre>
+<hr>
+<h2>PARTE 8 — Problemas comuns</h2>
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Solução</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>command not found: npm</code></td>
+<td>O Node não instalou. Reinstale de nodejs.org e reabra o terminal.</td>
+</tr>
+<tr>
+<td><code>npx serve</code> pede pra instalar</td>
+<td>Digite <code>y</code> e Enter. É normal na primeira vez.</td>
+</tr>
+<tr>
+<td>A página abre sem estilo/imagens</td>
+<td>Você abriu o arquivo direto (file://). Use sempre <code>npx serve dist</code> e o <code>http://localhost:...</code>.</td>
+</tr>
+<tr>
+<td>Editei mas não mudou nada</td>
+<td>Faltou rodar o build de novo (<code>npm run compile</code>) e dar F5. Para a home, use Ctrl+Shift+R.</td>
+</tr>
+<tr>
+<td>URL limpa (<code>/landing-pages</code>) não abre local</td>
+<td>Adicione <code>.html</code> no fim. Em produção (Vercel) funciona sozinha.</td>
+</tr>
+<tr>
+<td><code>npm run build</code> falha por causa do Chromium</td>
+<td>Use <code>npm run compile</code> (não precisa de Chromium). O pré-render é opcional no local.</td>
+</tr>
+<tr>
+<td>Deploy na Vercel não atualizou</td>
+<td>Espere 1–2 min e limpe o cache (Ctrl+Shift+R). Se persistir, veja se o push foi pra branch certa.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Resumo em 1 minuto</h2>
+<ol>
+<li><code>git clone</code> → <code>cd site-is7</code> → <code>npm install</code></li>
+<li><code>npm run compile</code> → <code>npx serve dist</code> → abrir <code>http://localhost:3000</code></li>
+<li>Editar em <code>src/</code> → rebuild → F5</li>
+<li><code>git add . &amp;&amp; git commit -m &quot;...&quot; &amp;&amp; git push</code></li>
+<li>Merge na <code>master</code> → Vercel publica sozinha ✅</li>
+</ol>
+<p>Qualquer dúvida, este projeto é 100% estático e reversível: nada quebra a produção enquanto você não faz merge na <code>master</code>.</p>
+
+</div></body></html>
