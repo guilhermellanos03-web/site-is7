@@ -3,8 +3,45 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Portfólio — IS7 Assessoria de Marketing Digital</title>
+<title>Portfólio de sites da IS7 | Projetos reais em Curitiba e no Brasil</title>
+<meta name="description" content="Veja sites e lojas virtuais que a IS7 entregou para negócios reais: chaveiro, adega, estética automotiva, advocacia, barbearia e mais. Screenshot completo e domínio de cada projeto."/>
+<meta name="author" content="IS7 Marketing Digital"/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#070A14"/>
+<meta name="geo.region" content="BR-PR"/>
+<meta name="geo.placename" content="Curitiba"/>
+<link rel="canonical" href="https://is7mkt.com.br/portfolio"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:site_name" content="IS7 Marketing Digital"/>
+<meta property="og:title" content="Portfólio de sites da IS7 | Projetos reais no ar"/>
+<meta property="og:description" content="Sites e lojas virtuais entregues pela IS7 para negócios reais. Cada projeto com screenshot completo e domínio à vista."/>
+<meta property="og:url" content="https://is7mkt.com.br/portfolio"/>
+<meta property="og:image" content="https://is7mkt.com.br/assets/is7-logo-grad.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Portfólio de sites da IS7"/>
+<meta name="twitter:description" content="Sites e lojas virtuais entregues pela IS7 para negócios reais em Curitiba e no Brasil."/>
+<meta name="twitter:image" content="https://is7mkt.com.br/assets/is7-logo-grad.png"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Portfólio de sites da IS7 Marketing Digital",
+  "description": "Sites e lojas virtuais desenvolvidos pela IS7 Marketing Digital para negócios reais em Curitiba e no Brasil.",
+  "url": "https://is7mkt.com.br/portfolio",
+  "isPartOf": { "@type": "WebSite", "name": "IS7 Marketing Digital", "url": "https://is7mkt.com.br/" },
+  "about": { "@type": "ProfessionalService", "name": "IS7 Marketing Digital", "url": "https://is7mkt.com.br/" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://is7mkt.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Portfólio", "item": "https://is7mkt.com.br/portfolio" }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'"/>
@@ -12,52 +49,96 @@
 <!-- Anti-flash: apply saved theme before React mounts -->
 <script>(function(){ var t=localStorage.getItem('is7-theme')||'dark'; document.documentElement.setAttribute('data-theme',t); })()</script>
 <style>
-  .port-hero{
-    position:relative; overflow:hidden; padding:140px 0 80px; text-align:center;
-  }
+  .port-hero{ position:relative; overflow:hidden; padding:140px 0 64px; text-align:center; }
   .port-count{
     display:inline-flex; align-items:center; gap:10px;
-    font-family:var(--mono); font-size:13px; letter-spacing:.14em;
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.12em;
     text-transform:uppercase; color:var(--accent-bright);
-    background:rgba(145,69,230,.10); border:1px solid rgba(145,69,230,.25);
+    background:rgba(59,108,255,.10); border:1px solid rgba(59,108,255,.25);
     padding:8px 18px; border-radius:9999px; margin-bottom:22px;
   }
-  .port-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+
+  /* ---- Barra de filtro ---- */
+  .port-filter{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:40px; }
+  .port-fbtn{
+    font-family:var(--sans); font-size:14px; font-weight:600;
+    padding:10px 20px; border-radius:9999px; cursor:pointer;
+    background:transparent; border:1px solid var(--line-2); color:var(--fg-muted);
+    transition:border-color .22s, color .22s, background .22s;
+    min-height:44px;
   }
+  .port-fbtn:hover{ border-color:var(--accent-bright); color:var(--fg); }
+  .port-fbtn.on{ background:var(--grad); border-color:transparent; color:#fff; }
+  .port-fbtn .n{ opacity:.65; margin-left:6px; font-family:var(--mono); font-size:12px; }
+
+  /* ---- Grid ---- */
+  .port-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   .port-card{
     background:var(--surface); border:1px solid var(--line); border-radius:20px;
-    overflow:hidden; display:flex; flex-direction:column;
+    overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
     transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
   }
   .port-card:hover{
-    transform:translateY(-6px); border-color:rgba(145,69,230,.45);
-    box-shadow:0 24px 50px -22px rgba(91,91,245,.45);
+    transform:translateY(-6px); border-color:rgba(59,108,255,.45);
+    box-shadow:0 24px 50px -22px rgba(45,110,240,.45);
   }
-  .port-card:hover .port-img{ transform:scale(1.06); }
-  .port-thumb{
-    height:240px; overflow:hidden; position:relative;
+
+  /* barra de navegador — o domínio real à vista */
+  .port-bar{
+    background:var(--surface); border-bottom:1px solid var(--line);
+    padding:8px 12px; display:flex; align-items:center; gap:8px; flex-shrink:0;
   }
+  .port-dots{ display:flex; gap:5px; flex-shrink:0; }
+  .port-dots span{ width:10px; height:10px; border-radius:50%; display:block; }
+  .port-url{
+    flex:1; background:var(--bg-2); border-radius:6px; padding:4px 10px;
+    font-size:10px; color:var(--fg-dim); font-family:var(--mono);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+
+  /* screenshot com rolagem no hover (a página inteira, não só a dobra) */
+  .port-thumb{ height:230px; overflow:hidden; position:relative; flex-shrink:0; }
   .port-img{
-    width:100%; height:100%; object-fit:cover; object-position:top center;
-    transition:transform .5s ease;
+    position:absolute; top:0; left:0; width:100%; height:auto; display:block;
+    transition:transform 5s linear;
   }
-  .port-mono{
+  @media (hover:hover){ .port-card:hover .port-img{ transform:translateY(calc(-100% + 230px)); } }
+  .port-hover-hint{
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:rgba(7,10,20,.55); opacity:0; transition:opacity .25s; backdrop-filter:blur(2px);
   }
-  .port-mono span{
-    font-family:var(--serif); font-weight:800; font-size:64px;
-    letter-spacing:.06em; color:rgba(255,255,255,.88);
-  }
-  .port-info{ padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .port-card:hover .port-hover-hint{ opacity:1; }
+
+  /* corpo do card */
+  .port-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1; border-top:1px solid var(--line); }
+  .port-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
   .port-name{ margin:0; font-family:var(--serif); font-weight:700; font-size:17px; }
-  .port-meta{ margin:4px 0 0; font-size:13px; color:var(--fg-muted); }
+  .port-meta{ margin:4px 0 0; font-size:12.5px; color:var(--fg-dim); }
+  .port-summary{ margin:0; font-size:13.5px; line-height:1.6; color:var(--fg-muted); flex:1; }
   .port-arrow{
     width:36px; height:36px; border-radius:9999px; border:1px solid var(--line-2);
     display:flex; align-items:center; justify-content:center; flex:0 0 auto;
     transition:background .25s, border-color .25s;
   }
   .port-card:hover .port-arrow{ background:var(--grad); border-color:transparent; }
+  .port-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+
+  .port-empty{ text-align:center; padding:60px 0; color:var(--fg-muted); }
+
+  /* ---- Bloco SEO / AEO / GEO ---- */
+  .port-otim{ position:relative; padding:24px 0 8px; }
+  .port-otim-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:start; }
+  .port-otim-card{ padding:28px 26px; }
+  .port-otim-sigla{
+    display:inline-block; font-family:var(--mono); font-weight:700; font-size:13px;
+    letter-spacing:.16em; color:var(--accent-bright);
+    background:var(--grad-soft); border:1px solid var(--line-2);
+    padding:7px 14px; border-radius:9999px;
+  }
+  .port-otim-lista{ list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .port-otim-lista li{ display:flex; align-items:flex-start; gap:9px; font-size:13px; color:var(--fg-muted); line-height:1.5; }
+  .port-otim-lista li svg{ margin-top:3px; flex-shrink:0; }
+  @media(max-width:900px){ .port-otim-grid{ grid-template-columns:1fr; gap:16px; } }
 
   .port-cta{
     margin-top:80px; padding:64px 0; text-align:center; position:relative;
@@ -67,23 +148,20 @@
 
   @media(max-width:900px){
     .port-grid{ grid-template-columns:repeat(2,1fr); gap:18px; }
-    .port-hero{ padding:120px 0 60px; }
+    .port-hero{ padding:120px 0 52px; }
   }
   @media(max-width:580px){
     .port-grid{ grid-template-columns:1fr; gap:16px; }
     .port-thumb{ height:200px; }
+    @media (hover:hover){ .port-card:hover .port-img{ transform:translateY(calc(-100% + 200px)); } }
+    .port-filter{ gap:8px; }
+    .port-fbtn{ padding:10px 15px; font-size:13px; }
   }
-  /* light mode overrides */
+
+  /* light mode */
   [data-theme="light"] .port-card{ box-shadow:0 2px 14px rgba(0,0,0,.07); }
-  [data-theme="light"] .port-card:hover{ box-shadow:0 24px 50px -22px rgba(123,47,212,.20); border-color:rgba(123,47,212,.4); }
-  [data-theme="light"] .port-cta{ background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%); }
-  [data-theme="light"] .port-mono span{ color:rgba(255,255,255,.92); }
-  [data-theme="light"] .port-count{ background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.22); }
-  .port-hover-hint{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    background:rgba(7,10,20,.55); opacity:0; transition:opacity .25s; backdrop-filter:blur(2px);
-  }
-  .port-card:hover .port-hover-hint{ opacity:1; }
+  [data-theme="light"] .port-card:hover{ box-shadow:0 24px 50px -22px rgba(30,79,216,.20); border-color:rgba(30,79,216,.4); }
+  [data-theme="light"] .port-count{ background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.22); }
 </style>
 </head>
 <body class="js-anim" data-screen-label="IS7 — Portfólio completo">
@@ -93,6 +171,7 @@
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
   <script src="site_v2/cases.js"></script>
+  <script src="site_v2/consent.js"></script>
   <script type="text/babel" src="site_v2/SiteCore.jsx"></script>
   <script type="text/babel" src="site_v2/PortfolioLightbox.jsx"></script>
 
@@ -100,39 +179,57 @@
     const { Logo, Icon, Eyebrow, Reveal, wa, WAPP } = window.IS7v2;
     const CASES = window.IS7_CASES || [];
 
+    /* Filtros montados a partir dos proprios dados: nunca desencontram do cases.js */
+    const FILTERS = [
+      { key: "all",  label: "Todos" },
+      { key: "site", label: "Sites" },
+      { key: "loja", label: "Lojas virtuais" },
+    ].map(f => ({
+      ...f,
+      count: f.key === "all" ? CASES.length : CASES.filter(c => c.cat === f.key).length,
+    })).filter(f => f.count > 0);
+
     const PortCard = ({ c, i, onOpen }) => (
-      <Reveal delay={(i % 3) * 70} as="article" className="port-card" onClick={() => onOpen(c)} style={{ cursor: "pointer" }}>
-        <div className="port-thumb" style={{ background: c.grad || "var(--surface-2)", position: "relative" }}>
-          {c.img ? (
-            <img src={c.img} alt={c.name} loading="lazy" className="port-img" />
-          ) : (
-            <div className="port-mono"><span>{c.mono}</span></div>
-          )}
-          <span className="tag tag-accent" style={{ position: "absolute", top: 12, left: 12, backdropFilter: "blur(6px)" }}>{c.tag}</span>
-          {c.pages > 1 && (
-            <span className="tag" style={{ position: "absolute", top: 12, right: 12, backdropFilter: "blur(6px)" }}>{c.pages} páginas</span>
-          )}
-          {/* hover overlay */}
+      <Reveal delay={(i % 3) * 70} as="article" className="port-card" onClick={() => onOpen(c)}>
+        {/* barra de navegador com o dominio real */}
+        <div className="port-bar">
+          <div className="port-dots">
+            <span style={{ background: "#FF5F57" }} />
+            <span style={{ background: "#FFBD2E" }} />
+            <span style={{ background: "#28CA42" }} />
+          </div>
+          <div className="port-url">{c.domain}</div>
+        </div>
+
+        <div className="port-thumb" style={{ background: c.grad || "var(--surface-2)" }}>
+          <img src={c.img} alt={`Site desenvolvido para ${c.name}`} loading="lazy" className="port-img" />
           <div className="port-hover-hint">
             <span style={{ display:"flex", alignItems:"center", gap:8, background:"var(--grad)", padding:"10px 18px", borderRadius:9999, fontSize:13.5, fontWeight:600, color:"#fff" }}>
-              <Icon name="expand" size={16} /> Ver detalhes
+              <Icon name="monitor" size={16} /> Ver projeto
             </span>
           </div>
         </div>
-        <div className="port-info">
-          <div>
-            <p className="port-name">{c.name}</p>
-            <p className="port-meta">{c.meta}</p>
+
+        <div className="port-body">
+          <div className="port-head">
+            <div>
+              <p className="port-name">{c.name}</p>
+              <p className="port-meta">{c.meta}</p>
+            </div>
+            <span className="port-arrow"><Icon name="arrow-up-right" size={16} color="var(--accent-bright)" /></span>
           </div>
-          <span className="port-arrow">
-            <Icon name="expand" size={16} color="var(--accent-bright)" />
-          </span>
+          <p className="port-summary">{c.summary}</p>
+          <div className="port-tags">
+            <span className="tag tag-accent" style={{ fontSize: 10, padding: "3px 9px" }}>{c.tag}</span>
+            {c.pages > 1 && <span className="tag" style={{ fontSize: 10, padding: "3px 9px" }}>{c.pages} páginas</span>}
+          </div>
         </div>
       </Reveal>
     );
 
     const App = () => {
       const [scrolled, setScrolled] = React.useState(false);
+      const [filter, setFilter] = React.useState("all");
       const [theme, setTheme] = React.useState(() =>
         typeof localStorage !== 'undefined' ? (localStorage.getItem('is7-theme') || 'dark') : 'dark'
       );
@@ -150,6 +247,8 @@
 
       const { useLightbox, PortfolioLightbox } = window.IS7v2;
       const [active, setActive] = useLightbox();
+
+      const shown = filter === "all" ? CASES : CASES.filter(c => c.cat === filter);
 
       return (
         <React.Fragment>
@@ -178,7 +277,6 @@
           {/* Hero */}
           <section className="port-hero">
             <div className="glow glow-purple" style={{ width: 500, height: 500, top: -200, left: "50%", transform: "translateX(-50%)", animation: "glow-morph 12s ease-in-out infinite" }} />
-            <div className="gridlines" />
             <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
               <Reveal>
                 <a href="/" className="link-arrow" style={{ justifyContent: "center", marginBottom: 28 }}>
@@ -187,28 +285,105 @@
               </Reveal>
               <Reveal delay={60}>
                 <span className="port-count">
-                  <Icon name="layout-grid" size={14} /> {CASES.length} projetos entregues
+                  <Icon name="layers" size={14} /> {CASES.length} projetos selecionados · +100 entregues
                 </span>
               </Reveal>
               <Reveal delay={100}>
-                <h1 className="display" style={{ maxWidth: 800, margin: "0 auto" }}>
-                  Nosso <span className="grad-text">portfólio</span>
+                <h1 className="display" style={{ maxWidth: 860, margin: "0 auto" }}>
+                  Site de verdade, <span className="grad-text">no ar</span>, com o domínio à vista.
                 </h1>
               </Reveal>
               <Reveal delay={140}>
-                <p className="lead" style={{ maxWidth: 560, margin: "22px auto 0" }}>
-                  Sites, lojas virtuais e projetos de presença digital desenvolvidos para negócios reais em todo o Brasil.
+                <p className="lead" style={{ maxWidth: 620, margin: "22px auto 0" }}>
+                  Nada de mockup genérico. Cada projeto abaixo é um cliente real, com a página
+                  inteira aberta para você rolar e conferir antes de falar com a gente.
                 </p>
               </Reveal>
             </div>
           </section>
 
-          {/* Grid */}
+          {/* Grid + filtro */}
           <section style={{ paddingBottom: 80 }}>
             <div className="wrap">
+              <Reveal className="port-filter" role="group" aria-label="Filtrar projetos por tipo">
+                {FILTERS.map(f => (
+                  <button key={f.key}
+                    className={`port-fbtn ${filter === f.key ? "on" : ""}`}
+                    aria-pressed={filter === f.key}
+                    onClick={() => setFilter(f.key)}>
+                    {f.label}<span className="n">{f.count}</span>
+                  </button>
+                ))}
+              </Reveal>
+
               <div className="port-grid">
-                {CASES.map((c, i) => <PortCard key={i} c={c} i={i} onOpen={setActive} />)}
+                {shown.map((c, i) => <PortCard key={c.name} c={c} i={i} onOpen={setActive} />)}
               </div>
+
+              {shown.length === 0 && (
+                <p className="port-empty">Nenhum projeto nesta categoria por enquanto.</p>
+              )}
+            </div>
+          </section>
+
+          {/* Como os sites sao entregues: SEO + GEO + AEO */}
+          <section className="port-otim">
+            <div className="glow glow-purple" style={{ width: 420, height: 420, top: -140, left: "50%", transform: "translateX(-50%)", opacity: .3 }} />
+            <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
+              <Reveal style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 48px" }}>
+                <Eyebrow center>Como cada projeto é entregue</Eyebrow>
+                <h2 className="h2" style={{ marginTop: 16 }}>
+                  Site bonito é o começo. <span className="grad-text">Ser encontrado</span> é o trabalho.
+                </h2>
+                <p className="lead" style={{ marginTop: 18 }}>
+                  Hoje seu cliente não procura só no Google. Ele pergunta pro ChatGPT, pro Gemini
+                  e pra busca com IA. Todo site que sai daqui é preparado para as três frentes.
+                </p>
+              </Reveal>
+
+              <div className="port-otim-grid">
+                {[
+                  {
+                    sigla: "SEO",
+                    nome: "Otimização para buscadores",
+                    desc: "O básico bem feito, que é onde a maioria falha: título e descrição de cada página, endereço limpo, imagem leve, site rápido no celular e estrutura de conteúdo que o Google entende.",
+                    itens: ["Meta tags e canonical", "Dados estruturados (Schema.org)", "Sitemap e robots.txt", "Nota 95+ no PageSpeed"],
+                  },
+                  {
+                    sigla: "AEO",
+                    nome: "Otimização para respostas",
+                    desc: "Quando alguém pergunta \"quanto custa um chaveiro em Recife\", a busca responde direto na tela. Estruturamos o conteúdo em pergunta e resposta para que essa resposta seja a do seu site.",
+                    itens: ["FAQ marcado com FAQPage", "Conteúdo em pergunta e resposta", "Dados do negócio explícitos", "Horário, área e serviços legíveis"],
+                  },
+                  {
+                    sigla: "GEO",
+                    nome: "Otimização para IA generativa",
+                    desc: "ChatGPT, Gemini e Perplexity recomendam empresas. Para serem citados, precisam conseguir ler e confiar no seu site. Entregamos o site num formato que essas ferramentas conseguem digerir.",
+                    itens: ["Arquivo llms.txt no domínio", "Descrição factual do negócio", "Conteúdo sem depender de JavaScript", "Informação consistente com o Google"],
+                  },
+                ].map((o, i) => (
+                  <Reveal key={o.sigla} delay={i * 90} className="card port-otim-card">
+                    <div className="port-otim-sigla">{o.sigla}</div>
+                    <h3 className="h3" style={{ fontSize: 19, marginTop: 14 }}>{o.nome}</h3>
+                    <p style={{ margin: "10px 0 0", fontSize: 14, lineHeight: 1.65, color: "var(--fg-muted)" }}>{o.desc}</p>
+                    <ul className="port-otim-lista">
+                      {o.itens.map((it, j) => (
+                        <li key={j}>
+                          <Icon name="check" size={13} color="var(--accent-bright)" strokeWidth={2.6} />
+                          <span>{it}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                ))}
+              </div>
+
+              <Reveal style={{ textAlign: "center", marginTop: 36 }}>
+                <p style={{ margin: 0, fontSize: 14, color: "var(--fg-dim)" }}>
+                  Quer conferir? O próprio site da IS7 publica o dele em{" "}
+                  <a href="/llms.txt" target="_blank" rel="noreferrer" style={{ color: "var(--accent-bright)", fontFamily: "var(--mono)", fontSize: 13 }}>is7mkt.com.br/llms.txt</a>
+                </p>
+              </Reveal>
             </div>
           </section>
 

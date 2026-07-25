@@ -9,6 +9,7 @@ const wa = (msg) => `${WAPP}?text=${encodeURIComponent(msg)}`;
 // Renderizam sincronamente (sem flash, sem JS extra). Paths no padrao lucide.
 const ICONS = {
   "arrow-right": '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  "arrow-left": '<path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>',
   "arrow-down": '<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',
   "clock": '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
   "arrow-up-right": '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
@@ -69,14 +70,23 @@ const Icon = ({ name, size = 24, strokeWidth = 2, color = "currentColor", fill =
   return <span ref={ref} style={{ display: "inline-flex", color, lineHeight: 0, ...style }} aria-hidden="true" />;
 };
 
-const Logo = ({ size = 26 }) => (
-  <img
-    src="assets/is7-logo-roxa.png"
-    alt="IS7"
-    className="site-logo"
-    style={{ height: size * 2.2, width: "auto", display: "block" }}
-  />
-);
+// Marca IS7. A cor sai de var(--grad) via mascara (ver .site-logo no site.css),
+// entao aqui so definimos o tamanho. A proporcao e a do glifo recortado
+// (assets/is7-simbolo.png, 360x454) — travada pra marca nunca achatar, qualquer
+// que seja o espaco disponivel no header.
+const LOGO_RATIO = 360 / 454;
+
+const Logo = ({ size = 26 }) => {
+  const h = Math.round(size * 2.2);
+  return (
+    <span
+      className="site-logo"
+      role="img"
+      aria-label="IS7 Marketing Digital"
+      style={{ height: h, width: Math.round(h * LOGO_RATIO) }}
+    />
+  );
+};
 
 const Eyebrow = ({ children, center = false, style = {} }) => (
   <span className={`eyebrow ${center ? "center" : ""}`} style={style}>{children}</span>

@@ -1,8 +1,10 @@
 /* ============================================================
    IS7 — Site v2 (dark / premium / bold)
-   Evolved from the IS7 brand: deep navy canvas, purple→blue
-   gradient accents, Montserrat display + Inter body + JetBrains
-   Mono labels. Capture-safe reveal motion.
+   Paleta da marca: azul-noite como base e azul como unico acento.
+   O roxo saiu de proposito — o degrade roxo→azul dava ar de
+   template generico e o azul e o que sustenta a leitura de
+   autoridade e confianca. Montserrat display + Inter body +
+   JetBrains Mono labels. Capture-safe reveal motion.
    ============================================================ */
 
 :root{
@@ -17,12 +19,18 @@
   --fg-muted:  #98A1BC;
   --fg-dim:    #8089A8;
 
-  /* brand accent (purple→blue), brightened for dark */
-  --accent:    #9145E6;
-  --accent-2:  #3B6CFF;
-  --accent-bright: #B57BFF;
-  --grad: linear-gradient(118deg, #9145E6 0%, #5B5BF5 52%, #3B6CFF 100%);
-  --grad-soft: linear-gradient(118deg, rgba(145,69,230,.16), rgba(59,108,255,.16));
+  /* Acento azul. O ciano saiu: era ele que puxava a marca pro claro.
+     Agora o degrade e so azul, do mais fechado pro mais aberto, e o
+     ponto mais escuro que da pra usar sem perder legibilidade sobre
+     o fundo #070A14 e o #2F4FD8 (contraste 3.04 — serve pra fundo de
+     botao e icone, nao pra texto corrido).
+     --accent-bright e a cor de TEXTO (eyebrow, link, tag): ela precisa
+     ser a mais clara das tres por obrigacao de contraste, nao por gosto. */
+  --accent:    #3B6CFF;
+  --accent-2:  #2F4FD8;
+  --accent-bright: #5B8CFF;
+  --grad: linear-gradient(118deg, #2F4FD8 0%, #3B6CFF 55%, #4A7BFF 100%);
+  --grad-soft: linear-gradient(118deg, rgba(47,79,216,.18), rgba(59,108,255,.16));
 
   --wa:        #25D366;
   --star:      #FBBF24;
@@ -46,7 +54,7 @@ body{
 h1,h2,h3,h4{ font-family:var(--serif); font-weight:800; margin:0; letter-spacing:-.02em; line-height:1.04; }
 a{ color:inherit; text-decoration:none; }
 img{ display:block; max-width:100%; }
-::selection{ background:rgba(145,69,230,.35); color:#fff; }
+::selection{ background:rgba(59,108,255,.35); color:#fff; }
 
 .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; position:relative; }
 .section{ padding:104px 0; position:relative; }
@@ -82,10 +90,10 @@ img{ display:block; max-width:100%; }
   padding:15px 28px; border-radius:9999px; border:1px solid transparent;
   cursor:pointer; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, filter .25s; white-space:nowrap;
 }
-.btn-primary{ background:var(--grad); color:#fff; box-shadow:0 12px 30px -10px rgba(91,91,245,.6); }
-.btn-primary:hover{ transform:translateY(-2px); filter:brightness(1.08); box-shadow:0 18px 40px -10px rgba(91,91,245,.7); }
+.btn-primary{ background:var(--grad); color:#fff; box-shadow:0 12px 30px -10px rgba(45,110,240,.6); }
+.btn-primary:hover{ transform:translateY(-2px); filter:brightness(1.08); box-shadow:0 18px 40px -10px rgba(45,110,240,.7); }
 .btn-ghost{ background:rgba(255,255,255,.02); border-color:var(--line-2); color:var(--fg); }
-.btn-ghost:hover{ border-color:var(--accent-bright); background:rgba(145,69,230,.10); transform:translateY(-2px); }
+.btn-ghost:hover{ border-color:var(--accent-bright); background:rgba(59,108,255,.10); transform:translateY(-2px); }
 .btn-wa{ background:var(--wa); color:#04210F; box-shadow:0 12px 30px -10px rgba(37,211,102,.5); }
 .btn-wa:hover{ transform:translateY(-2px); filter:brightness(1.06); }
 .btn-lg{ padding:17px 34px; font-size:16px; }
@@ -95,23 +103,23 @@ img{ display:block; max-width:100%; }
 
 /* ---------- Cards ---------- */
 .card{ background:var(--surface); border:1px solid var(--line); border-radius:20px; transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
-.card-hover:hover{ transform:translateY(-5px); border-color:rgba(145,69,230,.45); box-shadow:0 24px 50px -22px rgba(91,91,245,.5); }
+.card-hover:hover{ transform:translateY(-5px); border-color:rgba(59,108,255,.45); box-shadow:0 24px 50px -22px rgba(45,110,240,.5); }
 
 /* icon chip */
-.chip{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:var(--grad-soft); border:1px solid rgba(145,69,230,.30); }
+.chip{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:var(--grad-soft); border:1px solid rgba(59,108,255,.30); }
 
 /* status / tag pill */
 .tag{ display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:5px 11px; border-radius:9999px; border:1px solid var(--line-2); color:var(--fg-muted); background:rgba(255,255,255,.03); }
-.tag-accent{ color:var(--accent-bright); border-color:rgba(145,69,230,.35); background:rgba(145,69,230,.10); }
+.tag-accent{ color:var(--accent-bright); border-color:rgba(59,108,255,.35); background:rgba(59,108,255,.10); }
 
-/* ---------- Glows / decoration ---------- */
+/* ---------- Glows / decoration ----------
+   Os nomes .glow-purple / .glow-blue vem da paleta antiga e ficaram como
+   estao pra nao ter que mexer em dezenas de JSX. Hoje os dois sao azuis:
+   "purple" e o azul da marca, "blue" e o azul-ciano de apoio. */
 .glow{ position:absolute; border-radius:9999px; filter:blur(110px); pointer-events:none; z-index:0; }
-.glow-purple{ background:rgba(145,69,230,.34); }
-.glow-blue{ background:rgba(59,108,255,.30); }
+.glow-purple{ background:rgba(59,108,255,.34); }
+.glow-blue{ background:rgba(47,79,216,.32); }
 .hair{ height:1px; background:linear-gradient(90deg, transparent, var(--line-2), transparent); border:0; }
-.gridlines{ position:absolute; inset:0; z-index:0; pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%); mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%); opacity:.5; }
 
 /* star row */
 .stars{ display:inline-flex; gap:3px; color:var(--star); }
@@ -157,7 +165,7 @@ body.js-anim .reveal.in{ opacity:1; transform:none; }
 
 /* ---------- FAQ ---------- */
 .faq-item{ border:1px solid var(--line); border-radius:16px; background:var(--surface); overflow:hidden; transition:border-color .3s, background .3s; }
-.faq-item.open{ border-color:rgba(145,69,230,.4); }
+.faq-item.open{ border-color:rgba(59,108,255,.4); }
 .faq-q{ width:100%; text-align:left; background:transparent; border:0; color:var(--fg); cursor:pointer; padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-family:var(--serif); font-weight:700; font-size:17px; letter-spacing:-.01em; }
 .faq-ic{ flex:0 0 auto; width:30px; height:30px; border-radius:9999px; border:1px solid var(--line-2); display:flex; align-items:center; justify-content:center; transition:transform .3s, background .3s, border-color .3s; }
 .faq-item.open .faq-ic{ transform:rotate(45deg); background:var(--grad); border-color:transparent; }
@@ -167,7 +175,7 @@ body.js-anim .reveal.in{ opacity:1; transform:none; }
 /* ---------- Inputs ---------- */
 .inp{ width:100%; height:50px; padding:0 16px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid var(--line-2); color:var(--fg); font-family:var(--sans); font-size:15px; outline:none; transition:border-color .25s, box-shadow .25s; }
 .inp::placeholder{ color:var(--fg-dim); }
-.inp:focus{ border-color:var(--accent-bright); box-shadow:0 0 0 3px rgba(145,69,230,.18); }
+.inp:focus{ border-color:var(--accent-bright); box-shadow:0 0 0 3px rgba(59,108,255,.18); }
 textarea.inp{ height:auto; padding:14px 16px; resize:vertical; min-height:96px; }
 
 /* ---------- Browser frame ---------- */
@@ -277,11 +285,14 @@ body.js-anim #topo .grad-text{
   --fg-muted:  #475080;
   --fg-dim:    #5F6890;
 
-  --accent:        #7B2FD4;
-  --accent-2:      #2B5CE6;
-  --accent-bright: #6A1EC0;
-  --grad:      linear-gradient(118deg,#7B2FD4 0%,#4A4AE8 52%,#2B5CE6 100%);
-  --grad-soft: linear-gradient(118deg,rgba(123,47,212,.10),rgba(43,92,230,.10));
+  /* No tema claro o azul precisa escurecer pra manter contraste no
+     texto (--accent-bright e usado em link e eyebrow sobre fundo claro,
+     por isso e o mais escuro dos tres). */
+  --accent:        #1E4FD8;
+  --accent-2:      #17399C;
+  --accent-bright: #1543B0;
+  --grad:      linear-gradient(118deg,#17399C 0%,#1E4FD8 55%,#2F5FE0 100%);
+  --grad-soft: linear-gradient(118deg,rgba(23,57,156,.10),rgba(30,79,216,.10));
 }
 
 /* body */
@@ -301,7 +312,7 @@ body.js-anim #topo .grad-text{
   background:rgba(0,0,0,.03); border-color:rgba(100,108,160,.24); color:var(--fg);
 }
 [data-theme="light"] .btn-ghost:hover{
-  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.35);
+  background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.35);
 }
 
 /* cards */
@@ -309,12 +320,12 @@ body.js-anim #topo .grad-text{
   box-shadow:0 2px 14px rgba(0,0,0,.07);
 }
 [data-theme="light"] .card-hover:hover{
-  box-shadow:0 24px 50px -22px rgba(123,47,212,.20), 0 2px 14px rgba(0,0,0,.07);
+  box-shadow:0 24px 50px -22px rgba(30,79,216,.20), 0 2px 14px rgba(0,0,0,.07);
 }
 
 /* chip / icon container */
 [data-theme="light"] .chip{
-  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.20);
+  background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.20);
 }
 
 /* tags */
@@ -322,7 +333,7 @@ body.js-anim #topo .grad-text{
   background:rgba(0,0,0,.04); border-color:rgba(100,108,160,.22); color:var(--fg-muted);
 }
 [data-theme="light"] .tag-accent{
-  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.25); color:var(--accent-bright);
+  background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.25); color:var(--accent-bright);
 }
 
 /* inputs */
@@ -331,26 +342,29 @@ body.js-anim #topo .grad-text{
 }
 [data-theme="light"] .inp::placeholder{ color:var(--fg-dim); }
 [data-theme="light"] .inp:focus{
-  border-color:var(--accent); box-shadow:0 0 0 3px rgba(123,47,212,.14);
+  border-color:var(--accent); box-shadow:0 0 0 3px rgba(30,79,216,.14);
 }
 
 /* glows (subtler on light) */
-[data-theme="light"] .glow-purple{ background:rgba(123,47,212,.15); }
+[data-theme="light"] .glow-purple{ background:rgba(30,79,216,.15); }
 [data-theme="light"] .glow-blue  { background:rgba(43,92,230,.12); }
 
-/* gridlines */
-[data-theme="light"] .gridlines{
-  background-image:
-    linear-gradient(rgba(100,108,160,.12) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(100,108,160,.12) 1px,transparent 1px);
-}
 
 /* faq */
 [data-theme="light"] .faq-item{ box-shadow:0 1px 8px rgba(0,0,0,.05); }
 
-/* logo dual-mode */
-.site-logo { filter: brightness(0) invert(1); } /* dark: white */
-[data-theme="light"] .site-logo { filter: none; }  /* light: roxo original */
+/* ---------- Marca IS7 ----------
+   O simbolo entra como mascara e a cor vem de var(--grad) — o mesmo degrade dos
+   botoes e dos titulos. Antes era um <img> com filter:brightness(0) invert(1),
+   que apagava o degrade e deixava a marca branca chapada no tema escuro.
+   Pintando por --grad ela acompanha o tema sozinha e mantem contraste nos dois.
+   O arquivo e o glifo ja recortado (sem os 75% de espaco vazio do original). */
+.site-logo{
+  display:block; flex-shrink:0;
+  background:var(--grad);
+  -webkit-mask:url("assets/is7-simbolo.png") no-repeat center / contain;
+          mask:url("assets/is7-simbolo.png") no-repeat center / contain;
+}
 
 /* about badge — light mode fix */
 [data-theme="light"] .about-badge{
@@ -359,9 +373,6 @@ body.js-anim #topo .grad-text{
   box-shadow: 0 4px 20px rgba(0,0,0,.10) !important;
 }
 [data-theme="light"] .about-badge p{ color: var(--fg) !important; }
-.logo-txt   { display:none; }
-[data-theme="light"] .logo-img{ display:none !important; }
-[data-theme="light"] .logo-txt{ display:inline !important; }
 
 /* float chips in hero */
 [data-theme="light"] .chip-float-card{

@@ -74,7 +74,7 @@ const BeforeAfter = () => (
             ))}
           </ul>
         </Reveal>
-        <Reveal delay={100} className="card" style={{ padding: 32, borderColor: "rgba(145,69,230,.38)", background: "linear-gradient(160deg, rgba(145,69,230,.08), rgba(59,108,255,.06))" }}>
+        <Reveal delay={100} className="card" style={{ padding: 32, borderColor: "rgba(59,108,255,.38)", background: "linear-gradient(160deg, rgba(59,108,255,.08), rgba(47,79,216,.07))" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
             <span style={{ width: 32, height: 32, borderRadius: 9999, background: "var(--grad)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Icon name="check" size={16} color="#fff" strokeWidth={2.5} />
@@ -103,7 +103,7 @@ const BeforeAfter = () => (
 const DELIVERABLES = [
   { icon: "palette",        title: "Identidade visual",    desc: "Logo, cores e tipografia para a sua marca ter uma cara profissional." },
   { icon: "monitor",        title: "Site profissional",    desc: "Desenvolvido do zero, rápido, responsivo e otimizado para converter." },
-  { icon: "trending-up",    title: "Tráfego pago (Ads)",   desc: "Campanhas de Google Ads gerenciadas com foco em retorno real." },
+  { icon: "trending-up",    title: "Tráfego pago (Ads)",   desc: "Campanhas de anúncios online gerenciadas com foco em retorno real." },
   { icon: "shopping-bag",   title: "Loja virtual",         desc: "Vitrine completa com catálogo, identidade própria e pedido no WhatsApp." },
   { icon: "headset",        title: "Suporte nas vendas",   desc: "Acompanhamento ativo das vendas, ajustamos estratégias para crescimento constante." },
   { icon: "users",          title: "Consultas estratégicas", desc: "Sessões regulares para alinhar ações, revisar resultados e planejar próximos passos." },

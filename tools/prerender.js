@@ -66,6 +66,17 @@ async function prerenderPage(browser, route, outFile) {
   await page.evaluate(function () {
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
     document.querySelectorAll('[class*="elfsight-app-"]').forEach(function (el) { el.innerHTML = ""; });
+    // O banner de cookie NAO pode entrar no snapshot: o HTML salvo nao carrega
+    // os event listeners junto, entao a copia gravada viraria um banner morto,
+    // que nao fecha no clique. Quem decide se ele aparece e o consent.js, em
+    // tempo de execucao, olhando a escolha guardada no navegador do visitante.
+    document.querySelectorAll(".is7-cookie").forEach(function (el) { el.remove(); });
+    // A tag do Google tambem sai do snapshot. Ela e inserida pelo consent.js,
+    // que antes disso declara o consentimento como negado. Se ficasse gravada
+    // no HTML, carregaria direto no <head> — antes desse "denied" existir — e
+    // o primeiro hit sairia sem consentimento, que e justamente o que o
+    // Consent Mode tem que evitar.
+    document.querySelectorAll('script[src*="googletagmanager.com"]').forEach(function (el) { el.remove(); });
     window.scrollTo(0, 0);
   });
 

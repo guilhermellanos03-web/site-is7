@@ -43,7 +43,7 @@
   "founder": { "@type": "Person", "name": "Guilherme Llanos", "jobTitle": "Gestor de Marketing Digital" },
   "sameAs": ["https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA"],
   "knowsAbout": ["Perfil da Empresa no Google", "SEO local", "criação de sites", "landing pages", "lojas virtuais", "Google Ads", "tráfego pago"],
-  "slogan": "Sua empresa no topo do Google e vendendo pela internet",
+  "slogan": "Criação de sites profissionais e assessoria de marketing com foco no Google",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "28" }
 }
 </script>
@@ -71,7 +71,7 @@
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <rect width="100" height="100" fill="#070A14"/>
       <text x="50" y="60" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="34" letter-spacing="-2">
-        <tspan fill="#F4F6FB">i</tspan><tspan fill="#9145E6">S7</tspan>
+        <tspan fill="#F4F6FB">i</tspan><tspan fill="#3B6CFF">S7</tspan>
       </text>
     </svg>
   </template>
@@ -81,6 +81,7 @@
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
   <script src="lojas_virtuais/image-slot.js"></script>
   <script src="site_v2/cases.js"></script>
+  <script src="site_v2/consent.js"></script>
 
   <script type="text/babel" src="tweaks-panel.jsx"></script>
   <script type="text/babel" src="site_v2/SiteCore.jsx"></script>
@@ -98,15 +99,18 @@
   <script type="text/babel">
     const TWEAKS = /*EDITMODE-BEGIN*/{
       "hero": "A",
-      "accent": "Roxo → Azul",
+      "accent": "Azul",
       "headingFont": "Montserrat",
       "motion": true
     }/*EDITMODE-END*/;
 
+    // "Azul" e o padrao da marca e NAO e escrito inline (ver ACCENT_PADRAO
+    // abaixo): quem manda nele e o site.css, pra que o tema claro use a
+    // propria paleta. Os outros sao so pra experimentar no painel.
+    // O roxo saiu da lista de proposito.
     const ACCENTS = {
-      "Roxo → Azul": { a: "#9145E6", a2: "#3B6CFF", br: "#B57BFF", grad: "linear-gradient(118deg,#9145E6 0%,#5B5BF5 52%,#3B6CFF 100%)" },
-      "Roxo":        { a: "#9D4EDD", a2: "#C24BE6", br: "#CB8BFF", grad: "linear-gradient(118deg,#7B2FBE 0%,#A93CD9 55%,#C24BE6 100%)" },
-      "Azul":        { a: "#3B6CFF", a2: "#22A6F6", br: "#74A8FF", grad: "linear-gradient(118deg,#2D5BFF 0%,#3B8EF6 55%,#22C3F6 100%)" },
+      "Azul":        { a: "#3B6CFF", a2: "#2F4FD8", br: "#5B8CFF", grad: "linear-gradient(118deg,#2F4FD8 0%,#3B6CFF 55%,#4A7BFF 100%)" },
+      "Azul-noite":  { a: "#2F4FD8", a2: "#1E4FD8", br: "#4A7BFF", grad: "linear-gradient(118deg,#17399C 0%,#1E4FD8 55%,#2F4FD8 100%)" },
       "Teal":        { a: "#13B8A6", a2: "#3B6CFF", br: "#56E0CE", grad: "linear-gradient(118deg,#0EA38F 0%,#1FA6C9 55%,#3B6CFF 100%)" },
     };
     const FONTS = {
@@ -125,13 +129,26 @@
       const TweakToggle  = window.TweakToggle  || (() => null);
       const [t, setTweak] = useTweaks(TWEAKS);
 
+      const ACCENT_VARS = ["--accent", "--accent-2", "--accent-bright", "--grad"];
+      const ACCENT_PADRAO = "Azul";
+
       React.useEffect(() => {
         const r = document.documentElement.style;
-        const ac = ACCENTS[t.accent] || ACCENTS["Roxo → Azul"];
-        r.setProperty("--accent", ac.a);
-        r.setProperty("--accent-2", ac.a2);
-        r.setProperty("--accent-bright", ac.br);
-        r.setProperty("--grad", ac.grad);
+        const ac = ACCENTS[t.accent];
+        // Estilo inline no <html> vence qualquer seletor, inclusive
+        // [data-theme="light"]. Por isso, no acento padrao a gente NAO escreve
+        // nada e deixa o CSS mandar — senao o tema claro herdava a paleta do
+        // tema escuro e perdia o contraste que ele tem de proposito.
+        // Os outros acentos sao do painel de tweaks (uso interno) e continuam
+        // sobrescrevendo, que e justamente a funcao deles.
+        if (!ac || t.accent === ACCENT_PADRAO) {
+          ACCENT_VARS.forEach((p) => r.removeProperty(p));
+        } else {
+          r.setProperty("--accent", ac.a);
+          r.setProperty("--accent-2", ac.a2);
+          r.setProperty("--accent-bright", ac.br);
+          r.setProperty("--grad", ac.grad);
+        }
         r.setProperty("--serif", FONTS[t.headingFont] || FONTS.Montserrat);
       }, [t.accent, t.headingFont]);
 
@@ -166,7 +183,7 @@
               onChange={(v) => setTweak("hero", v)} />
             <TweakSection label="Marca" />
             <TweakRadio label="Cor de destaque" value={t.accent}
-              options={["Roxo → Azul", "Roxo", "Azul", "Teal"]}
+              options={["Azul", "Azul-noite", "Teal"]}
               onChange={(v) => setTweak("accent", v)} />
             <TweakRadio label="Fonte dos títulos" value={t.headingFont}
               options={["Montserrat", "Poppins", "Space Grotesk"]}

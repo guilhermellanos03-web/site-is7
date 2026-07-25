@@ -8,7 +8,7 @@
     "prerender": "node tools/prerender.js",
     "build": "node tools/build.js && node tools/prerender.js",
     "build-proposta": "node tools/build-proposta.js",
-    "prerender:save": "node tools/prerender.js && mkdir -p prerendered && cp dist/index.html prerendered/ && (test -f dist/portfolio.html && cp dist/portfolio.html prerendered/ || true)"
+    "prerender:save": "node tools/prerender.js && node tools/save-prerender.js"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",

@@ -54,17 +54,22 @@ const CaseCard = ({ c, i, onOpen }) => (
     </div>
 
     {/* Info row */}
-    <div style={{ padding: "16px 18px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, borderTop: "1px solid var(--line)" }}>
-      <div>
-        <p style={{ margin: 0, fontFamily: "var(--serif)", fontWeight: 700, fontSize: 15 }}>{c.name}</p>
-        <p style={{ margin: "3px 0 0", fontSize: 12, color: "var(--fg-muted)", display: "flex", alignItems: "center", gap: 6 }}>
-          <span className="tag tag-accent" style={{ fontSize: 10, padding: "1px 7px" }}>{c.tag}</span>
-          <span style={{ color: "var(--fg-dim)" }}>{c.meta}</span>
-        </p>
+    <div style={{ padding: "16px 18px", display: "flex", flexDirection: "column", gap: 9, flex: 1, borderTop: "1px solid var(--line)" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
+        <div>
+          <p style={{ margin: 0, fontFamily: "var(--serif)", fontWeight: 700, fontSize: 15 }}>{c.name}</p>
+          <p style={{ margin: "3px 0 0", fontSize: 12, color: "var(--fg-muted)", display: "flex", alignItems: "center", gap: 6 }}>
+            <span className="tag tag-accent" style={{ fontSize: 10, padding: "1px 7px" }}>{c.tag}</span>
+            <span style={{ color: "var(--fg-dim)" }}>{c.meta}</span>
+          </p>
+        </div>
+        <span style={{ width: 32, height: 32, borderRadius: 9999, border: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <Icon name="arrow-up-right" size={15} color="var(--accent-bright)" />
+        </span>
       </div>
-      <span style={{ width: 32, height: 32, borderRadius: 9999, border: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-        <Icon name="arrow-up-right" size={15} color="var(--accent-bright)" />
-      </span>
+      {c.summary && (
+        <p style={{ margin: 0, fontSize: 13, lineHeight: 1.55, color: "var(--fg-muted)" }}>{c.summary}</p>
+      )}
     </div>
   </Reveal>
 );
@@ -77,18 +82,22 @@ const Portfolio = () => {
     <section id="cases" className="section" style={{ background: "var(--bg-2)" }}>
       <div className="wrap">
         <Reveal style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 20, marginBottom: 48 }}>
-          <div style={{ maxWidth: 560 }}>
+          <div style={{ maxWidth: 620 }}>
             <Eyebrow>Projetos desenvolvidos</Eyebrow>
             <h2 className="h2" style={{ marginTop: 16 }}>Projetos reais, <span className="grad-text">no ar e vendendo</span>.</h2>
+            <p className="lead" style={{ marginTop: 16, fontSize: 17 }}>
+              Sem mockup e sem "cliente fictício": clique em qualquer projeto e role o site inteiro,
+              com o domínio do cliente à vista.
+            </p>
           </div>
-          <a href="/portfolio" className="link-arrow hide-sm">Ver portfólio completo <Icon name="arrow-right" size={16} /></a>
+          <a href="/portfolio" className="link-arrow hide-sm">Ver os {total} projetos <Icon name="arrow-right" size={16} /></a>
         </Reveal>
         <div className="grid-portfolio">
           {FEATURED.map((c, i) => <CaseCard key={i} c={c} i={i} onOpen={setActive} />)}
         </div>
         <Reveal style={{ textAlign: "center", marginTop: 36 }}>
           <a href="/portfolio" className="btn btn-ghost">
-            Ver portfólio completo <Icon name="arrow-right" size={16} />
+            Ver os {total} projetos do portfólio <Icon name="arrow-right" size={16} />
           </a>
         </Reveal>
       </div>
@@ -110,12 +119,12 @@ const REVIEWS = [
   { name: "Joao Victor",            time: "há 1 mês",     initial: "J", color: "#34A853", text: "Meu site ficou perfeito! Recomendo muito, ótimo suporte!" },
   { name: "Allan Ferraz",           time: "há 3 meses",   initial: "A", color: "#EA4335", text: "Atendimento rápido e conciso, meu site ficou lindo e agora tô recebendo clientes melhores investindo menos do que antes." },
   { name: "Rafael Almeida",         time: "há 2 semanas", initial: "R", color: "#FBBC05", text: "Fizeram meu site, a cara da empresa ficou outra. Muito bom." },
-  { name: "VICTOR Hugo",            time: "há 1 mês",     initial: "V", color: "#9145E6", text: "Solicitei um serviço para um site e foi ótimo o atendimento!" },
+  { name: "VICTOR Hugo",            time: "há 1 mês",     initial: "V", color: "#1967D2", text: "Solicitei um serviço para um site e foi ótimo o atendimento!" },
   { name: "André Vicente",          time: "há 3 meses",   initial: "A", color: "#4285F4", text: "Graças às mudanças de direcionamento e grandes estratégias criadas por essa agência, alcancei resultados expressivos." },
   { name: "Victor Hugo",            time: "há 3 meses",   initial: "V", color: "#34A853", text: "Uma empresa séria que me gerou confiança e ótimos resultados. Guilherme é um excelente profissional que traz o direcionamento certo para investir melhor e ter retorno." },
   { name: "Eduardo Henrique",       time: "há 3 meses",   initial: "E", color: "#EA4335", text: "Me surpreendeu bem mais do que eu esperava. Nota 1000!" },
   { name: "Geovanna Xavier",        time: "há 8 meses",   initial: "G", color: "#FBBC05", text: "Ótimos serviços, entregam o que prometem com muita agilidade e pontualidade. Recomendo!!" },
-  { name: "Luã De Assis",           time: "há 3 meses",   initial: "L", color: "#9145E6", text: "Excelente! Recomendo o trabalho de olhos fechados. Grande profissional." },
+  { name: "Luã De Assis",           time: "há 3 meses",   initial: "L", color: "#1967D2", text: "Excelente! Recomendo o trabalho de olhos fechados. Grande profissional." },
   { name: "Jonas Neto",             time: "há 2 semanas", initial: "J", color: "#4285F4", text: "Serviço impecável." },
   { name: "Alexandre Freitas",      time: "há 3 meses",   initial: "A", color: "#34A853", text: "Fui atendido pelo Guilherme, muito prestativo e atencioso. Recomendo!" },
 ];
@@ -197,7 +206,7 @@ const Reviews = () => {
             <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontSize: 24, fontWeight: 900, fontFamily: "var(--serif)" }}>5,0</span>
               <Stars size={18} />
-              <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>(29)</span>
+              <span style={{ fontSize: 13, color: "var(--fg-muted)" }}>(28)</span>
             </span>
           </div>
         </Reveal>

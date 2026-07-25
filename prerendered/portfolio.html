@@ -2,17 +2,56 @@
 <html lang="pt-BR" data-theme="dark"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Portfólio — IS7 Assessoria de Marketing Digital</title>
+<title>Portfólio de sites da IS7 | Projetos reais em Curitiba e no Brasil</title>
+<meta name="description" content="Veja sites e lojas virtuais que a IS7 entregou para negócios reais: chaveiro, adega, estética automotiva, advocacia, barbearia e mais. Screenshot completo e domínio de cada projeto.">
+<meta name="author" content="IS7 Marketing Digital">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070A14">
+<meta name="geo.region" content="BR-PR">
+<meta name="geo.placename" content="Curitiba">
+<link rel="canonical" href="https://is7mkt.com.br/portfolio">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="IS7 Marketing Digital">
+<meta property="og:title" content="Portfólio de sites da IS7 | Projetos reais no ar">
+<meta property="og:description" content="Sites e lojas virtuais entregues pela IS7 para negócios reais. Cada projeto com screenshot completo e domínio à vista.">
+<meta property="og:url" content="https://is7mkt.com.br/portfolio">
+<meta property="og:image" content="https://is7mkt.com.br/assets/is7-logo-grad.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfólio de sites da IS7">
+<meta name="twitter:description" content="Sites e lojas virtuais entregues pela IS7 para negócios reais em Curitiba e no Brasil.">
+<meta name="twitter:image" content="https://is7mkt.com.br/assets/is7-logo-grad.png">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Portfólio de sites da IS7 Marketing Digital",
+  "description": "Sites e lojas virtuais desenvolvidos pela IS7 Marketing Digital para negócios reais em Curitiba e no Brasil.",
+  "url": "https://is7mkt.com.br/portfolio",
+  "isPartOf": { "@type": "WebSite", "name": "IS7 Marketing Digital", "url": "https://is7mkt.com.br/" },
+  "about": { "@type": "ProfessionalService", "name": "IS7 Marketing Digital", "url": "https://is7mkt.com.br/" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://is7mkt.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Portfólio", "item": "https://is7mkt.com.br/portfolio" }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Poppins:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Poppins:wght@600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" media="all" onload="this.media='all'">
 <style>
 /* ============================================================
    IS7 — Site v2 (dark / premium / bold)
-   Evolved from the IS7 brand: deep navy canvas, purple→blue
-   gradient accents, Montserrat display + Inter body + JetBrains
-   Mono labels. Capture-safe reveal motion.
+   Paleta da marca: azul-noite como base e azul como unico acento.
+   O roxo saiu de proposito — o degrade roxo→azul dava ar de
+   template generico e o azul e o que sustenta a leitura de
+   autoridade e confianca. Montserrat display + Inter body +
+   JetBrains Mono labels. Capture-safe reveal motion.
    ============================================================ */
 
 :root{
@@ -27,12 +66,18 @@
   --fg-muted:  #98A1BC;
   --fg-dim:    #8089A8;
 
-  /* brand accent (purple→blue), brightened for dark */
-  --accent:    #9145E6;
-  --accent-2:  #3B6CFF;
-  --accent-bright: #B57BFF;
-  --grad: linear-gradient(118deg, #9145E6 0%, #5B5BF5 52%, #3B6CFF 100%);
-  --grad-soft: linear-gradient(118deg, rgba(145,69,230,.16), rgba(59,108,255,.16));
+  /* Acento azul. O ciano saiu: era ele que puxava a marca pro claro.
+     Agora o degrade e so azul, do mais fechado pro mais aberto, e o
+     ponto mais escuro que da pra usar sem perder legibilidade sobre
+     o fundo #070A14 e o #2F4FD8 (contraste 3.04 — serve pra fundo de
+     botao e icone, nao pra texto corrido).
+     --accent-bright e a cor de TEXTO (eyebrow, link, tag): ela precisa
+     ser a mais clara das tres por obrigacao de contraste, nao por gosto. */
+  --accent:    #3B6CFF;
+  --accent-2:  #2F4FD8;
+  --accent-bright: #5B8CFF;
+  --grad: linear-gradient(118deg, #2F4FD8 0%, #3B6CFF 55%, #4A7BFF 100%);
+  --grad-soft: linear-gradient(118deg, rgba(47,79,216,.18), rgba(59,108,255,.16));
 
   --wa:        #25D366;
   --star:      #FBBF24;
@@ -56,7 +101,7 @@ body{
 h1,h2,h3,h4{ font-family:var(--serif); font-weight:800; margin:0; letter-spacing:-.02em; line-height:1.04; }
 a{ color:inherit; text-decoration:none; }
 img{ display:block; max-width:100%; }
-::selection{ background:rgba(145,69,230,.35); color:#fff; }
+::selection{ background:rgba(59,108,255,.35); color:#fff; }
 
 .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; position:relative; }
 .section{ padding:104px 0; position:relative; }
@@ -92,10 +137,10 @@ img{ display:block; max-width:100%; }
   padding:15px 28px; border-radius:9999px; border:1px solid transparent;
   cursor:pointer; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, filter .25s; white-space:nowrap;
 }
-.btn-primary{ background:var(--grad); color:#fff; box-shadow:0 12px 30px -10px rgba(91,91,245,.6); }
-.btn-primary:hover{ transform:translateY(-2px); filter:brightness(1.08); box-shadow:0 18px 40px -10px rgba(91,91,245,.7); }
+.btn-primary{ background:var(--grad); color:#fff; box-shadow:0 12px 30px -10px rgba(45,110,240,.6); }
+.btn-primary:hover{ transform:translateY(-2px); filter:brightness(1.08); box-shadow:0 18px 40px -10px rgba(45,110,240,.7); }
 .btn-ghost{ background:rgba(255,255,255,.02); border-color:var(--line-2); color:var(--fg); }
-.btn-ghost:hover{ border-color:var(--accent-bright); background:rgba(145,69,230,.10); transform:translateY(-2px); }
+.btn-ghost:hover{ border-color:var(--accent-bright); background:rgba(59,108,255,.10); transform:translateY(-2px); }
 .btn-wa{ background:var(--wa); color:#04210F; box-shadow:0 12px 30px -10px rgba(37,211,102,.5); }
 .btn-wa:hover{ transform:translateY(-2px); filter:brightness(1.06); }
 .btn-lg{ padding:17px 34px; font-size:16px; }
@@ -105,23 +150,23 @@ img{ display:block; max-width:100%; }
 
 /* ---------- Cards ---------- */
 .card{ background:var(--surface); border:1px solid var(--line); border-radius:20px; transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease; }
-.card-hover:hover{ transform:translateY(-5px); border-color:rgba(145,69,230,.45); box-shadow:0 24px 50px -22px rgba(91,91,245,.5); }
+.card-hover:hover{ transform:translateY(-5px); border-color:rgba(59,108,255,.45); box-shadow:0 24px 50px -22px rgba(45,110,240,.5); }
 
 /* icon chip */
-.chip{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:var(--grad-soft); border:1px solid rgba(145,69,230,.30); }
+.chip{ width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:var(--grad-soft); border:1px solid rgba(59,108,255,.30); }
 
 /* status / tag pill */
 .tag{ display:inline-flex; align-items:center; gap:7px; font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:5px 11px; border-radius:9999px; border:1px solid var(--line-2); color:var(--fg-muted); background:rgba(255,255,255,.03); }
-.tag-accent{ color:var(--accent-bright); border-color:rgba(145,69,230,.35); background:rgba(145,69,230,.10); }
+.tag-accent{ color:var(--accent-bright); border-color:rgba(59,108,255,.35); background:rgba(59,108,255,.10); }
 
-/* ---------- Glows / decoration ---------- */
+/* ---------- Glows / decoration ----------
+   Os nomes .glow-purple / .glow-blue vem da paleta antiga e ficaram como
+   estao pra nao ter que mexer em dezenas de JSX. Hoje os dois sao azuis:
+   "purple" e o azul da marca, "blue" e o azul-ciano de apoio. */
 .glow{ position:absolute; border-radius:9999px; filter:blur(110px); pointer-events:none; z-index:0; }
-.glow-purple{ background:rgba(145,69,230,.34); }
-.glow-blue{ background:rgba(59,108,255,.30); }
+.glow-purple{ background:rgba(59,108,255,.34); }
+.glow-blue{ background:rgba(47,79,216,.32); }
 .hair{ height:1px; background:linear-gradient(90deg, transparent, var(--line-2), transparent); border:0; }
-.gridlines{ position:absolute; inset:0; z-index:0; pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%); mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%); opacity:.5; }
 
 /* star row */
 .stars{ display:inline-flex; gap:3px; color:var(--star); }
@@ -167,7 +212,7 @@ body.js-anim .reveal.in{ opacity:1; transform:none; }
 
 /* ---------- FAQ ---------- */
 .faq-item{ border:1px solid var(--line); border-radius:16px; background:var(--surface); overflow:hidden; transition:border-color .3s, background .3s; }
-.faq-item.open{ border-color:rgba(145,69,230,.4); }
+.faq-item.open{ border-color:rgba(59,108,255,.4); }
 .faq-q{ width:100%; text-align:left; background:transparent; border:0; color:var(--fg); cursor:pointer; padding:22px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; font-family:var(--serif); font-weight:700; font-size:17px; letter-spacing:-.01em; }
 .faq-ic{ flex:0 0 auto; width:30px; height:30px; border-radius:9999px; border:1px solid var(--line-2); display:flex; align-items:center; justify-content:center; transition:transform .3s, background .3s, border-color .3s; }
 .faq-item.open .faq-ic{ transform:rotate(45deg); background:var(--grad); border-color:transparent; }
@@ -177,7 +222,7 @@ body.js-anim .reveal.in{ opacity:1; transform:none; }
 /* ---------- Inputs ---------- */
 .inp{ width:100%; height:50px; padding:0 16px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid var(--line-2); color:var(--fg); font-family:var(--sans); font-size:15px; outline:none; transition:border-color .25s, box-shadow .25s; }
 .inp::placeholder{ color:var(--fg-dim); }
-.inp:focus{ border-color:var(--accent-bright); box-shadow:0 0 0 3px rgba(145,69,230,.18); }
+.inp:focus{ border-color:var(--accent-bright); box-shadow:0 0 0 3px rgba(59,108,255,.18); }
 textarea.inp{ height:auto; padding:14px 16px; resize:vertical; min-height:96px; }
 
 /* ---------- Browser frame ---------- */
@@ -287,11 +332,14 @@ body.js-anim #topo .grad-text{
   --fg-muted:  #475080;
   --fg-dim:    #5F6890;
 
-  --accent:        #7B2FD4;
-  --accent-2:      #2B5CE6;
-  --accent-bright: #6A1EC0;
-  --grad:      linear-gradient(118deg,#7B2FD4 0%,#4A4AE8 52%,#2B5CE6 100%);
-  --grad-soft: linear-gradient(118deg,rgba(123,47,212,.10),rgba(43,92,230,.10));
+  /* No tema claro o azul precisa escurecer pra manter contraste no
+     texto (--accent-bright e usado em link e eyebrow sobre fundo claro,
+     por isso e o mais escuro dos tres). */
+  --accent:        #1E4FD8;
+  --accent-2:      #17399C;
+  --accent-bright: #1543B0;
+  --grad:      linear-gradient(118deg,#17399C 0%,#1E4FD8 55%,#2F5FE0 100%);
+  --grad-soft: linear-gradient(118deg,rgba(23,57,156,.10),rgba(30,79,216,.10));
 }
 
 /* body */
@@ -311,7 +359,7 @@ body.js-anim #topo .grad-text{
   background:rgba(0,0,0,.03); border-color:rgba(100,108,160,.24); color:var(--fg);
 }
 [data-theme="light"] .btn-ghost:hover{
-  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.35);
+  background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.35);
 }
 
 /* cards */
@@ -319,12 +367,12 @@ body.js-anim #topo .grad-text{
   box-shadow:0 2px 14px rgba(0,0,0,.07);
 }
 [data-theme="light"] .card-hover:hover{
-  box-shadow:0 24px 50px -22px rgba(123,47,212,.20), 0 2px 14px rgba(0,0,0,.07);
+  box-shadow:0 24px 50px -22px rgba(30,79,216,.20), 0 2px 14px rgba(0,0,0,.07);
 }
 
 /* chip / icon container */
 [data-theme="light"] .chip{
-  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.20);
+  background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.20);
 }
 
 /* tags */
@@ -332,7 +380,7 @@ body.js-anim #topo .grad-text{
   background:rgba(0,0,0,.04); border-color:rgba(100,108,160,.22); color:var(--fg-muted);
 }
 [data-theme="light"] .tag-accent{
-  background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.25); color:var(--accent-bright);
+  background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.25); color:var(--accent-bright);
 }
 
 /* inputs */
@@ -341,26 +389,29 @@ body.js-anim #topo .grad-text{
 }
 [data-theme="light"] .inp::placeholder{ color:var(--fg-dim); }
 [data-theme="light"] .inp:focus{
-  border-color:var(--accent); box-shadow:0 0 0 3px rgba(123,47,212,.14);
+  border-color:var(--accent); box-shadow:0 0 0 3px rgba(30,79,216,.14);
 }
 
 /* glows (subtler on light) */
-[data-theme="light"] .glow-purple{ background:rgba(123,47,212,.15); }
+[data-theme="light"] .glow-purple{ background:rgba(30,79,216,.15); }
 [data-theme="light"] .glow-blue  { background:rgba(43,92,230,.12); }
 
-/* gridlines */
-[data-theme="light"] .gridlines{
-  background-image:
-    linear-gradient(rgba(100,108,160,.12) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(100,108,160,.12) 1px,transparent 1px);
-}
 
 /* faq */
 [data-theme="light"] .faq-item{ box-shadow:0 1px 8px rgba(0,0,0,.05); }
 
-/* logo dual-mode */
-.site-logo { filter: brightness(0) invert(1); } /* dark: white */
-[data-theme="light"] .site-logo { filter: none; }  /* light: roxo original */
+/* ---------- Marca IS7 ----------
+   O simbolo entra como mascara e a cor vem de var(--grad) — o mesmo degrade dos
+   botoes e dos titulos. Antes era um <img> com filter:brightness(0) invert(1),
+   que apagava o degrade e deixava a marca branca chapada no tema escuro.
+   Pintando por --grad ela acompanha o tema sozinha e mantem contraste nos dois.
+   O arquivo e o glifo ja recortado (sem os 75% de espaco vazio do original). */
+.site-logo{
+  display:block; flex-shrink:0;
+  background:var(--grad);
+  -webkit-mask:url("assets/is7-simbolo.png") no-repeat center / contain;
+          mask:url("assets/is7-simbolo.png") no-repeat center / contain;
+}
 
 /* about badge — light mode fix */
 [data-theme="light"] .about-badge{
@@ -369,9 +420,6 @@ body.js-anim #topo .grad-text{
   box-shadow: 0 4px 20px rgba(0,0,0,.10) !important;
 }
 [data-theme="light"] .about-badge p{ color: var(--fg) !important; }
-.logo-txt   { display:none; }
-[data-theme="light"] .logo-img{ display:none !important; }
-[data-theme="light"] .logo-txt{ display:inline !important; }
 
 /* float chips in hero */
 [data-theme="light"] .chip-float-card{
@@ -419,52 +467,96 @@ body.js-anim #topo .grad-text{
 <!-- Anti-flash: apply saved theme before React mounts -->
 <script>(function(){ var t=localStorage.getItem('is7-theme')||'dark'; document.documentElement.setAttribute('data-theme',t); })()</script>
 <style>
-  .port-hero{
-    position:relative; overflow:hidden; padding:140px 0 80px; text-align:center;
-  }
+  .port-hero{ position:relative; overflow:hidden; padding:140px 0 64px; text-align:center; }
   .port-count{
     display:inline-flex; align-items:center; gap:10px;
-    font-family:var(--mono); font-size:13px; letter-spacing:.14em;
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.12em;
     text-transform:uppercase; color:var(--accent-bright);
-    background:rgba(145,69,230,.10); border:1px solid rgba(145,69,230,.25);
+    background:rgba(59,108,255,.10); border:1px solid rgba(59,108,255,.25);
     padding:8px 18px; border-radius:9999px; margin-bottom:22px;
   }
-  .port-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+
+  /* ---- Barra de filtro ---- */
+  .port-filter{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:40px; }
+  .port-fbtn{
+    font-family:var(--sans); font-size:14px; font-weight:600;
+    padding:10px 20px; border-radius:9999px; cursor:pointer;
+    background:transparent; border:1px solid var(--line-2); color:var(--fg-muted);
+    transition:border-color .22s, color .22s, background .22s;
+    min-height:44px;
   }
+  .port-fbtn:hover{ border-color:var(--accent-bright); color:var(--fg); }
+  .port-fbtn.on{ background:var(--grad); border-color:transparent; color:#fff; }
+  .port-fbtn .n{ opacity:.65; margin-left:6px; font-family:var(--mono); font-size:12px; }
+
+  /* ---- Grid ---- */
+  .port-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   .port-card{
     background:var(--surface); border:1px solid var(--line); border-radius:20px;
-    overflow:hidden; display:flex; flex-direction:column;
+    overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
     transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
   }
   .port-card:hover{
-    transform:translateY(-6px); border-color:rgba(145,69,230,.45);
-    box-shadow:0 24px 50px -22px rgba(91,91,245,.45);
+    transform:translateY(-6px); border-color:rgba(59,108,255,.45);
+    box-shadow:0 24px 50px -22px rgba(45,110,240,.45);
   }
-  .port-card:hover .port-img{ transform:scale(1.06); }
-  .port-thumb{
-    height:240px; overflow:hidden; position:relative;
+
+  /* barra de navegador — o domínio real à vista */
+  .port-bar{
+    background:var(--surface); border-bottom:1px solid var(--line);
+    padding:8px 12px; display:flex; align-items:center; gap:8px; flex-shrink:0;
   }
+  .port-dots{ display:flex; gap:5px; flex-shrink:0; }
+  .port-dots span{ width:10px; height:10px; border-radius:50%; display:block; }
+  .port-url{
+    flex:1; background:var(--bg-2); border-radius:6px; padding:4px 10px;
+    font-size:10px; color:var(--fg-dim); font-family:var(--mono);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+
+  /* screenshot com rolagem no hover (a página inteira, não só a dobra) */
+  .port-thumb{ height:230px; overflow:hidden; position:relative; flex-shrink:0; }
   .port-img{
-    width:100%; height:100%; object-fit:cover; object-position:top center;
-    transition:transform .5s ease;
+    position:absolute; top:0; left:0; width:100%; height:auto; display:block;
+    transition:transform 5s linear;
   }
-  .port-mono{
+  @media (hover:hover){ .port-card:hover .port-img{ transform:translateY(calc(-100% + 230px)); } }
+  .port-hover-hint{
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:rgba(7,10,20,.55); opacity:0; transition:opacity .25s; backdrop-filter:blur(2px);
   }
-  .port-mono span{
-    font-family:var(--serif); font-weight:800; font-size:64px;
-    letter-spacing:.06em; color:rgba(255,255,255,.88);
-  }
-  .port-info{ padding:20px 22px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .port-card:hover .port-hover-hint{ opacity:1; }
+
+  /* corpo do card */
+  .port-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1; border-top:1px solid var(--line); }
+  .port-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
   .port-name{ margin:0; font-family:var(--serif); font-weight:700; font-size:17px; }
-  .port-meta{ margin:4px 0 0; font-size:13px; color:var(--fg-muted); }
+  .port-meta{ margin:4px 0 0; font-size:12.5px; color:var(--fg-dim); }
+  .port-summary{ margin:0; font-size:13.5px; line-height:1.6; color:var(--fg-muted); flex:1; }
   .port-arrow{
     width:36px; height:36px; border-radius:9999px; border:1px solid var(--line-2);
     display:flex; align-items:center; justify-content:center; flex:0 0 auto;
     transition:background .25s, border-color .25s;
   }
   .port-card:hover .port-arrow{ background:var(--grad); border-color:transparent; }
+  .port-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+
+  .port-empty{ text-align:center; padding:60px 0; color:var(--fg-muted); }
+
+  /* ---- Bloco SEO / AEO / GEO ---- */
+  .port-otim{ position:relative; padding:24px 0 8px; }
+  .port-otim-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:start; }
+  .port-otim-card{ padding:28px 26px; }
+  .port-otim-sigla{
+    display:inline-block; font-family:var(--mono); font-weight:700; font-size:13px;
+    letter-spacing:.16em; color:var(--accent-bright);
+    background:var(--grad-soft); border:1px solid var(--line-2);
+    padding:7px 14px; border-radius:9999px;
+  }
+  .port-otim-lista{ list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:9px; }
+  .port-otim-lista li{ display:flex; align-items:flex-start; gap:9px; font-size:13px; color:var(--fg-muted); line-height:1.5; }
+  .port-otim-lista li svg{ margin-top:3px; flex-shrink:0; }
+  @media(max-width:900px){ .port-otim-grid{ grid-template-columns:1fr; gap:16px; } }
 
   .port-cta{
     margin-top:80px; padding:64px 0; text-align:center; position:relative;
@@ -474,40 +566,356 @@ body.js-anim #topo .grad-text{
 
   @media(max-width:900px){
     .port-grid{ grid-template-columns:repeat(2,1fr); gap:18px; }
-    .port-hero{ padding:120px 0 60px; }
+    .port-hero{ padding:120px 0 52px; }
   }
   @media(max-width:580px){
     .port-grid{ grid-template-columns:1fr; gap:16px; }
     .port-thumb{ height:200px; }
+    @media (hover:hover){ .port-card:hover .port-img{ transform:translateY(calc(-100% + 200px)); } }
+    .port-filter{ gap:8px; }
+    .port-fbtn{ padding:10px 15px; font-size:13px; }
   }
-  /* light mode overrides */
+
+  /* light mode */
   [data-theme="light"] .port-card{ box-shadow:0 2px 14px rgba(0,0,0,.07); }
-  [data-theme="light"] .port-card:hover{ box-shadow:0 24px 50px -22px rgba(123,47,212,.20); border-color:rgba(123,47,212,.4); }
-  [data-theme="light"] .port-cta{ background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 100%); }
-  [data-theme="light"] .port-mono span{ color:rgba(255,255,255,.92); }
-  [data-theme="light"] .port-count{ background:rgba(123,47,212,.08); border-color:rgba(123,47,212,.22); }
-  .port-hover-hint{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    background:rgba(7,10,20,.55); opacity:0; transition:opacity .25s; backdrop-filter:blur(2px);
-  }
-  .port-card:hover .port-hover-hint{ opacity:1; }
+  [data-theme="light"] .port-card:hover{ box-shadow:0 24px 50px -22px rgba(30,79,216,.20); border-color:rgba(30,79,216,.4); }
+  [data-theme="light"] .port-count{ background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.22); }
 </style>
-</head>
+<style>.is7-cookie{position:fixed;left:16px;bottom:16px;z-index:9995;max-width:390px;background:var(--surface,#0E1426);border:1px solid var(--line-2,rgba(255,255,255,.14));border-radius:16px;padding:18px 20px;box-shadow:0 20px 50px -18px rgba(0,0,0,.75);font-family:var(--sans,system-ui);animation:is7-cookie-in .3s ease both}@keyframes is7-cookie-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}.is7-cookie-txt{margin:0 0 14px;font-size:13.5px;line-height:1.6;color:var(--fg-muted,#98A1BC)}.is7-cookie-btns{display:flex;gap:10px;justify-content:flex-end}.is7-cookie-btns button{font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;padding:10px 20px;border-radius:9999px;min-height:44px;transition:filter .2s,border-color .2s}.is7-cookie-no{background:transparent;border:1px solid var(--line-2,rgba(255,255,255,.14));color:var(--fg-muted,#98A1BC)}.is7-cookie-no:hover{border-color:var(--accent-bright,#5B8CFF);color:var(--fg,#F4F6FB)}.is7-cookie-ok{background:var(--grad,#3B6CFF);border:1px solid transparent;color:#fff}.is7-cookie-ok:hover{filter:brightness(1.08)}@media(max-width:600px){.is7-cookie{left:12px;right:12px;bottom:92px;max-width:none}}</style></head>
 <body class="js-anim" data-screen-label="IS7 — Portfólio completo">
-  <div id="root"><header class="hdr "><div class="wrap hdr-row"><a href="/" aria-label="IS7"><img src="assets/is7-logo-roxa.png" alt="IS7" class="site-logo" style="height: 57.2px; width: auto; display: block;"></a><nav class="nav"><a href="/">Início</a><a href="/#servicos">Serviços</a><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a></nav><div style="display: flex; align-items: center; gap: 10px;"><button class="theme-toggle" aria-label="Alternar tema"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary" style="padding: 12px 24px; font-size: 14px;">Fale conosco</a></div></div></header><section class="port-hero"><div class="glow glow-purple" style="width: 500px; height: 500px; top: -200px; left: 50%; transform: translateX(-50%); animation: 12s ease-in-out 0s infinite normal none running glow-morph;"></div><div class="gridlines"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><a href="/" class="link-arrow" style="justify-content: center; margin-bottom: 28px;"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Voltar ao site</a></div><div class="reveal in" style="transition-delay: 60ms;"><span class="port-count"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> 5 projetos entregues</span></div><div class="reveal in" style="transition-delay: 100ms;"><h1 class="display" style="max-width: 800px; margin: 0px auto;">Nosso <span class="grad-text">portfólio</span></h1></div><div class="reveal in" style="transition-delay: 140ms;"><p class="lead" style="max-width: 560px; margin: 22px auto 0px;">Sites, lojas virtuais e projetos de presença digital desenvolvidos para negócios reais em todo o Brasil.</p></div></div></section><section style="padding-bottom: 80px;"><div class="wrap"><div class="port-grid"><article class="reveal in port-card" style="transition-delay: 0ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/tribbo-street.webp" alt="Tribbo Street" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><span class="tag" style="position: absolute; top: 12px; right: 12px; backdrop-filter: blur(6px);">2 páginas</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">Tribbo Street</p><p class="port-meta">Estética automotiva · SJP</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 70ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/rc-soft.webp" alt="RC Soft Service" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">RC Soft Service</p><p class="port-meta">Manutenção predial · Curitiba</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 140ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/lua-advogado.webp" alt="Luã Advogado" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">Luã Advogado</p><p class="port-meta">Advocacia tributária · Curitiba</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 0ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/chaveiro.webp" alt="Chaveiro Assistência 24h" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Site</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">Chaveiro Assistência 24h</p><p class="port-meta">Chaveiro 24h · Recife</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article><article class="reveal in port-card" style="transition-delay: 70ms; cursor: pointer;"><div class="port-thumb" style="background: var(--surface-2); position: relative;"><img src="assets/portfolio/mk-vinhos.webp" alt="MK Distribuidora de Vinhos" loading="lazy" class="port-img"><span class="tag tag-accent" style="position: absolute; top: 12px; left: 12px; backdrop-filter: blur(6px);">Loja virtual</span><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><span aria-hidden="true" style="display: inline-flex; color: currentcolor; line-height: 0;"></span> Ver detalhes</span></div></div><div class="port-info"><div><p class="port-name">MK Distribuidora de Vinhos</p><p class="port-meta">Vinhos &amp; adega · Curitiba</p></div><span class="port-arrow"><span aria-hidden="true" style="display: inline-flex; color: var(--accent-bright); line-height: 0;"></span></span></div></article></div></div></section><section class="port-cta"><div class="glow glow-blue" style="width: 400px; height: 400px; top: -120px; left: 50%; transform: translateX(-50%); opacity: 0.35;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><span class="eyebrow center">Quer um projeto assim?</span><h2 class="h2" style="margin-top: 16px;">Seu negócio pode ser o <span class="grad-text">próximo case</span>.</h2><p class="lead" style="max-width: 500px; margin: 18px auto 0px;">Fale com a gente e descubra como sua empresa pode ter uma presença digital que vende todos os dias.</p><div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px;"><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary btn-lg">Quero meu projeto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="/#contato" class="btn btn-ghost btn-lg">Entrar em contato</a></div></div></div></section><footer style="border-top: 1px solid var(--line); padding: 28px 0px; text-align: center;"><div class="wrap" style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center;"><img src="assets/is7-logo-roxa.png" alt="IS7" class="site-logo" style="height: 48.4px; width: auto; display: block;"><p style="margin: 0px; font-size: 12px; color: var(--fg-dim);">© 2026 IS7 · Todos os direitos reservados</p></div></footer><a class="fab" href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20saber%20mais." target="_blank" rel="noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 32 32" style="width: 30px; height: 30px; fill: rgb(4, 33, 15);"><path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z"></path></svg></a></div>
+  <div id="root"><header class="hdr "><div class="wrap hdr-row"><a href="/" aria-label="IS7"><span class="site-logo" role="img" aria-label="IS7 Marketing Digital" style="height: 57px; width: 45px;"></span></a><nav class="nav"><a href="/">Início</a><a href="/#servicos">Serviços</a><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a></nav><div style="display: flex; align-items: center; gap: 10px;"><button class="theme-toggle" aria-label="Alternar tema"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary" style="padding: 12px 24px; font-size: 14px;">Fale conosco</a></div></div></header><section class="port-hero"><div class="glow glow-purple" style="width: 500px; height: 500px; top: -200px; left: 50%; transform: translateX(-50%); animation: 12s ease-in-out 0s infinite normal none running glow-morph;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><a href="/" class="link-arrow" style="justify-content: center; margin-bottom: 28px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg> Voltar ao site</a></div><div class="reveal in" style="transition-delay: 60ms;"><span class="port-count"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg> 8 projetos selecionados · +100 entregues</span></div><div class="reveal in" style="transition-delay: 100ms;"><h1 class="display" style="max-width: 860px; margin: 0px auto;">Site de verdade, <span class="grad-text">no ar</span>, com o domínio à vista.</h1></div><div class="reveal in" style="transition-delay: 140ms;"><p class="lead" style="max-width: 620px; margin: 22px auto 0px;">Nada de mockup genérico. Cada projeto abaixo é um cliente real, com a página inteira aberta para você rolar e conferir antes de falar com a gente.</p></div></div></section><section style="padding-bottom: 80px;"><div class="wrap"><div class="reveal in port-filter" role="group" aria-label="Filtrar projetos por tipo" style="transition-delay: 0ms;"><button class="port-fbtn on" aria-pressed="true">Todos<span class="n">8</span></button><button class="port-fbtn " aria-pressed="false">Sites<span class="n">6</span></button><button class="port-fbtn " aria-pressed="false">Lojas virtuais<span class="n">2</span></button></div><div class="port-grid"><article class="reveal in port-card" style="transition-delay: 0ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">chaveiroassistencia24hs.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/chaveiro.webp" alt="Site desenvolvido para Chaveiro Assistência 24h" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Chaveiro Assistência 24h</p><p class="port-meta">Chaveiro 24h · Recife</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Emergência não espera: quem perdeu a chave precisa ligar em segundos.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 70ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">mkdistribuidoravinhos.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/mk-vinhos.webp" alt="Site desenvolvido para MK Distribuidora de Vinhos" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">MK Distribuidora de Vinhos</p><p class="port-meta">Vinhos &amp; adega · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Adega que precisava vender sem pagar mensalidade de plataforma.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Loja virtual</span></div></div></article><article class="reveal in port-card" style="transition-delay: 140ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">tribbostreet.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/tribbo-street.webp" alt="Site desenvolvido para Tribbo Street" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Tribbo Street</p><p class="port-meta">Estética automotiva · São José dos Pinhais</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Serviço premium que precisava parecer premium antes do orçamento.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span><span class="tag" style="font-size: 10px; padding: 3px 9px;">2 páginas</span></div></div></article><article class="reveal in port-card" style="transition-delay: 0ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">rcsoftservice.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/rc-soft-service.webp" alt="Site desenvolvido para RC Soft Service" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">RC Soft Service</p><p class="port-meta">Manutenção predial · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Empresa B2B que perdia obra por não ter onde mostrar credibilidade.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 70ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">curadoriabynandarocha.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/curadoria-site.webp" alt="Site desenvolvido para Curadoria by Nanda" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Curadoria by Nanda</p><p class="port-meta">Moda feminina · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Curadoria de moda que vendia só pelo Instagram e precisava de vitrine.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Loja virtual</span></div></div></article><article class="reveal in port-card" style="transition-delay: 140ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">luadeassis.adv.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/lua-de-assis.webp" alt="Site desenvolvido para Luã de Assis" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Luã de Assis</p><p class="port-meta">Advocacia tributária · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Advogado tributarista que precisava passar autoridade já na primeira tela.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 0ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">barbeariavelozo.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/barbearia-velozo.webp" alt="Site desenvolvido para Barbearia Velozo" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Barbearia Velozo</p><p class="port-meta">Barbearia · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Barbearia de bairro que dependia de agendamento no direct.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 70ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">nutrirafaela.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/lead_site/portfolio-nutri.webp" alt="Site desenvolvido para Nutri Rafaela" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Nutri Rafaela</p><p class="port-meta">Nutrição · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Nutricionista atendendo online e presencial, sem canal próprio de agenda.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span><span class="tag" style="font-size: 10px; padding: 3px 9px;">2 páginas</span></div></div></article></div></div></section><section class="port-otim"><div class="glow glow-purple" style="width: 420px; height: 420px; top: -140px; left: 50%; transform: translateX(-50%); opacity: 0.3;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms; text-align: center; max-width: 720px; margin: 0px auto 48px;"><span class="eyebrow center">Como cada projeto é entregue</span><h2 class="h2" style="margin-top: 16px;">Site bonito é o começo. <span class="grad-text">Ser encontrado</span> é o trabalho.</h2><p class="lead" style="margin-top: 18px;">Hoje seu cliente não procura só no Google. Ele pergunta pro ChatGPT, pro Gemini e pra busca com IA. Todo site que sai daqui é preparado para as três frentes.</p></div><div class="port-otim-grid"><div class="reveal in card port-otim-card" style="transition-delay: 0ms;"><div class="port-otim-sigla">SEO</div><h3 class="h3" style="font-size: 19px; margin-top: 14px;">Otimização para buscadores</h3><p style="margin: 10px 0px 0px; font-size: 14px; line-height: 1.65; color: var(--fg-muted);">O básico bem feito, que é onde a maioria falha: título e descrição de cada página, endereço limpo, imagem leve, site rápido no celular e estrutura de conteúdo que o Google entende.</p><ul class="port-otim-lista"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Meta tags e canonical</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Dados estruturados (Schema.org)</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Sitemap e robots.txt</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Nota 95+ no PageSpeed</span></li></ul></div><div class="reveal in card port-otim-card" style="transition-delay: 90ms;"><div class="port-otim-sigla">AEO</div><h3 class="h3" style="font-size: 19px; margin-top: 14px;">Otimização para respostas</h3><p style="margin: 10px 0px 0px; font-size: 14px; line-height: 1.65; color: var(--fg-muted);">Quando alguém pergunta "quanto custa um chaveiro em Recife", a busca responde direto na tela. Estruturamos o conteúdo em pergunta e resposta para que essa resposta seja a do seu site.</p><ul class="port-otim-lista"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>FAQ marcado com FAQPage</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Conteúdo em pergunta e resposta</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Dados do negócio explícitos</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Horário, área e serviços legíveis</span></li></ul></div><div class="reveal in card port-otim-card" style="transition-delay: 180ms;"><div class="port-otim-sigla">GEO</div><h3 class="h3" style="font-size: 19px; margin-top: 14px;">Otimização para IA generativa</h3><p style="margin: 10px 0px 0px; font-size: 14px; line-height: 1.65; color: var(--fg-muted);">ChatGPT, Gemini e Perplexity recomendam empresas. Para serem citados, precisam conseguir ler e confiar no seu site. Entregamos o site num formato que essas ferramentas conseguem digerir.</p><ul class="port-otim-lista"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Arquivo llms.txt no domínio</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Descrição factual do negócio</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Conteúdo sem depender de JavaScript</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Informação consistente com o Google</span></li></ul></div></div><div class="reveal in" style="transition-delay: 0ms; text-align: center; margin-top: 36px;"><p style="margin: 0px; font-size: 14px; color: var(--fg-dim);">Quer conferir? O próprio site da IS7 publica o dele em <a href="/llms.txt" target="_blank" rel="noreferrer" style="color: var(--accent-bright); font-family: var(--mono); font-size: 13px;">is7mkt.com.br/llms.txt</a></p></div></div></section><section class="port-cta"><div class="glow glow-blue" style="width: 400px; height: 400px; top: -120px; left: 50%; transform: translateX(-50%); opacity: 0.35;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><span class="eyebrow center">Quer um projeto assim?</span><h2 class="h2" style="margin-top: 16px;">Seu negócio pode ser o <span class="grad-text">próximo case</span>.</h2><p class="lead" style="max-width: 500px; margin: 18px auto 0px;">Fale com a gente e descubra como sua empresa pode ter uma presença digital que vende todos os dias.</p><div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px;"><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary btn-lg">Quero meu projeto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="/#contato" class="btn btn-ghost btn-lg">Entrar em contato</a></div></div></div></section><footer style="border-top: 1px solid var(--line); padding: 28px 0px; text-align: center;"><div class="wrap" style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center;"><span class="site-logo" role="img" aria-label="IS7 Marketing Digital" style="height: 48px; width: 38px;"></span><p style="margin: 0px; font-size: 12px; color: var(--fg-dim);">© 2026 IS7 · Todos os direitos reservados</p></div></footer><a class="fab" href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20saber%20mais." target="_blank" rel="noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 32 32" style="width: 30px; height: 30px; fill: rgb(4, 33, 15);"><path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z"></path></svg></a></div>
 
   <script src="vendor/react.production.min.js"></script>
   <script src="vendor/react-dom.production.min.js"></script>
   
   <script>
-// IS7 — shared portfolio cases data (plain JS, loaded before Babel scripts)
+// IS7 — dados do portfolio (JS puro, carregado antes dos scripts Babel)
+//
+// Campos:
+//   name/meta/domain — identificacao do projeto (domain aparece na barra do "navegador")
+//   tag              — rotulo visivel no card
+//   cat              — chave do filtro: "site" | "loja"
+//   img              — screenshot de pagina inteira (webp)
+//   summary          — uma linha: o que o site precisa resolver pro cliente
+//   delivered        — o que foi entregue. So o que da pra conferir no proprio print:
+//                      nada de metrica de resultado que a IS7 nao possa comprovar.
+//   url              — iframe ao vivo no lightbox. Vazio de proposito: o portfolio
+//                      roda com screenshot, pra nao depender de site de cliente no ar.
+//
+// A ordem importa: a home mostra os 6 primeiros (Sections2.jsx).
 window.IS7_CASES = [
-  { name: "Tribbo Street",           meta: "Estética automotiva · SJP",            tag: "Site",        pages: 2, img: "assets/portfolio/tribbo-street.webp",    domain: "tribbostreet.com.br",          url: "" },
-  { name: "RC Soft Service",         meta: "Manutenção predial · Curitiba",         tag: "Site",        pages: 1, img: "assets/portfolio/rc-soft.webp",          domain: "rcsoftservice.com.br",         url: "" },
-  { name: "Luã Advogado",            meta: "Advocacia tributária · Curitiba",       tag: "Site",        pages: 1, img: "assets/portfolio/lua-advogado.webp",     domain: "luadeAssis.adv.br",            url: "" },
-  { name: "Chaveiro Assistência 24h",meta: "Chaveiro 24h · Recife",                 tag: "Site",        pages: 1, img: "assets/portfolio/chaveiro.webp",         domain: "chaveiroassistencia24hs.com.br", url: "" },
-  { name: "MK Distribuidora de Vinhos", meta: "Vinhos & adega · Curitiba",            tag: "Loja virtual",pages: 1, img: "assets/portfolio/mk-vinhos.webp",         domain: "mkdistribuidoravinhos.com.br", url: "" },
+  {
+    name: "Chaveiro Assistência 24h",
+    meta: "Chaveiro 24h · Recife",
+    tag: "Site",
+    cat: "site",
+    pages: 1,
+    img: "assets/portfolio/chaveiro.webp",
+    domain: "chaveiroassistencia24hs.com.br",
+    url: "",
+    summary: "Emergência não espera: quem perdeu a chave precisa ligar em segundos.",
+    delivered: [
+      "Botões de ligar e WhatsApp fixos na tela",
+      "Serviços separados por automotivo, residencial e comercial",
+      "Bloco de emergência 24h em destaque",
+      "Área de atendimento por bairro (SEO local)",
+      "Avaliações do Google na página",
+    ],
+  },
+  {
+    name: "MK Distribuidora de Vinhos",
+    meta: "Vinhos & adega · Curitiba",
+    tag: "Loja virtual",
+    cat: "loja",
+    pages: 1,
+    img: "assets/portfolio/mk-vinhos.webp",
+    domain: "mkdistribuidoravinhos.com.br",
+    url: "",
+    summary: "Adega que precisava vender sem pagar mensalidade de plataforma.",
+    delivered: [
+      "Catálogo com preço e carrinho",
+      "Quiz “encontre seu vinho” em 3 perguntas",
+      "Navegação por tipo de uva",
+      "Fechamento do pedido no WhatsApp",
+      "Identidade visual própria da marca",
+    ],
+  },
+  {
+    name: "Tribbo Street",
+    meta: "Estética automotiva · São José dos Pinhais",
+    tag: "Site",
+    cat: "site",
+    pages: 2,
+    img: "assets/portfolio/tribbo-street.webp",
+    domain: "tribbostreet.com.br",
+    url: "",
+    summary: "Serviço premium que precisava parecer premium antes do orçamento.",
+    delivered: [
+      "Agendamento pelo WhatsApp em cada serviço",
+      "Vitrine de PPF, insulfilm, vitrificação e polimento",
+      "Galeria de trabalhos executados",
+      "Bloco de localização com mapa",
+      "Visual escuro alinhado à marca",
+    ],
+  },
+  {
+    name: "RC Soft Service",
+    meta: "Manutenção predial · Curitiba",
+    tag: "Site",
+    cat: "site",
+    pages: 1,
+    img: "assets/portfolio/rc-soft-service.webp",
+    domain: "rcsoftservice.com.br",
+    url: "",
+    summary: "Empresa B2B que perdia obra por não ter onde mostrar credibilidade.",
+    delivered: [
+      "Formulário de solicitação de orçamento",
+      "Serviços divididos por especialidade",
+      "Passo a passo de como o trabalho é executado",
+      "Depoimentos de clientes e FAQ",
+      "WhatsApp e telefone em destaque",
+    ],
+  },
+  {
+    name: "Curadoria by Nanda",
+    meta: "Moda feminina · Curitiba",
+    tag: "Loja virtual",
+    cat: "loja",
+    pages: 1,
+    img: "assets/portfolio/curadoria-site.webp",
+    domain: "curadoriabynandarocha.com.br",
+    url: "",
+    summary: "Curadoria de moda que vendia só pelo Instagram e precisava de vitrine.",
+    delivered: [
+      "Catálogo com sacola de compras",
+      "Captação para o grupo VIP",
+      "Aviso de frete grátis e parcelamento no topo",
+      "Entrega própria (bag delivery) explicada",
+      "Tipografia e paleta sob medida para a marca",
+    ],
+  },
+  {
+    name: "Luã de Assis",
+    meta: "Advocacia tributária · Curitiba",
+    tag: "Site",
+    cat: "site",
+    pages: 1,
+    img: "assets/portfolio/lua-de-assis.webp",
+    domain: "luadeassis.adv.br",
+    url: "",
+    summary: "Advogado tributarista que precisava passar autoridade já na primeira tela.",
+    delivered: [
+      "Áreas de atuação organizadas por tese",
+      "Seção de formação e credenciais",
+      "Consulta pelo WhatsApp e “como chegar”",
+      "Padrão visual sóbrio, dentro do permitido pela OAB",
+    ],
+  },
+  {
+    name: "Barbearia Velozo",
+    meta: "Barbearia · Curitiba",
+    tag: "Site",
+    cat: "site",
+    pages: 1,
+    img: "assets/portfolio/barbearia-velozo.webp",
+    domain: "barbeariavelozo.com.br",
+    url: "",
+    summary: "Barbearia de bairro que dependia de agendamento no direct.",
+    delivered: [
+      "Agendamento pelo WhatsApp por tipo de serviço",
+      "Pacotes de serviço com destaque para o mais pedido",
+      "Galeria de cortes recentes",
+      "Endereço, mapa e horário de funcionamento",
+      "Avaliações do Google na página",
+    ],
+  },
+  {
+    name: "Nutri Rafaela",
+    meta: "Nutrição · Curitiba",
+    tag: "Site",
+    cat: "site",
+    pages: 2,
+    img: "assets/lead_site/portfolio-nutri.webp",
+    domain: "nutrirafaela.com.br",
+    url: "",
+    summary: "Nutricionista atendendo online e presencial, sem canal próprio de agenda.",
+    delivered: [
+      "Agendamento de consulta pelo WhatsApp",
+      "Serviços separados por objetivo do paciente",
+      "Depoimentos de pacientes",
+      "Aviso de disponibilidade da semana",
+    ],
+  },
 ];
+
+</script>
+  <script>
+/* IS7 — Google Consent Mode v2 + banner de cookies (LGPD)
+ * ---------------------------------------------------------------------------
+ * CONFIGURACAO: os IDs ficam nas duas constantes abaixo. Com as duas vazias,
+ * nada carrega e o banner nem aparece.
+ *
+ * COMO FUNCIONA
+ * A tag do Google carrega junto com a pagina, mas nasce com o consentimento
+ * NEGADO. Nesse estado ela nao grava cookie e nao manda identificador nenhum —
+ * so um ping anonimo, que o Google usa pra estimativa. Quando o visitante
+ * aceita, disparamos um "consent update" e ela passa a medir normalmente.
+ *
+ * POR QUE ASSIM, E NAO BLOQUEANDO TUDO
+ * Bloquear o carregamento inteiro tambem e valido (e ate mais rigido), mas
+ * quebra a verificacao do Google: o robo dele abre o site, nao clica em
+ * "Aceitar", nao acha a tag e reporta "tag nao detectada" pra sempre. O Consent
+ * Mode v2 e a resposta oficial do Google pra esse conflito e mantem a exigencia
+ * da LGPD de nao rastrear antes do aceite (art. 7 e 8).
+ *
+ * O Meta Pixel NAO tem equivalente confiavel de consent mode, entao ele
+ * continua carregando so DEPOIS do aceite.
+ *
+ * A escolha fica em localStorage e pode ser refeita com IS7Consent.abrir().
+ */
+(function () {
+  "use strict";
+
+  var GA_ID = "G-HMCYNX4DFH";  // GA4 — IS7 Marketing Digital
+  var PIXEL_ID = "";           // opcional: ID do Meta Pixel (so numeros)
+
+  var CHAVE = "is7-consent";   // "aceito" | "recusado"
+  if (!GA_ID && !PIXEL_ID) return;
+
+  function ler() { try { return localStorage.getItem(CHAVE); } catch (e) { return null; } }
+  function gravar(v) { try { localStorage.setItem(CHAVE, v); } catch (e) {} }
+
+  /* ---------- gtag base ---------- */
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+
+  var jaAceitou = ler() === "aceito";
+
+  if (GA_ID) {
+    // O default TEM que vir antes do config, senao o primeiro hit sai sem a
+    // flag e o Google o trata como nao-consentido de forma permanente.
+    // wait_for_update segura o envio por 500ms, dando tempo do "update"
+    // chegar quando a pessoa ja tinha aceitado numa visita anterior.
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500,
+    });
+
+    if (jaAceitou) liberarGoogle();
+
+    gtag("js", new Date());
+    gtag("config", GA_ID);
+
+    // Guarda: se a tag ja estiver na pagina (ex.: alguem colou o snippet do
+    // Google no HTML tambem), nao carrega de novo.
+    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
+      document.head.appendChild(s);
+    }
+  }
+
+  function liberarGoogle() {
+    gtag("consent", "update", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+    });
+  }
+
+  /* ---------- Meta Pixel: so apos aceite ---------- */
+  var pixelCarregado = false;
+  function carregarPixel() {
+    if (!PIXEL_ID || pixelCarregado) return;
+    pixelCarregado = true;
+    /* eslint-disable */
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    /* eslint-enable */
+    window.fbq("init", PIXEL_ID);
+    window.fbq("track", "PageView");
+  }
+  if (jaAceitou) carregarPixel();
+
+  /* ---------- banner ---------- */
+  var caixa = null;
+  function fechar() { if (caixa) { caixa.remove(); caixa = null; } }
+
+  function aceitar() {
+    gravar("aceito"); fechar();
+    if (GA_ID) liberarGoogle();
+    carregarPixel();
+  }
+  function recusar() { gravar("recusado"); fechar(); } // segue negado, nada a fazer
+
+  function montar() {
+    if (caixa) return;
+    caixa = document.createElement("div");
+    caixa.className = "is7-cookie";
+    caixa.setAttribute("role", "dialog");
+    caixa.setAttribute("aria-live", "polite");
+    caixa.setAttribute("aria-label", "Aviso de cookies");
+    caixa.innerHTML =
+      '<p class="is7-cookie-txt">Usamos cookies para entender como as pessoas chegam ao site e melhorar o que mostramos. ' +
+      'Você escolhe — o site funciona normalmente dos dois jeitos.</p>' +
+      '<div class="is7-cookie-btns">' +
+        '<button type="button" class="is7-cookie-no">Recusar</button>' +
+        '<button type="button" class="is7-cookie-ok">Aceitar</button>' +
+      '</div>';
+    caixa.querySelector(".is7-cookie-ok").addEventListener("click", aceitar);
+    caixa.querySelector(".is7-cookie-no").addEventListener("click", recusar);
+    document.body.appendChild(caixa);
+  }
+
+  /* ---------- estilo (usa os tokens do site) ---------- */
+  var css = document.createElement("style");
+  css.textContent =
+    ".is7-cookie{position:fixed;left:16px;bottom:16px;z-index:9995;max-width:390px;" +
+    "background:var(--surface,#0E1426);border:1px solid var(--line-2,rgba(255,255,255,.14));" +
+    "border-radius:16px;padding:18px 20px;box-shadow:0 20px 50px -18px rgba(0,0,0,.75);" +
+    "font-family:var(--sans,system-ui);animation:is7-cookie-in .3s ease both}" +
+    "@keyframes is7-cookie-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}" +
+    ".is7-cookie-txt{margin:0 0 14px;font-size:13.5px;line-height:1.6;color:var(--fg-muted,#98A1BC)}" +
+    ".is7-cookie-btns{display:flex;gap:10px;justify-content:flex-end}" +
+    ".is7-cookie-btns button{font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;" +
+    "padding:10px 20px;border-radius:9999px;min-height:44px;transition:filter .2s,border-color .2s}" +
+    ".is7-cookie-no{background:transparent;border:1px solid var(--line-2,rgba(255,255,255,.14));color:var(--fg-muted,#98A1BC)}" +
+    ".is7-cookie-no:hover{border-color:var(--accent-bright,#5B8CFF);color:var(--fg,#F4F6FB)}" +
+    ".is7-cookie-ok{background:var(--grad,#3B6CFF);border:1px solid transparent;color:#fff}" +
+    ".is7-cookie-ok:hover{filter:brightness(1.08)}" +
+    /* no celular o FAB do WhatsApp fica embaixo a direita: o banner ocupa a
+       largura toda e sobe um pouco pra nao cobrir o botao */
+    "@media(max-width:600px){.is7-cookie{left:12px;right:12px;bottom:92px;max-width:none}}";
+  document.head.appendChild(css);
+
+  /* ---------- inicio ---------- */
+  function iniciar() {
+    var escolha = ler();
+    if (escolha === "aceito" || escolha === "recusado") return; // ja decidiu
+    montar();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciar);
+  } else {
+    iniciar();
+  }
+
+  // Link "Cookies" no rodape pode chamar: onclick="IS7Consent.abrir()"
+  window.IS7Consent = {
+    abrir: function () { try { localStorage.removeItem(CHAVE); } catch (e) {} montar(); },
+    estado: ler,
+  };
+})();
 
 </script>
   <script>
@@ -524,6 +932,7 @@ const wa = msg => `${WAPP}?text=${encodeURIComponent(msg)}`;
 // Renderizam sincronamente (sem flash, sem JS extra). Paths no padrao lucide.
 const ICONS = {
   "arrow-right": '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  "arrow-left": '<path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>',
   "arrow-down": '<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>',
   "clock": '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
   "arrow-up-right": '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
@@ -620,18 +1029,26 @@ const Icon = ({
     "aria-hidden": "true"
   });
 };
+
+// Marca IS7. A cor sai de var(--grad) via mascara (ver .site-logo no site.css),
+// entao aqui so definimos o tamanho. A proporcao e a do glifo recortado
+// (assets/is7-simbolo.png, 360x454) — travada pra marca nunca achatar, qualquer
+// que seja o espaco disponivel no header.
+const LOGO_RATIO = 360 / 454;
 const Logo = ({
   size = 26
-}) => /*#__PURE__*/React.createElement("img", {
-  src: "assets/is7-logo-roxa.png",
-  alt: "IS7",
-  className: "site-logo",
-  style: {
-    height: size * 2.2,
-    width: "auto",
-    display: "block"
-  }
-});
+}) => {
+  const h = Math.round(size * 2.2);
+  return /*#__PURE__*/React.createElement("span", {
+    className: "site-logo",
+    role: "img",
+    "aria-label": "IS7 Marketing Digital",
+    style: {
+      height: h,
+      width: Math.round(h * LOGO_RATIO)
+    }
+  });
+};
 const Eyebrow = ({
   children,
   center = false,
@@ -815,7 +1232,7 @@ const PortfolioLightbox = ({
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      padding: "20px 20px 0",
+      padding: 20,
       animation: "lb-in .2s ease both"
     }
   }, /*#__PURE__*/React.createElement("button", {
@@ -847,15 +1264,23 @@ const PortfolioLightbox = ({
     style: {
       width: "100%",
       maxWidth: 1100,
-      height: "calc(100vh - 80px)",
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      minHeight: 0,
+      animation: "lb-slide .32s cubic-bezier(.16,1,.3,1) both"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minHeight: 0,
       display: "flex",
       flexDirection: "column",
       borderRadius: "14px 14px 0 0",
       overflow: "hidden",
       boxShadow: "0 40px 100px -20px rgba(0,0,0,.9)",
       border: "1px solid rgba(255,255,255,.08)",
-      borderBottom: "none",
-      animation: "lb-slide .32s cubic-bezier(.16,1,.3,1) both"
+      borderBottom: "none"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1059,21 +1484,29 @@ const PortfolioLightbox = ({
     }
   }, c.mono)))), /*#__PURE__*/React.createElement("div", {
     style: {
-      width: "100%",
-      maxWidth: 1100,
       background: "rgba(22,27,46,.97)",
+      border: "1px solid rgba(255,255,255,.08)",
       borderTop: "1px solid rgba(255,255,255,.07)",
-      padding: "12px 20px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      backdropFilter: "blur(8px)"
+      borderRadius: "0 0 14px 14px",
+      padding: "12px 20px 14px",
+      backdropFilter: "blur(8px)",
+      flexShrink: 0
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       alignItems: "center",
-      gap: 12
+      justifyContent: "space-between",
+      gap: 12,
+      flexWrap: "wrap"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      flexWrap: "wrap",
+      minWidth: 0
     }
   }, /*#__PURE__*/React.createElement("span", {
     className: "tag tag-accent",
@@ -1091,12 +1524,14 @@ const PortfolioLightbox = ({
     style: {
       fontSize: 12,
       color: "var(--fg-dim)"
-    }
+    },
+    className: "hide-sm"
   }, "\xB7"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 12,
       color: "var(--fg-muted)"
-    }
+    },
+    className: "hide-sm"
   }, c.meta)), /*#__PURE__*/React.createElement("a", {
     href: wa(`Olá! Vi o projeto ${c.name} no portfólio da IS7 e gostaria de saber mais.`),
     target: "_blank",
@@ -1108,12 +1543,37 @@ const PortfolioLightbox = ({
       fontSize: 12,
       fontWeight: 600,
       color: "var(--accent-bright)",
-      textDecoration: "none"
+      textDecoration: "none",
+      flexShrink: 0
     }
   }, "Falar com a IS7 ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-up-right",
     size: 13
-  }))), /*#__PURE__*/React.createElement("style", null, `
+  }))), Array.isArray(c.delivered) && c.delivered.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "hide-sm",
+    style: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "6px 16px",
+      marginTop: 10,
+      paddingTop: 10,
+      borderTop: "1px solid rgba(255,255,255,.07)"
+    }
+  }, c.delivered.map((d, i) => /*#__PURE__*/React.createElement("span", {
+    key: i,
+    style: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 6,
+      fontSize: 12,
+      color: "var(--fg-muted)"
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "check",
+    size: 12,
+    color: "var(--accent-bright)",
+    strokeWidth: 2.6
+  }), d))))), /*#__PURE__*/React.createElement("style", null, `
         @keyframes lb-in    { from { opacity: 0 } to { opacity: 1 } }
         @keyframes lb-slide { from { transform: translateY(24px) scale(.98); opacity: 0 } to { transform: none; opacity: 1 } }
         @keyframes lb-spin  { to { transform: rotate(360deg) } }
@@ -1140,6 +1600,21 @@ const {
   WAPP
 } = window.IS7v2;
 const CASES = window.IS7_CASES || [];
+
+/* Filtros montados a partir dos proprios dados: nunca desencontram do cases.js */
+const FILTERS = [{
+  key: "all",
+  label: "Todos"
+}, {
+  key: "site",
+  label: "Sites"
+}, {
+  key: "loja",
+  label: "Lojas virtuais"
+}].map(f => ({
+  ...f,
+  count: f.key === "all" ? CASES.length : CASES.filter(c => c.cat === f.key).length
+})).filter(f => f.count > 0);
 const PortCard = ({
   c,
   i,
@@ -1148,40 +1623,36 @@ const PortCard = ({
   delay: i % 3 * 70,
   as: "article",
   className: "port-card",
-  onClick: () => onOpen(c),
-  style: {
-    cursor: "pointer"
-  }
+  onClick: () => onOpen(c)
 }, /*#__PURE__*/React.createElement("div", {
+  className: "port-bar"
+}, /*#__PURE__*/React.createElement("div", {
+  className: "port-dots"
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    background: "#FF5F57"
+  }
+}), /*#__PURE__*/React.createElement("span", {
+  style: {
+    background: "#FFBD2E"
+  }
+}), /*#__PURE__*/React.createElement("span", {
+  style: {
+    background: "#28CA42"
+  }
+})), /*#__PURE__*/React.createElement("div", {
+  className: "port-url"
+}, c.domain)), /*#__PURE__*/React.createElement("div", {
   className: "port-thumb",
   style: {
-    background: c.grad || "var(--surface-2)",
-    position: "relative"
+    background: c.grad || "var(--surface-2)"
   }
-}, c.img ? /*#__PURE__*/React.createElement("img", {
+}, /*#__PURE__*/React.createElement("img", {
   src: c.img,
-  alt: c.name,
+  alt: `Site desenvolvido para ${c.name}`,
   loading: "lazy",
   className: "port-img"
-}) : /*#__PURE__*/React.createElement("div", {
-  className: "port-mono"
-}, /*#__PURE__*/React.createElement("span", null, c.mono)), /*#__PURE__*/React.createElement("span", {
-  className: "tag tag-accent",
-  style: {
-    position: "absolute",
-    top: 12,
-    left: 12,
-    backdropFilter: "blur(6px)"
-  }
-}, c.tag), c.pages > 1 && /*#__PURE__*/React.createElement("span", {
-  className: "tag",
-  style: {
-    position: "absolute",
-    top: 12,
-    right: 12,
-    backdropFilter: "blur(6px)"
-  }
-}, c.pages, " p\xE1ginas"), /*#__PURE__*/React.createElement("div", {
+}), /*#__PURE__*/React.createElement("div", {
   className: "port-hover-hint"
 }, /*#__PURE__*/React.createElement("span", {
   style: {
@@ -1196,10 +1667,12 @@ const PortCard = ({
     color: "#fff"
   }
 }, /*#__PURE__*/React.createElement(Icon, {
-  name: "expand",
+  name: "monitor",
   size: 16
-}), " Ver detalhes"))), /*#__PURE__*/React.createElement("div", {
-  className: "port-info"
+}), " Ver projeto"))), /*#__PURE__*/React.createElement("div", {
+  className: "port-body"
+}, /*#__PURE__*/React.createElement("div", {
+  className: "port-head"
 }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
   className: "port-name"
 }, c.name), /*#__PURE__*/React.createElement("p", {
@@ -1207,12 +1680,29 @@ const PortCard = ({
 }, c.meta)), /*#__PURE__*/React.createElement("span", {
   className: "port-arrow"
 }, /*#__PURE__*/React.createElement(Icon, {
-  name: "expand",
+  name: "arrow-up-right",
   size: 16,
   color: "var(--accent-bright)"
-}))));
+}))), /*#__PURE__*/React.createElement("p", {
+  className: "port-summary"
+}, c.summary), /*#__PURE__*/React.createElement("div", {
+  className: "port-tags"
+}, /*#__PURE__*/React.createElement("span", {
+  className: "tag tag-accent",
+  style: {
+    fontSize: 10,
+    padding: "3px 9px"
+  }
+}, c.tag), c.pages > 1 && /*#__PURE__*/React.createElement("span", {
+  className: "tag",
+  style: {
+    fontSize: 10,
+    padding: "3px 9px"
+  }
+}, c.pages, " p\xE1ginas"))));
 const App = () => {
   const [scrolled, setScrolled] = React.useState(false);
+  const [filter, setFilter] = React.useState("all");
   const [theme, setTheme] = React.useState(() => typeof localStorage !== 'undefined' ? localStorage.getItem('is7-theme') || 'dark' : 'dark');
   React.useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 16);
@@ -1231,6 +1721,7 @@ const App = () => {
     PortfolioLightbox
   } = window.IS7v2;
   const [active, setActive] = useLightbox();
+  const shown = filter === "all" ? CASES : CASES.filter(c => c.cat === filter);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
     className: `hdr ${scrolled ? "scrolled" : ""}`
   }, /*#__PURE__*/React.createElement("div", {
@@ -1285,8 +1776,6 @@ const App = () => {
       animation: "glow-morph 12s ease-in-out infinite"
     }
   }), /*#__PURE__*/React.createElement("div", {
-    className: "gridlines"
-  }), /*#__PURE__*/React.createElement("div", {
     className: "wrap",
     style: {
       position: "relative",
@@ -1307,40 +1796,156 @@ const App = () => {
   }, /*#__PURE__*/React.createElement("span", {
     className: "port-count"
   }, /*#__PURE__*/React.createElement(Icon, {
-    name: "layout-grid",
+    name: "layers",
     size: 14
-  }), " ", CASES.length, " projetos entregues")), /*#__PURE__*/React.createElement(Reveal, {
+  }), " ", CASES.length, " projetos selecionados \xB7 +100 entregues")), /*#__PURE__*/React.createElement(Reveal, {
     delay: 100
   }, /*#__PURE__*/React.createElement("h1", {
     className: "display",
     style: {
-      maxWidth: 800,
+      maxWidth: 860,
       margin: "0 auto"
     }
-  }, "Nosso ", /*#__PURE__*/React.createElement("span", {
+  }, "Site de verdade, ", /*#__PURE__*/React.createElement("span", {
     className: "grad-text"
-  }, "portf\xF3lio"))), /*#__PURE__*/React.createElement(Reveal, {
+  }, "no ar"), ", com o dom\xEDnio \xE0 vista.")), /*#__PURE__*/React.createElement(Reveal, {
     delay: 140
   }, /*#__PURE__*/React.createElement("p", {
     className: "lead",
     style: {
-      maxWidth: 560,
+      maxWidth: 620,
       margin: "22px auto 0"
     }
-  }, "Sites, lojas virtuais e projetos de presen\xE7a digital desenvolvidos para neg\xF3cios reais em todo o Brasil.")))), /*#__PURE__*/React.createElement("section", {
+  }, "Nada de mockup gen\xE9rico. Cada projeto abaixo \xE9 um cliente real, com a p\xE1gina inteira aberta para voc\xEA rolar e conferir antes de falar com a gente.")))), /*#__PURE__*/React.createElement("section", {
     style: {
       paddingBottom: 80
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "wrap"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    className: "port-filter",
+    role: "group",
+    "aria-label": "Filtrar projetos por tipo"
+  }, FILTERS.map(f => /*#__PURE__*/React.createElement("button", {
+    key: f.key,
+    className: `port-fbtn ${filter === f.key ? "on" : ""}`,
+    "aria-pressed": filter === f.key,
+    onClick: () => setFilter(f.key)
+  }, f.label, /*#__PURE__*/React.createElement("span", {
+    className: "n"
+  }, f.count)))), /*#__PURE__*/React.createElement("div", {
     className: "port-grid"
-  }, CASES.map((c, i) => /*#__PURE__*/React.createElement(PortCard, {
-    key: i,
+  }, shown.map((c, i) => /*#__PURE__*/React.createElement(PortCard, {
+    key: c.name,
     c: c,
     i: i,
     onOpen: setActive
-  }))))), /*#__PURE__*/React.createElement("section", {
+  }))), shown.length === 0 && /*#__PURE__*/React.createElement("p", {
+    className: "port-empty"
+  }, "Nenhum projeto nesta categoria por enquanto."))), /*#__PURE__*/React.createElement("section", {
+    className: "port-otim"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "glow glow-purple",
+    style: {
+      width: 420,
+      height: 420,
+      top: -140,
+      left: "50%",
+      transform: "translateX(-50%)",
+      opacity: .3
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "wrap",
+    style: {
+      position: "relative",
+      zIndex: 2
+    }
+  }, /*#__PURE__*/React.createElement(Reveal, {
+    style: {
+      textAlign: "center",
+      maxWidth: 720,
+      margin: "0 auto 48px"
+    }
+  }, /*#__PURE__*/React.createElement(Eyebrow, {
+    center: true
+  }, "Como cada projeto \xE9 entregue"), /*#__PURE__*/React.createElement("h2", {
+    className: "h2",
+    style: {
+      marginTop: 16
+    }
+  }, "Site bonito \xE9 o come\xE7o. ", /*#__PURE__*/React.createElement("span", {
+    className: "grad-text"
+  }, "Ser encontrado"), " \xE9 o trabalho."), /*#__PURE__*/React.createElement("p", {
+    className: "lead",
+    style: {
+      marginTop: 18
+    }
+  }, "Hoje seu cliente n\xE3o procura s\xF3 no Google. Ele pergunta pro ChatGPT, pro Gemini e pra busca com IA. Todo site que sai daqui \xE9 preparado para as tr\xEAs frentes.")), /*#__PURE__*/React.createElement("div", {
+    className: "port-otim-grid"
+  }, [{
+    sigla: "SEO",
+    nome: "Otimização para buscadores",
+    desc: "O básico bem feito, que é onde a maioria falha: título e descrição de cada página, endereço limpo, imagem leve, site rápido no celular e estrutura de conteúdo que o Google entende.",
+    itens: ["Meta tags e canonical", "Dados estruturados (Schema.org)", "Sitemap e robots.txt", "Nota 95+ no PageSpeed"]
+  }, {
+    sigla: "AEO",
+    nome: "Otimização para respostas",
+    desc: "Quando alguém pergunta \"quanto custa um chaveiro em Recife\", a busca responde direto na tela. Estruturamos o conteúdo em pergunta e resposta para que essa resposta seja a do seu site.",
+    itens: ["FAQ marcado com FAQPage", "Conteúdo em pergunta e resposta", "Dados do negócio explícitos", "Horário, área e serviços legíveis"]
+  }, {
+    sigla: "GEO",
+    nome: "Otimização para IA generativa",
+    desc: "ChatGPT, Gemini e Perplexity recomendam empresas. Para serem citados, precisam conseguir ler e confiar no seu site. Entregamos o site num formato que essas ferramentas conseguem digerir.",
+    itens: ["Arquivo llms.txt no domínio", "Descrição factual do negócio", "Conteúdo sem depender de JavaScript", "Informação consistente com o Google"]
+  }].map((o, i) => /*#__PURE__*/React.createElement(Reveal, {
+    key: o.sigla,
+    delay: i * 90,
+    className: "card port-otim-card"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "port-otim-sigla"
+  }, o.sigla), /*#__PURE__*/React.createElement("h3", {
+    className: "h3",
+    style: {
+      fontSize: 19,
+      marginTop: 14
+    }
+  }, o.nome), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "10px 0 0",
+      fontSize: 14,
+      lineHeight: 1.65,
+      color: "var(--fg-muted)"
+    }
+  }, o.desc), /*#__PURE__*/React.createElement("ul", {
+    className: "port-otim-lista"
+  }, o.itens.map((it, j) => /*#__PURE__*/React.createElement("li", {
+    key: j
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: "check",
+    size: 13,
+    color: "var(--accent-bright)",
+    strokeWidth: 2.6
+  }), /*#__PURE__*/React.createElement("span", null, it))))))), /*#__PURE__*/React.createElement(Reveal, {
+    style: {
+      textAlign: "center",
+      marginTop: 36
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: 0,
+      fontSize: 14,
+      color: "var(--fg-dim)"
+    }
+  }, "Quer conferir? O pr\xF3prio site da IS7 publica o dele em", " ", /*#__PURE__*/React.createElement("a", {
+    href: "/llms.txt",
+    target: "_blank",
+    rel: "noreferrer",
+    style: {
+      color: "var(--accent-bright)",
+      fontFamily: "var(--mono)",
+      fontSize: 13
+    }
+  }, "is7mkt.com.br/llms.txt"))))), /*#__PURE__*/React.createElement("section", {
     className: "port-cta"
   }, /*#__PURE__*/React.createElement("div", {
     className: "glow glow-blue",

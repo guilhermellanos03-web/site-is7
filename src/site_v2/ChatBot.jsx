@@ -22,20 +22,20 @@ const chatStyles = {
     width: 360, maxWidth: "calc(100vw - 32px)",
     display: "flex", flexDirection: "column",
     background: "linear-gradient(180deg, #0E1426 0%, #0A0F1E 100%)",
-    border: "1px solid rgba(145,69,230,.3)",
+    border: "1px solid rgba(59,108,255,.3)",
     borderRadius: 22, overflow: "hidden",
-    boxShadow: "0 20px 60px -16px rgba(0,0,0,.7), 0 0 40px -10px rgba(145,69,230,.2)",
+    boxShadow: "0 20px 60px -16px rgba(0,0,0,.7), 0 0 40px -10px rgba(59,108,255,.2)",
     animation: "chat-in .3s cubic-bezier(.16,1,.3,1) both",
     fontFamily: "'Inter', sans-serif",
   },
   header: {
     padding: "18px 20px", display: "flex", alignItems: "center", gap: 12,
-    background: "linear-gradient(135deg, rgba(145,69,230,.15), rgba(59,108,255,.1))",
+    background: "linear-gradient(135deg, rgba(59,108,255,.15), rgba(47,79,216,.12))",
     borderBottom: "1px solid rgba(255,255,255,.06)",
   },
   avatar: {
     width: 40, height: 40, borderRadius: 12,
-    background: "linear-gradient(135deg, #9145E6, #3B6CFF)",
+    background: "linear-gradient(135deg, #2F4FD8, #3B6CFF)",
     display: "flex", alignItems: "center", justifyContent: "center",
     fontFamily: "'Poppins', sans-serif", fontWeight: 800, color: "#fff", fontSize: 16,
     flexShrink: 0,
@@ -65,10 +65,10 @@ const chatStyles = {
   fab: {
     position: "fixed", bottom: 24, left: 24, zIndex: 9999,
     width: 56, height: 56, borderRadius: 16,
-    background: "linear-gradient(135deg, #9145E6, #3B6CFF)",
+    background: "linear-gradient(135deg, #2F4FD8, #3B6CFF)",
     border: "none", cursor: "pointer",
     display: "flex", alignItems: "center", justifyContent: "center",
-    boxShadow: "0 8px 28px -4px rgba(145,69,230,.5)",
+    boxShadow: "0 8px 28px -4px rgba(59,108,255,.5)",
     transition: "transform .2s, box-shadow .2s",
   },
   badge: {
@@ -112,7 +112,7 @@ const ChatBot = () => {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
               {QUICK.map((q, i) => (
                 <a key={i} href={wa(q.msg)} target="_blank" rel="noreferrer" style={{
-                  background: "rgba(145,69,230,.1)", border: "1px solid rgba(145,69,230,.25)",
+                  background: "rgba(59,108,255,.1)", border: "1px solid rgba(59,108,255,.25)",
                   borderRadius: 9999, padding: "8px 14px", color: "var(--accent-bright, #A78BFA)",
                   fontSize: 12.5, fontWeight: 500, cursor: "pointer", textDecoration: "none",
                 }}>{q.label}</a>

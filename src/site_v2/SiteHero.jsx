@@ -22,7 +22,7 @@ const CTAs = ({ center }) => (
     <a href={wa("Olá! Quero um diagnóstico gratuito da presença digital da minha empresa.")} target="_blank" rel="noreferrer" className="btn btn-primary btn-lg">
       Falar com especialista <Icon name="arrow-right" size={18} />
     </a>
-    <a href="#cases" className="btn btn-ghost btn-lg">Ver nossos cases</a>
+    <a href="#cases" className="btn btn-ghost btn-lg">Ver sites que entregamos</a>
   </div>
 );
 
@@ -61,7 +61,7 @@ const Constellation = () => {
 const OrbitRing = ({ size, top, left, dur, opacity = 0.12 }) => (
   <div className="hide-sm" style={{
     position: "absolute", top, left, width: size, height: size,
-    border: `1px solid rgba(145,69,230,${opacity})`, borderRadius: "50%",
+    border: `1px solid rgba(59,108,255,${opacity})`, borderRadius: "50%",
     animation: `orbit-spin ${dur}s linear infinite`,
     pointerEvents: "none", zIndex: 0,
   }}>
@@ -73,7 +73,7 @@ const OrbitRing = ({ size, top, left, dur, opacity = 0.12 }) => (
 );
 
 const FLOAT_CHIPS = [
-  { label: "Google", icon: "map-pin", pos: { top: "16%", left: "6%" }, delay: "0s", cls: "float" },
+  { label: "Perfil no Google", icon: "map-pin", pos: { top: "16%", left: "6%" }, delay: "0s", cls: "float" },
   { label: "Sites profissionais", icon: "monitor", pos: { top: "24%", right: "5%" }, delay: ".8s", cls: "float-2" },
   { label: "Lojas virtuais", icon: "shopping-bag", pos: { bottom: "20%", left: "9%" }, delay: "1.4s", cls: "float-2" },
   { label: "Tráfego pago", icon: "trending-up", pos: { bottom: "16%", right: "8%" }, delay: ".4s", cls: "float" },
@@ -83,7 +83,6 @@ const HeroA = () => (
   <section id="topo" style={{ position: "relative", overflow: "hidden", minHeight: "92vh", display: "flex", alignItems: "center", paddingTop: 40, paddingBottom: 72 }}>
     <div className="glow glow-purple" style={{ width: 560, height: 560, top: -180, left: "50%", transform: "translateX(-50%)", animation: "glow-morph 12s ease-in-out infinite" }} />
     <div className="glow glow-blue" style={{ width: 420, height: 420, bottom: -160, right: -80, animation: "drift 16s ease-in-out infinite, glow-morph 14s ease-in-out 2s infinite reverse" }} />
-    <div className="gridlines" />
     <Constellation />
     <OrbitRing size={600} top="-10%" left="55%" dur={40} opacity={0.08} />
     <OrbitRing size={380} top="60%" left="-5%" dur={30} opacity={0.06} />
@@ -101,12 +100,13 @@ const HeroA = () => (
       </Reveal>
       <Reveal delay={80}>
         <h1 className="display" style={{ margin: "22px auto 0", maxWidth: 980 }}>
-          Performance e <span className="grad-text">posicionamento</span> para a sua empresa.
+          Criação de sites profissionais para empresas que querem <span className="grad-text">ser encontradas</span>.
         </h1>
       </Reveal>
       <Reveal delay={160}>
-        <p className="lead" style={{ maxWidth: 600, margin: "26px auto 0" }}>
-          Posicionamento no Google, sites profissionais, lojas virtuais e tráfego pago. Tudo que o seu negócio precisa para ser encontrado e escolher os melhores clientes.
+        <p className="lead" style={{ maxWidth: 620, margin: "26px auto 0" }}>
+          Site rápido, feito sob medida e preparado para o Google, para o celular e para as buscas
+          com inteligência artificial. De Curitiba para todo o Brasil.
         </p>
       </Reveal>
       <Reveal delay={240}><CTAs center /></Reveal>
@@ -137,23 +137,23 @@ const MiniReview = () => (
 const ResultPanel = () => (
   <div className="card glass-dark" style={{ padding: 22, background: "linear-gradient(160deg, rgba(19,26,48,.95), rgba(14,20,38,.95))" }}>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-      <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "var(--fg-muted)" }}>Resultados</span>
-      <span className="tag tag-accent">ao vivo</span>
+      <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "var(--fg-muted)" }}>A IS7 em números</span>
+      <span className="tag tag-accent">verificável</span>
     </div>
     <div style={{ display: "grid", gap: 16 }}>
       <div>
-        <StatNumber prefix="+" value={312} suffix="%" />
-        <p style={{ margin: "4px 0 0", fontSize: 12.5, color: "var(--fg-muted)" }}>Visitas vindas do Google</p>
+        <StatNumber prefix="+" value={100} />
+        <p style={{ margin: "4px 0 0", fontSize: 12.5, color: "var(--fg-muted)" }}>Projetos entregues</p>
       </div>
       <hr className="hair" />
       <div>
-        <StatNumber value={29} suffix="+" />
-        <p style={{ margin: "4px 0 0", fontSize: 12.5, color: "var(--fg-muted)" }}>Avaliações 5.0 estrelas</p>
+        <StatNumber value={28} />
+        <p style={{ margin: "4px 0 0", fontSize: 12.5, color: "var(--fg-muted)" }}>Avaliações 5.0 no Google</p>
       </div>
     </div>
     <div style={{ marginTop: 18, height: 54, display: "flex", alignItems: "flex-end", gap: 6 }}>
       {[34,46,40,58,52,72,66,88].map((h, i) => (
-        <span key={i} style={{ flex: 1, height: `${h}%`, borderRadius: 4, background: i > 5 ? "var(--grad)" : "rgba(145,69,230,.28)" }} />
+        <span key={i} style={{ flex: 1, height: `${h}%`, borderRadius: 4, background: i > 5 ? "var(--grad)" : "rgba(59,108,255,.28)" }} />
       ))}
     </div>
   </div>
@@ -164,12 +164,11 @@ const HeroB = () => (
     <div className="glow glow-purple" style={{ width: 520, height: 520, top: -200, left: -120, animation: "glow-morph 12s ease-in-out infinite" }} />
     <div className="glow glow-blue" style={{ width: 460, height: 460, bottom: -200, right: -120, animation: "drift 18s ease-in-out infinite, glow-morph 14s ease-in-out 2s infinite reverse" }} />
     <Constellation />
-    <div className="gridlines" />
     <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr 1fr", gap: 40, alignItems: "center" }} className="hero-b-grid">
         <Reveal style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <div style={{ position: "relative", width: "100%" }}>
-            <div className="card" style={{ padding: 8, borderRadius: 24, overflow: "hidden", borderColor: "rgba(145,69,230,.35)" }}>
+            <div className="card" style={{ padding: 8, borderRadius: 24, overflow: "hidden", borderColor: "rgba(59,108,255,.35)" }}>
               <image-slot id="hero-founder" shape="rect" anchor="top"
                 placeholder="Foto do Guilherme"
                 style={{ width: "100%", aspectRatio: "3/4", display: "block", borderRadius: 18 }}></image-slot>

@@ -1,10 +1,10 @@
 const { Icon, Eyebrow, Reveal, StatNumber, wa } = window.IS7v2;
 
 const STATS = [
-  { prefix: "R$ ", value: 500, suffix: " mil+", label: "Investidos em Google Ads" },
+  { prefix: "R$ ", value: 500, suffix: " mil+", label: "Investidos em anúncios online" },
   { prefix: "",    value: 5,   suffix: "+",      label: "Anos de experiência" },
   { prefix: "+",   value: 100, suffix: "",       label: "Projetos entregues" },
-  { prefix: "+",   value: 95,  suffix: "",       label: "Nota média dos sites" },
+  { prefix: "",    value: 95,  suffix: "+",      label: "De desempenho no PageSpeed, em todos os sites" },
 ];
 
 const Stats = () => (
@@ -28,9 +28,9 @@ const Stats = () => (
 
 const SERVICES = [
   { n: "01", icon: "search",       title: "Posicionamento no Google", desc: "Sua empresa nas primeiras posições quando alguém procura pelo seu serviço. Perfil da Empresa no Google otimizado e presença orgânica que dura.", bullets: ["Perfil da Empresa no Google", "SEO local", "Avaliações 5 estrelas"] },
-  { n: "02", icon: "monitor",      title: "Sites profissionais", desc: "Sites rápidos, bonitos e otimizados para SEO, feitos para aparecer no Google e converter visita em cliente. No computador e no celular.", bullets: ["Otimizado para SEO", "Otimizado para celular", "Nota +90 de desempenho"] },
+  { n: "02", icon: "monitor",      title: "Sites profissionais", desc: "Sites rápidos, bonitos e otimizados para SEO, feitos para aparecer no Google e converter visita em cliente. No computador e no celular.", bullets: ["Otimizado para SEO", "Otimizado para celular", "Nota 95+ de desempenho"] },
   { n: "03", icon: "shopping-bag", title: "Lojas virtuais", desc: "Vitrine profissional com pedido direto no WhatsApp. Sua marca pronta para vender online, sem mensalidade de plataforma.", bullets: ["Catálogo completo", "Pedido no WhatsApp", "Identidade própria"] },
-  { n: "04", icon: "trending-up",  title: "Tráfego pago", desc: "Campanhas de Google Ads que trazem clientes qualificados todos os dias. Cada real investido trabalhando para o seu negócio.", bullets: ["Google Ads", "Públicos certos", "Relatórios claros"] },
+  { n: "04", icon: "trending-up",  title: "Tráfego pago", desc: "Anúncios online que trazem clientes qualificados todos os dias, no canal onde o seu público está. Cada real investido trabalhando para o seu negócio.", bullets: ["Google e redes sociais", "Públicos certos", "Relatórios claros"] },
 ];
 
 const ServiceCard = ({ s, i }) => (

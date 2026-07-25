@@ -30,7 +30,7 @@ const PortfolioLightbox = ({ c, onClose }) => {
         background: "rgba(2,4,12,.92)", backdropFilter: "blur(12px)",
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
-        padding: "20px 20px 0",
+        padding: 20,
         animation: "lb-in .2s ease both",
       }}>
 
@@ -46,17 +46,23 @@ const PortfolioLightbox = ({ c, onClose }) => {
         <Icon name="x" size={24} color="#fff" />
       </button>
 
+      {/* Janela + rodape: coluna unica que ocupa a altura disponivel. A janela
+          flexiona e o rodape cresce conforme o conteudo, sem estourar a tela. */}
+      <div style={{
+        width: "100%", maxWidth: 1100, height: "100%",
+        display: "flex", flexDirection: "column", minHeight: 0,
+        animation: "lb-slide .32s cubic-bezier(.16,1,.3,1) both",
+      }}>
+
       {/* Browser window */}
       <div style={{
-        width: "100%", maxWidth: 1100,
-        height: "calc(100vh - 80px)",
+        flex: 1, minHeight: 0,
         display: "flex", flexDirection: "column",
         borderRadius: "14px 14px 0 0",
         overflow: "hidden",
         boxShadow: "0 40px 100px -20px rgba(0,0,0,.9)",
         border: "1px solid rgba(255,255,255,.08)",
         borderBottom: "none",
-        animation: "lb-slide .32s cubic-bezier(.16,1,.3,1) both",
       }}>
 
         {/* Chrome bar */}
@@ -174,31 +180,47 @@ const PortfolioLightbox = ({ c, onClose }) => {
         </div>
       </div>
 
-      {/* Bottom label strip */}
+      {/* Rodape: identificacao + o que foi entregue no projeto */}
       <div style={{
-        width: "100%", maxWidth: 1100,
         background: "rgba(22,27,46,.97)",
+        border: "1px solid rgba(255,255,255,.08)",
         borderTop: "1px solid rgba(255,255,255,.07)",
-        padding: "12px 20px",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
+        borderRadius: "0 0 14px 14px",
+        padding: "12px 20px 14px",
         backdropFilter: "blur(8px)",
+        flexShrink: 0,
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <span className="tag tag-accent" style={{ fontSize: 10 }}>{c.tag}</span>
-          <span style={{ fontSize: 13, fontWeight: 700, fontFamily: "var(--serif)", color: "var(--fg)" }}>{c.name}</span>
-          <span style={{ fontSize: 12, color: "var(--fg-dim)" }}>·</span>
-          <span style={{ fontSize: 12, color: "var(--fg-muted)" }}>{c.meta}</span>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", minWidth: 0 }}>
+            <span className="tag tag-accent" style={{ fontSize: 10 }}>{c.tag}</span>
+            <span style={{ fontSize: 13, fontWeight: 700, fontFamily: "var(--serif)", color: "var(--fg)" }}>{c.name}</span>
+            <span style={{ fontSize: 12, color: "var(--fg-dim)" }} className="hide-sm">·</span>
+            <span style={{ fontSize: 12, color: "var(--fg-muted)" }} className="hide-sm">{c.meta}</span>
+          </div>
+          <a
+            href={wa(`Olá! Vi o projeto ${c.name} no portfólio da IS7 e gostaria de saber mais.`)}
+            target="_blank" rel="noreferrer"
+            style={{
+              display: "flex", alignItems: "center", gap: 6,
+              fontSize: 12, fontWeight: 600, color: "var(--accent-bright)",
+              textDecoration: "none", flexShrink: 0,
+            }}>
+            Falar com a IS7 <Icon name="arrow-up-right" size={13} />
+          </a>
         </div>
-        <a
-          href={wa(`Olá! Vi o projeto ${c.name} no portfólio da IS7 e gostaria de saber mais.`)}
-          target="_blank" rel="noreferrer"
-          style={{
-            display: "flex", alignItems: "center", gap: 6,
-            fontSize: 12, fontWeight: 600, color: "var(--accent-bright)",
-            textDecoration: "none",
-          }}>
-          Falar com a IS7 <Icon name="arrow-up-right" size={13} />
-        </a>
+
+        {/* No celular a tela e curta demais pra lista: fica so a identificacao. */}
+        {Array.isArray(c.delivered) && c.delivered.length > 0 && (
+          <div className="hide-sm" style={{ display: "flex", flexWrap: "wrap", gap: "6px 16px", marginTop: 10, paddingTop: 10, borderTop: "1px solid rgba(255,255,255,.07)" }}>
+            {c.delivered.map((d, i) => (
+              <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12, color: "var(--fg-muted)" }}>
+                <Icon name="check" size={12} color="var(--accent-bright)" strokeWidth={2.6} />{d}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
       </div>
 
       <style>{`

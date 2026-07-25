@@ -32,8 +32,7 @@ site_v2/
   Sections2.jsx            → Portfólio cards (browser chrome + hover-scroll) + Reviews carousel
   Sections3.jsx            → Sobre + FAQ
   Sections4.jsx            → Clientes strip + Instagram feed + Contato + Footer + WhatsApp FAB
-  PortfolioLightbox.jsx    → Lightbox de projeto (iframe/screenshot scrollável)
-  PortfolioPage.jsx        → Página de portfólio completo
+  PortfolioLightbox.jsx    → Lightbox de projeto (screenshot scrollável + entregas)
   Blog.jsx                 → Feed Instagram (Behold API)
   ChatBot.jsx              → ChatBot flutuante
   SiteContact.jsx          → Seção de contato com formulário
@@ -43,15 +42,15 @@ assets/
   favicon.png              → Favicon
   portfolio/               → Screenshots dos projetos do portfólio
     guilherme-foto.jpg     → Foto do Guilherme (seção Sobre)
-    curadoria-site.png
-    angelo-car.png
-    degustare.png
-    tribbo-street.png
-    chaveiro.png
-    rc-soft.png
-    lua-advogado.png
-    barbearia-velozo.png
-    mk-vinhos.png
+    curadoria-site.webp
+    tribbo-street.webp
+    chaveiro.webp
+    rc-soft-service.webp     # site da RC Soft Service
+    lua-de-assis.webp        # site do Luã de Assis
+    barbearia-velozo.webp
+    mk-vinhos.webp
+    angelo-car.webp          # fora do portfólio atual
+    degustare.webp           # fora do portfólio atual
   lead_site/               → Screenshots adicionais de portfólio
 tweaks-panel.jsx           → Painel de tweaks (desenvolvimento)
 lojas_virtuais/
@@ -221,16 +220,24 @@ O site é **100% estático** (HTML + CSS + JS). Não requer servidor, banco de d
 
 ---
 
-## URLs a preencher em `site_v2/cases.js`
+## Portfólio — `src/site_v2/cases.js`
 
-Os campos `url: ""` nos cases do portfólio podem receber a URL do site ao vivo para o lightbox abrir o iframe:
+Fonte única dos projetos: alimenta a home (6 primeiros) e a página `/portfolio`
+(todos + filtro). Para adicionar um projeto, basta um objeto novo no array —
+o contador do filtro e o do hero se ajustam sozinhos.
 
-```js
-{ name: "Curadoria by Nanda", url: "curadoria-by-nanda/index.html" }, // já preenchido
-{ name: "Angelo Car",         url: "https://angelocarmecanica.com.br" },
-{ name: "Degustare",          url: "https://degustarefoodtruck.com.br" },
-// etc.
-```
+| Campo | Para que serve |
+|---|---|
+| `name` / `meta` / `domain` | Identificação; o domínio aparece na barra de "navegador" do card |
+| `tag` | Rótulo visível no card ("Site", "Loja virtual") |
+| `cat` | Chave do filtro: `"site"` ou `"loja"` |
+| `img` | Screenshot da **página inteira** em webp (o card rola no hover) |
+| `summary` | Uma linha: o problema que o site resolve |
+| `delivered` | Lista do que foi entregue — aparece no rodapé do lightbox |
+| `url` | Iframe ao vivo no lightbox. **Vazio de propósito**: o portfólio roda com screenshot, para não depender do site de cliente estar no ar |
+
+> Regra de conteúdo: `delivered` só lista o que dá para conferir no próprio
+> screenshot. Nada de métrica de resultado que a IS7 não possa comprovar.
 
 ---
 
