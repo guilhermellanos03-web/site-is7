@@ -362,8 +362,8 @@ body.js-anim #topo .grad-text{
 .site-logo{
   display:block; flex-shrink:0;
   background:var(--grad);
-  -webkit-mask:url("assets/is7-simbolo.png") no-repeat center / contain;
-          mask:url("assets/is7-simbolo.png") no-repeat center / contain;
+  -webkit-mask:url("assets/is7-simbolo.webp") no-repeat center / contain;
+          mask:url("assets/is7-simbolo.webp") no-repeat center / contain;
 }
 
 /* about badge — light mode fix */

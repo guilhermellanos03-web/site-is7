@@ -72,7 +72,7 @@ const Icon = ({ name, size = 24, strokeWidth = 2, color = "currentColor", fill =
 
 // Marca IS7. A cor sai de var(--grad) via mascara (ver .site-logo no site.css),
 // entao aqui so definimos o tamanho. A proporcao e a do glifo recortado
-// (assets/is7-simbolo.png, 360x454) — travada pra marca nunca achatar, qualquer
+// (assets/is7-simbolo.webp, 360x454) — travada pra marca nunca achatar, qualquer
 // que seja o espaco disponivel no header.
 const LOGO_RATIO = 360 / 454;
 

@@ -77,6 +77,15 @@ async function prerenderPage(browser, route, outFile) {
     // o primeiro hit sairia sem consentimento, que e justamente o que o
     // Consent Mode tem que evitar.
     document.querySelectorAll('script[src*="googletagmanager.com"]').forEach(function (el) { el.remove(); });
+    // Fontes: o HTML usa media="print" + onload="this.media='all'" pra que o CSS
+    // do Google Fonts NAO bloqueie a renderizacao. Como o snapshot e tirado
+    // depois do onload, ele congelava media="all" — devolvendo o bloqueio que o
+    // truque existia pra evitar (~2s de atraso no FCP/LCP em producao).
+    // Voltamos pra "print" no snapshot: o onload roda de novo no navegador do
+    // visitante e libera a fonte, agora sem travar o primeiro paint.
+    document.querySelectorAll('link[rel="stylesheet"][onload]').forEach(function (el) {
+      if (/fonts\.googleapis\.com/.test(el.href)) el.setAttribute("media", "print");
+    });
     window.scrollTo(0, 0);
   });
 

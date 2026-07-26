@@ -63,8 +63,18 @@ const Footer = () => (
             Assessoria de marketing digital em Curitiba. Presença digital e suporte nas vendas para o seu negócio crescer de verdade.
           </p>
           <div style={{ display: "flex", gap: 12 }}>
-            {[["instagram", "https://www.instagram.com/guilherme.is7/"], ["message-circle", WAPP], ["mail", "mailto:guilherme@is7mkt.com.br"]].map(([ic, href], i) => (
-              <a key={i} href={href} target="_blank" rel="noreferrer" style={{ width: 40, height: 40, borderRadius: 9999, border: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fg-muted)" }}>
+            {/* O rotulo e obrigatorio: dentro do link so tem um SVG aria-hidden,
+                entao sem ele o link fica sem nome nenhum para leitor de tela e
+                para agente de IA (o PageSpeed reprova em "links must have
+                discernible text", tanto em Acessibilidade quanto em navegacao
+                agentica — justo o que a IS7 vende como AEO/GEO). */}
+            {[
+              ["instagram", "https://www.instagram.com/guilherme.is7/", "Instagram da IS7"],
+              ["message-circle", WAPP, "Falar com a IS7 no WhatsApp"],
+              ["mail", "mailto:guilherme@is7mkt.com.br", "Enviar e-mail para a IS7"],
+            ].map(([ic, href, rotulo], i) => (
+              <a key={i} href={href} target="_blank" rel="noreferrer" aria-label={rotulo} title={rotulo}
+                 style={{ width: 40, height: 40, borderRadius: 9999, border: "1px solid var(--line-2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--fg-muted)" }}>
                 <Icon name={ic} size={17} />
               </a>
             ))}

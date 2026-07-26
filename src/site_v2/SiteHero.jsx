@@ -100,13 +100,13 @@ const HeroA = () => (
       </Reveal>
       <Reveal delay={80}>
         <h1 className="display" style={{ margin: "22px auto 0", maxWidth: 980 }}>
-          Criação de sites profissionais para empresas que querem <span className="grad-text">ser encontradas</span>.
+          Assessoria de marketing digital para sua empresa <span className="grad-text">ser encontrada e vender</span>.
         </h1>
       </Reveal>
       <Reveal delay={160}>
-        <p className="lead" style={{ maxWidth: 620, margin: "26px auto 0" }}>
-          Site rápido, feito sob medida e preparado para o Google, para o celular e para as buscas
-          com inteligência artificial. De Curitiba para todo o Brasil.
+        <p className="lead" style={{ maxWidth: 640, margin: "26px auto 0" }}>
+          Cuidamos da sua presença no Google, do site que recebe quem te procurou e dos anúncios
+          que trazem gente nova. De Curitiba para todo o Brasil.
         </p>
       </Reveal>
       <Reveal delay={240}><CTAs center /></Reveal>
