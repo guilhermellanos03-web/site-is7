@@ -16,3 +16,7 @@ dist-proposta/
 # Editor
 .vscode/
 .idea/
+
+# Pacote temporario de deploy manual (a Vercel publica direto do repo)
+is7-site-pronto.zip
+*.zip
