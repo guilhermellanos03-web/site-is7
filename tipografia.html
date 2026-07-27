@@ -1,0 +1,194 @@
+<!doctype html>
+<!-- IS7 — comparador de tipografia (uso local, nao entra no build nem no deploy) -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>IS7 — Direções tipográficas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"/>
+<style>
+  :root{
+    --bg:#070A14; --bg-2:#0A0F1E; --surface:#0E1426; --surface-2:#131A30;
+    --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+    --fg:#F4F6FB; --fg-muted:#98A1BC; --fg-dim:#8089A8;
+    --accent:#3B6CFF; --accent-bright:#5B8CFF;
+    --grad:linear-gradient(118deg,#2F4FD8 0%,#3B6CFF 55%,#4A7BFF 100%);
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* topo */
+  .topo{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .topo h1{font-family:'Inter',sans-serif;font-size:26px;font-weight:700;margin:0 0 10px;letter-spacing:-.02em}
+  .topo p{color:var(--fg-muted);margin:0;max-width:620px;font-family:'Inter',sans-serif;font-size:15px}
+
+  /* bloco de cada direcao */
+  .dir{padding:56px 0;border-bottom:1px solid var(--line)}
+  .cab{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+  .num{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--accent-bright);text-transform:uppercase}
+  .fontes{font-family:var(--mono);font-size:12px;color:var(--fg-dim);margin-top:6px}
+  .porque{font-family:'Inter',sans-serif;font-size:14px;color:var(--fg-muted);max-width:460px;line-height:1.65;margin:0}
+  .recomendo{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:#fff;background:var(--grad);padding:4px 10px;border-radius:9999px;margin-left:8px;vertical-align:middle}
+
+  /* amostra — herda a fonte do bloco pai */
+  .eyebrow{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-bright);display:block;margin-bottom:18px}
+  .h1{font-size:clamp(34px,5vw,60px);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin:0}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:19px;color:var(--fg-muted);line-height:1.6;max-width:620px;margin:22px 0 0}
+  .linha{height:1px;background:var(--line);margin:36px 0}
+  .h2{font-size:32px;line-height:1.08;letter-spacing:-.02em;font-weight:800;margin:0 0 14px}
+  .corpo{font-size:15px;color:var(--fg-muted);max-width:620px;margin:0}
+
+  .baixo{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:36px;align-items:start}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .card h3{font-size:18px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
+  .card p{font-size:13.5px;color:var(--fg-muted);margin:0;line-height:1.6}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center}
+  .stat .n{font-size:38px;font-weight:800;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
+  .stat .l{font-size:13px;color:var(--fg-muted);font-family:'Inter',sans-serif;margin-top:6px}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--grad);color:#fff;font-weight:600;font-size:15px;
+    padding:14px 26px;border-radius:9999px;margin-top:26px;text-decoration:none}
+
+  @media(max-width:760px){ .baixo{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<div class="wrap topo">
+  <h1>IS7 — cinco direções tipográficas</h1>
+  <p>Mesma copy, mesma paleta, mesmo espaçamento. Só a tipografia muda. Role e veja qual soa como a IS7. A nº 1 é a atual, pra servir de régua.</p>
+</div>
+
+<!-- 1. ATUAL -->
+<div class="dir" style="font-family:'Montserrat',sans-serif">
+  <div class="wrap">
+    <div class="cab">
+      <div>
+        <div class="num">01 · Atual</div>
+        <div class="fontes">Montserrat + Inter</div>
+      </div>
+      <p class="porque">É o par mais usado da web. Não é feio — é invisível. Um cliente que viu 30 sites de agência já viu essa fonte 30 vezes, e ela não deixa lembrança nenhuma.</p>
+    </div>
+    <span class="eyebrow">Assessoria de marketing digital</span>
+    <p class="h1">Assessoria de marketing digital para sua empresa <span class="grad">ser encontrada e vender</span>.</p>
+    <p class="lead" style="font-family:'Inter',sans-serif">Cuidamos da sua presença no Google, do site que recebe quem te procurou e dos anúncios que trazem gente nova. De Curitiba para todo o Brasil.</p>
+    <div class="linha"></div>
+    <p class="h2">Não basta ser bonito. <span class="grad">Tem que converter</span>.</p>
+    <p class="corpo" style="font-family:'Inter',sans-serif">E converter começa por ser achado. Hoje seu cliente não procura só no Google — ele pergunta pro ChatGPT, pro Gemini e pra busca com IA.</p>
+    <div class="baixo">
+      <div class="card"><h3>Chaveiro Assistência 24h</h3><p style="font-family:'Inter',sans-serif">Emergência não espera: quem perdeu a chave precisa ligar em segundos.</p></div>
+      <div class="stat"><span class="n">R$ 500 mil+</span><span class="l">Investidos em anúncios online</span></div>
+    </div>
+    <a class="btn" style="font-family:'Inter',sans-serif" href="#">Falar com especialista →</a>
+  </div>
+</div>
+
+<!-- 2. INSTRUMENT SERIF -->
+<div class="dir" style="font-family:'Instrument Serif',serif">
+  <div class="wrap">
+    <div class="cab">
+      <div>
+        <div class="num">02 · Editorial <span class="recomendo">minha aposta</span></div>
+        <div class="fontes">Instrument Serif + Inter</div>
+      </div>
+      <p class="porque">Serifa diz “estabelecido” antes de qualquer palavra ser lida — é a razão de banco e escritório de advocacia usarem. E nenhum concorrente seu em Curitiba usa serifa: todos estão no Poppins/Montserrat. Diferencia com motivo, não por moda.</p>
+    </div>
+    <span class="eyebrow">Assessoria de marketing digital</span>
+    <p class="h1" style="font-weight:400;letter-spacing:-.01em">Assessoria de marketing digital para sua empresa <span class="grad">ser encontrada e vender</span>.</p>
+    <p class="lead" style="font-family:'Inter',sans-serif">Cuidamos da sua presença no Google, do site que recebe quem te procurou e dos anúncios que trazem gente nova. De Curitiba para todo o Brasil.</p>
+    <div class="linha"></div>
+    <p class="h2" style="font-weight:400">Não basta ser bonito. <span class="grad">Tem que converter</span>.</p>
+    <p class="corpo" style="font-family:'Inter',sans-serif">E converter começa por ser achado. Hoje seu cliente não procura só no Google — ele pergunta pro ChatGPT, pro Gemini e pra busca com IA.</p>
+    <div class="baixo">
+      <div class="card"><h3 style="font-weight:400;font-size:21px">Chaveiro Assistência 24h</h3><p style="font-family:'Inter',sans-serif">Emergência não espera: quem perdeu a chave precisa ligar em segundos.</p></div>
+      <div class="stat"><span class="n" style="font-weight:400;font-size:42px">R$ 500 mil+</span><span class="l">Investidos em anúncios online</span></div>
+    </div>
+    <a class="btn" style="font-family:'Inter',sans-serif" href="#">Falar com especialista →</a>
+  </div>
+</div>
+
+<!-- 3. ARCHIVO -->
+<div class="dir" style="font-family:'Archivo',sans-serif">
+  <div class="wrap">
+    <div class="cab">
+      <div>
+        <div class="num">03 · Sólida</div>
+        <div class="fontes">Archivo + Inter</div>
+      </div>
+      <p class="porque">Grotesca de origem editorial, desenhada para manchete de jornal. Tem peso e postura sem virar “tech startup”. É a opção mais segura se serifa te parecer arriscada — moderna, mas com mais osso que a Montserrat.</p>
+    </div>
+    <span class="eyebrow">Assessoria de marketing digital</span>
+    <p class="h1">Assessoria de marketing digital para sua empresa <span class="grad">ser encontrada e vender</span>.</p>
+    <p class="lead" style="font-family:'Inter',sans-serif">Cuidamos da sua presença no Google, do site que recebe quem te procurou e dos anúncios que trazem gente nova. De Curitiba para todo o Brasil.</p>
+    <div class="linha"></div>
+    <p class="h2">Não basta ser bonito. <span class="grad">Tem que converter</span>.</p>
+    <p class="corpo" style="font-family:'Inter',sans-serif">E converter começa por ser achado. Hoje seu cliente não procura só no Google — ele pergunta pro ChatGPT, pro Gemini e pra busca com IA.</p>
+    <div class="baixo">
+      <div class="card"><h3>Chaveiro Assistência 24h</h3><p style="font-family:'Inter',sans-serif">Emergência não espera: quem perdeu a chave precisa ligar em segundos.</p></div>
+      <div class="stat"><span class="n">R$ 500 mil+</span><span class="l">Investidos em anúncios online</span></div>
+    </div>
+    <a class="btn" style="font-family:'Inter',sans-serif" href="#">Falar com especialista →</a>
+  </div>
+</div>
+
+<!-- 4. BRICOLAGE -->
+<div class="dir" style="font-family:'Bricolage Grotesque',sans-serif">
+  <div class="wrap">
+    <div class="cab">
+      <div>
+        <div class="num">04 · Contemporânea</div>
+        <div class="fontes">Bricolage Grotesque + Inter</div>
+      </div>
+      <p class="porque">A mais cheia de personalidade das cinco: largura variável, cortes irregulares, cara de estúdio de design. Chama atenção. O risco é datar — daqui a três anos ela vai gritar “feito em 2026”.</p>
+    </div>
+    <span class="eyebrow">Assessoria de marketing digital</span>
+    <p class="h1">Assessoria de marketing digital para sua empresa <span class="grad">ser encontrada e vender</span>.</p>
+    <p class="lead" style="font-family:'Inter',sans-serif">Cuidamos da sua presença no Google, do site que recebe quem te procurou e dos anúncios que trazem gente nova. De Curitiba para todo o Brasil.</p>
+    <div class="linha"></div>
+    <p class="h2">Não basta ser bonito. <span class="grad">Tem que converter</span>.</p>
+    <p class="corpo" style="font-family:'Inter',sans-serif">E converter começa por ser achado. Hoje seu cliente não procura só no Google — ele pergunta pro ChatGPT, pro Gemini e pra busca com IA.</p>
+    <div class="baixo">
+      <div class="card"><h3>Chaveiro Assistência 24h</h3><p style="font-family:'Inter',sans-serif">Emergência não espera: quem perdeu a chave precisa ligar em segundos.</p></div>
+      <div class="stat"><span class="n">R$ 500 mil+</span><span class="l">Investidos em anúncios online</span></div>
+    </div>
+    <a class="btn" style="font-family:'Inter',sans-serif" href="#">Falar com especialista →</a>
+  </div>
+</div>
+
+<!-- 5. SORA + JAKARTA -->
+<div class="dir" style="font-family:'Sora',sans-serif;border-bottom:none">
+  <div class="wrap">
+    <div class="cab">
+      <div>
+        <div class="num">05 · Técnica</div>
+        <div class="fontes">Sora + Plus Jakarta Sans</div>
+      </div>
+      <p class="porque">Geométrica com respiro largo, leitura calma e precisa. Troca a Inter pela Jakarta no corpo, que tem mais calor. É o upgrade mais conservador: melhora sem mudar o caráter do site.</p>
+    </div>
+    <span class="eyebrow">Assessoria de marketing digital</span>
+    <p class="h1">Assessoria de marketing digital para sua empresa <span class="grad">ser encontrada e vender</span>.</p>
+    <p class="lead" style="font-family:'Plus Jakarta Sans',sans-serif">Cuidamos da sua presença no Google, do site que recebe quem te procurou e dos anúncios que trazem gente nova. De Curitiba para todo o Brasil.</p>
+    <div class="linha"></div>
+    <p class="h2">Não basta ser bonito. <span class="grad">Tem que converter</span>.</p>
+    <p class="corpo" style="font-family:'Plus Jakarta Sans',sans-serif">E converter começa por ser achado. Hoje seu cliente não procura só no Google — ele pergunta pro ChatGPT, pro Gemini e pra busca com IA.</p>
+    <div class="baixo">
+      <div class="card"><h3>Chaveiro Assistência 24h</h3><p style="font-family:'Plus Jakarta Sans',sans-serif">Emergência não espera: quem perdeu a chave precisa ligar em segundos.</p></div>
+      <div class="stat"><span class="n">R$ 500 mil+</span><span class="l" style="font-family:'Plus Jakarta Sans',sans-serif">Investidos em anúncios online</span></div>
+    </div>
+    <a class="btn" style="font-family:'Plus Jakarta Sans',sans-serif" href="#">Falar com especialista →</a>
+  </div>
+</div>
+
+<div class="wrap" style="padding:48px 0 80px;color:var(--fg-dim);font-family:'Inter',sans-serif;font-size:13.5px;line-height:1.7">
+  <p style="margin:0">Todas são do Google Fonts, então o custo de carregamento é o mesmo que você já paga hoje.<br/>
+  Me diga o número e eu aplico no site inteiro — títulos, cards, botões, propostas e páginas de blog.</p>
+</div>
+
+</body>
+</html>

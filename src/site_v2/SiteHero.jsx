@@ -99,7 +99,7 @@ const HeroA = () => (
         <Eyebrow center>Assessoria de marketing digital</Eyebrow>
       </Reveal>
       <Reveal delay={80}>
-        <h1 className="display" style={{ margin: "22px auto 0", maxWidth: 980 }}>
+        <h1 className="display" style={{ margin: "20px auto 0", maxWidth: 840 }}>
           Assessoria de marketing digital para sua empresa <span className="grad-text">ser encontrada e vender</span>.
         </h1>
       </Reveal>

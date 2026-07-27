@@ -1,25 +1,100 @@
 // IS7 — dados do portfolio (JS puro, carregado antes dos scripts Babel)
 //
 // Campos:
-//   name/meta/domain — identificacao do projeto (domain aparece na barra do "navegador")
+//   name/meta/domain — identificacao (domain aparece na barra de "navegador"
+//                      do card; e o endereco REAL que abre, inclusive os
+//                      .vercel.app de cliente sem dominio proprio)
 //   tag              — rotulo visivel no card
 //   cat              — chave do filtro: "site" | "loja"
-//   img              — screenshot de pagina inteira (webp)
-//   summary          — uma linha: o que o site precisa resolver pro cliente
-//   delivered        — o que foi entregue. So o que da pra conferir no proprio print:
-//                      nada de metrica de resultado que a IS7 nao possa comprovar.
-//   url              — iframe ao vivo no lightbox. Vazio de proposito: o portfolio
-//                      roda com screenshot, pra nao depender de site de cliente no ar.
+//   img              — screenshot de pagina inteira (gerado por
+//                      tools/print-portfolio.js, largura 1600)
+//   summary          — uma linha: o que o site resolve pro cliente
+//   delivered        — o que foi entregue. So o que da pra conferir no print.
+//   url              — iframe ao vivo no lightbox. Vazio de proposito.
 //
 // A ordem importa: a home mostra os 6 primeiros (Sections2.jsx).
+// Lista corrigida pelo Guilherme em 26/07/2026 (prints recapturados na data).
 window.IS7_CASES = [
+  {
+    name: "Neo Sorriso",
+    meta: "Odontologia · Centro de Curitiba",
+    tag: "Site",
+    cat: "site",
+    pages: 1,
+    img: "assets/portfolio/neo-sorriso-curitiba.webp",
+    domain: "neo-sorriso-curitiba.vercel.app",
+    url: "",
+    summary: "Clínica desde 2008 que precisava transformar urgência e medo de dentista em agendamento.",
+    delivered: [
+      "Agendamento de avaliação pelo WhatsApp",
+      "Atendimento de emergência em destaque",
+      "Serviços separados por especialidade",
+      "Seção da sedação com óxido nitroso (diferencial da clínica)",
+      "69 avaliações do Google na página",
+      "Convênio e localização com FAQ",
+    ],
+  },
+  {
+    name: "MK Distribuidora de Vinhos",
+    meta: "Vinhos & adega · Curitiba",
+    tag: "Loja virtual",
+    cat: "loja",
+    pages: 1,
+    img: "assets/portfolio/mk-vinhos.webp",
+    domain: "mk-vinhos.vercel.app",
+    url: "",
+    summary: "Adega que precisava vender sem pagar mensalidade de plataforma.",
+    delivered: [
+      "Catálogo com preço e carrinho",
+      "Quiz “encontre seu vinho” em 3 perguntas",
+      "Navegação por tipo de uva",
+      "Fechamento do pedido no WhatsApp",
+      "Identidade visual própria da marca",
+    ],
+  },
+  {
+    name: "Fabi Guincho",
+    meta: "Guincho 24h · Campinas/SP",
+    tag: "Site",
+    cat: "site",
+    pages: 1,
+    img: "assets/portfolio/fabiguinhocampinas.webp",
+    domain: "fabiguinhocampinas.com.br",
+    url: "",
+    summary: "Emergência na estrada: quem quebrou liga pro primeiro que atender.",
+    delivered: [
+      "Botões de ligar e WhatsApp fixos na tela",
+      "Serviços por tipo de socorro (reboque, bateria, pane seca)",
+      "Comparativo “com e sem” que justifica o preço fechado",
+      "Área de atendimento cidade por cidade (SEO local)",
+      "28 avaliações do Google na página",
+    ],
+  },
+  {
+    name: "Brenda Burda Tattoo",
+    meta: "Tatuadora fine line · Curitiba",
+    tag: "Site",
+    cat: "site",
+    pages: 1,
+    img: "assets/portfolio/brenda-tatuadora.webp",
+    domain: "brenda-tatuadora.vercel.app",
+    url: "",
+    summary: "Tatuadora autoral que fechava orçamento pelo direct, sem vitrine própria.",
+    delivered: [
+      "Portfólio de trabalhos recentes",
+      "Orçamento personalizado pelo WhatsApp",
+      "FAQ que responde preço, sinal e cicatrização antes do contato",
+      "Avaliações do Google na página",
+      "Identidade delicada, alinhada ao traço fine line",
+    ],
+  },
   {
     name: "Chaveiro Assistência 24h",
     meta: "Chaveiro 24h · Recife",
     tag: "Site",
     cat: "site",
     pages: 1,
-    img: "assets/portfolio/chaveiro.webp",
+    img: "assets/portfolio/chaveiroassistencia24hs.webp",
     domain: "chaveiroassistencia24hs.com.br",
     url: "",
     summary: "Emergência não espera: quem perdeu a chave precisa ligar em segundos.",
@@ -32,21 +107,21 @@ window.IS7_CASES = [
     ],
   },
   {
-    name: "MK Distribuidora de Vinhos",
-    meta: "Vinhos & adega · Curitiba",
-    tag: "Loja virtual",
-    cat: "loja",
+    name: "Degustare",
+    meta: "Hambúrguer artesanal & eventos · Curitiba",
+    tag: "Site",
+    cat: "site",
     pages: 1,
-    img: "assets/portfolio/mk-vinhos.webp",
-    domain: "mkdistribuidoravinhos.com.br",
+    img: "assets/portfolio/degustare-site-novo.webp",
+    domain: "degustare-site-novo.vercel.app",
     url: "",
-    summary: "Adega que precisava vender sem pagar mensalidade de plataforma.",
+    summary: "Food truck que virou buffet de eventos e precisava vender as duas frentes.",
     delivered: [
-      "Catálogo com preço e carrinho",
-      "Quiz “encontre seu vinho” em 3 perguntas",
-      "Navegação por tipo de uva",
-      "Fechamento do pedido no WhatsApp",
-      "Identidade visual própria da marca",
+      "Orçamento por tipo de evento (casamento, corporativo, festa)",
+      "Cardápio com pedido pelo WhatsApp",
+      "História da marca e números (+200 eventos, 7 anos)",
+      "Avaliações do Google na página",
+      "Ponto fixo, delivery e horários organizados",
     ],
   },
   {
@@ -54,9 +129,9 @@ window.IS7_CASES = [
     meta: "Estética automotiva · São José dos Pinhais",
     tag: "Site",
     cat: "site",
-    pages: 2,
-    img: "assets/portfolio/tribbo-street.webp",
-    domain: "tribbostreet.com.br",
+    pages: 1,
+    img: "assets/portfolio/tribbo-street-shine.webp",
+    domain: "tribbo-street-shine.vercel.app",
     url: "",
     summary: "Serviço premium que precisava parecer premium antes do orçamento.",
     delivered: [
@@ -68,31 +143,13 @@ window.IS7_CASES = [
     ],
   },
   {
-    name: "RC Soft Service",
-    meta: "Manutenção predial · Curitiba",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/rc-soft-service.webp",
-    domain: "rcsoftservice.com.br",
-    url: "",
-    summary: "Empresa B2B que perdia obra por não ter onde mostrar credibilidade.",
-    delivered: [
-      "Formulário de solicitação de orçamento",
-      "Serviços divididos por especialidade",
-      "Passo a passo de como o trabalho é executado",
-      "Depoimentos de clientes e FAQ",
-      "WhatsApp e telefone em destaque",
-    ],
-  },
-  {
     name: "Curadoria by Nanda",
     meta: "Moda feminina · Curitiba",
     tag: "Loja virtual",
     cat: "loja",
     pages: 1,
-    img: "assets/portfolio/curadoria-site.webp",
-    domain: "curadoriabynandarocha.com.br",
+    img: "assets/portfolio/curadoria-nanda.webp",
+    domain: "curadoria-nanda.vercel.app",
     url: "",
     summary: "Curadoria de moda que vendia só pelo Instagram e precisava de vitrine.",
     delivered: [
@@ -104,38 +161,21 @@ window.IS7_CASES = [
     ],
   },
   {
-    name: "Luã de Assis",
-    meta: "Advocacia tributária · Curitiba",
+    name: "RC Soft Service",
+    meta: "Manutenção predial · Curitiba",
     tag: "Site",
     cat: "site",
     pages: 1,
-    img: "assets/portfolio/lua-de-assis.webp",
-    domain: "luadeassis.adv.br",
+    img: "assets/portfolio/servicesrc.webp",
+    domain: "servicesrc.com.br",
     url: "",
-    summary: "Advogado tributarista que precisava passar autoridade já na primeira tela.",
+    summary: "Empresa B2B que perdia obra por não ter onde mostrar credibilidade.",
     delivered: [
-      "Áreas de atuação organizadas por tese",
-      "Seção de formação e credenciais",
-      "Consulta pelo WhatsApp e “como chegar”",
-      "Padrão visual sóbrio, dentro do permitido pela OAB",
-    ],
-  },
-  {
-    name: "Barbearia Velozo",
-    meta: "Barbearia · Curitiba",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/barbearia-velozo.webp",
-    domain: "barbeariavelozo.com.br",
-    url: "",
-    summary: "Barbearia de bairro que dependia de agendamento no direct.",
-    delivered: [
-      "Agendamento pelo WhatsApp por tipo de serviço",
-      "Pacotes de serviço com destaque para o mais pedido",
-      "Galeria de cortes recentes",
-      "Endereço, mapa e horário de funcionamento",
-      "Avaliações do Google na página",
+      "Formulário de solicitação de orçamento",
+      "Serviços divididos por especialidade",
+      "Passo a passo de como o trabalho é executado",
+      "Depoimentos de clientes e FAQ",
+      "WhatsApp e telefone em destaque",
     ],
   },
   {
@@ -143,9 +183,9 @@ window.IS7_CASES = [
     meta: "Nutrição · Curitiba",
     tag: "Site",
     cat: "site",
-    pages: 2,
-    img: "assets/lead_site/portfolio-nutri.webp",
-    domain: "nutrirafaela.com.br",
+    pages: 1,
+    img: "assets/portfolio/nutrirafaelagualberto.webp",
+    domain: "nutrirafaelagualberto.com.br",
     url: "",
     summary: "Nutricionista atendendo online e presencial, sem canal próprio de agenda.",
     delivered: [
