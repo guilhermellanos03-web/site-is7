@@ -17,6 +17,7 @@ CNPJ: 50.201.864/0001-40 (IS7 Midias Digitais)
 
 ## Blog
 
+- [Indice do blog](https://is7mkt.com.br/blog): todos os guias da IS7
 - [Quanto custa criar um site profissional em 2026](https://is7mkt.com.br/blog/quanto-custa-um-site-profissional): guia de precos do mercado brasileiro
 - [Como aparecer no Google Maps](https://is7mkt.com.br/blog/como-aparecer-no-google-maps): checklist completo do Perfil da Empresa no Google
 - [Landing page ou site institucional](https://is7mkt.com.br/blog/landing-page-ou-site-institucional): comparativo para decidir o que fazer primeiro

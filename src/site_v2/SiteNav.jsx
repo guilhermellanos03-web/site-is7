@@ -3,8 +3,8 @@ const { Logo, Icon, wa } = window.IS7v2;
 const NAV = [
   { href: "#servicos", label: "Serviços" },
   { href: "/portfolio", label: "Portfólio" },
+  { href: "/blog",     label: "Blog" },
   { href: "#sobre",    label: "Sobre" },
-  { href: "#faq",      label: "FAQ" },
   { href: "#contato",  label: "Contato" },
 ];
 
