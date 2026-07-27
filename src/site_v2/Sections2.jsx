@@ -88,7 +88,7 @@ const Portfolio = () => {
             <h2 className="h2" style={{ marginTop: 16 }}>Projetos reais, <span className="grad-text">no ar e vendendo</span>.</h2>
             <p className="lead" style={{ marginTop: 16, fontSize: 17 }}>
               Sem mockup e sem "cliente fictício": clique em qualquer projeto e role o site inteiro,
-              com o domínio do cliente à vista.
+              do topo ao rodapé, exatamente como ele está no ar.
             </p>
           </div>
           <a href="/portfolio" className="link-arrow hide-sm">Ver os {total} projetos <Icon name="arrow-right" size={16} /></a>

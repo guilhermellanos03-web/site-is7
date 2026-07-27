@@ -43,7 +43,7 @@ const BEFORE = [
   "Atendendo qualquer cliente por falta de posicionamento",
 ];
 const AFTER = [
-  "Aparecer na primeira página quando alguém procura pelo seu serviço",
+  "Ser encontrado no Google quando alguém procura pelo seu serviço",
   "Site rápido que converte visita em contato e contato em cliente",
   "Relatórios claros mostrando exatamente o que deu retorno",
   "Tráfego qualificado que traz quem realmente quer comprar",

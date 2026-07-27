@@ -108,8 +108,22 @@
     /* Prints reais do painel "Desempenho" do Perfil da Empresa no Google.
        Sem nome de cliente no titulo por decisao do Guilherme (26/07/2026):
        identificamos so o nicho. Os numeros abaixo sao os que aparecem em
-       cada print — nada alem do que da pra conferir na propria imagem. */
+       cada print — nada alem do que da pra conferir na propria imagem.
+       stat2/label2 permitem trocar a segunda metrica quando "pesquisas" e um
+       numero baixo que nao ajuda a contar a historia. waMsg garante que o
+       lightbox compartilhado peca Google Meu Negocio, e nao site. */
     const GMN = [
+      {
+        name: "Food truck & eventos",
+        meta: "Curitiba/PR",
+        tag: "Perfil da Empresa",
+        img: "assets/gmn/food-truck-curitiba.webp",
+        views: "4.238",
+        buscas: "2.314",
+        termos: ["restaurantes", "food truck curitiba", "food truck"],
+        delivered: ["4.238 visualizações do perfil", "2.314 pesquisas mostraram a empresa", "66% das descobertas pelo Google Maps no celular", "Aparece até na busca genérica por “restaurantes”"],
+        waMsg: "Olá! Vi o resultado de um food truck no portfólio de Google Meu Negócio da IS7 e quero esse trabalho no perfil da minha empresa.",
+      },
       {
         name: "Mecânica",
         meta: "Porto Alegre/RS",
@@ -119,6 +133,7 @@
         buscas: "279",
         termos: ["mecanica", "mecanica porto alegre", "auto elétrica"],
         delivered: ["6.350 visualizações do perfil", "79% das descobertas pelo celular", "Perfil aparecendo até para buscas de auto elétrica"],
+        waMsg: "Olá! Vi o resultado de uma mecânica no portfólio de Google Meu Negócio da IS7 e quero esse trabalho no perfil da minha empresa.",
       },
       {
         name: "Chaveiro 24h",
@@ -129,6 +144,7 @@
         buscas: "1.636",
         termos: ["chaveiro", "chaveiro recife", "chaveiro 24 horas"],
         delivered: ["5.021 visualizações em 6 meses (fev–jul/2026)", "1.636 pesquisas mostraram o perfil", "83% das descobertas pelo celular, na hora do aperto"],
+        waMsg: "Olá! Vi o resultado de um chaveiro no portfólio de Google Meu Negócio da IS7 e quero esse trabalho no perfil da minha empresa.",
       },
       {
         name: "Nutricionista",
@@ -138,7 +154,8 @@
         views: "1.079",
         buscas: "171",
         termos: ["nutricionista unimed", "nutricionista curitiba", "nutricionista cajuru"],
-        delivered: ["1.079 visualizações do perfil", "Aparece para quem busca pelo convênio (unimed)", "Posicionada no bairro (cajuru) e na cidade"],
+        delivered: ["1.079 visualizações do perfil", "Aparece para quem busca pelo convênio (“unimed”)", "Posicionada no bairro (“cajuru”) e na cidade"],
+        waMsg: "Olá! Vi o resultado de uma nutricionista no portfólio de Google Meu Negócio da IS7 e quero esse trabalho no perfil da minha empresa.",
       },
       {
         name: "Estética automotiva",
@@ -146,9 +163,11 @@
         tag: "Perfil da Empresa",
         img: "assets/gmn/estetica-automotiva.webp",
         views: "944",
-        buscas: "16+",
+        stat2: "75%",
+        label2: "das descobertas pelo celular",
         termos: ["lava car", "lava car perto de mim", "car wash near me"],
         delivered: ["944 visualizações do perfil", "75% das descobertas pelo celular", "Aparece no “perto de mim”, inclusive em inglês"],
+        waMsg: "Olá! Vi o resultado de uma estética automotiva no portfólio de Google Meu Negócio da IS7 e quero esse trabalho no perfil da minha empresa.",
       },
       {
         name: "Loja virtual de moda",
@@ -159,6 +178,7 @@
         buscas: "64",
         termos: ["marca pesquisada pelo nome"],
         delivered: ["296 visualizações do perfil", "Clientes já pesquisam a marca pelo nome próprio", "Perfil ativo mesmo sem loja física de rua"],
+        waMsg: "Olá! Vi o resultado de uma loja de moda no portfólio de Google Meu Negócio da IS7 e quero esse trabalho no perfil da minha empresa.",
       },
     ];
 
@@ -166,14 +186,17 @@
       <Reveal delay={(i % 2) * 80} as="article" className="gmn-card" onClick={() => onOpen(g)}>
         <div className="gmn-head">
           <div>
-            <p className="gmn-nicho">{g.name}</p>
+            <h2 className="gmn-nicho">{g.name}</h2>
             <p className="gmn-meta">{g.meta}</p>
           </div>
           <span className="tag tag-accent" style={{ fontSize: 10, flexShrink: 0 }}>Google</span>
         </div>
         <div className="gmn-stats">
           <div className="gmn-stat"><span className="n">{g.views}</span><span className="l">pessoas viram o perfil</span></div>
-          <div className="gmn-stat"><span className="n">{g.buscas}</span><span className="l">pesquisas mostraram a empresa</span></div>
+          <div className="gmn-stat">
+            <span className="n">{g.stat2 || g.buscas}</span>
+            <span className="l">{g.label2 || "pesquisas mostraram a empresa"}</span>
+          </div>
         </div>
         <div className="gmn-termos">
           {g.termos.map((t, j) => <span key={j} className="tag" style={{ fontSize: 10, padding: "3px 9px", textTransform: "none", letterSpacing: 0 }}>{t}</span>)}
@@ -264,8 +287,19 @@
                 {GMN.map((g, i) => <GmnCard key={g.name} g={g} i={i} onOpen={setActive} />)}
               </div>
               <Reveal className="gmn-nota">
-                Prints do painel oficial do Google (seção Desempenho). Nichos identificados sem o nome
-                do cliente por privacidade — no diagnóstico a gente mostra como chegar lá no seu.
+                <p style={{ margin: 0 }}>
+                  Prints do painel oficial do Google, na seção Desempenho. Identificamos cada card
+                  pelo segmento, e não pela razão social — dados que apontam para pessoa ou endereço
+                  são ocultados na própria imagem.
+                </p>
+                <p style={{ margin: "14px 0 0" }}>
+                  E o nosso próprio perfil?{" "}
+                  <a href="https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA" target="_blank" rel="noreferrer"
+                     style={{ color: "var(--accent-bright)", fontWeight: 600 }}>
+                    5,0 com 28 avaliações no Google
+                  </a>{" "}
+                  — confere lá.
+                </p>
               </Reveal>
             </div>
           </section>

@@ -27,7 +27,7 @@ const Stats = () => (
 );
 
 const SERVICES = [
-  { n: "01", icon: "search",       title: "Posicionamento no Google", desc: "Sua empresa nas primeiras posições quando alguém procura pelo seu serviço. Perfil da Empresa no Google otimizado e presença orgânica que dura.", bullets: ["Perfil da Empresa no Google", "SEO local", "Avaliações 5 estrelas"] },
+  { n: "01", icon: "search",       title: "Posicionamento no Google", desc: "Sua empresa aparecendo quando alguém procura pelo seu serviço na sua região. Perfil da Empresa no Google otimizado e presença orgânica que dura.", bullets: ["Perfil da Empresa no Google", "SEO local", "Avaliações 5 estrelas"] },
   { n: "02", icon: "monitor",      title: "Sites profissionais", desc: "Sites rápidos, bonitos e otimizados para SEO, feitos para aparecer no Google e converter visita em cliente. No computador e no celular.", bullets: ["Otimizado para SEO", "Otimizado para celular", "Nota 95+ de desempenho"] },
   { n: "03", icon: "shopping-bag", title: "Lojas virtuais", desc: "Vitrine profissional com pedido direto no WhatsApp. Sua marca pronta para vender online, sem mensalidade de plataforma.", bullets: ["Catálogo completo", "Pedido no WhatsApp", "Identidade própria"] },
   { n: "04", icon: "trending-up",  title: "Tráfego pago", desc: "Anúncios online que trazem clientes qualificados todos os dias, no canal onde o seu público está. Cada real investido trabalhando para o seu negócio.", bullets: ["Google e redes sociais", "Públicos certos", "Relatórios claros"] },

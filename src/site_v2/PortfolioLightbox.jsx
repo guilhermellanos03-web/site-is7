@@ -104,9 +104,11 @@ const PortfolioLightbox = ({ c, onClose }) => {
             </span>
           </div>
 
-          {/* CTA button */}
+          {/* CTA button — a mensagem vem do proprio item quando existe (waMsg).
+              Sem isso, a pagina de Google Meu Negocio herdava a copy de venda
+              de SITE e pedia o produto errado no WhatsApp. */}
           <a
-            href={wa(`Olá! Vi o projeto ${c.name} no portfólio da IS7 e quero um site assim.`)}
+            href={wa(c.waMsg || `Olá! Vi o projeto ${c.name} no portfólio da IS7 e quero um site assim.`)}
             target="_blank" rel="noreferrer"
             style={{
               display: "flex", alignItems: "center", gap: 6,
@@ -198,7 +200,7 @@ const PortfolioLightbox = ({ c, onClose }) => {
             <span style={{ fontSize: 12, color: "var(--fg-muted)" }} className="hide-sm">{c.meta}</span>
           </div>
           <a
-            href={wa(`Olá! Vi o projeto ${c.name} no portfólio da IS7 e gostaria de saber mais.`)}
+            href={wa(c.waMsg || `Olá! Vi o projeto ${c.name} no portfólio da IS7 e gostaria de saber mais.`)}
             target="_blank" rel="noreferrer"
             style={{
               display: "flex", alignItems: "center", gap: 6,
