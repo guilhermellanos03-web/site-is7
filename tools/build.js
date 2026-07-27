@@ -33,6 +33,14 @@ if (fs.existsSync(path.join(SRC, "portfolio.html"))) {
 if (fs.existsSync(path.join(SRC, "google-meu-negocio.html"))) {
   PAGES.push({ in: "google-meu-negocio.html", out: "google-meu-negocio.html" });
 }
+// Paginas de nicho: privadas (noindex, fora do menu e do sitemap), enviadas
+// por link direto pro prospect do segmento. Basta criar src/<nicho>.html
+// usando NichoPage.jsx que ela entra no build sozinha.
+["saude"].forEach(function (n) {
+  if (fs.existsSync(path.join(SRC, n + ".html"))) {
+    PAGES.push({ in: n + ".html", out: n + ".html" });
+  }
+});
 
 // Recursos extras copiados pra dist (referenciados por URL no HTML).
 // landing-pages.html e modelo-home.html sao paginas estaticas puras (sem JSX),

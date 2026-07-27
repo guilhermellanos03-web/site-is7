@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>IS7 · Sites para saúde e bem-estar</title>
+<!-- PAGINA PRIVADA: enviada por link direto pro prospect do segmento.
+     noindex + nofollow, fora do menu e fora do sitemap.xml de proposito. -->
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="theme-color" content="#070A14"/>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="site_v2/site.css"/>
+<script>(function(){ var t=localStorage.getItem('is7-theme')||'dark'; document.documentElement.setAttribute('data-theme',t); })()</script>
+<style>
+  .nicho-hero{ position:relative; overflow:hidden; padding:140px 0 56px; text-align:center; }
+  .nicho-provas{ display:flex; flex-wrap:wrap; gap:26px; justify-content:center; margin-top:30px; font-size:14px; color:var(--fg-muted); }
+  .nicho-provas strong{ color:var(--fg); font-family:var(--serif); font-size:19px; }
+
+  .nicho-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  .nicho-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:20px;
+    overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
+    transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  }
+  .nicho-card:hover{ transform:translateY(-6px); border-color:rgba(59,108,255,.45); box-shadow:0 24px 50px -22px rgba(45,110,240,.45); }
+
+  .nicho-bar{ background:var(--surface); border-bottom:1px solid var(--line); padding:8px 12px; display:flex; align-items:center; gap:8px; flex-shrink:0; }
+  .nicho-dots{ display:flex; gap:5px; flex-shrink:0; }
+  .nicho-dots span{ width:10px; height:10px; border-radius:50%; display:block; }
+  .nicho-url{ flex:1; background:var(--bg-2); border-radius:6px; padding:4px 10px; font-size:10px; color:var(--fg-dim); font-family:var(--mono); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+  .nicho-thumb{ height:250px; overflow:hidden; position:relative; flex-shrink:0; background:var(--surface-2); }
+  .nicho-img{ position:absolute; top:0; left:0; width:100%; height:auto; display:block; transition:transform 5.5s linear; }
+  @media (hover:hover){ .nicho-card:hover .nicho-img{ transform:translateY(calc(-100% + 250px)); } }
+  .nicho-hint{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(7,10,20,.55); opacity:0; transition:opacity .25s; backdrop-filter:blur(2px); }
+  .nicho-card:hover .nicho-hint{ opacity:1; }
+
+  .nicho-body{ padding:20px 22px 22px; display:flex; flex-direction:column; gap:11px; flex:1; border-top:1px solid var(--line); }
+  .nicho-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+  .nicho-name{ margin:0; font-family:var(--serif); font-weight:700; font-size:18px; }
+  .nicho-meta{ margin:4px 0 0; font-size:12.5px; color:var(--fg-dim); }
+  .nicho-summary{ margin:0; font-size:14px; line-height:1.6; color:var(--fg-muted); }
+  .nicho-lista{ list-style:none; margin:2px 0 0; padding:0; display:flex; flex-direction:column; gap:7px; }
+  .nicho-lista li{ display:flex; align-items:flex-start; gap:8px; font-size:13px; color:var(--fg-muted); line-height:1.5; }
+  .nicho-lista li svg{ margin-top:3px; flex-shrink:0; }
+
+  .nicho-entrega{ padding:64px 0; background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .nicho-entrega-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+
+  .nicho-cta{ padding:70px 0; text-align:center; position:relative; background:linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+
+  @media(max-width:900px){
+    .nicho-grid{ grid-template-columns:1fr; gap:18px; }
+    .nicho-entrega-grid{ grid-template-columns:1fr; }
+    .nicho-hero{ padding:120px 0 44px; }
+  }
+  [data-theme="light"] .nicho-card{ box-shadow:0 2px 14px rgba(0,0,0,.07); }
+  [data-theme="light"] .nicho-card:hover{ box-shadow:0 24px 50px -22px rgba(30,79,216,.20); }
+</style>
+</head>
+<body class="js-anim" data-screen-label="IS7 — Portfólio saúde e bem-estar (privado)">
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+  <script>
+  /* Dados do segmento. Tudo aqui foi conferido no proprio site do cliente:
+     nenhuma entrega listada sem estar visivel no print. */
+  window.IS7_NICHO = {
+    label: "saúde e bem-estar",
+    eyebrow: "Portfólio · Saúde e bem-estar",
+    h1: 'Sites para quem <span class="grad-text">cuida de gente</span>.',
+    lead: "Consultório, clínica e estúdio têm o mesmo problema: a agenda só enche se a pessoa achar você e confiar antes de marcar. Estes são projetos reais da IS7 nesse segmento.",
+    provas: [
+      { n: "4", l: "projetos no segmento" },
+      { n: "3", l: "cidades" },
+      { n: "100%", l: "com agendamento no WhatsApp" }
+    ],
+    waMsg: "Olá! Vi o portfólio da IS7 para a área da saúde e quero um site assim para o meu consultório.",
+    ctaEyebrow: "Sua agenda pode encher assim",
+    ctaTitulo: 'Seu consultório merece um site que <span class="grad-text">marca consulta</span>.',
+    ctaLead: "Diagnóstico gratuito: a gente olha como você aparece hoje no Google e te mostra o que está travando os agendamentos.",
+    ctaBotao: "Quero meu diagnóstico",
+    entregaveisTitulo: 'O que todo site de saúde da IS7 <span class="grad-text">leva de série</span>.',
+    entregaveis: [
+      { icon: "message-circle", t: "Agendamento pelo WhatsApp", d: "O botão de marcar consulta acompanha a pessoa a página inteira, em cada serviço. Sem formulário que ninguém preenche." },
+      { icon: "map-pin", t: "Perfil da Empresa no Google", d: "Ficha otimizada com fotos, horários, especialidades e convênios — é ali que a maioria procura consultório perto de casa." },
+      { icon: "star", t: "Avaliações na página", d: "As avaliações reais do Google entram no site. Em saúde, a opinião de outro paciente vale mais que qualquer texto de venda." },
+      { icon: "badge-check", t: "Credenciais visíveis", d: "Formação, tempo de atuação e especialização em destaque. Confiança é o que decide o agendamento." },
+      { icon: "monitor", t: "Rápido no celular", d: "Quem procura dentista com dor não espera site carregar. Nota 95+ de desempenho em todos os projetos." },
+      { icon: "search", t: "FAQ que responde antes", d: "Preço, convênio, primeira consulta e formas de pagamento respondidos na página — filtra a agenda e poupa seu tempo." }
+    ],
+    cases: [
+      {
+        name: "Neo Sorriso",
+        meta: "Odontologia · Centro de Curitiba",
+        tag: "Site",
+        domain: "",
+        img: "assets/portfolio/neo-sorriso-curitiba.webp",
+        summary: "Clínica desde 2008 que precisava transformar urgência e medo de dentista em agendamento.",
+        delivered: [
+          "Agendamento de avaliação pelo WhatsApp",
+          "Atendimento de emergência no mesmo dia em destaque",
+          "Seção da sedação com óxido nitroso, o diferencial da clínica",
+          "69 avaliações do Google na página",
+          "Convênio, localização e FAQ"
+        ]
+      },
+      {
+        name: "Esmalteria da Rê",
+        meta: "Esmalteria · Campinas/SP",
+        tag: "Site",
+        domain: "",
+        img: "assets/portfolio/esmalteria-da-re.webp",
+        summary: "Esmalteria de bairro que precisava mostrar o trabalho e encher a agenda sem depender do Instagram.",
+        delivered: [
+          "Agendamento pelo WhatsApp em cada serviço",
+          "Galeria real de unhas, com trabalhos da semana",
+          "Avaliações do Google na página (4,8)",
+          "Vale-presente como oferta extra",
+          "Serviços de mãos, pés e nail art separados"
+        ]
+      },
+      {
+        name: "Nutri Rafaela",
+        meta: "Nutrição · Curitiba/PR",
+        tag: "Site",
+        domain: "nutrirafaelagualberto.com.br",
+        img: "assets/portfolio/nutrirafaelagualberto.webp",
+        summary: "Nutricionista atendendo online e presencial, sem canal próprio de agenda.",
+        delivered: [
+          "Agendamento de consulta pelo WhatsApp",
+          "Serviços separados por objetivo do paciente",
+          "Depoimentos de pacientes",
+          "Aviso de disponibilidade da semana"
+        ]
+      },
+      {
+        name: "Brenda Burda Tattoo",
+        meta: "Tatuagem fine line · Curitiba/PR",
+        tag: "Site",
+        domain: "",
+        img: "assets/portfolio/brenda-tatuadora.webp",
+        summary: "Tatuadora autoral que fechava orçamento pelo direct, sem vitrine própria.",
+        delivered: [
+          "Portfólio de trabalhos recentes",
+          "Orçamento personalizado pelo WhatsApp",
+          "FAQ que responde preço, sinal e cicatrização antes do contato",
+          "Avaliações do Google na página"
+        ]
+      }
+    ]
+  };
+  </script>
+
+  <script type="text/babel" src="site_v2/SiteCore.jsx"></script>
+  <script type="text/babel" src="site_v2/PortfolioLightbox.jsx"></script>
+  <script type="text/babel" src="site_v2/NichoPage.jsx"></script>
+
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById("root")).render(<window.IS7v2.NichoPage />);
+  </script>
+</body>
+</html>
