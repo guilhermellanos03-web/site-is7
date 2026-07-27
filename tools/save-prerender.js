@@ -17,7 +17,7 @@ var ROOT = path.join(__dirname, "..");
 var DIST = path.join(ROOT, "dist");
 var OUT = path.join(ROOT, "prerendered");
 
-var PAGES = ["index.html", "portfolio.html"];
+var PAGES = ["index.html", "portfolio.html", "google-meu-negocio.html"];
 
 fs.mkdirSync(OUT, { recursive: true });
 

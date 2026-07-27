@@ -1,9 +1,11 @@
 // IS7 — dados do portfolio (JS puro, carregado antes dos scripts Babel)
 //
 // Campos:
-//   name/meta/domain — identificacao (domain aparece na barra de "navegador"
-//                      do card; e o endereco REAL que abre, inclusive os
-//                      .vercel.app de cliente sem dominio proprio)
+//   name/meta/domain — identificacao. domain aparece na barra de "navegador"
+//                      do card e SO entra se for dominio proprio do cliente:
+//                      cliente hospedado em .vercel.app fica com domain vazio
+//                      e a barra mostra o nome da empresa (decisao do
+//                      Guilherme, 26/07/2026 — link de vercel no card fica feio)
 //   tag              — rotulo visivel no card
 //   cat              — chave do filtro: "site" | "loja"
 //   img              — screenshot de pagina inteira (gerado por
@@ -22,7 +24,7 @@ window.IS7_CASES = [
     cat: "site",
     pages: 1,
     img: "assets/portfolio/neo-sorriso-curitiba.webp",
-    domain: "neo-sorriso-curitiba.vercel.app",
+    domain: "",
     url: "",
     summary: "Clínica desde 2008 que precisava transformar urgência e medo de dentista em agendamento.",
     delivered: [
@@ -41,7 +43,7 @@ window.IS7_CASES = [
     cat: "loja",
     pages: 1,
     img: "assets/portfolio/mk-vinhos.webp",
-    domain: "mk-vinhos.vercel.app",
+    domain: "",
     url: "",
     summary: "Adega que precisava vender sem pagar mensalidade de plataforma.",
     delivered: [
@@ -77,7 +79,7 @@ window.IS7_CASES = [
     cat: "site",
     pages: 1,
     img: "assets/portfolio/brenda-tatuadora.webp",
-    domain: "brenda-tatuadora.vercel.app",
+    domain: "",
     url: "",
     summary: "Tatuadora autoral que fechava orçamento pelo direct, sem vitrine própria.",
     delivered: [
@@ -113,7 +115,7 @@ window.IS7_CASES = [
     cat: "site",
     pages: 1,
     img: "assets/portfolio/degustare-site-novo.webp",
-    domain: "degustare-site-novo.vercel.app",
+    domain: "",
     url: "",
     summary: "Food truck que virou buffet de eventos e precisava vender as duas frentes.",
     delivered: [
@@ -131,7 +133,7 @@ window.IS7_CASES = [
     cat: "site",
     pages: 1,
     img: "assets/portfolio/tribbo-street-shine.webp",
-    domain: "tribbo-street-shine.vercel.app",
+    domain: "",
     url: "",
     summary: "Serviço premium que precisava parecer premium antes do orçamento.",
     delivered: [
@@ -149,7 +151,7 @@ window.IS7_CASES = [
     cat: "loja",
     pages: 1,
     img: "assets/portfolio/curadoria-nanda.webp",
-    domain: "curadoria-nanda.vercel.app",
+    domain: "",
     url: "",
     summary: "Curadoria de moda que vendia só pelo Instagram e precisava de vitrine.",
     delivered: [

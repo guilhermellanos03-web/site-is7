@@ -100,7 +100,7 @@ const PortfolioLightbox = ({ c, onClose }) => {
               fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
               overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
             }}>
-              {c.domain || "is7mkt.com.br"}
+              {c.domain || c.name}
             </span>
           </div>
 

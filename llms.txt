@@ -12,7 +12,8 @@ CNPJ: 50.201.864/0001-40 (IS7 Midias Digitais)
 
 - [Home](https://is7mkt.com.br/): visao geral da assessoria e do Metodo IS7
 - [Landing Pages](https://is7mkt.com.br/landing-pages): criacao de paginas de vendas, captura de leads (one page) e portfolio
-- [Portfolio](https://is7mkt.com.br/portfolio): projetos entregues com resultados
+- [Portfolio de sites](https://is7mkt.com.br/portfolio): sites e lojas virtuais entregues, com screenshot de pagina inteira
+- [Portfolio de Google Meu Negocio](https://is7mkt.com.br/google-meu-negocio): prints reais do painel do Perfil da Empresa no Google de clientes (visualizacoes e pesquisas), por nicho
 
 ## Blog
 

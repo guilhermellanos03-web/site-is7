@@ -50,7 +50,7 @@ const Contact = () => {
 
 const FOOT = {
   servicos: [["#servicos", "Posicionamento no Google"], ["#servicos", "Sites profissionais"], ["#servicos", "Lojas virtuais"], ["#servicos", "Tráfego pago"]],
-  links: [["#cases", "Cases"], ["#sobre", "Sobre"], ["#faq", "FAQ"], ["#contato", "Contato"]],
+  links: [["/portfolio", "Portfólio de sites"], ["/google-meu-negocio", "Resultados no Google"], ["#sobre", "Sobre"], ["#faq", "FAQ"], ["#contato", "Contato"]],
 };
 
 const Footer = () => (

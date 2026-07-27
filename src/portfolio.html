@@ -50,6 +50,11 @@
 <script>(function(){ var t=localStorage.getItem('is7-theme')||'dark'; document.documentElement.setAttribute('data-theme',t); })()</script>
 <style>
   .port-hero{ position:relative; overflow:hidden; padding:140px 0 64px; text-align:center; }
+  /* alternador Sites | Google Meu Negocio (existe igual na outra pagina) */
+  .port-switch{ display:inline-flex; gap:6px; background:var(--surface); border:1px solid var(--line-2); border-radius:9999px; padding:5px; margin-bottom:26px; }
+  .port-switch a{ font-size:13.5px; font-weight:600; padding:9px 18px; border-radius:9999px; color:var(--fg-muted); transition:color .2s, background .2s; }
+  .port-switch a.on{ background:var(--grad); color:#fff; }
+  .port-switch a:not(.on):hover{ color:var(--fg); }
   .port-count{
     display:inline-flex; align-items:center; gap:10px;
     font-family:var(--mono); font-size:12.5px; letter-spacing:.12em;
@@ -198,7 +203,7 @@
             <span style={{ background: "#FFBD2E" }} />
             <span style={{ background: "#28CA42" }} />
           </div>
-          <div className="port-url">{c.domain}</div>
+          <div className="port-url">{c.domain || c.name}</div>
         </div>
 
         <div className="port-thumb" style={{ background: c.grad || "var(--surface-2)" }}>
@@ -279,9 +284,10 @@
             <div className="glow glow-purple" style={{ width: 500, height: 500, top: -200, left: "50%", transform: "translateX(-50%)", animation: "glow-morph 12s ease-in-out infinite" }} />
             <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
               <Reveal>
-                <a href="/" className="link-arrow" style={{ justifyContent: "center", marginBottom: 28 }}>
-                  <Icon name="arrow-left" size={15} /> Voltar ao site
-                </a>
+                <div className="port-switch">
+                  <a href="/portfolio" className="on">Sites</a>
+                  <a href="/google-meu-negocio">Google Meu Negócio</a>
+                </div>
               </Reveal>
               <Reveal delay={60}>
                 <span className="port-count">

@@ -2,41 +2,40 @@
 <html lang="pt-BR" data-theme="dark"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Portfólio de sites da IS7 | Projetos reais em Curitiba e no Brasil</title>
-<meta name="description" content="Veja sites e lojas virtuais que a IS7 entregou para negócios reais: chaveiro, adega, estética automotiva, advocacia, barbearia e mais. Screenshot completo e domínio de cada projeto.">
+<title>Portfólio Google Meu Negócio | Resultados reais no Perfil da Empresa | IS7</title>
+<meta name="description" content="Prints reais do painel do Perfil da Empresa no Google de clientes da IS7: visualizações, pesquisas e termos que levaram gente até chaveiro, mecânica, nutricionista e mais.">
 <meta name="author" content="IS7 Marketing Digital">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070A14">
 <meta name="geo.region" content="BR-PR">
 <meta name="geo.placename" content="Curitiba">
-<link rel="canonical" href="https://is7mkt.com.br/portfolio">
-<!-- Open Graph -->
+<link rel="canonical" href="https://is7mkt.com.br/google-meu-negocio">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="IS7 Marketing Digital">
-<meta property="og:title" content="Portfólio de sites da IS7 | Projetos reais no ar">
-<meta property="og:description" content="Sites e lojas virtuais entregues pela IS7 para negócios reais. Cada projeto com screenshot completo e domínio à vista.">
-<meta property="og:url" content="https://is7mkt.com.br/portfolio">
+<meta property="og:title" content="Portfólio Google Meu Negócio | Resultados reais">
+<meta property="og:description" content="Prints reais do painel do Perfil da Empresa no Google de clientes da IS7, nicho a nicho.">
+<meta property="og:url" content="https://is7mkt.com.br/google-meu-negocio">
 <meta property="og:image" content="https://is7mkt.com.br/assets/is7-logo-grad.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Portfólio de sites da IS7">
-<meta name="twitter:description" content="Sites e lojas virtuais entregues pela IS7 para negócios reais em Curitiba e no Brasil.">
+<meta name="twitter:title" content="Portfólio Google Meu Negócio | IS7">
+<meta name="twitter:description" content="Visualizações, pesquisas e termos reais do Perfil da Empresa no Google de clientes da IS7.">
 <meta name="twitter:image" content="https://is7mkt.com.br/assets/is7-logo-grad.png">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Portfólio de sites da IS7 Marketing Digital",
-  "description": "Sites e lojas virtuais desenvolvidos pela IS7 Marketing Digital para negócios reais em Curitiba e no Brasil.",
-  "url": "https://is7mkt.com.br/portfolio",
+  "name": "Portfólio de Google Meu Negócio da IS7 Marketing Digital",
+  "description": "Resultados reais de Perfil da Empresa no Google gerenciados pela IS7: visualizações e pesquisas de clientes em vários nichos.",
+  "url": "https://is7mkt.com.br/google-meu-negocio",
   "isPartOf": { "@type": "WebSite", "name": "IS7 Marketing Digital", "url": "https://is7mkt.com.br/" },
   "about": { "@type": "ProfessionalService", "name": "IS7 Marketing Digital", "url": "https://is7mkt.com.br/" },
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://is7mkt.com.br/" },
-      { "@type": "ListItem", "position": 2, "name": "Portfólio", "item": "https://is7mkt.com.br/portfolio" }
+      { "@type": "ListItem", "position": 2, "name": "Google Meu Negócio", "item": "https://is7mkt.com.br/google-meu-negocio" }
     ]
   }
 }
@@ -473,335 +472,56 @@ body.js-anim #topo .grad-text{
 <!-- Anti-flash: apply saved theme before React mounts -->
 <script>(function(){ var t=localStorage.getItem('is7-theme')||'dark'; document.documentElement.setAttribute('data-theme',t); })()</script>
 <style>
-  .port-hero{ position:relative; overflow:hidden; padding:140px 0 64px; text-align:center; }
-  /* alternador Sites | Google Meu Negocio (existe igual na outra pagina) */
+  .gmn-hero{ position:relative; overflow:hidden; padding:140px 0 56px; text-align:center; }
+
+  /* alternador Sites | Google (aparece nas duas paginas de portfolio) */
   .port-switch{ display:inline-flex; gap:6px; background:var(--surface); border:1px solid var(--line-2); border-radius:9999px; padding:5px; margin-bottom:26px; }
   .port-switch a{ font-size:13.5px; font-weight:600; padding:9px 18px; border-radius:9999px; color:var(--fg-muted); transition:color .2s, background .2s; }
   .port-switch a.on{ background:var(--grad); color:#fff; }
   .port-switch a:not(.on):hover{ color:var(--fg); }
-  .port-count{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:var(--mono); font-size:12.5px; letter-spacing:.12em;
-    text-transform:uppercase; color:var(--accent-bright);
-    background:rgba(59,108,255,.10); border:1px solid rgba(59,108,255,.25);
-    padding:8px 18px; border-radius:9999px; margin-bottom:22px;
-  }
 
-  /* ---- Barra de filtro ---- */
-  .port-filter{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:40px; }
-  .port-fbtn{
-    font-family:var(--sans); font-size:14px; font-weight:600;
-    padding:10px 20px; border-radius:9999px; cursor:pointer;
-    background:transparent; border:1px solid var(--line-2); color:var(--fg-muted);
-    transition:border-color .22s, color .22s, background .22s;
-    min-height:44px;
-  }
-  .port-fbtn:hover{ border-color:var(--accent-bright); color:var(--fg); }
-  .port-fbtn.on{ background:var(--grad); border-color:transparent; color:#fff; }
-  .port-fbtn .n{ opacity:.65; margin-left:6px; font-family:var(--mono); font-size:12px; }
-
-  /* ---- Grid ---- */
-  .port-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  .port-card{
+  .gmn-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  .gmn-card{
     background:var(--surface); border:1px solid var(--line); border-radius:20px;
     overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
     transition:transform .3s ease, border-color .3s ease, box-shadow .3s ease;
   }
-  .port-card:hover{
-    transform:translateY(-6px); border-color:rgba(59,108,255,.45);
-    box-shadow:0 24px 50px -22px rgba(45,110,240,.45);
-  }
+  .gmn-card:hover{ transform:translateY(-6px); border-color:rgba(59,108,255,.45); box-shadow:0 24px 50px -22px rgba(45,110,240,.45); }
 
-  /* barra de navegador — o domínio real à vista */
-  .port-bar{
-    background:var(--surface); border-bottom:1px solid var(--line);
-    padding:8px 12px; display:flex; align-items:center; gap:8px; flex-shrink:0;
-  }
-  .port-dots{ display:flex; gap:5px; flex-shrink:0; }
-  .port-dots span{ width:10px; height:10px; border-radius:50%; display:block; }
-  .port-url{
-    flex:1; background:var(--bg-2); border-radius:6px; padding:4px 10px;
-    font-size:10px; color:var(--fg-dim); font-family:var(--mono);
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  }
+  .gmn-head{ padding:20px 22px 0; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+  .gmn-nicho{ margin:0; font-family:var(--serif); font-weight:700; font-size:18px; }
+  .gmn-meta{ margin:4px 0 0; font-size:12.5px; color:var(--fg-dim); }
 
-  /* screenshot com rolagem no hover (a página inteira, não só a dobra) */
-  .port-thumb{ height:230px; overflow:hidden; position:relative; flex-shrink:0; }
-  .port-img{
-    position:absolute; top:0; left:0; width:100%; height:auto; display:block;
-    transition:transform 5s linear;
-  }
-  @media (hover:hover){ .port-card:hover .port-img{ transform:translateY(calc(-100% + 230px)); } }
-  .port-hover-hint{
+  .gmn-stats{ display:flex; gap:28px; padding:16px 22px 4px; }
+  .gmn-stat .n{ font-family:var(--serif); font-weight:700; font-size:26px; letter-spacing:-.02em; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; display:block; }
+  .gmn-stat .l{ font-size:11.5px; color:var(--fg-muted); line-height:1.45; display:block; max-width:150px; margin-top:3px; }
+
+  .gmn-termos{ display:flex; flex-wrap:wrap; gap:6px; padding:10px 22px 16px; }
+
+  /* o print: a prova. clique abre no lightbox */
+  .gmn-shot{ position:relative; border-top:1px solid var(--line); background:#101010; }
+  .gmn-shot img{ width:100%; height:auto; display:block; }
+  .gmn-hint{
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
     background:rgba(7,10,20,.55); opacity:0; transition:opacity .25s; backdrop-filter:blur(2px);
   }
-  .port-card:hover .port-hover-hint{ opacity:1; }
+  .gmn-card:hover .gmn-hint{ opacity:1; }
 
-  /* corpo do card */
-  .port-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:10px; flex:1; border-top:1px solid var(--line); }
-  .port-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
-  .port-name{ margin:0; font-family:var(--serif); font-weight:700; font-size:17px; }
-  .port-meta{ margin:4px 0 0; font-size:12.5px; color:var(--fg-dim); }
-  .port-summary{ margin:0; font-size:13.5px; line-height:1.6; color:var(--fg-muted); flex:1; }
-  .port-arrow{
-    width:36px; height:36px; border-radius:9999px; border:1px solid var(--line-2);
-    display:flex; align-items:center; justify-content:center; flex:0 0 auto;
-    transition:background .25s, border-color .25s;
-  }
-  .port-card:hover .port-arrow{ background:var(--grad); border-color:transparent; }
-  .port-tags{ display:flex; flex-wrap:wrap; gap:6px; }
+  .gmn-nota{ text-align:center; margin-top:34px; font-size:13px; color:var(--fg-dim); }
 
-  .port-empty{ text-align:center; padding:60px 0; color:var(--fg-muted); }
+  @media(max-width:820px){ .gmn-grid{ grid-template-columns:1fr; gap:18px; } .gmn-hero{ padding:120px 0 44px; } }
 
-  /* ---- Bloco SEO / AEO / GEO ---- */
-  .port-otim{ position:relative; padding:24px 0 8px; }
-  .port-otim-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:start; }
-  .port-otim-card{ padding:28px 26px; }
-  .port-otim-sigla{
-    display:inline-block; font-family:var(--mono); font-weight:700; font-size:13px;
-    letter-spacing:.16em; color:var(--accent-bright);
-    background:var(--grad-soft); border:1px solid var(--line-2);
-    padding:7px 14px; border-radius:9999px;
-  }
-  .port-otim-lista{ list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:9px; }
-  .port-otim-lista li{ display:flex; align-items:flex-start; gap:9px; font-size:13px; color:var(--fg-muted); line-height:1.5; }
-  .port-otim-lista li svg{ margin-top:3px; flex-shrink:0; }
-  @media(max-width:900px){ .port-otim-grid{ grid-template-columns:1fr; gap:16px; } }
-
-  .port-cta{
-    margin-top:80px; padding:64px 0; text-align:center; position:relative;
-    background:linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-    border-top:1px solid var(--line);
-  }
-
-  @media(max-width:900px){
-    .port-grid{ grid-template-columns:repeat(2,1fr); gap:18px; }
-    .port-hero{ padding:120px 0 52px; }
-  }
-  @media(max-width:580px){
-    .port-grid{ grid-template-columns:1fr; gap:16px; }
-    .port-thumb{ height:200px; }
-    @media (hover:hover){ .port-card:hover .port-img{ transform:translateY(calc(-100% + 200px)); } }
-    .port-filter{ gap:8px; }
-    .port-fbtn{ padding:10px 15px; font-size:13px; }
-  }
-
-  /* light mode */
-  [data-theme="light"] .port-card{ box-shadow:0 2px 14px rgba(0,0,0,.07); }
-  [data-theme="light"] .port-card:hover{ box-shadow:0 24px 50px -22px rgba(30,79,216,.20); border-color:rgba(30,79,216,.4); }
-  [data-theme="light"] .port-count{ background:rgba(30,79,216,.08); border-color:rgba(30,79,216,.22); }
+  [data-theme="light"] .gmn-card{ box-shadow:0 2px 14px rgba(0,0,0,.07); }
+  [data-theme="light"] .gmn-card:hover{ box-shadow:0 24px 50px -22px rgba(30,79,216,.20); }
+  [data-theme="light"] .gmn-shot{ background:#0d0d0d; }
 </style>
 <style>.is7-cookie{position:fixed;left:16px;bottom:16px;z-index:9995;max-width:390px;background:var(--surface,#0E1426);border:1px solid var(--line-2,rgba(255,255,255,.14));border-radius:16px;padding:18px 20px;box-shadow:0 20px 50px -18px rgba(0,0,0,.75);font-family:var(--sans,system-ui);animation:is7-cookie-in .3s ease both}@keyframes is7-cookie-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}.is7-cookie-txt{margin:0 0 14px;font-size:13.5px;line-height:1.6;color:var(--fg-muted,#98A1BC)}.is7-cookie-btns{display:flex;gap:10px;justify-content:flex-end}.is7-cookie-btns button{font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;padding:10px 20px;border-radius:9999px;min-height:44px;transition:filter .2s,border-color .2s}.is7-cookie-no{background:transparent;border:1px solid var(--line-2,rgba(255,255,255,.14));color:var(--fg-muted,#98A1BC)}.is7-cookie-no:hover{border-color:var(--accent-bright,#5B8CFF);color:var(--fg,#F4F6FB)}.is7-cookie-ok{background:var(--grad,#3B6CFF);border:1px solid transparent;color:#fff}.is7-cookie-ok:hover{filter:brightness(1.08)}@media(max-width:600px){.is7-cookie{left:12px;right:12px;bottom:92px;max-width:none}}</style></head>
-<body class="js-anim" data-screen-label="IS7 — Portfólio completo">
-  <div id="root"><header class="hdr "><div class="wrap hdr-row"><a href="/" aria-label="IS7"><span class="site-logo" role="img" aria-label="IS7 Marketing Digital" style="height: 57px; width: 45px;"></span></a><nav class="nav"><a href="/">Início</a><a href="/#servicos">Serviços</a><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a></nav><div style="display: flex; align-items: center; gap: 10px;"><button class="theme-toggle" aria-label="Alternar tema"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary" style="padding: 12px 24px; font-size: 14px;">Fale conosco</a></div></div></header><section class="port-hero"><div class="glow glow-purple" style="width: 500px; height: 500px; top: -200px; left: 50%; transform: translateX(-50%); animation: 12s ease-in-out 0s infinite normal none running glow-morph;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><div class="port-switch"><a href="/portfolio" class="on">Sites</a><a href="/google-meu-negocio">Google Meu Negócio</a></div></div><div class="reveal in" style="transition-delay: 60ms;"><span class="port-count"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg> 10 projetos selecionados · +100 entregues</span></div><div class="reveal in" style="transition-delay: 100ms;"><h1 class="display" style="max-width: 720px; margin: 0px auto;">Site de verdade, <span class="grad-text">no ar</span>, com o domínio à vista.</h1></div><div class="reveal in" style="transition-delay: 140ms;"><p class="lead" style="max-width: 620px; margin: 22px auto 0px;">Nada de mockup genérico. Cada projeto abaixo é um cliente real, com a página inteira aberta para você rolar e conferir antes de falar com a gente.</p></div></div></section><section style="padding-bottom: 80px;"><div class="wrap"><div class="reveal in port-filter" role="group" aria-label="Filtrar projetos por tipo" style="transition-delay: 0ms;"><button class="port-fbtn on" aria-pressed="true">Todos<span class="n">10</span></button><button class="port-fbtn " aria-pressed="false">Sites<span class="n">8</span></button><button class="port-fbtn " aria-pressed="false">Lojas virtuais<span class="n">2</span></button></div><div class="port-grid"><article class="reveal in port-card" style="transition-delay: 0ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">Neo Sorriso</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/neo-sorriso-curitiba.webp" alt="Site desenvolvido para Neo Sorriso" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Neo Sorriso</p><p class="port-meta">Odontologia · Centro de Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Clínica desde 2008 que precisava transformar urgência e medo de dentista em agendamento.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 70ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">MK Distribuidora de Vinhos</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/mk-vinhos.webp" alt="Site desenvolvido para MK Distribuidora de Vinhos" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">MK Distribuidora de Vinhos</p><p class="port-meta">Vinhos &amp; adega · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Adega que precisava vender sem pagar mensalidade de plataforma.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Loja virtual</span></div></div></article><article class="reveal in port-card" style="transition-delay: 140ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">fabiguinhocampinas.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/fabiguinhocampinas.webp" alt="Site desenvolvido para Fabi Guincho" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Fabi Guincho</p><p class="port-meta">Guincho 24h · Campinas/SP</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Emergência na estrada: quem quebrou liga pro primeiro que atender.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 0ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">Brenda Burda Tattoo</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/brenda-tatuadora.webp" alt="Site desenvolvido para Brenda Burda Tattoo" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Brenda Burda Tattoo</p><p class="port-meta">Tatuadora fine line · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Tatuadora autoral que fechava orçamento pelo direct, sem vitrine própria.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 70ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">chaveiroassistencia24hs.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/chaveiroassistencia24hs.webp" alt="Site desenvolvido para Chaveiro Assistência 24h" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Chaveiro Assistência 24h</p><p class="port-meta">Chaveiro 24h · Recife</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Emergência não espera: quem perdeu a chave precisa ligar em segundos.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 140ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">Degustare</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/degustare-site-novo.webp" alt="Site desenvolvido para Degustare" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Degustare</p><p class="port-meta">Hambúrguer artesanal &amp; eventos · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Food truck que virou buffet de eventos e precisava vender as duas frentes.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 0ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">Tribbo Street</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/tribbo-street-shine.webp" alt="Site desenvolvido para Tribbo Street" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Tribbo Street</p><p class="port-meta">Estética automotiva · São José dos Pinhais</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Serviço premium que precisava parecer premium antes do orçamento.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal in port-card" style="transition-delay: 70ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">Curadoria by Nanda</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/curadoria-nanda.webp" alt="Site desenvolvido para Curadoria by Nanda" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Curadoria by Nanda</p><p class="port-meta">Moda feminina · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Curadoria de moda que vendia só pelo Instagram e precisava de vitrine.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Loja virtual</span></div></div></article><article class="reveal in port-card" style="transition-delay: 140ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">servicesrc.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/servicesrc.webp" alt="Site desenvolvido para RC Soft Service" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">RC Soft Service</p><p class="port-meta">Manutenção predial · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Empresa B2B que perdia obra por não ter onde mostrar credibilidade.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article><article class="reveal port-card in" style="transition-delay: 0ms;"><div class="port-bar"><div class="port-dots"><span style="background: rgb(255, 95, 87);"></span><span style="background: rgb(255, 189, 46);"></span><span style="background: rgb(40, 202, 66);"></span></div><div class="port-url">nutrirafaelagualberto.com.br</div></div><div class="port-thumb" style="background: var(--surface-2);"><img src="assets/portfolio/nutrirafaelagualberto.webp" alt="Site desenvolvido para Nutri Rafaela" loading="lazy" class="port-img"><div class="port-hover-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg> Ver projeto</span></div></div><div class="port-body"><div class="port-head"><div><p class="port-name">Nutri Rafaela</p><p class="port-meta">Nutrição · Curitiba</p></div><span class="port-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></div><p class="port-summary">Nutricionista atendendo online e presencial, sem canal próprio de agenda.</p><div class="port-tags"><span class="tag tag-accent" style="font-size: 10px; padding: 3px 9px;">Site</span></div></div></article></div></div></section><section class="port-otim"><div class="glow glow-purple" style="width: 420px; height: 420px; top: -140px; left: 50%; transform: translateX(-50%); opacity: 0.3;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms; text-align: center; max-width: 720px; margin: 0px auto 48px;"><span class="eyebrow center">Como cada projeto é entregue</span><h2 class="h2" style="margin-top: 16px;">Não basta ser bonito. <span class="grad-text">Tem que converter</span>.</h2><p class="lead" style="margin-top: 18px;">E converter começa por ser achado. Hoje seu cliente não procura só no Google — ele pergunta pro ChatGPT, pro Gemini e pra busca com IA. Todo site que sai daqui é preparado para as três frentes, e desenhado para transformar visita em contato.</p></div><div class="port-otim-grid"><div class="reveal card port-otim-card in" style="transition-delay: 0ms;"><div class="port-otim-sigla">SEO</div><h3 class="h3" style="font-size: 19px; margin-top: 14px;">Otimização para buscadores</h3><p style="margin: 10px 0px 0px; font-size: 14px; line-height: 1.65; color: var(--fg-muted);">O básico bem feito, que é onde a maioria falha: título e descrição de cada página, endereço limpo, imagem leve, site rápido no celular e estrutura de conteúdo que o Google entende.</p><ul class="port-otim-lista"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Meta tags e canonical</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Dados estruturados (Schema.org)</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Sitemap e robots.txt</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Nota 95+ no PageSpeed</span></li></ul></div><div class="reveal card port-otim-card in" style="transition-delay: 0ms;"><div class="port-otim-sigla">AEO</div><h3 class="h3" style="font-size: 19px; margin-top: 14px;">Otimização para respostas</h3><p style="margin: 10px 0px 0px; font-size: 14px; line-height: 1.65; color: var(--fg-muted);">Quando alguém pergunta "quanto custa um chaveiro em Recife", a busca responde direto na tela. Estruturamos o conteúdo em pergunta e resposta para que essa resposta seja a do seu site.</p><ul class="port-otim-lista"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>FAQ marcado com FAQPage</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Conteúdo em pergunta e resposta</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Dados do negócio explícitos</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Horário, área e serviços legíveis</span></li></ul></div><div class="reveal card port-otim-card in" style="transition-delay: 0ms;"><div class="port-otim-sigla">GEO</div><h3 class="h3" style="font-size: 19px; margin-top: 14px;">Otimização para IA generativa</h3><p style="margin: 10px 0px 0px; font-size: 14px; line-height: 1.65; color: var(--fg-muted);">ChatGPT, Gemini e Perplexity recomendam empresas. Para serem citados, precisam conseguir ler e confiar no seu site. Entregamos o site num formato que essas ferramentas conseguem digerir.</p><ul class="port-otim-lista"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Arquivo llms.txt no domínio</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Descrição factual do negócio</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Conteúdo sem depender de JavaScript</span></li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--accent-bright)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M20 6 9 17l-5-5"></path></svg><span>Informação consistente com o Google</span></li></ul></div></div><div class="reveal in" style="transition-delay: 0ms; text-align: center; margin-top: 36px;"><p style="margin: 0px; font-size: 14px; color: var(--fg-dim);">Quer conferir? O próprio site da IS7 publica o dele em <a href="/llms.txt" target="_blank" rel="noreferrer" style="color: var(--accent-bright); font-family: var(--mono); font-size: 13px;">is7mkt.com.br/llms.txt</a></p></div></div></section><section class="port-cta"><div class="glow glow-blue" style="width: 400px; height: 400px; top: -120px; left: 50%; transform: translateX(-50%); opacity: 0.35;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><span class="eyebrow center">Quer um projeto assim?</span><h2 class="h2" style="margin-top: 16px;">Seu negócio pode ser o <span class="grad-text">próximo case</span>.</h2><p class="lead" style="max-width: 500px; margin: 18px auto 0px;">Fale com a gente e descubra como sua empresa pode ter uma presença digital que vende todos os dias.</p><div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px;"><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20um%20projeto%20assim%20tamb%C3%A9m." target="_blank" rel="noreferrer" class="btn btn-primary btn-lg">Quero meu projeto <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="/#contato" class="btn btn-ghost btn-lg">Entrar em contato</a></div></div></div></section><footer style="border-top: 1px solid var(--line); padding: 28px 0px; text-align: center;"><div class="wrap" style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center;"><span class="site-logo" role="img" aria-label="IS7 Marketing Digital" style="height: 48px; width: 38px;"></span><p style="margin: 0px; font-size: 12px; color: var(--fg-dim);">© 2026 IS7 · Todos os direitos reservados</p></div></footer><a class="fab" href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20o%20portf%C3%B3lio%20da%20IS7%20e%20quero%20saber%20mais." target="_blank" rel="noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 32 32" style="width: 30px; height: 30px; fill: rgb(4, 33, 15);"><path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z"></path></svg></a></div>
+<body class="js-anim" data-screen-label="IS7 — Portfólio Google Meu Negócio">
+  <div id="root"><header class="hdr "><div class="wrap hdr-row"><a href="/" aria-label="IS7"><span class="site-logo" role="img" aria-label="IS7 Marketing Digital" style="height: 57px; width: 45px;"></span></a><nav class="nav"><a href="/">Início</a><a href="/portfolio">Sites</a><a href="/#sobre">Sobre</a><a href="/#contato">Contato</a></nav><div style="display: flex; align-items: center; gap: 10px;"><button class="theme-toggle" aria-label="Alternar tema"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20os%20resultados%20de%20Google%20Meu%20Neg%C3%B3cio%20da%20IS7%20e%20quero%20isso%20pra%20minha%20empresa." target="_blank" rel="noreferrer" class="btn btn-primary" style="padding: 12px 24px; font-size: 14px;">Fale conosco</a></div></div></header><section class="gmn-hero"><div class="glow glow-purple" style="width: 500px; height: 500px; top: -200px; left: 50%; transform: translateX(-50%); animation: 12s ease-in-out 0s infinite normal none running glow-morph;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><div class="port-switch"><a href="/portfolio">Sites</a><a href="/google-meu-negocio" class="on">Google Meu Negócio</a></div></div><div class="reveal in" style="transition-delay: 60ms;"><h1 class="display" style="max-width: 720px; margin: 0px auto;">Empresas aparecendo no Google, <span class="grad-text">com print do painel</span>.</h1></div><div class="reveal in" style="transition-delay: 120ms;"><p class="lead" style="max-width: 600px; margin: 20px auto 0px;">Cada card abaixo é a tela real de desempenho do Perfil da Empresa no Google de um cliente da IS7: quantas pessoas viram, o que pesquisaram e por onde chegaram.</p></div></div></section><section style="padding-bottom: 80px;"><div class="wrap"><div class="gmn-grid"><article class="reveal in gmn-card" style="transition-delay: 0ms;"><div class="gmn-head"><div><p class="gmn-nicho">Mecânica</p><p class="gmn-meta">Porto Alegre/RS</p></div><span class="tag tag-accent" style="font-size: 10px; flex-shrink: 0;">Google</span></div><div class="gmn-stats"><div class="gmn-stat"><span class="n">6.350</span><span class="l">pessoas viram o perfil</span></div><div class="gmn-stat"><span class="n">279</span><span class="l">pesquisas mostraram a empresa</span></div></div><div class="gmn-termos"><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">mecanica</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">mecanica porto alegre</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">auto elétrica</span></div><div class="gmn-shot"><img src="assets/gmn/mecanica-porto-alegre.webp" alt="Painel do Perfil da Empresa no Google — Mecânica" loading="lazy"><div class="gmn-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg> Ver print completo</span></div></div></article><article class="reveal in gmn-card" style="transition-delay: 80ms;"><div class="gmn-head"><div><p class="gmn-nicho">Chaveiro 24h</p><p class="gmn-meta">Recife/PE</p></div><span class="tag tag-accent" style="font-size: 10px; flex-shrink: 0;">Google</span></div><div class="gmn-stats"><div class="gmn-stat"><span class="n">5.021</span><span class="l">pessoas viram o perfil</span></div><div class="gmn-stat"><span class="n">1.636</span><span class="l">pesquisas mostraram a empresa</span></div></div><div class="gmn-termos"><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">chaveiro</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">chaveiro recife</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">chaveiro 24 horas</span></div><div class="gmn-shot"><img src="assets/gmn/chaveiro-recife.webp" alt="Painel do Perfil da Empresa no Google — Chaveiro 24h" loading="lazy"><div class="gmn-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg> Ver print completo</span></div></div></article><article class="reveal in gmn-card" style="transition-delay: 0ms;"><div class="gmn-head"><div><p class="gmn-nicho">Nutricionista</p><p class="gmn-meta">Curitiba/PR</p></div><span class="tag tag-accent" style="font-size: 10px; flex-shrink: 0;">Google</span></div><div class="gmn-stats"><div class="gmn-stat"><span class="n">1.079</span><span class="l">pessoas viram o perfil</span></div><div class="gmn-stat"><span class="n">171</span><span class="l">pesquisas mostraram a empresa</span></div></div><div class="gmn-termos"><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">nutricionista unimed</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">nutricionista curitiba</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">nutricionista cajuru</span></div><div class="gmn-shot"><img src="assets/gmn/nutricionista-curitiba.webp" alt="Painel do Perfil da Empresa no Google — Nutricionista" loading="lazy"><div class="gmn-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg> Ver print completo</span></div></div></article><article class="reveal in gmn-card" style="transition-delay: 80ms;"><div class="gmn-head"><div><p class="gmn-nicho">Estética automotiva</p><p class="gmn-meta">São José dos Pinhais/PR</p></div><span class="tag tag-accent" style="font-size: 10px; flex-shrink: 0;">Google</span></div><div class="gmn-stats"><div class="gmn-stat"><span class="n">944</span><span class="l">pessoas viram o perfil</span></div><div class="gmn-stat"><span class="n">16+</span><span class="l">pesquisas mostraram a empresa</span></div></div><div class="gmn-termos"><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">lava car</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">lava car perto de mim</span><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">car wash near me</span></div><div class="gmn-shot"><img src="assets/gmn/estetica-automotiva.webp" alt="Painel do Perfil da Empresa no Google — Estética automotiva" loading="lazy"><div class="gmn-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg> Ver print completo</span></div></div></article><article class="reveal in gmn-card" style="transition-delay: 0ms;"><div class="gmn-head"><div><p class="gmn-nicho">Loja virtual de moda</p><p class="gmn-meta">Curitiba/PR</p></div><span class="tag tag-accent" style="font-size: 10px; flex-shrink: 0;">Google</span></div><div class="gmn-stats"><div class="gmn-stat"><span class="n">296</span><span class="l">pessoas viram o perfil</span></div><div class="gmn-stat"><span class="n">64</span><span class="l">pesquisas mostraram a empresa</span></div></div><div class="gmn-termos"><span class="tag" style="font-size: 10px; padding: 3px 9px; text-transform: none; letter-spacing: 0px;">marca pesquisada pelo nome</span></div><div class="gmn-shot"><img src="assets/gmn/loja-virtual-moda.webp" alt="Painel do Perfil da Empresa no Google — Loja virtual de moda" loading="lazy"><div class="gmn-hint"><span style="display: flex; align-items: center; gap: 8px; background: var(--grad); padding: 10px 18px; border-radius: 9999px; font-size: 13.5px; font-weight: 600; color: rgb(255, 255, 255);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg> Ver print completo</span></div></div></article></div><div class="reveal in gmn-nota" style="transition-delay: 0ms;">Prints do painel oficial do Google (seção Desempenho). Nichos identificados sem o nome do cliente por privacidade — no diagnóstico a gente mostra como chegar lá no seu.</div></div></section><section class="port-cta" style="margin-top: 40px; padding: 64px 0px; text-align: center; position: relative; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); border-top: 1px solid var(--line);"><div class="glow glow-blue" style="width: 400px; height: 400px; top: -120px; left: 50%; transform: translateX(-50%); opacity: 0.35;"></div><div class="wrap" style="position: relative; z-index: 2;"><div class="reveal in" style="transition-delay: 0ms;"><span class="eyebrow center">Quer aparecer assim?</span><h2 class="h2" style="margin-top: 16px;">Seu perfil no Google pode ser o <span class="grad-text">próximo painel</span>.</h2><p class="lead" style="max-width: 520px; margin: 18px auto 0px;">Diagnóstico gratuito: a gente olha seu Perfil da Empresa e te mostra o que está travando suas visualizações.</p><div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px;"><a href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Quero%20um%20diagn%C3%B3stico%20gratuito%20do%20meu%20Perfil%20da%20Empresa%20no%20Google." target="_blank" rel="noreferrer" class="btn btn-primary btn-lg">Quero meu diagnóstico <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="/portfolio" class="btn btn-ghost btn-lg">Ver portfólio de sites</a></div></div></div></section><footer style="border-top: 1px solid var(--line); padding: 28px 0px; text-align: center;"><div class="wrap" style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center;"><span class="site-logo" role="img" aria-label="IS7 Marketing Digital" style="height: 48px; width: 38px;"></span><p style="margin: 0px; font-size: 12px; color: var(--fg-dim);">© 2026 IS7 · Todos os direitos reservados</p></div></footer><a class="fab" href="https://wa.me/5541987430349?text=Ol%C3%A1!%20Vi%20os%20resultados%20de%20Google%20Meu%20Neg%C3%B3cio%20da%20IS7%20e%20quero%20saber%20mais." target="_blank" rel="noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 32 32" style="width: 30px; height: 30px; fill: rgb(4, 33, 15);"><path d="M16.004 0h-.008C7.174 0 .002 7.174.002 16c0 3.5 1.128 6.744 3.046 9.378L1.058 31.116l5.944-1.91A15.91 15.91 0 0 0 16.004 32C24.826 32 32 24.826 32 16S24.826 0 16.004 0zm9.314 22.594c-.39 1.1-1.932 2.014-3.168 2.282-.846.18-1.95.324-5.668-1.218-4.76-1.972-7.822-6.8-8.06-7.116-.228-.316-1.916-2.554-1.916-4.872 0-2.318 1.214-3.456 1.644-3.928.39-.428 1.022-.624 1.63-.624.196 0 .372.01.53.018.468.02.702.048 1.012.784.386.918 1.326 3.236 1.442 3.472.118.236.236.55.078.866-.148.326-.278.53-.514.808-.236.278-.458.492-.694.792-.216.26-.46.538-.196.996.264.45 1.174 1.936 2.522 3.136 1.732 1.54 3.192 2.02 3.642 2.236.35.168.766.128 1.04-.168.348-.382.78-.998 1.218-1.606.314-.434.708-.49 1.098-.332.396.148 2.508 1.182 2.938 1.398.43.216.716.324.822.504.104.18.104 1.042-.286 2.142z"></path></svg></a></div>
 
   <script src="vendor/react.production.min.js"></script>
   <script src="vendor/react-dom.production.min.js"></script>
   
-  <script>
-// IS7 — dados do portfolio (JS puro, carregado antes dos scripts Babel)
-//
-// Campos:
-//   name/meta/domain — identificacao. domain aparece na barra de "navegador"
-//                      do card e SO entra se for dominio proprio do cliente:
-//                      cliente hospedado em .vercel.app fica com domain vazio
-//                      e a barra mostra o nome da empresa (decisao do
-//                      Guilherme, 26/07/2026 — link de vercel no card fica feio)
-//   tag              — rotulo visivel no card
-//   cat              — chave do filtro: "site" | "loja"
-//   img              — screenshot de pagina inteira (gerado por
-//                      tools/print-portfolio.js, largura 1600)
-//   summary          — uma linha: o que o site resolve pro cliente
-//   delivered        — o que foi entregue. So o que da pra conferir no print.
-//   url              — iframe ao vivo no lightbox. Vazio de proposito.
-//
-// A ordem importa: a home mostra os 6 primeiros (Sections2.jsx).
-// Lista corrigida pelo Guilherme em 26/07/2026 (prints recapturados na data).
-window.IS7_CASES = [
-  {
-    name: "Neo Sorriso",
-    meta: "Odontologia · Centro de Curitiba",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/neo-sorriso-curitiba.webp",
-    domain: "",
-    url: "",
-    summary: "Clínica desde 2008 que precisava transformar urgência e medo de dentista em agendamento.",
-    delivered: [
-      "Agendamento de avaliação pelo WhatsApp",
-      "Atendimento de emergência em destaque",
-      "Serviços separados por especialidade",
-      "Seção da sedação com óxido nitroso (diferencial da clínica)",
-      "69 avaliações do Google na página",
-      "Convênio e localização com FAQ",
-    ],
-  },
-  {
-    name: "MK Distribuidora de Vinhos",
-    meta: "Vinhos & adega · Curitiba",
-    tag: "Loja virtual",
-    cat: "loja",
-    pages: 1,
-    img: "assets/portfolio/mk-vinhos.webp",
-    domain: "",
-    url: "",
-    summary: "Adega que precisava vender sem pagar mensalidade de plataforma.",
-    delivered: [
-      "Catálogo com preço e carrinho",
-      "Quiz “encontre seu vinho” em 3 perguntas",
-      "Navegação por tipo de uva",
-      "Fechamento do pedido no WhatsApp",
-      "Identidade visual própria da marca",
-    ],
-  },
-  {
-    name: "Fabi Guincho",
-    meta: "Guincho 24h · Campinas/SP",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/fabiguinhocampinas.webp",
-    domain: "fabiguinhocampinas.com.br",
-    url: "",
-    summary: "Emergência na estrada: quem quebrou liga pro primeiro que atender.",
-    delivered: [
-      "Botões de ligar e WhatsApp fixos na tela",
-      "Serviços por tipo de socorro (reboque, bateria, pane seca)",
-      "Comparativo “com e sem” que justifica o preço fechado",
-      "Área de atendimento cidade por cidade (SEO local)",
-      "28 avaliações do Google na página",
-    ],
-  },
-  {
-    name: "Brenda Burda Tattoo",
-    meta: "Tatuadora fine line · Curitiba",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/brenda-tatuadora.webp",
-    domain: "",
-    url: "",
-    summary: "Tatuadora autoral que fechava orçamento pelo direct, sem vitrine própria.",
-    delivered: [
-      "Portfólio de trabalhos recentes",
-      "Orçamento personalizado pelo WhatsApp",
-      "FAQ que responde preço, sinal e cicatrização antes do contato",
-      "Avaliações do Google na página",
-      "Identidade delicada, alinhada ao traço fine line",
-    ],
-  },
-  {
-    name: "Chaveiro Assistência 24h",
-    meta: "Chaveiro 24h · Recife",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/chaveiroassistencia24hs.webp",
-    domain: "chaveiroassistencia24hs.com.br",
-    url: "",
-    summary: "Emergência não espera: quem perdeu a chave precisa ligar em segundos.",
-    delivered: [
-      "Botões de ligar e WhatsApp fixos na tela",
-      "Serviços separados por automotivo, residencial e comercial",
-      "Bloco de emergência 24h em destaque",
-      "Área de atendimento por bairro (SEO local)",
-      "Avaliações do Google na página",
-    ],
-  },
-  {
-    name: "Degustare",
-    meta: "Hambúrguer artesanal & eventos · Curitiba",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/degustare-site-novo.webp",
-    domain: "",
-    url: "",
-    summary: "Food truck que virou buffet de eventos e precisava vender as duas frentes.",
-    delivered: [
-      "Orçamento por tipo de evento (casamento, corporativo, festa)",
-      "Cardápio com pedido pelo WhatsApp",
-      "História da marca e números (+200 eventos, 7 anos)",
-      "Avaliações do Google na página",
-      "Ponto fixo, delivery e horários organizados",
-    ],
-  },
-  {
-    name: "Tribbo Street",
-    meta: "Estética automotiva · São José dos Pinhais",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/tribbo-street-shine.webp",
-    domain: "",
-    url: "",
-    summary: "Serviço premium que precisava parecer premium antes do orçamento.",
-    delivered: [
-      "Agendamento pelo WhatsApp em cada serviço",
-      "Vitrine de PPF, insulfilm, vitrificação e polimento",
-      "Galeria de trabalhos executados",
-      "Bloco de localização com mapa",
-      "Visual escuro alinhado à marca",
-    ],
-  },
-  {
-    name: "Curadoria by Nanda",
-    meta: "Moda feminina · Curitiba",
-    tag: "Loja virtual",
-    cat: "loja",
-    pages: 1,
-    img: "assets/portfolio/curadoria-nanda.webp",
-    domain: "",
-    url: "",
-    summary: "Curadoria de moda que vendia só pelo Instagram e precisava de vitrine.",
-    delivered: [
-      "Catálogo com sacola de compras",
-      "Captação para o grupo VIP",
-      "Aviso de frete grátis e parcelamento no topo",
-      "Entrega própria (bag delivery) explicada",
-      "Tipografia e paleta sob medida para a marca",
-    ],
-  },
-  {
-    name: "RC Soft Service",
-    meta: "Manutenção predial · Curitiba",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/servicesrc.webp",
-    domain: "servicesrc.com.br",
-    url: "",
-    summary: "Empresa B2B que perdia obra por não ter onde mostrar credibilidade.",
-    delivered: [
-      "Formulário de solicitação de orçamento",
-      "Serviços divididos por especialidade",
-      "Passo a passo de como o trabalho é executado",
-      "Depoimentos de clientes e FAQ",
-      "WhatsApp e telefone em destaque",
-    ],
-  },
-  {
-    name: "Nutri Rafaela",
-    meta: "Nutrição · Curitiba",
-    tag: "Site",
-    cat: "site",
-    pages: 1,
-    img: "assets/portfolio/nutrirafaelagualberto.webp",
-    domain: "nutrirafaelagualberto.com.br",
-    url: "",
-    summary: "Nutricionista atendendo online e presencial, sem canal próprio de agenda.",
-    delivered: [
-      "Agendamento de consulta pelo WhatsApp",
-      "Serviços separados por objetivo do paciente",
-      "Depoimentos de pacientes",
-      "Aviso de disponibilidade da semana",
-    ],
-  },
-];
-
-</script>
   <script>
 /* IS7 — Google Consent Mode v2 + banner de cookies (LGPD)
  * ---------------------------------------------------------------------------
@@ -1649,64 +1369,113 @@ const {
   Icon,
   Eyebrow,
   Reveal,
-  wa,
-  WAPP
+  wa
 } = window.IS7v2;
-const CASES = window.IS7_CASES || [];
 
-/* Filtros montados a partir dos proprios dados: nunca desencontram do cases.js */
-const FILTERS = [{
-  key: "all",
-  label: "Todos"
+/* Prints reais do painel "Desempenho" do Perfil da Empresa no Google.
+   Sem nome de cliente no titulo por decisao do Guilherme (26/07/2026):
+   identificamos so o nicho. Os numeros abaixo sao os que aparecem em
+   cada print — nada alem do que da pra conferir na propria imagem. */
+const GMN = [{
+  name: "Mecânica",
+  meta: "Porto Alegre/RS",
+  tag: "Perfil da Empresa",
+  img: "assets/gmn/mecanica-porto-alegre.webp",
+  views: "6.350",
+  buscas: "279",
+  termos: ["mecanica", "mecanica porto alegre", "auto elétrica"],
+  delivered: ["6.350 visualizações do perfil", "79% das descobertas pelo celular", "Perfil aparecendo até para buscas de auto elétrica"]
 }, {
-  key: "site",
-  label: "Sites"
+  name: "Chaveiro 24h",
+  meta: "Recife/PE",
+  tag: "Perfil da Empresa",
+  img: "assets/gmn/chaveiro-recife.webp",
+  views: "5.021",
+  buscas: "1.636",
+  termos: ["chaveiro", "chaveiro recife", "chaveiro 24 horas"],
+  delivered: ["5.021 visualizações em 6 meses (fev–jul/2026)", "1.636 pesquisas mostraram o perfil", "83% das descobertas pelo celular, na hora do aperto"]
 }, {
-  key: "loja",
-  label: "Lojas virtuais"
-}].map(f => ({
-  ...f,
-  count: f.key === "all" ? CASES.length : CASES.filter(c => c.cat === f.key).length
-})).filter(f => f.count > 0);
-const PortCard = ({
-  c,
+  name: "Nutricionista",
+  meta: "Curitiba/PR",
+  tag: "Perfil da Empresa",
+  img: "assets/gmn/nutricionista-curitiba.webp",
+  views: "1.079",
+  buscas: "171",
+  termos: ["nutricionista unimed", "nutricionista curitiba", "nutricionista cajuru"],
+  delivered: ["1.079 visualizações do perfil", "Aparece para quem busca pelo convênio (unimed)", "Posicionada no bairro (cajuru) e na cidade"]
+}, {
+  name: "Estética automotiva",
+  meta: "São José dos Pinhais/PR",
+  tag: "Perfil da Empresa",
+  img: "assets/gmn/estetica-automotiva.webp",
+  views: "944",
+  buscas: "16+",
+  termos: ["lava car", "lava car perto de mim", "car wash near me"],
+  delivered: ["944 visualizações do perfil", "75% das descobertas pelo celular", "Aparece no “perto de mim”, inclusive em inglês"]
+}, {
+  name: "Loja virtual de moda",
+  meta: "Curitiba/PR",
+  tag: "Perfil da Empresa",
+  img: "assets/gmn/loja-virtual-moda.webp",
+  views: "296",
+  buscas: "64",
+  termos: ["marca pesquisada pelo nome"],
+  delivered: ["296 visualizações do perfil", "Clientes já pesquisam a marca pelo nome próprio", "Perfil ativo mesmo sem loja física de rua"]
+}];
+const GmnCard = ({
+  g,
   i,
   onOpen
 }) => /*#__PURE__*/React.createElement(Reveal, {
-  delay: i % 3 * 70,
+  delay: i % 2 * 80,
   as: "article",
-  className: "port-card",
-  onClick: () => onOpen(c)
+  className: "gmn-card",
+  onClick: () => onOpen(g)
 }, /*#__PURE__*/React.createElement("div", {
-  className: "port-bar"
+  className: "gmn-head"
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+  className: "gmn-nicho"
+}, g.name), /*#__PURE__*/React.createElement("p", {
+  className: "gmn-meta"
+}, g.meta)), /*#__PURE__*/React.createElement("span", {
+  className: "tag tag-accent",
+  style: {
+    fontSize: 10,
+    flexShrink: 0
+  }
+}, "Google")), /*#__PURE__*/React.createElement("div", {
+  className: "gmn-stats"
 }, /*#__PURE__*/React.createElement("div", {
-  className: "port-dots"
+  className: "gmn-stat"
 }, /*#__PURE__*/React.createElement("span", {
+  className: "n"
+}, g.views), /*#__PURE__*/React.createElement("span", {
+  className: "l"
+}, "pessoas viram o perfil")), /*#__PURE__*/React.createElement("div", {
+  className: "gmn-stat"
+}, /*#__PURE__*/React.createElement("span", {
+  className: "n"
+}, g.buscas), /*#__PURE__*/React.createElement("span", {
+  className: "l"
+}, "pesquisas mostraram a empresa"))), /*#__PURE__*/React.createElement("div", {
+  className: "gmn-termos"
+}, g.termos.map((t, j) => /*#__PURE__*/React.createElement("span", {
+  key: j,
+  className: "tag",
   style: {
-    background: "#FF5F57"
+    fontSize: 10,
+    padding: "3px 9px",
+    textTransform: "none",
+    letterSpacing: 0
   }
-}), /*#__PURE__*/React.createElement("span", {
-  style: {
-    background: "#FFBD2E"
-  }
-}), /*#__PURE__*/React.createElement("span", {
-  style: {
-    background: "#28CA42"
-  }
-})), /*#__PURE__*/React.createElement("div", {
-  className: "port-url"
-}, c.domain || c.name)), /*#__PURE__*/React.createElement("div", {
-  className: "port-thumb",
-  style: {
-    background: c.grad || "var(--surface-2)"
-  }
+}, t))), /*#__PURE__*/React.createElement("div", {
+  className: "gmn-shot"
 }, /*#__PURE__*/React.createElement("img", {
-  src: c.img,
-  alt: `Site desenvolvido para ${c.name}`,
-  loading: "lazy",
-  className: "port-img"
+  src: g.img,
+  alt: `Painel do Perfil da Empresa no Google — ${g.name}`,
+  loading: "lazy"
 }), /*#__PURE__*/React.createElement("div", {
-  className: "port-hover-hint"
+  className: "gmn-hint"
 }, /*#__PURE__*/React.createElement("span", {
   style: {
     display: "flex",
@@ -1720,42 +1489,11 @@ const PortCard = ({
     color: "#fff"
   }
 }, /*#__PURE__*/React.createElement(Icon, {
-  name: "monitor",
-  size: 16
-}), " Ver projeto"))), /*#__PURE__*/React.createElement("div", {
-  className: "port-body"
-}, /*#__PURE__*/React.createElement("div", {
-  className: "port-head"
-}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
-  className: "port-name"
-}, c.name), /*#__PURE__*/React.createElement("p", {
-  className: "port-meta"
-}, c.meta)), /*#__PURE__*/React.createElement("span", {
-  className: "port-arrow"
-}, /*#__PURE__*/React.createElement(Icon, {
-  name: "arrow-up-right",
-  size: 16,
-  color: "var(--accent-bright)"
-}))), /*#__PURE__*/React.createElement("p", {
-  className: "port-summary"
-}, c.summary), /*#__PURE__*/React.createElement("div", {
-  className: "port-tags"
-}, /*#__PURE__*/React.createElement("span", {
-  className: "tag tag-accent",
-  style: {
-    fontSize: 10,
-    padding: "3px 9px"
-  }
-}, c.tag), c.pages > 1 && /*#__PURE__*/React.createElement("span", {
-  className: "tag",
-  style: {
-    fontSize: 10,
-    padding: "3px 9px"
-  }
-}, c.pages, " p\xE1ginas"))));
+  name: "search",
+  size: 15
+}), " Ver print completo"))));
 const App = () => {
   const [scrolled, setScrolled] = React.useState(false);
-  const [filter, setFilter] = React.useState("all");
   const [theme, setTheme] = React.useState(() => typeof localStorage !== 'undefined' ? localStorage.getItem('is7-theme') || 'dark' : 'dark');
   React.useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 16);
@@ -1774,7 +1512,6 @@ const App = () => {
     PortfolioLightbox
   } = window.IS7v2;
   const [active, setActive] = useLightbox();
-  const shown = filter === "all" ? CASES : CASES.filter(c => c.cat === filter);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
     className: `hdr ${scrolled ? "scrolled" : ""}`
   }, /*#__PURE__*/React.createElement("div", {
@@ -1789,8 +1526,8 @@ const App = () => {
   }, /*#__PURE__*/React.createElement("a", {
     href: "/"
   }, "In\xEDcio"), /*#__PURE__*/React.createElement("a", {
-    href: "/#servicos"
-  }, "Servi\xE7os"), /*#__PURE__*/React.createElement("a", {
+    href: "/portfolio"
+  }, "Sites"), /*#__PURE__*/React.createElement("a", {
     href: "/#sobre"
   }, "Sobre"), /*#__PURE__*/React.createElement("a", {
     href: "/#contato"
@@ -1808,7 +1545,7 @@ const App = () => {
     name: theme === 'dark' ? 'sun' : 'moon',
     size: 17
   })), /*#__PURE__*/React.createElement("a", {
-    href: wa("Olá! Vi o portfólio da IS7 e quero um projeto assim também."),
+    href: wa("Olá! Vi os resultados de Google Meu Negócio da IS7 e quero isso pra minha empresa."),
     target: "_blank",
     rel: "noreferrer",
     className: "btn btn-primary",
@@ -1817,7 +1554,7 @@ const App = () => {
       fontSize: 14
     }
   }, "Fale conosco")))), /*#__PURE__*/React.createElement("section", {
-    className: "port-hero"
+    className: "gmn-hero"
   }, /*#__PURE__*/React.createElement("div", {
     className: "glow glow-purple",
     style: {
@@ -1837,166 +1574,53 @@ const App = () => {
   }, /*#__PURE__*/React.createElement(Reveal, null, /*#__PURE__*/React.createElement("div", {
     className: "port-switch"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/portfolio",
-    className: "on"
+    href: "/portfolio"
   }, "Sites"), /*#__PURE__*/React.createElement("a", {
-    href: "/google-meu-negocio"
+    href: "/google-meu-negocio",
+    className: "on"
   }, "Google Meu Neg\xF3cio"))), /*#__PURE__*/React.createElement(Reveal, {
     delay: 60
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "port-count"
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "layers",
-    size: 14
-  }), " ", CASES.length, " projetos selecionados \xB7 +100 entregues")), /*#__PURE__*/React.createElement(Reveal, {
-    delay: 100
   }, /*#__PURE__*/React.createElement("h1", {
     className: "display",
     style: {
       maxWidth: 720,
       margin: "0 auto"
     }
-  }, "Site de verdade, ", /*#__PURE__*/React.createElement("span", {
+  }, "Empresas aparecendo no Google, ", /*#__PURE__*/React.createElement("span", {
     className: "grad-text"
-  }, "no ar"), ", com o dom\xEDnio \xE0 vista.")), /*#__PURE__*/React.createElement(Reveal, {
-    delay: 140
+  }, "com print do painel"), ".")), /*#__PURE__*/React.createElement(Reveal, {
+    delay: 120
   }, /*#__PURE__*/React.createElement("p", {
     className: "lead",
     style: {
-      maxWidth: 620,
-      margin: "22px auto 0"
+      maxWidth: 600,
+      margin: "20px auto 0"
     }
-  }, "Nada de mockup gen\xE9rico. Cada projeto abaixo \xE9 um cliente real, com a p\xE1gina inteira aberta para voc\xEA rolar e conferir antes de falar com a gente.")))), /*#__PURE__*/React.createElement("section", {
+  }, "Cada card abaixo \xE9 a tela real de desempenho do Perfil da Empresa no Google de um cliente da IS7: quantas pessoas viram, o que pesquisaram e por onde chegaram.")))), /*#__PURE__*/React.createElement("section", {
     style: {
       paddingBottom: 80
     }
   }, /*#__PURE__*/React.createElement("div", {
     className: "wrap"
-  }, /*#__PURE__*/React.createElement(Reveal, {
-    className: "port-filter",
-    role: "group",
-    "aria-label": "Filtrar projetos por tipo"
-  }, FILTERS.map(f => /*#__PURE__*/React.createElement("button", {
-    key: f.key,
-    className: `port-fbtn ${filter === f.key ? "on" : ""}`,
-    "aria-pressed": filter === f.key,
-    onClick: () => setFilter(f.key)
-  }, f.label, /*#__PURE__*/React.createElement("span", {
-    className: "n"
-  }, f.count)))), /*#__PURE__*/React.createElement("div", {
-    className: "port-grid"
-  }, shown.map((c, i) => /*#__PURE__*/React.createElement(PortCard, {
-    key: c.name,
-    c: c,
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "gmn-grid"
+  }, GMN.map((g, i) => /*#__PURE__*/React.createElement(GmnCard, {
+    key: g.name,
+    g: g,
     i: i,
     onOpen: setActive
-  }))), shown.length === 0 && /*#__PURE__*/React.createElement("p", {
-    className: "port-empty"
-  }, "Nenhum projeto nesta categoria por enquanto."))), /*#__PURE__*/React.createElement("section", {
-    className: "port-otim"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "glow glow-purple",
+  }))), /*#__PURE__*/React.createElement(Reveal, {
+    className: "gmn-nota"
+  }, "Prints do painel oficial do Google (se\xE7\xE3o Desempenho). Nichos identificados sem o nome do cliente por privacidade \u2014 no diagn\xF3stico a gente mostra como chegar l\xE1 no seu."))), /*#__PURE__*/React.createElement("section", {
+    className: "port-cta",
     style: {
-      width: 420,
-      height: 420,
-      top: -140,
-      left: "50%",
-      transform: "translateX(-50%)",
-      opacity: .3
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "wrap",
-    style: {
+      marginTop: 40,
+      padding: "64px 0",
+      textAlign: "center",
       position: "relative",
-      zIndex: 2
+      background: "linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%)",
+      borderTop: "1px solid var(--line)"
     }
-  }, /*#__PURE__*/React.createElement(Reveal, {
-    style: {
-      textAlign: "center",
-      maxWidth: 720,
-      margin: "0 auto 48px"
-    }
-  }, /*#__PURE__*/React.createElement(Eyebrow, {
-    center: true
-  }, "Como cada projeto \xE9 entregue"), /*#__PURE__*/React.createElement("h2", {
-    className: "h2",
-    style: {
-      marginTop: 16
-    }
-  }, "N\xE3o basta ser bonito. ", /*#__PURE__*/React.createElement("span", {
-    className: "grad-text"
-  }, "Tem que converter"), "."), /*#__PURE__*/React.createElement("p", {
-    className: "lead",
-    style: {
-      marginTop: 18
-    }
-  }, "E converter come\xE7a por ser achado. Hoje seu cliente n\xE3o procura s\xF3 no Google \u2014 ele pergunta pro ChatGPT, pro Gemini e pra busca com IA. Todo site que sai daqui \xE9 preparado para as tr\xEAs frentes, e desenhado para transformar visita em contato.")), /*#__PURE__*/React.createElement("div", {
-    className: "port-otim-grid"
-  }, [{
-    sigla: "SEO",
-    nome: "Otimização para buscadores",
-    desc: "O básico bem feito, que é onde a maioria falha: título e descrição de cada página, endereço limpo, imagem leve, site rápido no celular e estrutura de conteúdo que o Google entende.",
-    itens: ["Meta tags e canonical", "Dados estruturados (Schema.org)", "Sitemap e robots.txt", "Nota 95+ no PageSpeed"]
-  }, {
-    sigla: "AEO",
-    nome: "Otimização para respostas",
-    desc: "Quando alguém pergunta \"quanto custa um chaveiro em Recife\", a busca responde direto na tela. Estruturamos o conteúdo em pergunta e resposta para que essa resposta seja a do seu site.",
-    itens: ["FAQ marcado com FAQPage", "Conteúdo em pergunta e resposta", "Dados do negócio explícitos", "Horário, área e serviços legíveis"]
-  }, {
-    sigla: "GEO",
-    nome: "Otimização para IA generativa",
-    desc: "ChatGPT, Gemini e Perplexity recomendam empresas. Para serem citados, precisam conseguir ler e confiar no seu site. Entregamos o site num formato que essas ferramentas conseguem digerir.",
-    itens: ["Arquivo llms.txt no domínio", "Descrição factual do negócio", "Conteúdo sem depender de JavaScript", "Informação consistente com o Google"]
-  }].map((o, i) => /*#__PURE__*/React.createElement(Reveal, {
-    key: o.sigla,
-    delay: i * 90,
-    className: "card port-otim-card"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "port-otim-sigla"
-  }, o.sigla), /*#__PURE__*/React.createElement("h3", {
-    className: "h3",
-    style: {
-      fontSize: 19,
-      marginTop: 14
-    }
-  }, o.nome), /*#__PURE__*/React.createElement("p", {
-    style: {
-      margin: "10px 0 0",
-      fontSize: 14,
-      lineHeight: 1.65,
-      color: "var(--fg-muted)"
-    }
-  }, o.desc), /*#__PURE__*/React.createElement("ul", {
-    className: "port-otim-lista"
-  }, o.itens.map((it, j) => /*#__PURE__*/React.createElement("li", {
-    key: j
-  }, /*#__PURE__*/React.createElement(Icon, {
-    name: "check",
-    size: 13,
-    color: "var(--accent-bright)",
-    strokeWidth: 2.6
-  }), /*#__PURE__*/React.createElement("span", null, it))))))), /*#__PURE__*/React.createElement(Reveal, {
-    style: {
-      textAlign: "center",
-      marginTop: 36
-    }
-  }, /*#__PURE__*/React.createElement("p", {
-    style: {
-      margin: 0,
-      fontSize: 14,
-      color: "var(--fg-dim)"
-    }
-  }, "Quer conferir? O pr\xF3prio site da IS7 publica o dele em", " ", /*#__PURE__*/React.createElement("a", {
-    href: "/llms.txt",
-    target: "_blank",
-    rel: "noreferrer",
-    style: {
-      color: "var(--accent-bright)",
-      fontFamily: "var(--mono)",
-      fontSize: 13
-    }
-  }, "is7mkt.com.br/llms.txt"))))), /*#__PURE__*/React.createElement("section", {
-    className: "port-cta"
   }, /*#__PURE__*/React.createElement("div", {
     className: "glow glow-blue",
     style: {
@@ -2015,20 +1639,20 @@ const App = () => {
     }
   }, /*#__PURE__*/React.createElement(Reveal, null, /*#__PURE__*/React.createElement(Eyebrow, {
     center: true
-  }, "Quer um projeto assim?"), /*#__PURE__*/React.createElement("h2", {
+  }, "Quer aparecer assim?"), /*#__PURE__*/React.createElement("h2", {
     className: "h2",
     style: {
       marginTop: 16
     }
-  }, "Seu neg\xF3cio pode ser o ", /*#__PURE__*/React.createElement("span", {
+  }, "Seu perfil no Google pode ser o ", /*#__PURE__*/React.createElement("span", {
     className: "grad-text"
-  }, "pr\xF3ximo case"), "."), /*#__PURE__*/React.createElement("p", {
+  }, "pr\xF3ximo painel"), "."), /*#__PURE__*/React.createElement("p", {
     className: "lead",
     style: {
-      maxWidth: 500,
+      maxWidth: 520,
       margin: "18px auto 0"
     }
-  }, "Fale com a gente e descubra como sua empresa pode ter uma presen\xE7a digital que vende todos os dias."), /*#__PURE__*/React.createElement("div", {
+  }, "Diagn\xF3stico gratuito: a gente olha seu Perfil da Empresa e te mostra o que est\xE1 travando suas visualiza\xE7\xF5es."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       flexWrap: "wrap",
@@ -2037,17 +1661,17 @@ const App = () => {
       marginTop: 32
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: wa("Olá! Vi o portfólio da IS7 e quero um projeto assim também."),
+    href: wa("Olá! Quero um diagnóstico gratuito do meu Perfil da Empresa no Google."),
     target: "_blank",
     rel: "noreferrer",
     className: "btn btn-primary btn-lg"
-  }, "Quero meu projeto ", /*#__PURE__*/React.createElement(Icon, {
+  }, "Quero meu diagn\xF3stico ", /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-right",
     size: 18
   })), /*#__PURE__*/React.createElement("a", {
-    href: "/#contato",
+    href: "/portfolio",
     className: "btn btn-ghost btn-lg"
-  }, "Entrar em contato"))))), /*#__PURE__*/React.createElement("footer", {
+  }, "Ver portf\xF3lio de sites"))))), /*#__PURE__*/React.createElement("footer", {
     style: {
       borderTop: "1px solid var(--line)",
       padding: "28px 0",
@@ -2075,7 +1699,7 @@ const App = () => {
     onClose: () => setActive(null)
   }), /*#__PURE__*/React.createElement("a", {
     className: "fab",
-    href: wa("Olá! Vi o portfólio da IS7 e quero saber mais."),
+    href: wa("Olá! Vi os resultados de Google Meu Negócio da IS7 e quero saber mais."),
     target: "_blank",
     rel: "noreferrer",
     "aria-label": "WhatsApp"

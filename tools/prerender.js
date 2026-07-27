@@ -31,6 +31,7 @@ function serve() {
     var url = decodeURIComponent(req.url.split("?")[0]);
     if (url === "/") url = "/index.html";
     if (url === "/portfolio") url = "/portfolio.html";
+    if (url === "/google-meu-negocio") url = "/google-meu-negocio.html";
     var file = path.join(DIST, url);
     if (!file.startsWith(DIST) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
       res.writeHead(404); res.end("404"); return;
@@ -113,6 +114,9 @@ async function prerenderPage(browser, route, outFile) {
     await prerenderPage(browser, "/index.html", "index.html");
     if (fs.existsSync(path.join(DIST, "portfolio.html"))) {
       await prerenderPage(browser, "/portfolio.html", "portfolio.html");
+    }
+    if (fs.existsSync(path.join(DIST, "google-meu-negocio.html"))) {
+      await prerenderPage(browser, "/google-meu-negocio.html", "google-meu-negocio.html");
     }
   } finally {
     await browser.close();

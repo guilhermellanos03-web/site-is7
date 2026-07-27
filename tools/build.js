@@ -29,6 +29,10 @@ var PAGES = [
 if (fs.existsSync(path.join(SRC, "portfolio.html"))) {
   PAGES.push({ in: "portfolio.html", out: "portfolio.html" });
 }
+// idem pro portfolio de Google Meu Negocio (/google-meu-negocio)
+if (fs.existsSync(path.join(SRC, "google-meu-negocio.html"))) {
+  PAGES.push({ in: "google-meu-negocio.html", out: "google-meu-negocio.html" });
+}
 
 // Recursos extras copiados pra dist (referenciados por URL no HTML).
 // landing-pages.html e modelo-home.html sao paginas estaticas puras (sem JSX),

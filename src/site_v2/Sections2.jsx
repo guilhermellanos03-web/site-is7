@@ -3,8 +3,9 @@ const { Icon, Eyebrow, Reveal, Stars, wa } = window.IS7v2;
 /* ---------------- PORTFOLIO / CASES (main site — 6 featured) ---------------- */
 const FEATURED = (window.IS7_CASES || []).slice(0, 6);
 
-/* Browser chrome bar — dots + URL */
-const BrowserBar = ({ domain }) => (
+/* Browser chrome bar — dots + URL. Sem dominio proprio, mostra o nome da
+   empresa no lugar (nao expomos link .vercel.app de cliente). */
+const BrowserBar = ({ domain, name }) => (
   <div style={{
     background: "var(--surface)", borderBottom: "1px solid var(--line)",
     padding: "8px 12px", display: "flex", alignItems: "center", gap: 8, flexShrink: 0,
@@ -19,7 +20,7 @@ const BrowserBar = ({ domain }) => (
       padding: "4px 10px", fontSize: 10, color: "var(--fg-dim)",
       fontFamily: "var(--mono, monospace)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
     }}>
-      {domain || "is7mkt.com.br"}
+      {domain || name || "is7mkt.com.br"}
     </div>
   </div>
 );
@@ -30,7 +31,7 @@ const CaseCard = ({ c, i, onOpen }) => (
     onClick={() => onOpen(c)}>
 
     {/* Browser chrome */}
-    <BrowserBar domain={c.domain} />
+    <BrowserBar domain={c.domain} name={c.name} />
 
     {/* Screenshot area */}
     <div style={{ height: 200, overflow: "hidden", position: "relative", background: c.grad || "var(--surface-2)", flexShrink: 0 }}>
