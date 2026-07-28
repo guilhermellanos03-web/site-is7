@@ -58,13 +58,14 @@ th{color:var(--fg);font-family:var(--serif);font-size:14px;background:var(--surf
 footer{border-top:1px solid var(--line);margin-top:64px;padding:30px 0;text-align:center;font-size:12.5px;color:var(--fg-dim);}
 .meta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;color:var(--fg-dim);font-size:13.5px;margin-top:18px;}
 blockquote{margin:0 0 18px;padding:14px 20px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 12px 12px 0;color:var(--fg-muted);}
+.site-logo{display:inline-block;flex-shrink:0;height:40px;width:32px;background:var(--grad);-webkit-mask:url("../assets/is7-simbolo.webp") no-repeat center / contain;mask:url("../assets/is7-simbolo.webp") no-repeat center / contain;}
 </style>
 <style>.rel-box{margin:44px 0 0;padding-top:28px;border-top:1px solid var(--line);}.rel-box h2{font-size:20px;margin:0 0 16px;}.rel-grid{display:grid;gap:12px;}.rel-item{display:block;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;color:inherit;transition:border-color .22s,transform .22s;}.rel-item:hover{border-color:rgba(59,108,255,.45);transform:translateY(-2px);text-decoration:none;}.rel-item strong{display:block;font-family:var(--serif);font-size:15.5px;color:var(--fg);margin-bottom:4px;}.rel-item span{font-size:13.5px;color:var(--fg-muted);}.rel-volta{display:inline-block;margin-top:18px;font-size:14px;}</style>
 </head>
 <body>
 <header class="hdr">
   <div class="hdr-row">
-    <a class="logo" href="https://is7mkt.com.br/"><span class="i">i</span><span class="s7">S7</span></a>
+    <a class="logo" href="https://is7mkt.com.br/"><span class="site-logo" role="img" aria-label="IS7 Marketing Digital"></span></a>
     <div style="display:flex;align-items:center;gap:14px;">
       <a href="https://is7mkt.com.br/" style="font-size:14px;color:var(--fg-muted);">← Voltar ao site</a>
       <button class="theme-toggle" id="themeBtn" aria-label="Alternar tema"><svg id="themeIcon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
