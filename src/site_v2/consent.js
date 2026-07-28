@@ -77,6 +77,23 @@
     });
   }
 
+  /* ---------- clique em WhatsApp vira evento no GA4 ----------
+     O site tem ~15 CTAs de WhatsApp e nenhum era medido: o GA4 so via
+     pageview, entao nao dava pra saber qual pagina, secao ou botao gera
+     contato. Um listener delegado cobre todos de uma vez, inclusive os que
+     ainda vao ser criados. Sem consentimento o gtag ignora o envio, entao
+     nao ha vazamento. */
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest && e.target.closest('a[href*="wa.me"]');
+    if (!a || typeof window.gtag !== "function") return;
+    var secao = a.closest("section");
+    gtag("event", "clique_whatsapp", {
+      pagina: location.pathname,
+      secao: (secao && (secao.id || secao.className)) || "sem-secao",
+      texto: (a.innerText || a.getAttribute("aria-label") || "").trim().slice(0, 60),
+    });
+  }, true);
+
   /* ---------- Meta Pixel: so apos aceite ---------- */
   var pixelCarregado = false;
   function carregarPixel() {

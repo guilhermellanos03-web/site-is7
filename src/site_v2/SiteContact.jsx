@@ -3,7 +3,24 @@ const { Logo, Icon, Eyebrow, Reveal, wa, WAPP } = window.IS7v2;
 const Contact = () => {
   const [form, setForm] = React.useState({ nome: "", whatsapp: "", segmento: "" });
   const [sent, setSent] = React.useState(false);
-  const submit = (e) => { e.preventDefault(); setSent(true); };
+
+  // O formulario NAO tem backend (site estatico na Vercel, sem /api). Antes
+  // ele so exibia "Recebemos seus dados!" e descartava tudo — cada lead
+  // preenchido aqui era perdido em silencio. Agora ele monta a mensagem e
+  // abre o WhatsApp com os dados ja escritos: o contato chega de verdade e
+  // a pessoa ve pra onde foi.
+  const submit = (e) => {
+    e.preventDefault();
+    var texto = "Olá! Quero meu diagnóstico gratuito com a IS7."
+      + "\n\nNome: " + form.nome
+      + "\nWhatsApp: " + form.whatsapp
+      + (form.segmento ? "\nSegmento: " + form.segmento : "");
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "generate_lead", { method: "formulario_home" });
+    }
+    window.open(wa(texto), "_blank", "noopener");
+    setSent(true);
+  };
   return (
     <section id="contato" className="section" style={{ position: "relative", overflow: "hidden", background: "var(--bg-2)" }}>
       <div className="glow glow-purple" style={{ width: 480, height: 480, top: -160, left: "50%", transform: "translateX(-50%)", opacity: .5 }} />
@@ -30,8 +47,11 @@ const Contact = () => {
             {sent ? (
               <div style={{ textAlign: "center", padding: "28px 0" }}>
                 <span style={{ width: 56, height: 56, borderRadius: 9999, background: "var(--grad)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}><Icon name="check" size={26} color="#fff" strokeWidth={3} /></span>
-                <p style={{ margin: 0, fontWeight: 700, fontSize: 17 }}>Recebemos seus dados!</p>
-                <p className="muted" style={{ margin: "6px 0 0", fontSize: 14 }}>Em breve entraremos em contato.</p>
+                <p style={{ margin: 0, fontWeight: 700, fontSize: 17 }}>Abrimos o WhatsApp com seus dados!</p>
+                <p className="muted" style={{ margin: "6px 0 0", fontSize: 14 }}>
+                  É só apertar enviar na conversa. Se a janela não abriu,{" "}
+                  <a href={wa("Olá! Quero meu diagnóstico gratuito com a IS7.")} target="_blank" rel="noreferrer" style={{ color: "var(--accent-bright)", fontWeight: 600 }}>clique aqui</a>.
+                </p>
               </div>
             ) : (
               <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
