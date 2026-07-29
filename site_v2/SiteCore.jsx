@@ -126,23 +126,27 @@
   };
 
   // ── useCountUp ────────────────────────────────────────────────────────────
+  // Usa setInterval em vez de requestAnimationFrame: o rAF congela em aba de
+  // segundo plano, e a proposta costuma abrir justamente assim (o cliente
+  // clica no link e a aba abre atras). Antes, nesse caso, o numero ficava
+  // parado em 0 — "R$ 0 mil investidos" na pagina que vende.
+  // A rede de seguranca garante que o valor final sempre aparece.
   const useCountUp = function useCountUp(target, duration, active) {
     duration = duration || 1800;
     var [count, setCount] = React.useState(0);
     React.useEffect(function () {
       if (!active) return;
-      var start = Date.now();
-      var raf;
-      function frame() {
-        var elapsed = Date.now() - start;
-        var progress = Math.min(elapsed / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
+      var iv = null;
+      var inicio = Date.now();
+      function fim() { if (iv) clearInterval(iv); iv = null; setCount(target); }
+      iv = setInterval(function () {
+        var p = Math.min(1, (Date.now() - inicio) / duration);
+        var eased = 1 - Math.pow(1 - p, 3);
         setCount(Math.round(eased * target));
-        if (progress < 1) raf = requestAnimationFrame(frame);
-        else setCount(target);
-      }
-      raf = requestAnimationFrame(frame);
-      return function () { cancelAnimationFrame(raf); };
+        if (p >= 1) fim();
+      }, 32);
+      var seguranca = setTimeout(fim, duration + 800);
+      return function () { if (iv) clearInterval(iv); clearTimeout(seguranca); };
     }, [target, duration, active]);
     return count;
   };
@@ -152,5 +156,44 @@
     return React.useState(null);
   };
 
-  Object.assign(window.IS7v2, { Icon, Logo, Eyebrow, Reveal, useCountUp, useLightbox, wa, WAPP });
+  // ── StatNumber ────────────────────────────────────────────────────────────
+  // Figura de estatistica que conta de 0 ate o valor quando entra na tela.
+  // Faltava nesta copia do SiteCore (a de src/ sempre teve). As 4 paginas de
+  // proposta fazem `const { ..., StatNumber, ... } = window.IS7v2`, entao o
+  // componente vinha undefined e o React derrubava a pagina INTEIRA com o
+  // erro #130 (element type is invalid) — proposta em branco no cliente.
+  const StatNumber = function StatNumber({ prefix, value, suffix, size }) {
+    const ref = React.useRef(null);
+    const [ativo, setAtivo] = React.useState(false);
+
+    React.useEffect(function () {
+      const el = ref.current;
+      if (!el) { setAtivo(true); return; }
+      // ja visivel no primeiro paint: conta na hora
+      if (el.getBoundingClientRect().top < window.innerHeight) { setAtivo(true); return; }
+      let obs = null;
+      try {
+        obs = new IntersectionObserver(function (entradas) {
+          entradas.forEach(function (e) {
+            if (e.isIntersecting) { setAtivo(true); if (obs) obs.disconnect(); }
+          });
+        }, { threshold: 0.35 });
+        obs.observe(el);
+      } catch (e) { setAtivo(true); }
+      // Rede de seguranca: se o observer nao disparar (aba de fundo, navegador
+      // sem suporte, elemento fora de fluxo), o numero NAO pode ficar em zero
+      // numa pagina comercial. Depois de 2,5s conta de qualquer forma.
+      const seguranca = setTimeout(function () { setAtivo(true); }, 2500);
+      return function () { if (obs) obs.disconnect(); clearTimeout(seguranca); };
+    }, []);
+
+    const n = useCountUp(value || 0, 1800, ativo);
+    return (
+      <span ref={ref} className="stat-num" style={size ? { fontSize: size } : undefined}>
+        {(prefix || "") + Number(n).toLocaleString("pt-BR") + (suffix || "")}
+      </span>
+    );
+  };
+
+  Object.assign(window.IS7v2, { Icon, Logo, Eyebrow, Reveal, useCountUp, useLightbox, StatNumber, wa, WAPP });
 })();
