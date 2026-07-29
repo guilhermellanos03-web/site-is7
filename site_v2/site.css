@@ -331,9 +331,20 @@ body.js-anim #topo .grad-text{
 /* faq */
 [data-theme="light"] .faq-item{ box-shadow:0 1px 8px rgba(0,0,0,.05); }
 
-/* logo dual-mode */
-.site-logo { filter: brightness(0) invert(1); } /* dark: white */
-[data-theme="light"] .site-logo { filter: none; }  /* light: roxo original */
+/* ---------- Marca IS7 ----------
+   Igual a de src/site_v2/site.css. Esta copia (usada pelas paginas de
+   proposta) tinha ficado na versao antiga: um filter que pintava a marca de
+   branco chapado. Agora o simbolo entra como mascara e a cor sai de
+   var(--grad), acompanhando o tema.
+   Caminho ABSOLUTO: esta folha e carregada como arquivo externo de
+   /site_v2/, entao "assets/..." relativo resolveria pra
+   /site_v2/assets/is7-simbolo.webp (404) e a logo sumiria. */
+.site-logo{
+  display:block; flex-shrink:0;
+  background:var(--grad);
+  -webkit-mask:url("/assets/is7-simbolo.webp") no-repeat center / contain;
+          mask:url("/assets/is7-simbolo.webp") no-repeat center / contain;
+}
 
 /* about badge — light mode fix */
 [data-theme="light"] .about-badge{

@@ -410,12 +410,19 @@ body.js-anim #topo .grad-text{
    botoes e dos titulos. Antes era um <img> com filter:brightness(0) invert(1),
    que apagava o degrade e deixava a marca branca chapada no tema escuro.
    Pintando por --grad ela acompanha o tema sozinha e mantem contraste nos dois.
-   O arquivo e o glifo ja recortado (sem os 75% de espaco vazio do original). */
+   O arquivo e o glifo ja recortado (sem os 75% de espaco vazio do original).
+
+   Caminho ABSOLUTO de proposito. Com "assets/..." relativo, o endereco muda
+   conforme quem carrega o CSS: no site principal o build embute a folha no
+   HTML da raiz e resolve certo, mas as paginas de proposta carregam
+   site_v2/site.css como arquivo externo — ali o relativo virava
+   /site_v2/assets/is7-simbolo.webp (404) e a LOGO SUMIA, deixando so uma
+   barra fixa com o botao de menu no topo. */
 .site-logo{
   display:block; flex-shrink:0;
   background:var(--grad);
-  -webkit-mask:url("assets/is7-simbolo.webp") no-repeat center / contain;
-          mask:url("assets/is7-simbolo.webp") no-repeat center / contain;
+  -webkit-mask:url("/assets/is7-simbolo.webp") no-repeat center / contain;
+          mask:url("/assets/is7-simbolo.webp") no-repeat center / contain;
 }
 
 /* about badge — light mode fix */
