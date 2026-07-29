@@ -263,7 +263,7 @@ const PageSpeed = () => (
 
       {/* Screenshot slot */}
       <Reveal style={{maxWidth:820,margin:"0 auto"}}>
-        <div className="card" style={{padding:10,borderColor:"rgba(145,69,230,.3)"}}>
+        <div className="card" style={{padding:10,borderColor:"rgba(59,108,255,.3)"}}>
           <div style={{background:"var(--surface-2)",borderRadius:14,overflow:"hidden",position:"relative",paddingTop:"44%"}}>
             <image-slot id={`pagespeed-${SEG.key}`} shape="rect" anchor="top"
               placeholder="Arraste aqui o print do Google PageSpeed do site"
@@ -328,7 +328,7 @@ const About = () => (
     <div className="wrap" style={{maxWidth:900}}>
       <div style={{display:"grid",gridTemplateColumns:"auto 1fr",gap:48,alignItems:"center"}} className="about-grid">
         <Reveal>
-          <div className="card" style={{padding:8,borderRadius:20,borderColor:"rgba(145,69,230,.35)",width:240}}>
+          <div className="card" style={{padding:8,borderRadius:20,borderColor:"rgba(59,108,255,.35)",width:240}}>
             <image-slot id="guilherme-proposta" shape="rect" anchor="top"
               placeholder="Foto do Guilherme"
               style={{width:"100%",aspectRatio:"4/5",display:"block",borderRadius:14}}/>
@@ -339,7 +339,7 @@ const About = () => (
           <h2 className="h2" style={{marginTop:14,fontSize:"clamp(26px,3.4vw,40px)"}}>Guilherme Llanos</h2>
           <p style={{margin:"6px 0 0",fontFamily:"var(--mono)",fontSize:13,color:"var(--accent-bright)",letterSpacing:".1em"}}>Fundador da IS7 Mídias Digitais</p>
           <p style={{margin:"20px 0 0",fontSize:15.5,color:"var(--fg-muted)",lineHeight:1.7}}>
-            "Trabalhei com marketing para mais de 17 grupos, gerenciando mais de R$500 mil em Google Ads. Meu foco é simples: colocar negócios locais nas primeiras posições do Google e garantir que cada real investido traga retorno real."
+            "Trabalhei com marketing para mais de 17 grupos, gerenciando mais de R$500 mil em Google Ads. Meu foco é simples: fazer negócios locais serem encontrados no Google e garantir que cada real investido traga retorno real."
           </p>
           <div style={{display:"flex",gap:14,marginTop:26,flexWrap:"wrap"}}>
             {[["map-pin","Curitiba/PR"],["calendar-days","6+ anos"],["users","15+ estados"]].map(([ic,l])=>(
@@ -432,15 +432,15 @@ const Pricing = () => (
       <Reveal style={{ textAlign: "center", marginBottom: 44 }}>
         <Eyebrow center>Investimento</Eyebrow>
         <h2 className="h2" style={{ marginTop: 14 }}>Escolha como quer <span className="grad-text">começar</span>.</h2>
-        <p className="lead" style={{ marginTop: 14, maxWidth: 540, margin: "14px auto 0" }}>Duas formas de colocar seu guincho no topo do Google.</p>
+        <p className="lead" style={{ marginTop: 14, maxWidth: 540, margin: "14px auto 0" }}>Duas formas de começar. O serviço é o mesmo; muda o tempo que a IS7 fica do seu lado.</p>
       </Reveal>
 
       <div className="plans-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, alignItems: "start" }}>
         {PLANS.map((p, i) => (
           <Reveal key={p.id} delay={i * 90} className="card" style={{
             padding: "34px 28px", display: "flex", flexDirection: "column", gap: 18,
-            borderColor: p.highlight ? "rgba(145,69,230,.5)" : "var(--line-2)",
-            background: p.highlight ? "linear-gradient(160deg, rgba(145,69,230,.10), rgba(59,108,255,.06))" : "var(--surface)",
+            borderColor: p.highlight ? "rgba(59,108,255,.5)" : "var(--line-2)",
+            background: p.highlight ? "linear-gradient(160deg, rgba(59,108,255,.10), rgba(59,108,255,.06))" : "var(--surface)",
             position: "relative",
           }}>
             {p.highlight && (
@@ -532,7 +532,7 @@ const FinalCTA = () => (
       <Reveal>
         <Eyebrow center>Pronto para começar?</Eyebrow>
         <h2 className="h2" style={{marginTop:16}}>
-          Coloque seu <span className="grad-text">{SEG.label}</span><br/>no topo do Google hoje.
+          Faça seu <span className="grad-text">{SEG.label}</span><br/>ser encontrado no Google.
         </h2>
         <p className="lead" style={{marginTop:18,maxWidth:520,margin:"18px auto 0"}}>
           Entre em contato agora e receba uma análise gratuita da presença digital da sua empresa.
