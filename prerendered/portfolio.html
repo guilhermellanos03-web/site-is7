@@ -54,6 +54,35 @@
    JetBrains Mono labels. Capture-safe reveal motion.
    ============================================================ */
 
+/* ---------- Fallback com metricas casadas (anti-CLS) ----------
+   A folha do Google Fonts carrega sem bloquear a renderizacao (media="print"
+   + onload), o que e otimo pro FCP mas garante que o texto apareca primeiro
+   na fonte do sistema e SO DEPOIS troque pra Montserrat/Inter. Nessa troca as
+   letras mudam de largura e altura, o conteudo se reacomoda e a pagina
+   "pula" — no relatorio isso aparecia como CLS 0,243, atribuido ao glow do
+   hero (que e ancorado pelo bottom e por isso se move junto; ele era o
+   sintoma, nao a causa).
+
+   Estes @font-face nao baixam nada: sao a Arial local reescalada com
+   size-adjust/ascent-override pra ocupar o MESMO espaco da fonte final.
+   Assim a troca acontece sem deslocar nada. */
+@font-face{
+  font-family:'Montserrat Fallback';
+  src:local('Arial');
+  size-adjust:113.35%;
+  ascent-override:85.79%;
+  descent-override:22.25%;
+  line-gap-override:0%;
+}
+@font-face{
+  font-family:'Inter Fallback';
+  src:local('Arial');
+  size-adjust:107.12%;
+  ascent-override:90.20%;
+  descent-override:22.48%;
+  line-gap-override:0%;
+}
+
 :root{
   --bg:        #070A14;
   --bg-2:      #0A0F1E;
@@ -83,8 +112,8 @@
   --star:      #FBBF24;
   --google-blue:#4285F4;
 
-  --serif: 'Montserrat', system-ui, sans-serif;
-  --sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --serif: 'Montserrat', 'Montserrat Fallback', system-ui, sans-serif;
+  --sans:  'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
   --mono:  'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
 
   --maxw: 1200px;
@@ -872,12 +901,24 @@ window.IS7_CASES = [
 
     // Guarda: se a tag ja estiver na pagina (ex.: alguem colou o snippet do
     // Google no HTML tambem), nao carrega de novo.
-    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+    // O gtag.js tem ~159 KB e concorre com o primeiro paint se baixar junto
+    // com a pagina. Como o consentimento ja foi declarado acima (denied) e o
+    // dataLayer guarda os eventos ate ele chegar, nada se perde esperando o
+    // load — so o desempenho melhora. Timeout de seguranca pro caso de o
+    // evento load nao disparar.
+    var jaPediu = false;
+    function baixarGtag() {
+      if (jaPediu) return;
+      jaPediu = true;
+      if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
       var s = document.createElement("script");
       s.async = true;
       s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
       document.head.appendChild(s);
     }
+    if (document.readyState === "complete") baixarGtag();
+    else window.addEventListener("load", baixarGtag, { once: true });
+    setTimeout(baixarGtag, 5000);
   }
 
   function liberarGoogle() {

@@ -60,12 +60,24 @@
 
     // Guarda: se a tag ja estiver na pagina (ex.: alguem colou o snippet do
     // Google no HTML tambem), nao carrega de novo.
-    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+    // O gtag.js tem ~159 KB e concorre com o primeiro paint se baixar junto
+    // com a pagina. Como o consentimento ja foi declarado acima (denied) e o
+    // dataLayer guarda os eventos ate ele chegar, nada se perde esperando o
+    // load — so o desempenho melhora. Timeout de seguranca pro caso de o
+    // evento load nao disparar.
+    var jaPediu = false;
+    function baixarGtag() {
+      if (jaPediu) return;
+      jaPediu = true;
+      if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
       var s = document.createElement("script");
       s.async = true;
       s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
       document.head.appendChild(s);
     }
+    if (document.readyState === "complete") baixarGtag();
+    else window.addEventListener("load", baixarGtag, { once: true });
+    setTimeout(baixarGtag, 5000);
   }
 
   function liberarGoogle() {

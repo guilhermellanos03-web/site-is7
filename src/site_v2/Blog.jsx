@@ -106,16 +106,47 @@ const InstagramPost = ({ post, index }) => {
 
 const Instagram = () => {
   const [posts, setPosts] = React.useState(FALLBACK_POSTS);
+  const secao = React.useRef(null);
 
+  // A busca no feed só começa quando a seção está chegando na tela.
+  // Antes ela saía junto com o carregamento da página: o relatório do
+  // PageSpeed mostrava feeds.behold.so ocupando 953ms do caminho crítico
+  // para alimentar uma seção que fica lá embaixo, fora da primeira tela.
+  // Enquanto não carrega, os posts do FALLBACK_POSTS já aparecem — ninguém
+  // vê seção vazia.
   React.useEffect(() => {
-    fetch(`https://feeds.behold.so/${FEED_ID}`)
-      .then(r => r.json())
-      .then(data => { if (Array.isArray(data) && data.length) setPosts(data.slice(0, 6).map(normalizePost)); })
-      .catch(() => {/* keep fallback */});
+    let cancelado = false;
+    const buscar = () => {
+      fetch(`https://feeds.behold.so/${FEED_ID}`)
+        .then(r => r.json())
+        .then(data => {
+          if (cancelado) return;
+          if (Array.isArray(data) && data.length) setPosts(data.slice(0, 6).map(normalizePost));
+        })
+        .catch(() => {/* mantém o fallback */});
+    };
+
+    const el = secao.current;
+    if (!el || typeof IntersectionObserver === "undefined") { buscar(); return; }
+
+    let obs = new IntersectionObserver((entradas) => {
+      entradas.forEach((e) => { if (e.isIntersecting) { obs.disconnect(); buscar(); } });
+    }, { rootMargin: "400px" }); // começa um pouco antes de aparecer
+    obs.observe(el);
+
+    // Rede de segurança: se o observer não disparar (aba de fundo, navegador
+    // que não o suporta direito), busca assim que a página terminar de
+    // carregar. O objetivo era só sair do caminho crítico — não é deixar o
+    // feed desatualizado pra sempre.
+    const depoisDoLoad = () => setTimeout(() => { obs.disconnect(); buscar(); }, 1200);
+    if (document.readyState === "complete") depoisDoLoad();
+    else window.addEventListener("load", depoisDoLoad, { once: true });
+
+    return () => { cancelado = true; obs.disconnect(); };
   }, []);
 
   return (
-    <section id="instagram" className="section" style={{ background: "var(--bg)" }}>
+    <section id="instagram" ref={secao} className="section" style={{ background: "var(--bg)" }}>
       <div className="glow glow-purple" style={{ width: 380, height: 380, bottom: -120, left: -120, opacity: .35 }} />
       <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
         {/* Header */}
@@ -124,7 +155,8 @@ const Instagram = () => {
             <a href={IG_URL} target="_blank" rel="noreferrer" style={{ flexShrink: 0 }}>
               <div style={{ width: 64, height: 64, borderRadius: 9999, background: "linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)", padding: 2 }}>
                 <img src="https://cdn2.behold.pictures/CY8U1E0lbNYFtqkZ8Cj4lANgm4d2/17841460136562134/profile.webp"
-                     alt="Guilherme IS7" style={{ width: "100%", height: "100%", borderRadius: 9999, objectFit: "cover", border: "2px solid var(--bg)" }} />
+                     alt="Guilherme IS7" loading="lazy" width="60" height="60"
+                     style={{ width: "100%", height: "100%", borderRadius: 9999, objectFit: "cover", border: "2px solid var(--bg)" }} />
               </div>
             </a>
             <div>

@@ -120,8 +120,11 @@
       "Azul-noite":  { a: "#2F4FD8", a2: "#1E4FD8", br: "#4A7BFF", grad: "linear-gradient(118deg,#17399C 0%,#1E4FD8 55%,#2F4FD8 100%)" },
       "Teal":        { a: "#13B8A6", a2: "#3B6CFF", br: "#56E0CE", grad: "linear-gradient(118deg,#0EA38F 0%,#1FA6C9 55%,#3B6CFF 100%)" },
     };
+    // 'Montserrat Fallback' precisa vir aqui tambem: este valor e escrito
+    // inline no <html> e sobrescreve o --serif do site.css. Sem ele, o titulo
+    // perdia o fallback de metricas casadas e o CLS voltava.
     const FONTS = {
-      "Montserrat": "'Montserrat', system-ui, sans-serif",
+      "Montserrat": "'Montserrat', 'Montserrat Fallback', system-ui, sans-serif",
       "Poppins": "'Poppins', system-ui, sans-serif",
       "Space Grotesk": "'Space Grotesk', system-ui, sans-serif",
     };
