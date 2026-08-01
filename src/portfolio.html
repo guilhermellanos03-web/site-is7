@@ -181,7 +181,7 @@
   <script type="text/babel" src="site_v2/PortfolioLightbox.jsx"></script>
 
   <script type="text/babel">
-    const { Logo, Icon, Eyebrow, Reveal, wa, WAPP } = window.IS7v2;
+    const { Logo, Icon, Eyebrow, Reveal, wa, WAPP, thumb, onErroThumb } = window.IS7v2;
     const CASES = window.IS7_CASES || [];
 
     /* Filtros montados a partir dos proprios dados: nunca desencontram do cases.js */
@@ -207,7 +207,7 @@
         </div>
 
         <div className="port-thumb" style={{ background: c.grad || "var(--surface-2)" }}>
-          <img src={c.img} alt={`Site desenvolvido para ${c.name}`} loading="lazy" className="port-img" />
+          <img src={thumb(c.img)} onError={onErroThumb} alt={`Site desenvolvido para ${c.name}`} loading="lazy" className="port-img" />
           <div className="port-hover-hint">
             <span style={{ display:"flex", alignItems:"center", gap:8, background:"var(--grad)", padding:"10px 18px", borderRadius:9999, fontSize:13.5, fontWeight:600, color:"#fff" }}>
               <Icon name="monitor" size={16} /> Ver projeto

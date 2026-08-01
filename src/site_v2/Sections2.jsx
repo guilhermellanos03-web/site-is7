@@ -1,4 +1,4 @@
-const { Icon, Eyebrow, Reveal, Stars, wa } = window.IS7v2;
+const { Icon, Eyebrow, Reveal, Stars, wa, thumb, onErroThumb } = window.IS7v2;
 
 /* ---------------- PORTFOLIO / CASES (main site — 6 featured) ---------------- */
 const FEATURED = (window.IS7_CASES || []).slice(0, 6);
@@ -36,7 +36,7 @@ const CaseCard = ({ c, i, onOpen }) => (
     {/* Screenshot area */}
     <div style={{ height: 200, overflow: "hidden", position: "relative", background: c.grad || "var(--surface-2)", flexShrink: 0 }}>
       {c.img ? (
-        <img src={c.img} alt={c.name} loading="lazy" className="case-img"
+        <img src={thumb(c.img)} onError={onErroThumb} alt={c.name} loading="lazy" className="case-img"
              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "auto", display: "block" }} />
       ) : (
         <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>

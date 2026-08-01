@@ -855,6 +855,21 @@ const Eyebrow = ({
   style: style
 }, children);
 
+// Versao leve do print, pros CARDS (720px, gerada por tools/gera-thumbs.js).
+// O arquivo original tem 1600px porque o lightbox precisa: la a pessoa le o
+// site inteiro. Nos cards ele aparece com uns 350px, entao carregar o grande
+// significava baixar 4x mais pixel do que usar — a home pesava 2,2 MB, quase
+// tudo nesses prints.
+// Se a thumb nao existir (print novo sem rodar o script), o onErroThumb
+// devolve o original em vez de deixar o card vazio.
+const thumb = src => (src || "").replace("assets/portfolio/", "assets/portfolio/card/");
+const onErroThumb = e => {
+  const el = e.currentTarget;
+  if (el.dataset.voltou) return;
+  el.dataset.voltou = "1";
+  el.src = el.src.replace("/assets/portfolio/card/", "/assets/portfolio/");
+};
+
 // Capture-safe reveal: hidden state only applies when body.js-anim is set AND
 // the element hasn't yet entered the viewport. State lives in React so a parent
 // re-render (e.g. from tweaks) can't strip the "in" class.
@@ -978,6 +993,8 @@ window.IS7v2 = {
   Reveal,
   useCountUp,
   StatNumber,
+  thumb,
+  onErroThumb,
   WAPP,
   wa
 };

@@ -9,7 +9,7 @@
 // entram no sitemap e levam noindex — um cliente de odontologia nao precisa
 // descobrir que a IS7 tambem e "a agencia dos guinchos".
 
-const { Logo, Icon, Eyebrow, Reveal, wa } = window.IS7v2;
+const { Logo, Icon, Eyebrow, Reveal, wa, thumb, onErroThumb } = window.IS7v2;
 
 const NichoPage = () => {
   const N = window.IS7_NICHO || {};
@@ -99,7 +99,7 @@ const NichoPage = () => {
                   <div className="nicho-url">{c.domain || c.name}</div>
                 </div>
                 <div className="nicho-thumb">
-                  <img src={c.img} alt={`Site desenvolvido para ${c.name}`} loading="lazy" className="nicho-img" />
+                  <img src={thumb(c.img)} onError={onErroThumb} alt={`Site desenvolvido para ${c.name}`} loading="lazy" className="nicho-img" />
                   <div className="nicho-hint">
                     <span style={{ display: "flex", alignItems: "center", gap: 8, background: "var(--grad)", padding: "10px 18px", borderRadius: 9999, fontSize: 13.5, fontWeight: 600, color: "#fff" }}>
                       <Icon name="monitor" size={16} /> Ver projeto
