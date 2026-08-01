@@ -94,7 +94,14 @@
   <script type="text/babel" src="site_v2/PortfolioLightbox.jsx"></script>
   <script type="text/babel" src="site_v2/Blog.jsx"></script>
   <script type="text/babel" src="site_v2/SiteContact.jsx"></script>
-  <script type="text/babel" src="site_v2/ChatBot.jsx"></script>
+  <!-- ChatBot desativado por ora: nao estava configurado direito.
+       O componente segue em site_v2/ChatBot.jsx. Pra voltar:
+         1) aqui, uma tag de script text/babel apontando pra site_v2/ChatBot.jsx
+            (mesmo formato das linhas acima)
+         2) ChatBot no destructuring do App, e o componente antes do TweaksPanel
+       Atencao: nao adianta comentar a tag de script. O build casa a tag mesmo
+       dentro de comentario e inlineia o arquivo, levando codigo morto pro HTML
+       — por isso a instrucao aqui esta escrita, e nao em codigo. -->
 
   <script type="text/babel">
     const TWEAKS = /*EDITMODE-BEGIN*/{
@@ -120,7 +127,7 @@
     };
 
     const App = () => {
-      const { Header, Hero, Stats, ClientsStrip, Services, BeforeAfter, Deliverables, Portfolio, Reviews, About, Instagram, Faq, Contact, Footer, WhatsAppFab, ChatBot } = window.IS7v2;
+      const { Header, Hero, Stats, ClientsStrip, Services, BeforeAfter, Deliverables, Portfolio, Reviews, About, Instagram, Faq, Contact, Footer, WhatsAppFab } = window.IS7v2;
       // Fallbacks so app renders even if tweaks-panel.jsx hasn't finished loading yet
       const useTweaks  = window.useTweaks  || ((d) => { const [t,setT] = React.useState(d); return [t,(k,v)=>setT(p=>({...p,[k]:v}))]; });
       const TweaksPanel  = window.TweaksPanel  || (({ children }) => null);
@@ -174,7 +181,7 @@
           </main>
           <Footer />
           <WhatsAppFab />
-          <ChatBot />
+          {/* <ChatBot /> — desativado por ora, ver comentario no <head> */}
 
           <TweaksPanel>
             <TweakSection label="Direção do Hero" />
