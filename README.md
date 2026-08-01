@@ -245,7 +245,7 @@ o contador do filtro e o do hero se ajustam sozinhos.
 
 ```
 WhatsApp: +55 (41) 98743-0349
-Email: suporte@is7mkt.com.br
+Email: guilherme@is7mkt.com.br
 Site: is7mkt.com.br
 Google Reviews: https://maps.app.goo.gl/EuyiNkJ55Y8NJL7EA
 CNPJ: 50.201.864/0001-40

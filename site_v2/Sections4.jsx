@@ -104,11 +104,11 @@
                   +55 (41) 98743-0349
                 </a>
                 <a
-                  href="mailto:suporte@is7mkt.com.br"
+                  href="mailto:guilherme@is7mkt.com.br"
                   style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: "var(--fg-muted)" }}
                 >
                   <Icon name="mail" size={15} color="var(--accent-bright)" />
-                  suporte@is7mkt.com.br
+                  guilherme@is7mkt.com.br
                 </a>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <Icon name="map-pin" size={15} color="var(--fg-dim)" />

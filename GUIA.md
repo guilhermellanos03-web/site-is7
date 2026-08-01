@@ -13,7 +13,7 @@
 - **Site:** https://is7mkt.com.br
 - **Cidade:** Curitiba/PR (atende todo o Brasil)
 - **WhatsApp:** (41) 98743-0349 → `5541987430349`
-- **E-mail:** suporte@is7mkt.com.br
+- **E-mail:** guilherme@is7mkt.com.br
 - **CNPJ:** 50.201.864/0001-40 (IS7 Mídias Digitais)
 - **Fundador/Gestor:** Guilherme Llanos
 - **Números atuais:** 5.0 no Google (28 avaliações) · +100 projetos · 5 anos de mercado · sites com PageSpeed 90–100

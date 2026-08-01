@@ -26,7 +26,7 @@
 
     var info = [
       { icon: "message-circle", label: "WhatsApp", value: "+55 (41) 98743-0349", href: wa("Olá, vim pelo site da IS7!") },
-      { icon: "mail",           label: "E-mail",   value: "suporte@is7mkt.com.br", href: "mailto:suporte@is7mkt.com.br" },
+      { icon: "mail",           label: "E-mail",   value: "guilherme@is7mkt.com.br", href: "mailto:guilherme@is7mkt.com.br" },
       { icon: "map-pin",        label: "Localização", value: "Curitiba, PR", href: null },
     ];
 
